@@ -89,7 +89,7 @@ Hệ thống bao gồm các thành phần chính:
 
 7. **Chạy ứng dụng**:
    ```bash
-   python app.py
+   python run.py
    ```
    Truy cập `http://localhost:5000` để kiểm tra.
 
@@ -101,7 +101,7 @@ Hệ thống bao gồm các thành phần chính:
    COPY requirements.txt .
    RUN pip install -r requirements.txt
    COPY . .
-   CMD ["python", "app.py"]
+   CMD ["python", "run.py"]
    ```
 
 2. **Build và chạy**:
@@ -154,7 +154,7 @@ Hệ thống bao gồm các thành phần chính:
   - **Khắc phục**: Kiểm tra `GEMINI_API_KEYS`, đảm bảo `KeyRotationStrategy` hoạt động đúng.
 - **Lỗi ứng dụng**:
   - **Triệu chứng**: Crash hoặc lỗi 500.
-  - **Khắc phục**: Kiểm tra log, khởi động lại Flask (`python app.py`).
+  - **Khắc phục**: Kiểm tra log, khởi động lại Flask (`python run.py`).
 
 ## Kế hoạch mở rộng
 Dựa trên tư vấn công nghệ, dự án có thể được cải tiến như sau:
