@@ -60,14 +60,22 @@ Hệ thống bao gồm các thành phần chính:
    ```
    Nội dung `requirements.txt`:
    ```
-   flask
-   flask-cors
+   Flask
+   flask_pymongo
+   bcrypt
+   flask_cors
+   sentence_transformers
    faiss-cpu
    numpy
-   sentence-transformers
+   transformers
+   torch
+   scikit-learn
+   langchain_google_genai
+   langchain
+   google-generativeai
    python-dotenv
-   nltk
-   rank-bm25
+   gunicorn
+   rank_bm25
    ```
 
 4. **Tải dữ liệu NLTK**:
