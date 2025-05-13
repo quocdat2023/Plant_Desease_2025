@@ -1,14 +1,3 @@
 # Bỏ qua tệp môi trường chứa key
 .env
 *.env
-config/secrets.json
-credentials.json
-
-# Bỏ qua các thư mục chứa dữ liệu nhạy cảm
-/secrets/
-/keys/
-
-# Bỏ qua tệp tạm thời hoặc log
-*.log
-node_modules/
-.DS_Store
