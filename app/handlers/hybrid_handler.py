@@ -6,7 +6,7 @@ from ..core.repositories.index_repository import IndexRepository
 from typing import List
 
 class HybridHandler(QueryHandler):
-    def __init__(self, index_repo: IndexRepository, faiss_weight: float = 0.5, bm25_weight: float = 0.5):
+    def __init__(self, index_repo: IndexRepository, faiss_weight: float = 0.7, bm25_weight: float = 0.7):
         self.faiss_handler = FaissHandler(index_repo)
         self.bm25_handler = BM25Handler(index_repo)
         self.faiss_weight = faiss_weight

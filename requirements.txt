@@ -8,7 +8,6 @@ numpy
 transformers
 torch
 scikit-learn
-langchain_google_genai
 langchain
 google-generativeai
 python-dotenv
