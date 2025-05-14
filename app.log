@@ -55,3 +55,131 @@
 2025-05-14 15:33:36,194 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
 2025-05-14 15:33:36,200 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
 2025-05-14 15:33:40,344 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-14 15:35:54,060 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.6:5000
+2025-05-14 15:35:54,060 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-14 15:35:54,076 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-14 15:36:55,352 [werkzeug] WARNING:  * Debugger is active!
+2025-05-14 15:36:55,355 [werkzeug] INFO:  * Debugger PIN: 123-240-775
+2025-05-14 15:36:55,412 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:36:55] "GET / HTTP/1.1" 200 -
+2025-05-14 15:36:55,439 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:36:55] "GET / HTTP/1.1" 200 -
+2025-05-14 15:36:55,501 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:36:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-14 15:36:55,779 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:36:55] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-14 15:36:55,780 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:36:55] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-14 15:36:55,784 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:36:55] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-14 15:36:55,790 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:36:55] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-14 15:40:11,945 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:40:11] "POST /api/query HTTP/1.1" 200 -
+2025-05-14 15:41:57,192 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 15:41:57,194 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 15:41:57,475 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 15:41:57,475 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 15:41:57,475 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 15:42:00,990 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-14 15:43:04,453 [werkzeug] WARNING:  * Debugger is active!
+2025-05-14 15:43:04,457 [werkzeug] INFO:  * Debugger PIN: 123-240-775
+2025-05-14 15:43:04,540 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:43:04] "GET / HTTP/1.1" 200 -
+2025-05-14 15:43:04,543 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:43:04] "GET / HTTP/1.1" 200 -
+2025-05-14 15:43:04,594 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:43:04] "GET / HTTP/1.1" 200 -
+2025-05-14 15:43:04,617 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:43:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-14 15:43:04,972 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:43:04] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-14 15:43:05,005 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:43:05] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-14 15:43:05,011 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:43:05] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-14 15:43:05,018 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:43:05] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-14 15:44:07,230 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:44:07] "POST /api/query HTTP/1.1" 200 -
+2025-05-14 15:44:39,550 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:44:39] "POST /api/query HTTP/1.1" 200 -
+2025-05-14 15:45:13,719 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 15:45:13,719 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 15:45:13,719 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 15:45:17,495 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-14 15:46:59,058 [werkzeug] WARNING:  * Debugger is active!
+2025-05-14 15:46:59,063 [werkzeug] INFO:  * Debugger PIN: 123-240-775
+2025-05-14 15:58:37,262 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\sentence_transformers\\cross_encoder\\CrossEncoder.py', reloading
+2025-05-14 15:58:37,312 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\transformers\\utils\\__init__.py', reloading
+2025-05-14 15:58:37,342 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\transformers\\utils\\hub.py', reloading
+2025-05-14 15:58:37,426 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\torch\\nn\\modules\\linear.py', reloading
+2025-05-14 15:58:39,814 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-14 15:59:51,987 [werkzeug] WARNING:  * Debugger is active!
+2025-05-14 15:59:51,990 [werkzeug] INFO:  * Debugger PIN: 123-240-775
+2025-05-14 15:59:52,063 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:59:52] "GET / HTTP/1.1" 200 -
+2025-05-14 15:59:52,094 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:59:52] "GET / HTTP/1.1" 200 -
+2025-05-14 15:59:52,095 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:59:52] "GET / HTTP/1.1" 200 -
+2025-05-14 15:59:52,129 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:59:52] "GET / HTTP/1.1" 200 -
+2025-05-14 15:59:52,308 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:59:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-14 15:59:52,482 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:59:52] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-14 15:59:52,484 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:59:52] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-14 15:59:52,488 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:59:52] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-14 15:59:52,492 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 15:59:52] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-14 16:00:00,162 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:00:00] "GET / HTTP/1.1" 200 -
+2025-05-14 16:00:00,211 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:00:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-14 16:00:00,248 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:00:00] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-14 16:00:00,250 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:00:00] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-14 16:00:00,254 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:00:00] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-14 16:00:00,265 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:00:00] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-14 16:00:07,354 [sentence_transformers.cross_encoder.CrossEncoder] INFO: Use pytorch device: cpu
+2025-05-14 16:00:07,771 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask_cors\\extension.py', reloading
+2025-05-14 16:00:07,772 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\core\\services\\query_service.py', reloading
+2025-05-14 16:00:07,779 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:00:07] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2025-05-14 16:00:09,574 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-14 16:01:09,367 [werkzeug] WARNING:  * Debugger is active!
+2025-05-14 16:01:09,369 [werkzeug] INFO:  * Debugger PIN: 123-240-775
+2025-05-14 16:01:09,478 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:01:09] "GET / HTTP/1.1" 200 -
+2025-05-14 16:01:09,501 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:01:09] "GET / HTTP/1.1" 200 -
+2025-05-14 16:01:09,555 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:01:09] "GET / HTTP/1.1" 200 -
+2025-05-14 16:01:09,565 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:01:09] "GET / HTTP/1.1" 200 -
+2025-05-14 16:01:09,644 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:01:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-14 16:01:09,713 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:01:09] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-14 16:01:09,716 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:01:09] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-14 16:01:09,719 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:01:09] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-14 16:01:09,725 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:01:09] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-14 16:02:13,642 [sentence_transformers.cross_encoder.CrossEncoder] INFO: Use pytorch device: cpu
+2025-05-14 16:02:14,091 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:02:14] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2025-05-14 16:03:38,058 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 16:03:38,059 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 16:03:38,065 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 16:03:39,510 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-14 16:04:34,544 [werkzeug] WARNING:  * Debugger is active!
+2025-05-14 16:04:34,547 [werkzeug] INFO:  * Debugger PIN: 123-240-775
+2025-05-14 16:04:51,079 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:04:51] "GET / HTTP/1.1" 200 -
+2025-05-14 16:04:51,128 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:04:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-14 16:04:51,287 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:04:51] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-14 16:04:51,289 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:04:51] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-14 16:04:51,290 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:04:51] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-14 16:04:51,293 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:04:51] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-14 16:05:44,614 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:05:44] "POST /api/query HTTP/1.1" 200 -
+2025-05-14 16:06:21,776 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 16:06:21,776 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 16:06:25,483 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-14 16:07:33,142 [werkzeug] WARNING:  * Debugger is active!
+2025-05-14 16:07:33,147 [werkzeug] INFO:  * Debugger PIN: 123-240-775
+2025-05-14 16:07:44,214 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 16:07:44,215 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 16:07:44,219 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 16:07:46,265 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-14 16:08:57,367 [werkzeug] WARNING:  * Debugger is active!
+2025-05-14 16:08:57,370 [werkzeug] INFO:  * Debugger PIN: 123-240-775
+2025-05-14 16:08:57,488 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:08:57] "GET / HTTP/1.1" 200 -
+2025-05-14 16:08:57,490 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:08:57] "GET / HTTP/1.1" 200 -
+2025-05-14 16:08:57,532 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:08:57] "GET / HTTP/1.1" 200 -
+2025-05-14 16:08:57,598 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:08:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-14 16:08:57,888 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:08:57] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-14 16:08:57,890 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:08:57] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-14 16:08:57,892 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:08:57] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-14 16:08:57,897 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:08:57] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-14 16:09:57,565 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:09:57] "POST /api/query HTTP/1.1" 200 -
+2025-05-14 16:10:38,050 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 16:10:38,051 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\hybrid_handler.py', reloading
+2025-05-14 16:10:42,777 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-14 16:12:00,052 [werkzeug] WARNING:  * Debugger is active!
+2025-05-14 16:12:00,054 [werkzeug] INFO:  * Debugger PIN: 123-240-775
+2025-05-14 16:13:47,810 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:13:47] "POST /api/query HTTP/1.1" 200 -
+2025-05-14 16:14:57,583 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:14:57] "POST /api/draft_judgment HTTP/1.1" 200 -
+2025-05-14 16:15:53,889 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:15:53] "GET / HTTP/1.1" 200 -
+2025-05-14 16:15:53,936 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:15:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-14 16:15:54,135 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:15:54] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-14 16:15:54,137 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:15:54] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-14 16:15:54,138 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:15:54] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-14 16:15:54,141 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:15:54] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-14 16:17:10,151 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:17:10] "POST /api/draft_judgment HTTP/1.1" 200 -
+2025-05-14 16:18:04,986 [werkzeug] INFO: 127.0.0.1 - - [14/May/2025 16:18:04] "POST /api/query HTTP/1.1" 200 -
