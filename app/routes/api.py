@@ -40,7 +40,7 @@ def query():
         {question}
 
         **Thông tin tham khảo (bản án tương đồng):**  
-        {banan_sum_results if banan_sum_results else "Không tìm thấy bản án phù hợp. Phân tích dựa trên các quy định pháp luật hiện hành và nguyên tắc pháp lý chung."}
+        {top_banan_docs if top_banan_docs else "Không tìm thấy bản án phù hợp. Phân tích dựa trên các quy định pháp luật hiện hành và nguyên tắc pháp lý chung."}
 
         **Thông tin tham khảo (án lệ tương đồng):**  
         {top_anle_docs if top_anle_docs else "Không tìm thấy án lệ phù hợp. Phân tích dựa trên các quy định pháp luật hiện hành và nguyên tắc pháp lý chung."}
