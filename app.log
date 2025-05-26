@@ -287,3 +287,61 @@
 2025-05-26 14:06:04,367 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 14:06:04] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
 2025-05-26 14:06:04,370 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 14:06:04] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
 2025-05-26 14:08:00,290 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 14:08:00] "POST /api/query HTTP/1.1" 200 -
+2025-05-26 23:26:16,910 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.117:5000
+2025-05-26 23:26:16,911 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-26 23:26:16,936 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-26 23:27:08,214 [werkzeug] WARNING:  * Debugger is active!
+2025-05-26 23:27:08,217 [werkzeug] INFO:  * Debugger PIN: 114-975-380
+2025-05-26 23:27:08,292 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:27:08] "GET / HTTP/1.1" 200 -
+2025-05-26 23:27:08,329 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:27:08] "GET / HTTP/1.1" 200 -
+2025-05-26 23:27:08,566 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:27:08] "GET /static/css/styles.css HTTP/1.1" 200 -
+2025-05-26 23:27:08,736 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:27:08] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-26 23:27:08,738 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:27:08] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-26 23:27:08,740 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:27:08] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-26 23:27:08,743 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:27:08] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-26 23:29:57,947 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask_cors\\extension.py', reloading
+2025-05-26 23:29:57,964 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:29:57] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2025-05-26 23:30:00,589 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-26 23:32:33,910 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.117:5000
+2025-05-26 23:32:33,911 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-26 23:32:33,930 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-26 23:33:37,410 [werkzeug] WARNING:  * Debugger is active!
+2025-05-26 23:33:37,414 [werkzeug] INFO:  * Debugger PIN: 114-975-380
+2025-05-26 23:33:37,482 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:33:37] "GET / HTTP/1.1" 200 -
+2025-05-26 23:33:37,512 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:33:37] "GET / HTTP/1.1" 200 -
+2025-05-26 23:33:37,683 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:33:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-26 23:33:37,853 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:33:37] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-26 23:33:37,856 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:33:37] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-26 23:33:37,859 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:33:37] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-26 23:33:37,863 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:33:37] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-26 23:36:11,100 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:36:11] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2025-05-26 23:37:41,362 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-26 23:37:41,363 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-26 23:37:41,364 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-26 23:37:45,484 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-26 23:38:51,551 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.117:5000
+2025-05-26 23:38:51,552 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-26 23:38:51,560 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-26 23:39:45,728 [werkzeug] WARNING:  * Debugger is active!
+2025-05-26 23:39:45,731 [werkzeug] INFO:  * Debugger PIN: 114-975-380
+2025-05-26 23:39:45,785 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:39:45] "GET / HTTP/1.1" 200 -
+2025-05-26 23:39:45,827 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:39:45] "GET / HTTP/1.1" 200 -
+2025-05-26 23:39:45,833 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:39:45] "GET / HTTP/1.1" 200 -
+2025-05-26 23:39:45,835 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:39:45] "GET / HTTP/1.1" 200 -
+2025-05-26 23:39:45,860 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:39:45] "GET / HTTP/1.1" 200 -
+2025-05-26 23:39:45,928 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:39:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-26 23:39:46,191 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:39:46] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-26 23:39:46,193 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:39:46] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-26 23:39:46,195 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:39:46] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-26 23:39:46,202 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:39:46] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-26 23:40:48,406 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:40:48] "POST /api/query HTTP/1.1" 200 -
+2025-05-26 23:43:05,885 [werkzeug] INFO: 127.0.0.1 - - [26/May/2025 23:43:05] "POST /api/query HTTP/1.1" 200 -
