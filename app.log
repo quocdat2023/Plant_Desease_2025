@@ -428,3 +428,842 @@
 2025-05-27 11:27:14,220 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
 2025-05-27 11:27:14,220 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
 2025-05-27 11:27:18,401 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-27 11:29:53,458 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.126:5000
+2025-05-27 11:29:53,458 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-27 11:29:53,476 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-27 11:30:52,907 [werkzeug] WARNING:  * Debugger is active!
+2025-05-27 11:30:52,913 [werkzeug] INFO:  * Debugger PIN: 114-975-380
+2025-05-27 11:30:53,021 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:30:53] "GET / HTTP/1.1" 200 -
+2025-05-27 11:30:53,063 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:30:53] "GET / HTTP/1.1" 200 -
+2025-05-27 11:30:53,110 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:30:53] "GET / HTTP/1.1" 200 -
+2025-05-27 11:30:53,260 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:30:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:30:53,401 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:30:53] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 11:30:53,404 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:30:53] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 11:30:53,406 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:30:53] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 11:30:53,410 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:30:53] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 11:31:51,549 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:31:51] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:32:31,860 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:32:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:32:31,897 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:32:31] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 11:35:35,883 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:35:35] "GET / HTTP/1.1" 200 -
+2025-05-27 11:35:35,933 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:35:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:35:36,122 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:35:36] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 11:35:36,124 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:35:36] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 11:35:36,128 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:35:36] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 11:35:36,132 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:35:36] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 11:35:49,312 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:35:49] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:39:00,999 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:39:00] "GET / HTTP/1.1" 200 -
+2025-05-27 11:39:01,051 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:39:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:39:01,186 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:39:01] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 11:39:01,189 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:39:01] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 11:39:01,191 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:39:01] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 11:39:01,193 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:39:01] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 11:39:19,138 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:39:19] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:39:48,373 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:39:48] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:40:40,762 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:40:40] "GET / HTTP/1.1" 200 -
+2025-05-27 11:40:40,804 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:40:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:40:40,845 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:40:40] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 11:40:40,846 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:40:40] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 11:40:40,849 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:40:40] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 11:40:40,852 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:40:40] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 11:41:26,671 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:41:26] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:43:29,719 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:43:29] "GET / HTTP/1.1" 200 -
+2025-05-27 11:43:29,770 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:43:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:43:29,823 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:43:29] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 11:43:29,824 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:43:29] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 11:43:29,826 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:43:29] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 11:43:29,843 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:43:29] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 11:43:43,544 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:43:43] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:45:34,115 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:45:34] "GET / HTTP/1.1" 200 -
+2025-05-27 11:45:34,172 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:45:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:45:34,420 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:45:34] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 11:45:34,421 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:45:34] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 11:45:34,423 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:45:34] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 11:45:34,426 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:45:34] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 11:46:19,357 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:46:19] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:48:13,071 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:48:13] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:49:34,905 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:49:34] "GET / HTTP/1.1" 200 -
+2025-05-27 11:49:34,981 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:49:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:49:35,082 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:49:35] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 11:49:35,083 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:49:35] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 11:49:35,085 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:49:35] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 11:49:35,087 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:49:35] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 11:49:52,938 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:49:52] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:50:05,467 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:50:05] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:51:51,249 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:51:51] "GET / HTTP/1.1" 200 -
+2025-05-27 11:51:51,308 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:51:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:51:51,422 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:51:51] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 11:51:51,423 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:51:51] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 11:51:51,425 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:51:51] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 11:51:51,427 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:51:51] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 11:52:10,225 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:52:10] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:53:45,143 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:53:45] "GET / HTTP/1.1" 200 -
+2025-05-27 11:53:45,192 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:53:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:53:45,278 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:53:45] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 11:53:45,280 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:53:45] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 11:53:45,284 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:53:45] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 11:53:45,287 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:53:45] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 11:53:51,420 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:53:51] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:54:01,330 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:54:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:54:01,374 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:54:01] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 11:55:43,268 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:55:43] "GET / HTTP/1.1" 200 -
+2025-05-27 11:55:43,324 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:55:43] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 11:55:43,330 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:55:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:55:43,725 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:55:43] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 11:55:43,727 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:55:43] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 11:55:43,729 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:55:43] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 11:55:43,735 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:55:43] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 11:56:05,223 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:56:05] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:57:47,809 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:57:47] "GET / HTTP/1.1" 200 -
+2025-05-27 11:57:47,861 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:57:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:57:48,064 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:57:48] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 11:57:48,074 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:57:48] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 11:57:48,076 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:57:48] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 11:57:48,077 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:57:48] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 11:57:56,094 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:57:56] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 11:58:04,081 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:58:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 11:58:04,133 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 11:58:04] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:00:29,780 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:00:29] "GET / HTTP/1.1" 200 -
+2025-05-27 12:00:29,830 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:00:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:00:30,034 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:00:30] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:00:30,036 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:00:30] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:00:30,038 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:00:30] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:00:30,041 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:00:30] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:00:46,557 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:00:46] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:00:53,468 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:00:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:00:53,512 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:00:53] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:01:45,569 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:01:45] "GET / HTTP/1.1" 200 -
+2025-05-27 12:01:45,624 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:01:45] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:01:45,657 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:01:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:01:45,996 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:01:45] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:01:45,998 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:01:45] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:01:46,004 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:01:46] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:01:46,007 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:01:46] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:01:56,625 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:01:56] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:02:08,721 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:02:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:02:08,764 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:02:08] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:03:57,279 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:03:57] "GET / HTTP/1.1" 200 -
+2025-05-27 12:03:57,336 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:03:57] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:03:57,341 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:03:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:03:57,679 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:03:57] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:03:57,681 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:03:57] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:03:57,685 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:03:57] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:03:57,692 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:03:57] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:04:16,670 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:04:16] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:04:26,820 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:04:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:04:26,861 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:04:26] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:05:02,489 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:02] "GET / HTTP/1.1" 200 -
+2025-05-27 12:05:02,542 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:02] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:05:02,566 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:05:02,938 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:02] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:05:02,941 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:02] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:05:02,945 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:02] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:05:02,949 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:02] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:05:11,581 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:11] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:05:36,750 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:36] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:05:54,863 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:54] "GET / HTTP/1.1" 200 -
+2025-05-27 12:05:54,910 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:05:55,076 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:55] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:05:55,078 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:55] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:05:55,081 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:55] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:05:55,084 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:05:55] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:06:02,431 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:06:02] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:06:34,104 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:06:34] "GET / HTTP/1.1" 200 -
+2025-05-27 12:06:34,166 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:06:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:06:34,351 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:06:34] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:06:34,354 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:06:34] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:06:34,360 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:06:34] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:06:34,361 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:06:34] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:07:09,500 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:07:09] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:07:57,801 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:07:57] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:10:22,765 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:10:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:10:22,812 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:10:22] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:11:43,930 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:11:43] "GET / HTTP/1.1" 200 -
+2025-05-27 12:11:43,978 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:11:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:11:44,117 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:11:44] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:11:44,118 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:11:44] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:11:44,121 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:11:44] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:11:44,124 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:11:44] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:12:01,891 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:12:01] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:12:21,748 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:12:21] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:12:36,774 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:12:36] "GET / HTTP/1.1" 200 -
+2025-05-27 12:12:36,822 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:12:36] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:12:36,854 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:12:36] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:12:36,856 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:12:36] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:12:36,858 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:12:36] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:12:36,861 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:12:36] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:13:17,867 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:13:17] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:14:29,313 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:14:29] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:14:46,512 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:14:46] "GET / HTTP/1.1" 200 -
+2025-05-27 12:14:46,551 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:14:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:14:46,594 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:14:46] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:14:46,595 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:14:46] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:14:46,598 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:14:46] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:14:46,601 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:14:46] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:15:21,742 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:15:21] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:16:33,462 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:16:33] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:16:34,162 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:16:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:16:34,210 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:16:34] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:17:13,581 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:17:13] "GET / HTTP/1.1" 200 -
+2025-05-27 12:17:13,627 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:17:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:17:13,811 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:17:13] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:17:13,814 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:17:13] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:17:13,816 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:17:13] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:17:13,819 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:17:13] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:17:36,798 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:17:36] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:18:07,517 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:07] "GET / HTTP/1.1" 200 -
+2025-05-27 12:18:07,564 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:18:07,595 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:07] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:18:07,596 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:07] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:18:07,598 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:07] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:18:07,600 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:07] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:18:18,707 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:18] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:18:47,291 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:47] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:18:54,628 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:54] "GET / HTTP/1.1" 200 -
+2025-05-27 12:18:54,671 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:18:54,712 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:54] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:18:54,714 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:54] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:18:54,715 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:54] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:18:54,718 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:18:54] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:19:04,484 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:19:04] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:19:15,247 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:19:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:19:15,286 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:19:15] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:19:58,788 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:19:58] "GET / HTTP/1.1" 200 -
+2025-05-27 12:19:58,857 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:19:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:19:58,867 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:19:58] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:19:59,277 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:19:59] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:19:59,280 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:19:59] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:19:59,284 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:19:59] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:19:59,289 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:19:59] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:20:34,545 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:20:34] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:20:45,596 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:20:45] "GET / HTTP/1.1" 200 -
+2025-05-27 12:20:45,657 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:20:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:20:45,841 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:20:45] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:20:45,843 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:20:45] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:20:45,845 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:20:45] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:20:45,848 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:20:45] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:20:58,890 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:20:58] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:21:47,092 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:21:47] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:22:20,182 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:20] "GET / HTTP/1.1" 200 -
+2025-05-27 12:22:20,238 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:20] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:22:20,282 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:20] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:22:20,284 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:20] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:22:20,286 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:20] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:22:20,288 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:20] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:22:29,452 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:29] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:22:51,025 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "GET / HTTP/1.1" 200 -
+2025-05-27 12:22:51,080 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:22:51,109 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:22:51,111 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:22:51,112 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:22:51,113 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:22:51,769 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "GET / HTTP/1.1" 200 -
+2025-05-27 12:22:51,813 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:22:51,840 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:22:51,841 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:22:51,844 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:22:51,847 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:22:51] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:23:02,060 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:23:02] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:23:21,833 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:23:21] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:24:45,478 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:24:45] "GET / HTTP/1.1" 200 -
+2025-05-27 12:24:45,528 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:24:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:24:45,573 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:24:45] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:24:45,574 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:24:45] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:24:45,576 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:24:45] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:24:45,579 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:24:45] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:25:11,667 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:25:11] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:25:36,340 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:25:36] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:25:39,412 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:25:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:25:39,453 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:25:39] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:26:22,939 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:26:22] "GET / HTTP/1.1" 200 -
+2025-05-27 12:26:22,998 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:26:22] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:26:23,003 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:26:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:26:23,357 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:26:23] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:26:23,360 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:26:23] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:26:23,365 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:26:23] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:26:23,370 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:26:23] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:26:45,407 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:26:45] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:27:02,993 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:27:02] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:27:47,274 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:27:47] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:27:50,252 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:27:50] "GET / HTTP/1.1" 200 -
+2025-05-27 12:27:50,296 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:27:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:27:50,502 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:27:50] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:27:50,504 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:27:50] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:27:50,506 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:27:50] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:27:50,508 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:27:50] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:27:59,531 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:27:59] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:28:19,140 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:19] "GET / HTTP/1.1" 200 -
+2025-05-27 12:28:19,188 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:28:19,219 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:19] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:28:19,220 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:19] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:28:19,222 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:19] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:28:19,227 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:19] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:28:47,115 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:47] "GET / HTTP/1.1" 200 -
+2025-05-27 12:28:47,166 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:28:47,199 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:47] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:28:47,201 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:47] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:28:47,202 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:47] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:28:47,207 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:47] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:28:54,483 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:54] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:28:57,228 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:28:57] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:29:00,996 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:29:00] "GET / HTTP/1.1" 200 -
+2025-05-27 12:29:01,043 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:29:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:29:01,070 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:29:01] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:29:01,072 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:29:01] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:29:01,074 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:29:01] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:29:01,077 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:29:01] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:29:19,203 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:29:19] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:30:01,412 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:30:01] "GET / HTTP/1.1" 200 -
+2025-05-27 12:30:01,463 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:30:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:30:01,555 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:30:01] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:30:01,557 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:30:01] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:30:01,560 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:30:01] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:30:01,565 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:30:01] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:30:15,923 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:30:15] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:31:11,630 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:31:11] "GET / HTTP/1.1" 200 -
+2025-05-27 12:31:11,676 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:31:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:31:11,783 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:31:11] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:31:11,786 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:31:11] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:31:11,788 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:31:11] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:31:11,793 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:31:11] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:31:29,522 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:31:29] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:31:43,949 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:31:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:31:44,002 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:31:44] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:31:45,562 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:31:45] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:32:19,017 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:19] "GET / HTTP/1.1" 200 -
+2025-05-27 12:32:19,065 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:19] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:32:19,078 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:32:19,403 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:19] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:32:19,405 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:19] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:32:19,408 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:19] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:32:19,410 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:19] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:32:37,789 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:37] "GET / HTTP/1.1" 200 -
+2025-05-27 12:32:37,892 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:32:38,091 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:38] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:32:38,093 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:38] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:32:38,095 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:38] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:32:38,098 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:38] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:32:40,020 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:40] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:32:46,314 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:32:46] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:33:23,014 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:33:23] "GET / HTTP/1.1" 200 -
+2025-05-27 12:33:23,062 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:33:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:33:23,090 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:33:23] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:33:23,092 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:33:23] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:33:23,094 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:33:23] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:33:23,097 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:33:23] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:33:31,828 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:33:31] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:33:36,806 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:33:36] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:33:55,321 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:33:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:33:55,371 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:33:55] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:35:58,561 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:35:58] "GET / HTTP/1.1" 200 -
+2025-05-27 12:35:58,624 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:35:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:35:58,831 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:35:58] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:35:58,835 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:35:58] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:35:58,840 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:35:58] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:35:58,846 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:35:58] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:36:15,270 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:36:15] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:39:58,292 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:39:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:39:58,328 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:39:58] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:40:08,444 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:40:08] "GET / HTTP/1.1" 200 -
+2025-05-27 12:40:08,486 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:40:08] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:40:08,504 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:40:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:40:08,831 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:40:08] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:40:08,833 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:40:08] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:40:08,835 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:40:08] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:40:08,839 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:40:08] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:40:17,784 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:40:17] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:40:24,070 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:40:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:40:24,114 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:40:24] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:41:12,999 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:41:12] "GET / HTTP/1.1" 200 -
+2025-05-27 12:41:13,062 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:41:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:41:13,064 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:41:13] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:41:13,435 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:41:13] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:41:13,439 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:41:13] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:41:13,442 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:41:13] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:41:13,447 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:41:13] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:41:35,775 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:41:35] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:42:02,207 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:42:02] "GET / HTTP/1.1" 200 -
+2025-05-27 12:42:02,255 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:42:02] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:42:02,271 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:42:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:42:02,510 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:42:02] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 12:42:02,512 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:42:02] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 12:42:02,514 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:42:02] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 12:42:02,520 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:42:02] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 12:42:10,375 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:42:10] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 12:42:19,229 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:42:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 12:42:19,268 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:42:19] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 12:44:53,139 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\core\\services\\query_service.py', reloading
+2025-05-27 12:44:57,636 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-27 12:45:54,961 [werkzeug] WARNING:  * Debugger is active!
+2025-05-27 12:45:54,966 [werkzeug] INFO:  * Debugger PIN: 114-975-380
+2025-05-27 12:45:55,074 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 12:45:55] "GET / HTTP/1.1" 200 -
+2025-05-27 13:40:33,242 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:40:33] "GET / HTTP/1.1" 200 -
+2025-05-27 13:40:33,305 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:40:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 13:40:33,498 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:40:33] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 13:40:33,500 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:40:33] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 13:40:33,503 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:40:33] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 13:40:33,506 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:40:33] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 13:40:55,857 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:40:55] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 13:41:21,731 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:21] "GET / HTTP/1.1" 200 -
+2025-05-27 13:41:21,774 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 13:41:21,804 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:21] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 13:41:21,805 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:21] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 13:41:21,808 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:21] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 13:41:21,810 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:21] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 13:41:27,279 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:27] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 13:41:49,932 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:49] "GET / HTTP/1.1" 200 -
+2025-05-27 13:41:49,977 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 13:41:49,998 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:49] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 13:41:49,999 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:49] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 13:41:50,001 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:50] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 13:41:50,004 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:41:50] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 13:42:16,850 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:42:16] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 13:42:51,400 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:42:51] "GET / HTTP/1.1" 200 -
+2025-05-27 13:42:51,448 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:42:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 13:42:51,497 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:42:51] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 13:42:51,502 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:42:51] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 13:42:51,504 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:42:51] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 13:42:51,507 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:42:51] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 13:42:59,422 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:42:59] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 13:43:08,922 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:43:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 13:43:08,960 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:43:08] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 13:44:22,579 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:44:22] "GET / HTTP/1.1" 200 -
+2025-05-27 13:44:22,638 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:44:22] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-27 13:44:22,644 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:44:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 13:44:23,068 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:44:23] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 13:44:23,072 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:44:23] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 13:44:23,073 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:44:23] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 13:44:23,076 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:44:23] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 13:44:48,281 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:44:48] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 13:48:12,934 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\gemini_handler.py', reloading
+2025-05-27 13:48:12,995 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\google\\generativeai\\__init__.py', reloading
+2025-05-27 13:48:13,145 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\enum.py', reloading
+2025-05-27 13:48:13,223 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\dataclasses.py', reloading
+2025-05-27 13:48:17,236 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-27 13:49:16,030 [werkzeug] WARNING:  * Debugger is active!
+2025-05-27 13:49:16,035 [werkzeug] INFO:  * Debugger PIN: 114-975-380
+2025-05-27 13:51:14,988 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\gemini_handler.py', reloading
+2025-05-27 13:51:14,989 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\gemini_handler.py', reloading
+2025-05-27 13:51:16,729 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-27 13:52:21,849 [werkzeug] WARNING:  * Debugger is active!
+2025-05-27 13:52:21,859 [werkzeug] INFO:  * Debugger PIN: 114-975-380
+2025-05-27 13:52:21,949 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:52:21] "GET / HTTP/1.1" 200 -
+2025-05-27 13:52:21,971 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:52:21] "GET / HTTP/1.1" 200 -
+2025-05-27 13:52:22,022 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:52:22] "GET / HTTP/1.1" 200 -
+2025-05-27 13:52:22,060 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:52:22] "GET / HTTP/1.1" 200 -
+2025-05-27 13:52:22,062 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:52:22] "GET / HTTP/1.1" 200 -
+2025-05-27 13:52:22,103 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:52:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 13:52:22,268 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:52:22] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 13:52:22,270 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:52:22] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 13:52:22,271 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:52:22] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 13:52:22,274 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:52:22] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 13:52:56,677 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:52:56] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 13:54:10,762 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:54:10] "GET / HTTP/1.1" 200 -
+2025-05-27 13:54:10,814 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:54:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 13:54:10,863 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:54:10] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 13:54:10,865 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:54:10] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 13:54:10,867 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:54:10] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 13:54:10,871 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:54:10] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-27 13:54:17,648 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:54:17] "POST /api/query HTTP/1.1" 200 -
+2025-05-27 13:59:38,048 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:59:38] "GET / HTTP/1.1" 200 -
+2025-05-27 13:59:38,108 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:59:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-27 13:59:38,135 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:59:38] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-27 13:59:38,138 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:59:38] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-27 13:59:38,140 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:59:38] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-27 13:59:38,142 [werkzeug] INFO: 127.0.0.1 - - [27/May/2025 13:59:38] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-28 10:42:24,958 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.49:5000
+2025-05-28 10:42:24,959 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-28 10:42:24,972 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-28 10:43:13,886 [werkzeug] WARNING:  * Debugger is active!
+2025-05-28 10:43:13,897 [werkzeug] INFO:  * Debugger PIN: 107-635-830
+2025-05-28 13:08:28,356 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\wordcloud\\__init__.py', reloading
+2025-05-28 13:08:28,372 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\wordcloud\\wordcloud.py', reloading
+2025-05-28 13:08:28,712 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\_typing\\__init__.py', reloading
+2025-05-28 13:08:28,727 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\_typing\\_shape.py', reloading
+2025-05-28 13:08:28,947 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\_typing\\_nbit_base.py', reloading
+2025-05-28 13:08:28,960 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\_utils\\__init__.py', reloading
+2025-05-28 13:08:28,982 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\wordcloud\\tokenization.py', reloading
+2025-05-28 13:08:29,126 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\typing\\__init__.py', reloading
+2025-05-28 13:08:29,138 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\_typing\\_array_like.py', reloading
+2025-05-28 13:08:29,155 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\_typing\\_nested_sequence.py', reloading
+2025-05-28 13:08:29,176 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\_typing\\_dtype_like.py', reloading
+2025-05-28 13:08:33,169 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-28 14:06:57,634 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.49:5000
+2025-05-28 14:06:57,635 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-28 14:06:57,653 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-28 14:08:02,115 [werkzeug] WARNING:  * Debugger is active!
+2025-05-28 14:08:02,126 [werkzeug] INFO:  * Debugger PIN: 107-635-830
+2025-05-28 14:08:02,331 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:08:02] "GET / HTTP/1.1" 200 -
+2025-05-28 14:08:02,339 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:08:02] "GET / HTTP/1.1" 200 -
+2025-05-28 14:08:02,402 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:08:02] "GET /static/css/styles.css HTTP/1.1" 200 -
+2025-05-28 14:08:02,593 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:08:02] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-28 14:08:02,595 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:08:02] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-28 14:08:02,596 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:08:02] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-28 14:08:02,598 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:08:02] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-28 14:09:36,774 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:09:36] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 14:22:22,379 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:22:22] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 14:23:44,315 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:23:44] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 14:29:36,759 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:29:36] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 14:30:32,357 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:30:32] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 14:32:11,795 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\blueprints.py', reloading
+2025-05-28 14:32:11,817 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\globals.py', reloading
+2025-05-28 14:32:11,835 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\wrappers.py', reloading
+2025-05-28 14:32:11,856 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2025-05-28 14:32:11,875 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2025-05-28 14:32:11,908 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-05-28 14:32:11,938 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\json\\__init__.py', reloading
+2025-05-28 14:32:11,964 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\werkzeug\\wrappers\\response.py', reloading
+2025-05-28 14:32:12,005 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-05-28 14:32:12,031 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\templating.py', reloading
+2025-05-28 14:32:12,047 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\jinja2\\__init__.py', reloading
+2025-05-28 14:32:12,067 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\jinja2\\environment.py', reloading
+2025-05-28 14:32:12,119 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\langchain\\memory\\__init__.py', reloading
+2025-05-28 14:32:12,150 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\langchain\\memory\\buffer.py', reloading
+2025-05-28 14:32:12,172 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\langchain\\memory\\chat_memory.py', reloading
+2025-05-28 14:32:12,189 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\langchain_core\\memory.py', reloading
+2025-05-28 14:32:12,205 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\langchain_core\\load\\serializable.py', reloading
+2025-05-28 14:32:12,227 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\__init__.py', reloading
+2025-05-28 14:32:12,253 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\errors.py', reloading
+2025-05-28 14:32:12,269 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\main.py', reloading
+2025-05-28 14:32:12,308 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\networks.py', reloading
+2025-05-28 14:32:12,340 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\types.py', reloading
+2025-05-28 14:32:12,376 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\deprecated\\tools.py', reloading
+2025-05-28 14:32:12,392 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\_internal\\_model_construction.py', reloading
+2025-05-28 14:32:12,420 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\fields.py', reloading
+2025-05-28 14:32:12,447 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic_core\\__init__.py', reloading
+2025-05-28 14:32:16,379 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-28 14:33:18,230 [werkzeug] WARNING:  * Debugger is active!
+2025-05-28 14:33:18,236 [werkzeug] INFO:  * Debugger PIN: 107-635-830
+2025-05-28 14:34:26,564 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-28 14:34:26,565 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-28 14:34:28,495 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-28 14:36:01,307 [werkzeug] WARNING:  * Debugger is active!
+2025-05-28 14:36:01,316 [werkzeug] INFO:  * Debugger PIN: 107-635-830
+2025-05-28 14:36:01,413 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:36:01] "GET / HTTP/1.1" 200 -
+2025-05-28 14:36:01,469 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:36:01] "GET / HTTP/1.1" 200 -
+2025-05-28 14:36:01,514 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:36:01] "GET / HTTP/1.1" 200 -
+2025-05-28 14:36:01,584 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:36:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-28 14:36:01,751 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:36:01] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-28 14:36:01,759 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:36:01] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-28 14:36:01,770 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:36:01] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-28 14:36:01,772 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:36:01] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-28 14:36:14,071 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-28 14:36:14,071 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-28 14:36:18,153 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-28 14:44:24,957 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.49:5000
+2025-05-28 14:44:24,957 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-28 14:44:24,968 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-28 14:45:44,521 [werkzeug] WARNING:  * Debugger is active!
+2025-05-28 14:45:44,524 [werkzeug] INFO:  * Debugger PIN: 107-635-830
+2025-05-28 14:45:44,595 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:45:44] "GET / HTTP/1.1" 200 -
+2025-05-28 14:45:44,614 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:45:44] "GET / HTTP/1.1" 200 -
+2025-05-28 14:45:44,798 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:45:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-28 14:45:44,970 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:45:44] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-28 14:45:44,973 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:45:44] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-28 14:45:44,974 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:45:44] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-28 14:45:44,977 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:45:44] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-28 14:46:52,891 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:46:52] "GET / HTTP/1.1" 200 -
+2025-05-28 14:46:52,936 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:46:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-28 14:46:52,959 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:46:52] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-28 14:46:52,961 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:46:52] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-28 14:46:52,963 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:46:52] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-28 14:46:52,966 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:46:52] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-28 14:47:06,650 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:47:06] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 14:47:19,167 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:47:19] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 14:48:32,833 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-28 14:48:32,839 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-28 14:48:36,712 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-28 14:50:13,846 [werkzeug] WARNING:  * Debugger is active!
+2025-05-28 14:50:13,855 [werkzeug] INFO:  * Debugger PIN: 107-635-830
+2025-05-28 14:50:14,023 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:50:14] "GET / HTTP/1.1" 200 -
+2025-05-28 14:50:14,086 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:50:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-28 14:50:14,342 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:50:14] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-28 14:50:14,345 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:50:14] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-28 14:50:14,353 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:50:14] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-28 14:50:14,359 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:50:14] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-28 14:59:44,287 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 14:59:44] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 15:01:18,538 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:01:18] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 15:10:28,419 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:10:28] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 15:16:02,176 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:16:02] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 15:17:57,110 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:17:57] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 15:19:07,505 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:19:07] "POST /api/query HTTP/1.1" 200 -
+2025-05-28 15:22:12,243 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:22:12] "GET / HTTP/1.1" 200 -
+2025-05-28 15:22:12,293 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:22:12] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-28 15:22:12,450 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:22:12] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-28 15:22:12,453 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:22:12] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-28 15:22:12,455 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:22:12] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-28 15:22:12,457 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:22:12] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-28 15:22:39,657 [werkzeug] INFO: 127.0.0.1 - - [28/May/2025 15:22:39] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 12:10:21,504 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.55:5000
+2025-05-29 12:10:21,504 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-29 12:10:21,523 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:11:49,065 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:11:49,081 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:18:25,970 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:18:25,972 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:18:25,972 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:18:25,973 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:18:28,281 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:19:45,778 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.55:5000
+2025-05-29 12:19:45,778 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-29 12:19:45,792 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:20:42,933 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:20:42,937 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:23:19,235 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask_cors\\extension.py', reloading
+2025-05-29 12:23:19,240 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:23:19] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2025-05-29 12:23:23,549 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:25:03,605 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.55:5000
+2025-05-29 12:25:03,605 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-29 12:25:03,624 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:26:20,204 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:26:20,207 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:26:28,388 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:26:28] "GET / HTTP/1.1" 200 -
+2025-05-29 12:26:28,459 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:26:28] "GET /static/css/styles.css HTTP/1.1" 200 -
+2025-05-29 12:26:29,175 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:26:29] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 12:26:29,177 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:26:29] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 12:26:29,178 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:26:29] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 12:26:29,182 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:26:29] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 12:27:05,197 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:27:05] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2025-05-29 12:27:08,347 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:27:08] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2025-05-29 12:27:11,742 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:27:11] "GET / HTTP/1.1" 200 -
+2025-05-29 12:27:11,793 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:27:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 12:27:11,842 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:27:11] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 12:27:11,844 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:27:11] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 12:27:11,846 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:27:11] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 12:27:11,853 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:27:11] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 12:27:52,104 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:27:52] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2025-05-29 12:27:55,386 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\cacheprovider.py', reloading
+2025-05-29 12:27:55,421 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\fixtures.py', reloading
+2025-05-29 12:27:55,475 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\config\\__init__.py', reloading
+2025-05-29 12:27:55,530 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\capture.py', reloading
+2025-05-29 12:27:55,594 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\doctest.py', reloading
+2025-05-29 12:27:55,632 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\junitxml.py', reloading
+2025-05-29 12:27:55,664 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\legacypath.py', reloading
+2025-05-29 12:27:55,693 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\logging.py', reloading
+2025-05-29 12:27:59,190 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:28:59,935 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:28:59,939 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:29:04,653 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\json\\__init__.py', reloading
+2025-05-29 12:29:07,516 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:30:15,471 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:30:15,475 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:30:15,542 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:30:15] "GET / HTTP/1.1" 200 -
+2025-05-29 12:30:15,643 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:30:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 12:30:15,765 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:30:15] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 12:30:15,767 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:30:15] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 12:30:15,769 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:30:15] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 12:30:15,771 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:30:15] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 12:30:33,431 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:30:33,435 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:30:35,061 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:31:35,715 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:31:35,719 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:31:35,787 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:35] "GET / HTTP/1.1" 200 -
+2025-05-29 12:31:35,788 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:35] "GET / HTTP/1.1" 200 -
+2025-05-29 12:31:35,819 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:35] "GET / HTTP/1.1" 200 -
+2025-05-29 12:31:35,821 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:35] "GET / HTTP/1.1" 200 -
+2025-05-29 12:31:35,903 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 12:31:35,931 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:35] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 12:31:35,934 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:35] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 12:31:35,938 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:35] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 12:31:35,952 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:35] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 12:31:36,118 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:36] "GET / HTTP/1.1" 200 -
+2025-05-29 12:31:36,185 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:36] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 12:31:36,205 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:36] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 12:31:36,208 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:36] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 12:31:36,212 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:36] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 12:31:36,216 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:31:36] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 12:32:19,070 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:32:19] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 12:33:02,709 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:33:02] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 12:34:51,020 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:34:51] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 12:35:37,947 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:35:37,948 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:35:41,696 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:36:57,239 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:36:57,243 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:37:38,636 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:37:38] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 12:38:53,754 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:38:53] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 12:39:47,510 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:39:47,511 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:39:51,598 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:41:12,279 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:41:12,285 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:41:40,274 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:41:40] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 12:42:41,072 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:42:41,073 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:42:45,049 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:44:13,724 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:44:13,730 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:44:44,994 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:44:44] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 12:45:25,495 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:45:25,496 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:45:29,259 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:47:05,725 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:47:05,729 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:47:33,862 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:47:33] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2025-05-29 12:47:44,646 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:47:44,647 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:47:48,552 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:49:28,980 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:49:28,986 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:50:00,422 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:50:00] "[35m[1mPOST /api/query HTTP/1.1[0m" 500 -
+2025-05-29 12:50:16,295 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:50:16,300 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:50:19,894 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:51:56,489 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:51:56,497 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:52:26,025 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:52:26] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 12:55:17,447 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:55:17,448 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:55:17,449 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 12:55:22,327 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 12:56:43,480 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 12:56:43,483 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 12:57:12,843 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 12:57:12] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 13:01:13,032 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:01:13] "GET / HTTP/1.1" 200 -
+2025-05-29 13:01:13,129 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:01:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 13:01:13,486 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:01:13] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 13:01:13,490 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:01:13] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 13:01:13,496 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:01:13] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 13:01:13,500 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:01:13] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 13:02:08,319 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:02:08] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 13:02:23,976 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:02:23] "GET / HTTP/1.1" 200 -
+2025-05-29 13:02:24,023 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:02:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 13:02:24,049 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:02:24] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 13:02:24,051 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:02:24] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 13:02:24,052 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:02:24] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 13:02:24,055 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:02:24] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 13:03:15,216 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:03:15] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 13:06:15,280 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:06:15] "GET / HTTP/1.1" 200 -
+2025-05-29 13:06:15,347 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:06:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 13:06:15,598 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:06:15] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 13:06:15,603 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:06:15] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 13:06:15,608 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:06:15] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 13:06:15,611 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:06:15] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 13:06:52,184 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:06:52] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 13:07:37,011 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:07:37] "GET / HTTP/1.1" 200 -
+2025-05-29 13:07:37,053 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:07:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 13:07:37,079 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:07:37] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 13:07:37,080 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:07:37] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 13:07:37,081 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:07:37] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 13:07:37,084 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:07:37] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 13:08:12,886 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:08:12] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 13:09:17,103 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:09:17] "GET / HTTP/1.1" 200 -
+2025-05-29 13:09:17,168 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:09:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 13:09:17,221 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:09:17] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 13:09:17,224 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:09:17] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 13:09:17,228 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:09:17] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 13:09:17,232 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:09:17] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 13:10:04,585 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 13:10:04] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 13:11:10,175 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 13:11:10,175 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 13:11:14,877 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 13:12:33,170 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 13:12:33,173 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 14:10:58,206 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:10:58] "GET / HTTP/1.1" 200 -
+2025-05-29 14:10:58,273 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:10:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 14:10:58,452 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:10:58] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 14:10:58,457 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:10:58] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 14:10:58,462 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:10:58] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 14:10:58,466 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:10:58] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 14:11:15,749 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 14:11:18,978 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 14:12:18,219 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 14:12:18,225 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 14:19:46,492 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 14:19:46,493 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 14:19:46,493 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 14:19:48,621 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 14:20:54,743 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.55:5000
+2025-05-29 14:20:54,744 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-29 14:20:54,754 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 14:21:40,237 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 14:21:40,240 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 14:29:09,690 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:29:09] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 14:31:19,713 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 14:31:19,713 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 14:31:19,713 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 14:31:19,714 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 14:31:23,509 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 14:32:36,850 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 14:32:36,855 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 14:32:57,565 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 14:32:57,565 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 14:32:59,579 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 14:34:17,707 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 14:34:17,711 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 14:34:17,952 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:17] "GET / HTTP/1.1" 200 -
+2025-05-29 14:34:18,033 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:18] "GET / HTTP/1.1" 200 -
+2025-05-29 14:34:18,049 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:18] "GET / HTTP/1.1" 200 -
+2025-05-29 14:34:18,064 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:18] "GET / HTTP/1.1" 200 -
+2025-05-29 14:34:18,130 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:18] "GET / HTTP/1.1" 200 -
+2025-05-29 14:34:18,246 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 14:34:18,440 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:18] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 14:34:18,443 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:18] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 14:34:18,445 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:18] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 14:34:18,449 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:18] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 14:34:35,837 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:35] "GET / HTTP/1.1" 200 -
+2025-05-29 14:34:35,878 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 14:34:35,925 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:35] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 14:34:35,927 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:35] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 14:34:35,929 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:35] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 14:34:35,934 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:35] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 14:34:46,233 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:34:46] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 14:35:43,523 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:35:43] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 14:36:50,822 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\cacheprovider.py', reloading
+2025-05-29 14:36:50,839 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\fixtures.py', reloading
+2025-05-29 14:36:50,877 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\config\\__init__.py', reloading
+2025-05-29 14:36:50,910 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\capture.py', reloading
+2025-05-29 14:36:50,943 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\doctest.py', reloading
+2025-05-29 14:36:50,982 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\_pytest\\junitxml.py', reloading
+2025-05-29 14:36:54,733 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 14:38:11,945 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.3.55:5000
+2025-05-29 14:38:11,945 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-05-29 14:38:11,953 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 14:39:15,239 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 14:39:15,243 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 14:39:15,393 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:39:15] "GET / HTTP/1.1" 200 -
+2025-05-29 14:39:15,446 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:39:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-29 14:39:15,652 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:39:15] "[33mGET /assets/js/dir/users.json HTTP/1.1[0m" 404 -
+2025-05-29 14:39:15,654 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:39:15] "[33mGET /assets/js/dir/callList.json HTTP/1.1[0m" 404 -
+2025-05-29 14:39:15,656 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:39:15] "[33mGET /assets/js/dir/contacts.json HTTP/1.1[0m" 404 -
+2025-05-29 14:39:15,659 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:39:15] "[33mGET /assets/js/dir/chats.json HTTP/1.1[0m" 404 -
+2025-05-29 14:40:58,838 [werkzeug] INFO: 127.0.0.1 - - [29/May/2025 14:40:58] "POST /api/query HTTP/1.1" 200 -
+2025-05-29 15:37:16,116 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 15:37:20,933 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 15:38:22,887 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 15:38:22,895 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 16:06:58,334 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\handlers\\query_handler.py', reloading
+2025-05-29 16:06:58,443 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\abc.py', reloading
+2025-05-29 16:06:58,452 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\typing.py', reloading
+2025-05-29 16:07:00,670 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-05-29 16:07:46,688 [werkzeug] WARNING:  * Debugger is active!
+2025-05-29 16:07:46,691 [werkzeug] INFO:  * Debugger PIN: 938-789-517
+2025-05-29 16:37:16,312 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\legalmindv2\\app\\routes\\api.py', reloading
+2025-05-29 16:37:19,306 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)

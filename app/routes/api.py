@@ -1,19 +1,26 @@
-from flask import Blueprint, request, jsonify, render_template
+from flask import Blueprint, request, jsonify
 from datetime import datetime
+from langchain.memory import ConversationBufferMemory
+
+# Giả định các service/repository đã được định nghĩa
 from ..core.services.query_service import QueryService
 from ..core.services.gemini_service import GeminiService
 from ..core.repositories.index_repository import IndexRepository
-from langchain.memory import ConversationBufferMemory
 
 api_bp = Blueprint('api', __name__)
 
+# Khởi tạo các service/repository
 index_repo = IndexRepository()
 query_service = QueryService(index_repo)
 gemini_service = GeminiService()
 
-# Khởi tạo ConversationBufferMemory
-memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-
+# Khởi tạo ConversationBufferMemory với giới hạn 10 tin nhắn và 1000 token
+memory = ConversationBufferMemory(
+    memory_key="chat_history",
+    return_messages=True,
+    max_message_limit=10,  # Giới hạn 10 tin nhắn
+    max_token_limit=1000   # Giới hạn 1000 token
+)
 
 def format_chat_history(memory):
     messages = memory.chat_memory.messages
@@ -21,12 +28,11 @@ def format_chat_history(memory):
         return "Không có lịch sử hội thoại trước."
     formatted = []
     for m in messages:
-        role = getattr(m, "type", None)
-        if role is None:
-            role = m.get("role", "User")
+        role = getattr(m, "type", None) or m.get("role", "User")
         content = getattr(m, "content", None) or m.get("content", "")
         formatted.append(f"{role.capitalize()}: {content}")
     return "\n".join(formatted)
+
 
 
 @api_bp.route("/query", methods=["POST"])
