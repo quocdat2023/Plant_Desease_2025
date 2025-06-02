@@ -5,12 +5,13 @@ load_dotenv()
 
 class Config:
     GEMINI_API_KEYS = os.getenv("GEMINI_API_KEYS", "")
-    INDEX_PATH = "source/faiss_index"
-    METADATA_PATH = "source/faiss_metadata.pkl"
+    INDEX_PATH = "source/faiss_index_30_05"
+    METADATA_PATH = "source/faiss_metadata_30_05.pkl"
     SUMMARIZED_METADATA_PATH = "source/summarized_faiss_metadata.pkl"
-    ANLE_INDEX_PATH = "source/faiss_index_anle.index"
-    ANLE_METADATA_PATH = "source/metadata_anle.pkl"
-    
+
+    def __init__(self):
+        self.validate()  # Gọi validate khi khởi tạo
+
     @staticmethod
     def validate():
         if not Config.GEMINI_API_KEYS:
