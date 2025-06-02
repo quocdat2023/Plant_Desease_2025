@@ -45,16 +45,12 @@ def query():
     # Query dữ liệu tham khảo
     banan_results = query_service.query(question, k=5, doc_type="banan", strategy="hybrid")
     banan_sum_results = query_service.query(question, k=5, doc_type="banan_sum", strategy="hybrid")
-    anle_results = query_service.query(question, k=5, doc_type="anle", strategy="hybrid")
 
     top_banan_docs = [
         {"source": r.metadata["source"], "text": r.text, "distance": r.distance, **r.__dict__}
-        for r in banan_sum_results if r.distance is not None and r.distance != 0
+        for r in banan_results if r.distance is not None and r.distance != 0
     ]
-    top_anle_docs = [
-        {"source": r.metadata["source"], "text": r.text, "distance": r.distance, **r.__dict__}
-        for r in anle_results if r.distance is not None and r.distance != 0
-    ]
+    
 
     chat_history_str = format_chat_history(memory)
 
@@ -70,8 +66,6 @@ Bạn là chuyên gia tư vấn pháp luật với hơn 30 năm kinh nghiệm tr
 **Thông tin tham khảo (bản án tương đồng):**  
 {top_banan_docs if top_banan_docs else "Không tìm thấy bản án phù hợp. Phân tích dựa trên các quy định pháp luật hiện hành và nguyên tắc pháp lý chung."}
 
-**Thông tin tham khảo (án lệ tương đồng):**  
-{top_anle_docs if top_anle_docs else "Không tìm thấy án lệ phù hợp. Phân tích dựa trên các quy định pháp luật hiện hành và nguyên tắc pháp lý chung."}
 
 **Hướng dẫn trả lời chi tiết:**
 
@@ -121,7 +115,6 @@ Bạn là chuyên gia tư vấn pháp luật với hơn 30 năm kinh nghiệm tr
     return jsonify({
         "final_response": answer,
         "top_banan_documents": top_banan_docs,
-        "top_anle_documents": top_anle_docs,
         "chat_history": chat_history_str
     })
 
@@ -134,10 +127,8 @@ def draft_judgment():
         return jsonify({"error": "Invalid case details!"}), 400
 
     banan_results = query_service.query(case_details, k=2, doc_type="banan", strategy="faiss")
-    anle_results = query_service.query(case_details, k=2, doc_type="anle", strategy="faiss")
 
     top_banan_docs = [{"source": r.metadata["source"], **r.__dict__} for r in banan_results]
-    top_anle_docs = [{"source": r.metadata["source"], **r.__dict__} for r in anle_results]
 
     chat_history_str = format_chat_history(memory)
 
@@ -220,6 +211,5 @@ def draft_judgment():
     return jsonify({
             "judgment": judgment,
             "top_banan_documents": top_banan_docs,
-            "top_anle_documents": top_anle_docs,
             "chat_history": chat_history_str
         })
