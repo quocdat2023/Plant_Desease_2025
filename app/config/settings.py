@@ -5,7 +5,7 @@ load_dotenv()
 
 class Config:
     GEMINI_API_KEYS = os.getenv("GEMINI_API_KEYS", "")
-    INDEX_PATH = "source/faiss_index_30_05"
+    INDEX_PATH = "source/index_plant.faiss"
     METADATA_PATH = "source/faiss_metadata_30_05.pkl"
     SUMMARIZED_METADATA_PATH = "source/summarized_faiss_metadata.pkl"
 

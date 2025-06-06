@@ -1,6 +1,9 @@
 from flask import Blueprint, request, jsonify
 from datetime import datetime
 from langchain.memory import ConversationBufferMemory
+import json
+from typing import List, Dict
+import re
 
 # Giả định các service/repository đã được định nghĩa
 from ..core.services.query_service import QueryService
@@ -22,6 +25,75 @@ memory = ConversationBufferMemory(
     max_token_limit=1000   # Giới hạn 1000 token
 )
 
+def preprocess_related_questions(related_questions_input: str | List[Dict[str, str]]) -> List[Dict[str, str]]:
+    """
+    Preprocess related questions, handling JSON string with optional ```json and ``` markers.
+    
+    Args:
+        related_questions_input: JSON string (with or without ```json/``` markers) or list of dicts
+    
+    Returns:
+        List of exactly 5 validated and unique questions in the format [{"question": "..."}, ...]
+        related to agricultural diseases, symptoms, treatments, or related diseases.
+    """
+    # Danh sách câu hỏi dự phòng liên quan đến nông nghiệp
+    fallback_questions = [
+        {"question": "Cách xử lý bệnh phổ biến trên cây trồng tại Việt Nam là gì?"},
+        {"question": "Làm thế nào để nhận biết sớm các triệu chứng bệnh trên cây cà chua?"},
+        {"question": "Những loại thuốc trừ sâu nào được khuyến nghị cho cây lúa?"},
+        {"question": "Bệnh nào thường xuất hiện cùng với bệnh nhện đỏ trên cây trồng?"},
+        {"question": "Chế độ dinh dưỡng nào giúp cây trồng tăng sức đề kháng với bệnh?"}
+    ]
+
+    # Xử lý đầu vào
+    if isinstance(related_questions_input, str):
+        cleaned_input = re.sub(r'^```json\s*|\s*```$', '', related_questions_input).strip()
+        try:
+            related_questions = json.loads(cleaned_input)
+        except json.JSONDecodeError:
+            return fallback_questions[:5]
+    else:
+        related_questions = related_questions_input
+
+    # Kiểm tra nếu không phải danh sách
+    if not isinstance(related_questions, list):
+        return fallback_questions[:5]
+
+    # Lọc các câu hỏi hợp lệ
+    valid_questions = [
+        q for q in related_questions
+        if isinstance(q, dict) and "question" in q and isinstance(q["question"], str) and q["question"].strip()
+    ]
+
+    # Loại bỏ trùng lặp
+    seen = set()
+    unique_questions = []
+    for q in valid_questions:
+        question_text = q["question"].strip()
+        if question_text not in seen:
+            seen.add(question_text)
+            unique_questions.append({"question": question_text})
+
+    # Lọc câu hỏi liên quan đến nông nghiệp, loại bỏ câu hỏi pháp luật
+    agriculture_keywords = r"(bệnh|cây trồng|triệu chứng|thuốc trừ sâu|điều trị|nông nghiệp|cà chua|lúa|nấm|nhện đỏ|phân bón)"
+    
+    filtered_questions = [
+        q for q in unique_questions
+        if re.search(agriculture_keywords, q["question"], re.IGNORECASE)
+    ]
+
+    # Nếu không đủ 5 câu hỏi, bổ sung từ fallback
+    if len(filtered_questions) < 5:
+        remaining = 5 - len(filtered_questions)
+        for fq in fallback_questions:
+            if len(filtered_questions) >= 5:
+                break
+            if fq["question"] not in seen:
+                filtered_questions.append(fq)
+                seen.add(fq["question"])
+
+    return filtered_questions[:5]
+
 def format_chat_history(memory):
     messages = memory.chat_memory.messages
     if not messages:
@@ -33,8 +105,6 @@ def format_chat_history(memory):
         formatted.append(f"{role.capitalize()}: {content}")
     return "\n".join(formatted)
 
-
-
 @api_bp.route("/query", methods=["POST"])
 def query():
     data = request.get_json(silent=True) or {}
@@ -43,173 +113,309 @@ def query():
         return jsonify({"error": "Invalid question!"}), 400
 
     # Query dữ liệu tham khảo
-    banan_results = query_service.query(question, k=5, doc_type="banan", strategy="hybrid")
-    banan_sum_results = query_service.query(question, k=5, doc_type="banan_sum", strategy="hybrid")
+    results = query_service.query(question, k=5, doc_type="banan", strategy="hybrid")
 
-    top_banan_docs = [
+    top_pdf_docs = [
         {"source": r.metadata["source"], "text": r.text, "distance": r.distance, **r.__dict__}
-        for r in banan_results if r.distance is not None and r.distance != 0
+        for r in results if r.distance is not None and r.distance != 0
     ]
-    
 
     chat_history_str = format_chat_history(memory)
 
-    prompt = f"""
+    # Prompt for main answer
+    main_prompt = f"""
 Dưới đây là lịch sử hội thoại trước đó:
 {chat_history_str}
 
-Bạn là chuyên gia tư vấn pháp luật với hơn 30 năm kinh nghiệm trong mọi lĩnh vực pháp lý tại Việt Nam. Bạn sẽ phân tích vấn đề pháp lý theo các bước chi tiết dưới đây để cung cấp câu trả lời chặt chẽ, rõ ràng, và thuyết phục, đảm bảo đề cập đến cả bản án và án lệ khi có sẵn.
+Bạn là chuyên gia nông nghiệp với hơn 30 năm kinh nghiệm trong lĩnh vực bệnh cây trồng tại Việt Nam. Bạn sẽ phân tích câu hỏi về bệnh nông nghiệp theo các bước chi tiết dưới đây để cung cấp câu trả lời chính xác, rõ ràng, dễ áp dụng, trích dẫn thông tin từ dữ liệu tham khảo nếu có.
 
 **Câu hỏi:**  
 {question}
 
-**Thông tin tham khảo (bản án tương đồng):**  
-{top_banan_docs if top_banan_docs else "Không tìm thấy bản án phù hợp. Phân tích dựa trên các quy định pháp luật hiện hành và nguyên tắc pháp lý chung."}
+**Thông tin tham khảo (từ PDF):**  
+{top_pdf_docs if top_pdf_docs else "Không tìm thấy thông tin từ PDF. Phân tích dựa trên dữ liệu bệnh và kiến thức nông nghiệp."}
 
 
 **Hướng dẫn trả lời chi tiết:**
+** Chú ý nếu xác định đầu vào là câu hỏi thì tập trung vào trả lời câu hỏi liên quan. ngược lại nếu đầu vào là  tên bệnh thì trả lời theo các bước sau: **
 
-1. **Tổng quan về các bản án, án lệ tương đồng:**  
-   - Chỉ ra rõ thông tin tham khảo từ bản án, án lệ tương đồng đã được cung cấp.
-   - Nếu có thông tin chi tiết về bản án hoặc án lệ, trình bày ngắn gọn tên, bối cảnh, và nguồn gốc, làm rõ sự liên quan đến vấn đề pháp lý được đặt ra.  
-   - Xác định loại tranh chấp (hợp đồng, dân sự, thương mại, v.v.) và các yếu tố pháp lý trọng tâm, nhấn mạnh tính phù hợp với câu hỏi.  
-   - Nếu thông tin bản án hoặc án lệ chỉ có tên hoặc số hiệu, nêu rõ rằng thông tin chi tiết không khả dụng và chuyển sang phân tích dựa trên quy định pháp luật hiện hành.
+1. **Tên bệnh:**  
+   - Xác định và nêu rõ tên bệnh liên quan đến câu hỏi (nếu có trong dữ liệu tham khảo).
+   - Nếu không có dữ liệu cụ thể, đề xuất bệnh có thể liên quan dựa trên triệu chứng hoặc cây trồng được nhắc đến.
 
-2. **Nội dung chi tiết của từng bản án, án lệ:**  
-   - Nếu có thông tin chi tiết, tóm lược các sự kiện chính, vấn đề pháp lý, và lập luận của tòa án trong từng bản án, án lệ.  
-   - Phân tích các yếu tố quyết định phán quyết, bao gồm hợp đồng, nghĩa vụ bồi thường, hoặc trách nhiệm pháp lý của các bên.  
-   - Nếu thiếu chi tiết, nêu rõ hạn chế và thay bằng phân tích các nguyên tắc pháp lý liên quan đến câu hỏi.
+2. **Triệu chứng:**  
+   - Mô tả rõ các triệu chứng của bệnh, dựa trên dữ liệu tham khảo hoặc kiến thức chung.
+   - Nêu các dấu hiệu nhận biết trên cây trồng (lá, thân, quả, v.v.).
 
-3. **Phân tích tình huống pháp lý:**  
-   - Nếu có bản án hoặc án lệ, làm rõ các tình huống pháp lý trọng tâm, nêu bật yếu tố ảnh hưởng đến quyết định của tòa án.  
-   - So sánh điểm tương đồng và khác biệt giữa các bản án, án lệ, đánh giá mức độ áp dụng vào câu hỏi pháp lý.  
-   - Nếu không có thông tin chi tiết, phân tích tình huống dựa trên các quy định pháp luật hiện hành (ví dụ: Bộ luật Dân sự, Luật Thương mại).
+3. **Cách điều trị:**  
+   - Đề xuất phương pháp điều trị cụ thể, bao gồm thuốc trừ sâu, biện pháp sinh học, hoặc kỹ thuật canh tác.
+   - Trích dẫn từ dữ liệu tham khảo nếu có (thuốc, liều lượng, thời điểm phun).
 
-4. **Lập luận pháp lý:**  
-   - Phân tích chi tiết căn cứ pháp lý, viện dẫn cụ thể các điều luật từ Bộ luật Dân sự, Luật Thương mại, hoặc các văn bản pháp luật liên quan.  
-   - Giải thích cách áp dụng các điều luật vào tình huống thực tế, đảm bảo dễ hiểu và minh họa rõ ràng quá trình lập luận.  
-   - Nếu có bản án hoặc án lệ, liên hệ với lập luận của tòa án; nếu không, xây dựng lập luận dựa trên luật và nguyên tắc pháp lý.
+4. **Bệnh liên quan:**  
+   - Liệt kê các bệnh khác thường xuất hiện cùng hoặc có triệu chứng tương tự trên cùng loại cây trồng.
+   - Giải thích ngắn gọn mối liên hệ giữa các bệnh này.
 
-5. **Kết luận từ các bản án, án lệ:**  
-   - Nếu có thông tin chi tiết, tóm tắt phán quyết của từng bản án, án lệ, làm rõ lý do chúng có thể áp dụng vào tình huống của câu hỏi.  
-   - Nếu thiếu chi tiết, đưa ra kết luận dựa trên phân tích pháp lý, nhấn mạnh quyền lợi, nghĩa vụ, và hậu quả pháp lý của các bên.  
-   - Chỉ ra các yếu tố cần lưu ý khi áp dụng vào tình huống tương tự.
+6. **Lưu ý quan trọng:**
+   - Không được phép đề cập đến án lệ, bản án, hoặc các vấn đề pháp lý.
+   - Không cần giới thiệu bản thân, không đề cập đến kinh nghiệm tư vấn.
+   - Trả lời ngắn gọn, súc tích, đúng trọng tâm.
+   - Nêu các lưu ý khi áp dụng phương pháp điều trị (thời điểm, an toàn lao động, môi trường).
+   - Đảm bảo trả lời ngắn gọn, súc tích, đúng trọng tâm.
+   - Không sử dụng từ "giả sử" hoặc "ví dụ".
+   - Trình bày rõ ràng, sử dụng định dạng danh sách (-), in đậm (**text**) cho các tiêu đề và điểm quan trọng.
 
-**Lưu ý quan trọng:**  
-- Xác định nếu câu hỏi nhận được không thuộc về linh vực pháp lý hoặc không có thông tin bản án, án lệ phù hợp, hãy bỏ qua và trả lời Câu trả lời không nằm trong kiến thức của tôi.
-- Trả lời ngắn gọn, súc tích, không dài dòng, không cần giải thích quá nhiều.
-- Không dùng từ giả sử, ví dụ. 
-- Bỏ phần chào hỏi, giới thiệu mình là ai. 
-- Không cần nêu quy trình phân tích, không giới thiệu 30 năm kinh nghiệm.
-- Nếu xác định được bản án hay án lệ không phù hợp hãy bỏ qua, không đề cập đến trong câu trả lời.
-- Phân tích phải kết hợp chặt chẽ giữa lý thuyết pháp lý và thực tiễn vụ án (nếu có), đảm bảo tính chi tiết và thực tiễn.  
-- Nếu thông tin bản án hoặc án lệ không đủ chi tiết, tập trung vào phân tích pháp lý dựa trên các quy định pháp luật hiện hành.  
-- Trình bày rõ ràng, súc tích, sử dụng ngôn ngữ pháp lý chính xác, giúp người đọc dễ dàng áp dụng vào tình huống pháp lý thực tế.
-"""    # Sửa: sử dụng memory để lấy lịch sử hội thoại
-    # Sửa: sử dụng memory để lấy lịch sử hội thoại
-    answer = gemini_service.generate_content(prompt)
+**Định dạng trả lời:**
+- **Tên bệnh**: [Tên bệnh]
+- **Triệu chứng**: [Mô tả triệu chứng]
+- **Cách điều trị**: [Phương pháp điều trị]
+- **Bệnh liên quan**: [Danh sách bệnh liên quan]
+- **Nguồn tham khảo**: [Nguồn dữ liệu]
+- **Lưu ý quan trọng**: [Các lưu ý]
+"""
+    # Generate the main answer
+    answer = gemini_service.generate_content(main_prompt)
 
-    # Sửa: truyền đúng dict có đúng 1 key theo yêu cầu save_context
+    # Prompt cho câu hỏi liên quan
+    related_questions_prompt = f"""
+Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về bệnh cây trồng được cung cấp, hãy sinh ra 5 câu hỏi liên quan, đảm bảo các câu hỏi:
+
+- Liên quan chặt chẽ đến chủ đề bệnh cây trồng trong câu hỏi gốc.
+- Phù hợp với nông nghiệp Việt Nam hiện hành.
+- Ngắn gọn, rõ ràng, và mang tính ứng dụng thực tế.
+- Tập trung vào tên bệnh, triệu chứng, cách điều trị, hoặc bệnh liên quan.
+- Được trình bày dưới dạng danh sách JSON, mỗi câu hỏi là một đối tượng với key `question`.
+
+**Câu hỏi gốc:**  
+{question}
+
+**Hướng dẫn thêm:**
+- Nếu câu hỏi gốc đề cập đến một cây trồng cụ thể (ví dụ: cà chua, lúa), sinh ra các câu hỏi liên quan đến cây đó.
+- Nếu câu hỏi không rõ cây trồng, sinh ra các câu hỏi liên quan đến bệnh phổ biến trong nông nghiệp Việt Nam.
+- Không sử dụng từ "giả sử" hoặc "ví dụ".
+- Không lặp lại câu hỏi gốc.
+- Đảm bảo các câu hỏi không trùng lặp nội dung.
+
+**Định dạng đầu ra (JSON):**  
+[
+  {{"question": "Câu hỏi 1"}},
+  {{"question": "Câu hỏi 2"}},
+  {{"question": "Câu hỏi 3"}},
+  {{"question": "Câu hỏi 4"}},
+  {{"question": "Câu hỏi 5"}}
+]
+"""
+
+    # Parse related_questions to ensure it's a valid JSON list (assuming gemini_service returns a JSON string)
+    try:
+        related_questions = gemini_service.generate_content(related_questions_prompt)
+        # Preprocess the questions (handles both string and list inputs)
+        related_questions = preprocess_related_questions(related_questions)
+    except (json.JSONDecodeError, ValueError, Exception) as e:        # Fallback to default questions if generation fails
+        related_questions = [
+            {"question": "Cách nhận biết sớm các bệnh phổ biến trên cây cà chua?"},
+            {"question": "Những loại thuốc nào an toàn để trị bệnh trên cây lúa?"},
+            {"question": "Bệnh nhện đỏ trên cây trồng có thể phòng ngừa như thế nào?"},
+            {"question": "Các bệnh nào thường xuất hiện cùng với bệnh nấm trên cây?"},
+            {"question": "Chế độ tưới nước ảnh hưởng thế nào đến bệnh cây trồng?"}
+        ]
+
+    # Save context to memory
     memory.save_context({"question": question}, {"answer": answer})
 
+    # Return JSON response with related questions included
     return jsonify({
         "final_response": answer,
-        "top_banan_documents": top_banan_docs,
-        "chat_history": chat_history_str
+        "top_banan_documents": top_pdf_docs,
+        "chat_history": chat_history_str,
+        "related_questions": related_questions
     })
 
 
-@api_bp.route("/draft_judgment", methods=["POST"])
-def draft_judgment():
+
+@api_bp.route("/query_related", methods=["POST"])
+def query_related():
     data = request.get_json(silent=True) or {}
-    case_details = data.get("case_details", "").strip()
-    if not case_details:
-        return jsonify({"error": "Invalid case details!"}), 400
+    question = data.get("question", "").strip()
+    if not question:
+        return jsonify({"error": "Invalid question!"}), 400
 
-    banan_results = query_service.query(case_details, k=2, doc_type="banan", strategy="faiss")
+    # Query dữ liệu tham khảo
+    results = query_service.query(question, k=5, doc_type="banan", strategy="hybrid")
 
-    top_banan_docs = [{"source": r.metadata["source"], **r.__dict__} for r in banan_results]
+    top_pdf_docs = [
+        {"source": r.metadata["source"], "text": r.text, "distance": r.distance, **r.__dict__}
+        for r in results if r.distance is not None and r.distance != 0
+    ]
 
     chat_history_str = format_chat_history(memory)
 
-    prompt = f"""
-    Dưới đây là lịch sử hội thoại trước đó:
-    {chat_history_str}
+    # Prompt for main answer
+    main_prompt = f"""
+        Dưới đây là lịch sử hội thoại trước đó:
+        {chat_history_str}
 
-    Bạn là trợ lý pháp lý thông minh, có nhiệm vụ **hỗ trợ soạn thảo bản án** theo đúng mẫu các quy định của Nghị quyết 351/2017/UBTVQH14, Tòa án nhân dân tối cao đã thể hiện cụ thể về thể thức, kỹ thuật trình bày các mẫu bản án sơ thẩm, phúc thẩm, quyết định giám đốc thẩm về hành chính, dân sự, hôn nhân và gia đình, kinh doanh, thương mại, lao động ban hành kèm theo Nghị quyết số 01/2017/NQ-HĐTP, Nghị quyết số 02/2017/NQ-HĐTP (08 mẫu được gửi kèm theo Công văn này) để các Tòa án áp dụng khi ban hành các văn bản tố tụng này.
-    Hãy giúp tôi **soạn bản án đầy đủ, dưới dạng  sườn bản án, không cần cụ thể, ngắn gọn, đầy đủ chữ ký các bên liên quan**, trình bày rõ ràng, theo đúng định dạng mẫu, với các phần cụ thể như sau:
-    Dưới đây là **thông tin vụ án** để bạn dựa vào đó và soạn bản án:
+        Bạn là chuyên gia nông nghiệp với hơn 30 năm kinh nghiệm. Hãy phân tích câu hỏi về bệnh cây trồng và trả lời chi tiết, rõ ràng, đúng trọng tâm.
 
-    {case_details}
+        **Câu hỏi:**  
+        {question}
 
-    **Yêu cầu:**  
-    - Bỏ **Tuyệt vời! Tôi hiểu yêu cầu của bạn. Dựa trên thông tin bạn cung cấp và các quy định pháp luật hiện hành tại Việt Nam, tôi sẽ soạn thảo sườn Bản án sơ thẩm giải quyết vụ án Ly hôn, tranh chấp về quyền nuôi con một cách ngắn gọn, đầy đủ các phần theo yêu cầu, dưới dạng HTML5 và CSS chuẩn mực bạn cung cấp. Đây là sườn bản án: html**
-    - Không cần giải thích, lập luận pháp lý sau khi soạn thaot bản án.
-    - Hãy tập trung vào phần soạn thảo bản án, dưới dạng  sườn bản án, không cần cụ thể, ngắn gọn, đầy đủ chữ ký các bên liên quan, không cần giới thiệu
-    - Bắt buộc bỏ phần giới thiệu dài dòng khúc đầu của hệ thống, hãy tập trung vào phần soạn thảo bản án, dưới dạng  sườn bản án, không cần cụ thể, ngắn gọn, đầy đủ chữ ký các bên liên quan
-    - Dùng thông tin tôi cung cấp để soạn thảo hoàn chỉnh bản án, không tự suy diễn nội dung, tạo ra nội dung mới, bằng cách điền vào các chỗ trống, dưới dạng  sườn bản án, không cần cụ thể, ngắn gọn, đầy đủ chữ ký các bên liên quan
-    - Căn cứ, viện dẫn điều luật tại Việt Nam một cách chính xác, dựa trên thông tin tình huống vụ án mà tôi cung cấp để hoàn thành soạn thảo bản án, dưới dạng  sườn bản án, không cần cụ thể, ngắn gọn, đầy đủ chữ ký các bên liên quan
-    - Viết đúng định dạng bản án theo văn phong pháp lý, trang trọng, khách quan.  
-    - Không viết gộp đoạn, hãy chia từng phần theo đúng nhãn tiêu đề như trong mẫu.
-    - Định dạng kết quả trả về trong khổ giấy A4.
-    - Bắt buộc trả về kết quả dùng html5, và định dạng css chuẩn mực, không cần css cho thẻ <body>, phù hợp với trang A4 để dễ dàng hiển thị và in ấn, không tự ý css ngoài những gì mà tôi cung cấp dưới đây. Cụ thể như sau: 
-    <style>
+        **Thông tin tham khảo (từ PDF):**  
+        {top_pdf_docs if top_pdf_docs else "Không có thông tin từ PDF. Phân tích dựa trên kiến thức nông nghiệp."}
 
-            .header {{
-                display: flex  !important;
-                justify-content: space-between  !important;
-                margin-bottom: 20px  !important;
-            }}
+        Trả lời cần:  
+        - Tập trung trả lời câu hỏi của nông dân.
+        - Đưa ra nguyên nhân gây bệnh.
+        - Đề xuất phương pháp điều trị/phòng ngừa hiệu quả.
 
-            .header-left {{
-                text-align: left  !important;
-            }}
+        **Lưu ý quan trọng:**
+        - Không cần giới thiệu bản thân, không đề cập đến kinh nghiệm tư vấn.
+        - Trả lời ngắn gọn, súc tích, đúng trọng tâm.
+        - Nêu các lưu ý khi áp dụng phương pháp điều trị (thời điểm, an toàn lao động, môi trường).
+        - Đảm bảo trả lời ngắn gọn, súc tích, đúng trọng tâm.
+        - Không sử dụng từ "giả sử" hoặc "ví dụ".
+        - Trình bày rõ ràng, sử dụng định dạng danh sách (-), in đậm (**text**) cho các tiêu đề và điểm quan trọng.
 
-            .header-right {{
-                text-align: center  !important;
-            }}
-            .header p{{
-                margin: 0  !important;
+        """
 
-            }}
-            .indented {{
-                margin-left: 20px  !important;
-            }}
+    # Generate the main answer
+    answer = gemini_service.generate_content(main_prompt)
 
-            .center-bold {{
-                font-weight: bold  !important;
-                text-align: center  !important;
-            }}
+    # Prompt cho câu hỏi liên quan
+    related_questions_prompt = f"""
+Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về bệnh cây trồng được cung cấp, hãy sinh ra 5 câu hỏi liên quan, đảm bảo các câu hỏi:
 
-            .italic {{
-                font-style: italic  !important;
-            }}
-            / Print-specific styles /
-                @media print {{
-                    @page {{
-                        size: A4  !important;
-                        margin: 15mm  !important; / Standard margins for A4 printing /
-                    }}
-                    body {{
-                        margin: 0  !important;
-                        padding: 0  !important;
-                        font-size: 12pt  !important; / Standard for printed documents /
-                        line-height: 1.5  !important;
-                        text-align: justify  !important;
-                        color: #000  !important;
-                    }}
-                    .header{{
-                    display: block  !important;
-                    }}
-                }}
-        </style>
-    """
-    judgment = gemini_service.generate_content(prompt)
+- Liên quan chặt chẽ đến chủ đề bệnh cây trồng trong câu hỏi gốc.
+- Phù hợp với nông nghiệp Việt Nam hiện hành.
+- Ngắn gọn, rõ ràng, và mang tính ứng dụng thực tế.
+- Tập trung vào tên bệnh, triệu chứng, cách điều trị, hoặc bệnh liên quan.
+- Được trình bày dưới dạng danh sách JSON, mỗi câu hỏi là một đối tượng với key `question`.
 
-    memory.save_context({"case_details": case_details}, {"judgment": judgment})
+**Câu hỏi gốc:**  
+{question}
 
+**Hướng dẫn thêm:**
+- Nếu câu hỏi gốc đề cập đến một cây trồng cụ thể (ví dụ: cà chua, lúa), sinh ra các câu hỏi liên quan đến cây đó.
+- Nếu câu hỏi không rõ cây trồng, sinh ra các câu hỏi liên quan đến bệnh phổ biến trong nông nghiệp Việt Nam.
+- Không sử dụng từ "giả sử" hoặc "ví dụ".
+- Không lặp lại câu hỏi gốc.
+- Đảm bảo các câu hỏi không trùng lặp nội dung.
+
+**Định dạng đầu ra (JSON):**  
+[
+  {{"question": "Câu hỏi 1"}},
+  {{"question": "Câu hỏi 2"}},
+  {{"question": "Câu hỏi 3"}},
+  {{"question": "Câu hỏi 4"}},
+  {{"question": "Câu hỏi 5"}}
+]
+"""
+
+    # Parse related_questions to ensure it's a valid JSON list (assuming gemini_service returns a JSON string)
+    try:
+        related_questions = gemini_service.generate_content(related_questions_prompt)
+        # Preprocess the questions (handles both string and list inputs)
+        related_questions = preprocess_related_questions(related_questions)
+    except (json.JSONDecodeError, ValueError, Exception) as e:        # Fallback to default questions if generation fails
+        related_questions = [
+            {"question": "Cách nhận biết sớm các bệnh phổ biến trên cây cà chua?"},
+            {"question": "Những loại thuốc nào an toàn để trị bệnh trên cây lúa?"},
+            {"question": "Bệnh nhện đỏ trên cây trồng có thể phòng ngừa như thế nào?"},
+            {"question": "Các bệnh nào thường xuất hiện cùng với bệnh nấm trên cây?"},
+            {"question": "Chế độ tưới nước ảnh hưởng thế nào đến bệnh cây trồng?"}
+        ]
+
+    # Save context to memory
+    memory.save_context({"question": question}, {"answer": answer})
+
+    # Return JSON response with related questions included
     return jsonify({
-            "judgment": judgment,
-            "top_banan_documents": top_banan_docs,
-            "chat_history": chat_history_str
-        })
+        "final_response": answer,
+        "top_banan_documents": top_pdf_docs,
+        "chat_history": chat_history_str,
+        "related_questions": related_questions
+    })
+
+# @api_bp.route("/query", methods=["POST"])
+# def query():
+#     data = request.get_json(silent=True) or {}
+#     question = data.get("question", "").strip()
+#     if not question:
+#         return jsonify({"error": "Invalid question!"}), 400
+
+#     # Query dữ liệu tham khảo
+#     banan_results = query_service.query(question, k=5, doc_type="banan", strategy="hybrid")
+#     banan_sum_results = query_service.query(question, k=5, doc_type="banan_sum", strategy="hybrid")
+
+#     top_banan_docs = [
+#         {"source": r.metadata["source"], "text": r.text, "distance": r.distance, **r.__dict__}
+#         for r in banan_results if r.distance is not None and r.distance != 0
+#     ]
+   
+
+#     chat_history_str = format_chat_history(memory)
+
+#     prompt = f"""
+# Dưới đây là lịch sử hội thoại trước đó:
+# {chat_history_str}
+
+# Bạn là chuyên gia tư vấn pháp luật với hơn 30 năm kinh nghiệm trong mọi lĩnh vực pháp lý tại Việt Nam. Bạn sẽ phân tích vấn đề pháp lý theo các bước chi tiết dưới đây để cung cấp câu trả lời chặt chẽ, rõ ràng, phù hợp với quy định pháp luật Việt Nam, trích dẫn đầy đủ điều khoản từ các Bộ luật, Nghị định, Nghị quyết và các văn bản pháp luật liên quan.
+
+# **Câu hỏi:**  
+# {question}
+
+# **Thông tin tham khảo (bản án tương đồng):**  
+# {banan_results if banan_results else "Không tìm thấy bản án phù hợp. Phân tích dựa trên các quy định pháp luật hiện hành và nguyên tắc pháp lý chung."}
+
+# **Hướng dẫn trả lời chi tiết:**
+
+# 1. **Tổng quan về bản án, án lệ tương đồng:**  
+#    - Trình bày rõ thông tin tham khảo nếu có.
+#    - Nếu không có bản án, nêu rõ sẽ phân tích trên cơ sở các điều luật hiện hành tại Việt Nam.
+
+# 2. **Nội dung chi tiết của bản án, án lệ:**  
+#    - Nếu có thông tin cụ thể, trình bày rõ vấn đề pháp lý và lập luận của tòa án trong bản án, án lệ liên quan.
+#    - Nếu không có thông tin đầy đủ, phân tích dựa vào các nguyên tắc pháp lý chung, điều luật, nghị định hiện hành.
+
+# 3. **Phân tích tình huống pháp lý:**  
+#    - Phân tích rõ các vấn đề pháp lý chính.
+#    - Làm nổi bật các quy định cụ thể trong Bộ luật Dân sự, Luật Thương mại hoặc các luật chuyên ngành, nghị định, nghị quyết và các văn bản pháp luật liên quan.
+
+# 4. **Lập luận pháp lý:**  
+#    - Nêu rõ căn cứ pháp lý chính xác, trích dẫn cụ thể các điều khoản, nghị định, nghị quyết, thông tư, văn bản hướng dẫn thi hành liên quan.
+#    - Giải thích rõ cách thức áp dụng các điều khoản pháp luật vào tình huống thực tế, bảo đảm chính xác và khả thi trong thực tiễn.
+
+# 5. **Kết luận và khuyến nghị:**  
+#    - Kết luận rõ quyền và nghĩa vụ các bên theo quy định của pháp luật.
+#    - Chỉ ra những hậu quả pháp lý cụ thể, kèm theo lưu ý khi áp dụng vào các tình huống tương tự trong thực tế.
+# 6. **Nguồn tham khảo:**
+#     - Nguồn trích dẫn pháp luật có thể click vào để xem chi tiết, bao gồm các điều luật, nghị định, nghị quyết, thông tư, văn bản hướng dẫn thi hành liên quan đến vụ án nằm bên trong button <a href=" đường link trích dẫn tham khảo trên internet tương ứng với nội dung tham khảo và trích dẫn">Tên nội dung tham khảo như là Khoản, điều, luật, nghị định...</a>.:
+#     **Ví dụ:**
+# <a href="https://luatvietnam.vn/hon-nhan-gia-dinh/luat-hon-nhan-va-gia-dinh-2014-87930-d1.html">[Luật Hôn nhân và Gia đình 2014, số 52/2014/QH13]</a> (Đặc biệt Điều 3, Điều 5, Điều 8, Điều 10, Điều 11, Điều 12)
+# <a href="https://thuvienphapluat.vn/van-ban/Doanh-nghiep/Nghi-dinh-82-2020-ND-CP-xu-phat-hanh-chinh-linh-vuc-hon-nhan-thi-hanh-an-pha-san-doanh-nghiep-392611.aspx">[Nghị định 115/2015/NĐ-CP]</a> (Đặc biệt Điều 58)
+# <a href="https://hethongphapluat.com/bo-luat-hinh-su-2015/dieu-184">[Bộ luật Hình sự năm 2015]</a> (Đặc biệt Điều 184)
+
+# **Lưu ý quan trọng:**  
+# - Có trả về nguồn trích dẫn điều luật, nghị định, nghị quyết, thông tư, văn bản hướng dẫn thi hành liên quan đến vụ án, dưới dạng <a>Tên nội dung tham khảo</a>.
+# - Nếu câu hỏi không thuộc lĩnh vực pháp lý hoặc không có thông tin pháp lý phù hợp, hãy trả lời: "Câu trả lời không nằm trong kiến thức của tôi."
+# - Trả lời ngắn gọn, súc tích, rõ ràng, đúng trọng tâm.
+# - Tuyệt đối không dùng từ "giả sử", "ví dụ".
+# - Không giới thiệu bản thân, không đề cập đến kinh nghiệm tư vấn.
+# - Không cần mô tả quy trình phân tích.
+# - Nếu không có thông tin bản án, án lệ phù hợp, hãy bỏ qua, tập trung hoàn toàn vào phân tích pháp luật hiện hành.
+# - Phân tích phải luôn kết hợp chặt chẽ giữa lý thuyết pháp lý và văn bản pháp luật Việt Nam hiện hành.
+# - Trình bày rõ ràng, ngắn gọn, sử dụng ngôn ngữ pháp lý chuẩn xác, dễ áp dụng vào thực tế.
+# """
+#     # Sửa: sử dụng memory để lấy lịch sử hội thoại
+#     answer = gemini_service.generate_content(prompt)
+
+#     # Sửa: truyền đúng dict có đúng 1 key theo yêu cầu save_context
+#     memory.save_context({"question": question}, {"answer": answer})
+
+#     return jsonify({
+#         "final_response": answer,
+#         "top_banan_documents": top_banan_docs,
+#         "chat_history": chat_history_str,
+#         "banan_sum_results":banan_sum_results
+#     })
+
+

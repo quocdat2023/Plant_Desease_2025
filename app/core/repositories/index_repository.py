@@ -20,7 +20,7 @@ class IndexRepository:
     
     def _initialize(self):
         Config().validate()  # Validate GEMINI_API_KEYS
-        self.embeddings = SentenceTransformer('hiieu/halong_embedding')
+        self.embeddings = SentenceTransformer('all-MiniLM-L6-v2')
         
         # Load FAISS index
         self.faiss_index = faiss.read_index(Config.INDEX_PATH)
@@ -40,7 +40,7 @@ class IndexRepository:
         return self.embeddings
     
     def get_faiss_index(self, doc_type: str):
-        return self.faiss_index  # Only one FAISS index, no "anle"
+        return self.faiss_index if doc_type == "banan_sum" else self.faiss_index
     
     def get_bm25_index(self, doc_type: str):
         if doc_type == "banan":
