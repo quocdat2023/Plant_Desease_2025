@@ -3203,3 +3203,214 @@
 2025-06-09 17:02:46,879 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:02:46] "GET / HTTP/1.1" 200 -
 2025-06-09 17:02:47,032 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:02:47] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
 2025-06-09 17:02:47,035 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:02:47] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 17:09:14,188 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.7:5000
+2025-06-09 17:09:14,188 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-06-09 17:09:14,198 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-06-09 17:10:06,324 [werkzeug] WARNING:  * Debugger is active!
+2025-06-09 17:10:06,331 [werkzeug] INFO:  * Debugger PIN: 130-841-123
+2025-06-09 17:10:06,499 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "GET / HTTP/1.1" 200 -
+2025-06-09 17:10:06,561 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "GET / HTTP/1.1" 200 -
+2025-06-09 17:10:06,575 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "GET / HTTP/1.1" 200 -
+2025-06-09 17:10:06,596 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "GET / HTTP/1.1" 200 -
+2025-06-09 17:10:06,609 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "GET / HTTP/1.1" 200 -
+2025-06-09 17:10:06,614 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "GET / HTTP/1.1" 200 -
+2025-06-09 17:10:06,626 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "GET / HTTP/1.1" 200 -
+2025-06-09 17:10:06,631 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "GET / HTTP/1.1" 200 -
+2025-06-09 17:10:06,640 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "GET / HTTP/1.1" 200 -
+2025-06-09 17:10:06,671 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "GET / HTTP/1.1" 200 -
+2025-06-09 17:10:06,675 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "GET / HTTP/1.1" 200 -
+2025-06-09 17:10:06,886 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 17:10:06,888 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 17:10:06] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:39:07,972 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.7:5000
+2025-06-09 18:39:07,972 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-06-09 18:39:07,984 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-06-09 18:40:26,546 [werkzeug] WARNING:  * Debugger is active!
+2025-06-09 18:40:26,559 [werkzeug] INFO:  * Debugger PIN: 130-841-123
+2025-06-09 18:40:26,647 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:40:26] "GET / HTTP/1.1" 200 -
+2025-06-09 18:40:26,842 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:40:26] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:40:26,844 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:40:26] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:40:26,849 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:40:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-09 18:42:06,399 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:42:06] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 18:42:33,589 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:42:33] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 18:42:46,239 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:42:46] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 18:43:09,670 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:43:09] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 18:49:02,460 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:49:02] "GET / HTTP/1.1" 200 -
+2025-06-09 18:49:02,596 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:49:02] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:49:02,598 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:49:02] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:49:21,335 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:49:21] "GET / HTTP/1.1" 200 -
+2025-06-09 18:49:21,432 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:49:21] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:49:21,435 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:49:21] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:49:28,489 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:49:28] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 18:49:48,481 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:49:48] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 18:50:24,804 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:50:24] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 18:50:37,252 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:50:37] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 18:52:25,443 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:52:25] "GET / HTTP/1.1" 200 -
+2025-06-09 18:52:25,590 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:52:25] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:52:25,592 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:52:25] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:52:31,759 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:52:31] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 18:52:50,724 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:52:50] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 18:53:26,264 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:53:26] "GET / HTTP/1.1" 200 -
+2025-06-09 18:53:26,363 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:53:26] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:53:26,365 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:53:26] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:53:32,710 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:53:32] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 18:53:48,639 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:53:48] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 18:55:34,519 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:55:34] "GET / HTTP/1.1" 200 -
+2025-06-09 18:55:34,618 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:55:34] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:55:34,620 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:55:34] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:55:41,931 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:55:41] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 18:55:59,823 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:55:59] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 18:56:27,261 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:56:27] "GET / HTTP/1.1" 200 -
+2025-06-09 18:56:27,355 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:56:27] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:56:27,358 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:56:27] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:57:42,810 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:42] "GET / HTTP/1.1" 200 -
+2025-06-09 18:57:42,897 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:42] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:57:42,898 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:42] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:57:43,896 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:43] "GET / HTTP/1.1" 200 -
+2025-06-09 18:57:43,974 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:43] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:57:43,978 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:43] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:57:44,239 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:44] "GET / HTTP/1.1" 200 -
+2025-06-09 18:57:44,333 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:44] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:57:44,342 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:44] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:57:44,759 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:44] "GET / HTTP/1.1" 200 -
+2025-06-09 18:57:44,837 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:44] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:57:44,839 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:44] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:57:48,547 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:57:48] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 18:58:02,952 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:58:02] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 18:58:40,520 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:58:40] "GET / HTTP/1.1" 200 -
+2025-06-09 18:58:40,624 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:58:40] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 18:58:40,625 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:58:40] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 18:58:48,803 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:58:48] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 18:59:15,915 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 18:59:15] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:00:40,909 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:00:40] "GET / HTTP/1.1" 200 -
+2025-06-09 19:00:41,010 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:00:41] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:00:41,012 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:00:41] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:00:47,426 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:00:47] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:01:08,075 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:01:08] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:03:17,720 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:03:17] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:03:48,830 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:03:48] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:04:02,604 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:04:02] "GET / HTTP/1.1" 200 -
+2025-06-09 19:04:02,689 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:04:02] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:04:02,691 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:04:02] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:04:05,756 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:04:05] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:04:28,826 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:04:28] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:05:28,690 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:05:28] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:05:50,325 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:05:50] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:07:05,287 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:07:05] "GET / HTTP/1.1" 200 -
+2025-06-09 19:07:05,382 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:07:05] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:07:05,385 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:07:05] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:07:09,862 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:07:09] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:07:24,978 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:07:24] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:07:52,050 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:07:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-09 19:07:58,358 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\__init__.py', reloading
+2025-06-09 19:07:58,373 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\blueprints.py', reloading
+2025-06-09 19:07:58,392 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\sansio\\blueprints.py', reloading
+2025-06-09 19:07:58,408 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-06-09 19:07:58,427 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\globals.py', reloading
+2025-06-09 19:07:58,444 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\wrappers.py', reloading
+2025-06-09 19:07:58,461 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2025-06-09 19:07:58,466 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2025-06-09 19:07:58,487 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-06-09 19:07:58,498 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\flask\\json\\__init__.py', reloading
+2025-06-09 19:07:58,502 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\werkzeug\\wrappers\\response.py', reloading
+2025-06-09 19:07:58,520 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-06-09 19:07:58,542 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\langchain\\memory\\__init__.py', reloading
+2025-06-09 19:07:58,568 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\langchain\\memory\\buffer.py', reloading
+2025-06-09 19:07:58,583 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\langchain\\memory\\chat_memory.py', reloading
+2025-06-09 19:07:58,590 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\langchain_core\\memory.py', reloading
+2025-06-09 19:07:58,595 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\langchain_core\\load\\serializable.py', reloading
+2025-06-09 19:07:58,608 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\__init__.py', reloading
+2025-06-09 19:07:58,621 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\errors.py', reloading
+2025-06-09 19:07:58,624 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\main.py', reloading
+2025-06-09 19:07:58,661 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\networks.py', reloading
+2025-06-09 19:07:58,686 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\types.py', reloading
+2025-06-09 19:07:58,741 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pydantic\\deprecated\\tools.py', reloading
+2025-06-09 19:08:02,435 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-06-09 19:09:16,000 [werkzeug] WARNING:  * Debugger is active!
+2025-06-09 19:09:16,008 [werkzeug] INFO:  * Debugger PIN: 130-841-123
+2025-06-09 19:09:37,296 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:09:37] "GET / HTTP/1.1" 200 -
+2025-06-09 19:09:37,385 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:09:37] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:09:37,387 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:09:37] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:09:45,345 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:09:45] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:10:06,567 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:10:06] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:12:00,549 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\plants\\app\\routes\\api.py', reloading
+2025-06-09 19:12:00,549 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\plants\\app\\routes\\api.py', reloading
+2025-06-09 19:12:00,550 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\plants\\app\\routes\\api.py', reloading
+2025-06-09 19:12:04,205 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-06-09 19:13:43,575 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.7:5000
+2025-06-09 19:13:43,576 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-06-09 19:13:43,596 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-06-09 19:14:39,961 [werkzeug] WARNING:  * Debugger is active!
+2025-06-09 19:14:39,967 [werkzeug] INFO:  * Debugger PIN: 130-841-123
+2025-06-09 19:18:09,367 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:18:09] "GET / HTTP/1.1" 200 -
+2025-06-09 19:18:09,564 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:18:09] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:18:09,566 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:18:09] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:18:10,220 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:18:10] "GET / HTTP/1.1" 200 -
+2025-06-09 19:18:10,317 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:18:10] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:18:10,320 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:18:10] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:21:38,647 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:21:38] "GET / HTTP/1.1" 200 -
+2025-06-09 19:21:38,731 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:21:38] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:21:38,734 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:21:38] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:21:51,895 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:21:51] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:21:53,715 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:21:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-09 19:22:00,886 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:22:00] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-09 19:22:15,784 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:22:15] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:23:27,700 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:23:27] "GET / HTTP/1.1" 200 -
+2025-06-09 19:23:27,840 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:23:27] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:23:27,843 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:23:27] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:23:31,283 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:23:31] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:23:49,831 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:23:49] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:23:59,743 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:23:59] "GET / HTTP/1.1" 200 -
+2025-06-09 19:23:59,840 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:23:59] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:23:59,843 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:23:59] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:24:03,459 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:24:03] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:24:21,743 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:24:21] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:24:58,605 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:24:58] "GET / HTTP/1.1" 200 -
+2025-06-09 19:24:58,693 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:24:58] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:24:58,695 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:24:58] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:25:02,579 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:25:02] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:25:18,651 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:25:18] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:27:26,046 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:27:26] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:27:48,756 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:27:48] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:29:32,092 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:29:32] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:29:34,999 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:29:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-09 19:29:50,567 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:29:50] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:30:08,194 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:30:08] "GET / HTTP/1.1" 200 -
+2025-06-09 19:30:08,325 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:30:08] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:30:08,327 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:30:08] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:30:22,923 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:30:22] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:30:45,817 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:30:45] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:36:50,490 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:36:50] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:36:55,790 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:36:55] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-09 19:37:04,764 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:37:04] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:37:32,532 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:37:32] "GET / HTTP/1.1" 200 -
+2025-06-09 19:37:32,661 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:37:32] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-09 19:37:33,825 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:37:33] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:37:33,827 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:37:33] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:37:50,069 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:37:50] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:38:08,229 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:38:08] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 19:56:40,988 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:56:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-09 19:56:41,892 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:56:41] "GET / HTTP/1.1" 200 -
+2025-06-09 19:56:42,573 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:56:42] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 19:56:42,575 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:56:42] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-09 19:56:45,679 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:56:45] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-09 19:57:03,956 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 19:57:03] "POST /api/query HTTP/1.1" 200 -
+2025-06-09 20:10:38,776 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.7:5000
+2025-06-09 20:10:38,776 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-06-09 20:10:38,789 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-06-09 20:11:22,870 [werkzeug] WARNING:  * Debugger is active!
+2025-06-09 20:11:22,873 [werkzeug] INFO:  * Debugger PIN: 130-841-123
+2025-06-09 20:16:27,949 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 20:16:27] "GET / HTTP/1.1" 200 -
+2025-06-09 20:16:28,353 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 20:16:28] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-09 20:16:28,357 [werkzeug] INFO: 127.0.0.1 - - [09/Jun/2025 20:16:28] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -

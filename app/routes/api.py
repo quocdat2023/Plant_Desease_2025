@@ -132,7 +132,7 @@ Bạn là chuyên gia nông nghiệp với hơn 30 năm kinh nghiệm trong lĩn
 **Câu hỏi:**  
 {question}
 
-**Thông tin tham khảo (từ PDF):**  
+**Thông tin tham khảo:**  
 {top_pdf_docs if top_pdf_docs else "Không tìm thấy thông tin từ PDF. Phân tích dựa trên dữ liệu bệnh và kiến thức nông nghiệp."}
 
 
@@ -158,6 +158,8 @@ Bạn là chuyên gia nông nghiệp với hơn 30 năm kinh nghiệm trong lĩn
 6. **Lưu ý quan trọng:**
    - Không được phép đề cập đến án lệ, bản án, hoặc các vấn đề pháp lý.
    - Không cần giới thiệu bản thân, không đề cập đến kinh nghiệm tư vấn.
+   - Không cần đề cập đến nguồn tài liệu tham khảo.
+   - Tập trung trả lời câu hỏi của nông dân.
    - Trả lời ngắn gọn, súc tích, đúng trọng tâm.
    - Nêu các lưu ý khi áp dụng phương pháp điều trị (thời điểm, an toàn lao động, môi trường).
    - Đảm bảo trả lời ngắn gọn, súc tích, đúng trọng tâm.
@@ -169,7 +171,6 @@ Bạn là chuyên gia nông nghiệp với hơn 30 năm kinh nghiệm trong lĩn
 - **Triệu chứng**: [Mô tả triệu chứng]
 - **Cách điều trị**: [Phương pháp điều trị]
 - **Bệnh liên quan**: [Danh sách bệnh liên quan]
-- **Nguồn tham khảo**: [Nguồn dữ liệu]
 - **Lưu ý quan trọng**: [Các lưu ý]
 """
     # Generate the main answer

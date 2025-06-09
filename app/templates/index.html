@@ -187,7 +187,6 @@
         .user-message {
             background-color: #5E6AB8;
             margin-left: auto;
-            text-align: right;
             width: fit-content;
         }
 
@@ -1413,147 +1412,154 @@
             loadPlantSpecies();
         };
     </script>
-    <script>
-        // Chat Popup Functionality
-        document.getElementById('openChat').addEventListener('click', function () {
-            document.getElementById('chatPopup').style.display = 'block';
-            document.getElementById('openChat').style.display = 'none';
-        });
+<script>
+    document.getElementById('openChat').addEventListener('click', function () {
+    document.getElementById('chatPopup').style.display = 'block';
+    document.getElementById('openChat').style.display = 'none';
+});
 
-        document.getElementById('closeChat').addEventListener('click', function () {
-            document.getElementById('chatPopup').style.display = 'none';
-            document.getElementById('openChat').style.display = 'flex';
-        });
+document.getElementById('closeChat').addEventListener('click', function () {
+    document.getElementById('chatPopup').style.display = 'none';
+    document.getElementById('openChat').style.display = 'flex';
+});
 
-        // Function to send message to the Flask API
-        async function sendToBot(message) {
-            try {
-                const response = await fetch('http://localhost:5000/api/query', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ question: message })
-                });
-                if (!response.ok) {
-                    throw new Error('API request failed');
+async function sendToBot(message) {
+    try {
+        const response = await fetch('http://localhost:5000/api/query', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ question: message })
+        });
+        if (!response.ok) {
+            throw new Error('API request failed');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error:', error);
+        return { final_response: 'Đã xảy ra lỗi khi xử lý yêu cầu. Vui lòng thử lại.' };
+    }
+}
+
+function handleRelatedQuestionClick(question) {
+    document.getElementById('chatInput').value = question;
+    document.getElementById('sendMessage').click();
+    document.getElementById('chatInput').value = '';
+
+}
+
+async function typeText(element, text, delay = 30) {
+    element.innerHTML = ''; // Clear element content
+    for (let i = 0; i < text.length; i++) {
+        element.innerHTML = element.innerHTML.slice(0, -1) + text[i] + '|';
+        await new Promise(resolve => setTimeout(resolve, delay));
+    }
+    element.innerHTML = element.innerHTML.slice(0, -1); // Remove cursor
+}
+
+async function formatBotResponse(data) {
+    const { final_response, related_questions } = data;
+    const container = document.createElement('div');
+    container.className = 'chat-message bot-message';
+
+    // Split the response into sections based on headers
+    const sections = final_response.split(/\*\*(.*?)\*\*:/);
+    let formattedHtml = '';
+
+    for (let i = 1; i < sections.length; i += 2) {
+        const header = sections[i].trim();
+        const content = sections[i + 1].trim();
+
+        formattedHtml += `<h3>${header}</h3>`;
+
+        const lines = content.split('\n').filter(line => line.trim());
+        let inList = false;
+
+        lines.forEach(line => {
+            if (line.startsWith('* ')) {
+                if (!inList) {
+                    formattedHtml += '<ul>';
+                    inList = true;
                 }
-                const data = await response.json();
-                return data;
-            } catch (error) {
-                console.error('Error:', error);
-                return { final_response: 'Đã xảy ra lỗi khi xử lý yêu cầu. Vui lòng thử lại.' };
-            }
-        }
-
-        // Function to handle related questions click
-        function handleRelatedQuestionClick(question) {
-            document.getElementById('chatInput').value = question;
-            document.getElementById('sendMessage').click();
-        }
-
-        // Function to format the bot response
-        function formatBotResponse(data) {
-            const { final_response, related_questions } = data;
-            const container = document.createElement('div');
-            container.className = 'chat-message bot-message';
-
-            // Split the response into sections based on headers
-            const sections = final_response.split(/\*\*(.*?)\*\*:/);
-            let formattedHtml = '';
-
-            for (let i = 1; i < sections.length; i += 2) {
-                const header = sections[i].trim();
-                const content = sections[i + 1].trim();
-
-                // Format header
-                formattedHtml += `<h3>${header}</h3>`;
-
-                // Format content (convert * to list items)
-                const lines = content.split('\n').filter(line => line.trim());
-                let inList = false;
-
-                lines.forEach(line => {
-                    if (line.startsWith('* ')) {
-                        if (!inList) {
-                            formattedHtml += '<ul>';
-                            inList = true;
-                        }
-                        formattedHtml += `<li>${line.substring(2).trim()}</li>`;
-                    } else {
-                        if (inList) {
-                            formattedHtml += '</ul>';
-                            inList = false;
-                        }
-                        formattedHtml += `<p>${line}</p>`;
-                    }
-                });
-
+                formattedHtml += `<li>${line.substring(2).trim()}</li>`;
+            } else {
                 if (inList) {
                     formattedHtml += '</ul>';
+                    inList = false;
                 }
+                formattedHtml += `<p>${line}</p>`;
             }
+        });
 
-            container.innerHTML = formattedHtml;
-
-            // Add related questions if available
-            if (related_questions && Array.isArray(related_questions)) {
-                const relatedQuestionsDiv = document.createElement('div');
-                relatedQuestionsDiv.className = 'related-questions';
-                relatedQuestionsDiv.innerHTML = '<strong>Câu hỏi liên quan:</strong>';
-
-                const questionsList = document.createElement('ul');
-                related_questions.forEach(q => {
-                    const questionItem = document.createElement('li');
-                    const questionLink = document.createElement('a');
-                    questionLink.href = '#';
-                    questionLink.textContent = q.question;
-                    questionLink.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        handleRelatedQuestionClick(q.question);
-                    });
-                    questionItem.appendChild(questionLink);
-                    questionsList.appendChild(questionItem);
-                });
-
-                relatedQuestionsDiv.appendChild(questionsList);
-                container.appendChild(relatedQuestionsDiv);
-            }
-
-            return container;
+        if (inList) {
+            formattedHtml += '</ul>';
         }
+    }
 
-        // Send message handler
-        document.getElementById('sendMessage').addEventListener('click', async function () {
-            const chatInput = document.getElementById('chatInput');
-            const chatBody = document.getElementById('chatBody');
-            const messageText = chatInput.value.trim();
+    container.innerHTML = formattedHtml;
 
-            if (messageText) {
-                // Add user message
-                const userMessage = document.createElement('div');
-                userMessage.className = 'chat-message user-message';
-                userMessage.textContent = messageText;
-                chatBody.appendChild(userMessage);
+    // Type out headers, paragraphs, and list items
+    const elementsToType = container.querySelectorAll('h3, p, li');
+    for (const element of elementsToType) {
+        const text = element.textContent;
+        element.textContent = '';
+        await typeText(element, text);
+    }
 
-                // Send to API and get response
-                const responseData = await sendToBot(messageText);
+    // Add related questions if available
+    if (related_questions && Array.isArray(related_questions)) {
+        const relatedQuestionsDiv = document.createElement('div');
+        relatedQuestionsDiv.className = 'related-questions';
+        relatedQuestionsDiv.innerHTML = '<strong>Câu hỏi liên quan:</strong>';
 
-                // Display formatted bot response
-                const botMessage = formatBotResponse(responseData);
-                chatBody.appendChild(botMessage);
-
-                // Clear input
-                chatInput.value = '';
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
+        const questionsList = document.createElement('ul');
+        related_questions.forEach(q => {
+            const questionItem = document.createElement('li');
+            const questionLink = document.createElement('a');
+            questionLink.href = '#';
+            questionLink.textContent = q.question;
+            questionLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                handleRelatedQuestionClick(q.question);
+            });
+            questionItem.appendChild(questionLink);
+            questionsList.appendChild(questionItem);
         });
 
-        // Allow sending message with Enter key
-        document.getElementById('chatInput').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                document.getElementById('sendMessage').click();
-            }
-        });
-    </script>
+        relatedQuestionsDiv.appendChild(questionsList);
+        container.appendChild(relatedQuestionsDiv);
+    }
+
+    return container;
+}
+
+document.getElementById('sendMessage').addEventListener('click', async function () {
+    const chatInput = document.getElementById('chatInput');
+    const chatBody = document.getElementById('chatBody');
+    const messageText = chatInput.value.trim();
+
+    if (messageText) {
+        const userMessage = document.createElement('div');
+        userMessage.className = 'chat-message user-message';
+        userMessage.textContent = messageText;
+        chatBody.appendChild(userMessage);
+
+        const responseData = await sendToBot(messageText);
+        const botMessage = await formatBotResponse(responseData);
+        chatBody.appendChild(botMessage);
+
+        chatInput.value = '';
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+});
+
+document.getElementById('chatInput').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        document.getElementById('sendMessage').click();
+        document.getElementById('chatInput').value = '';
+    }
+});
+   </script>
 </body>
 
 </html>
