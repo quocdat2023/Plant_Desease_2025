@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Care, Gardens & Farms</title>
     <!-- Bootstrap CSS CDN -->
+     <link rel="shortcut icon" href="https://perenual.com/storage/image/logo/green-logo-sm.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Ứng dụng Plant Care, Gardens & Farms giúp người dùng chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây và phân bón.">
+    <meta name="keywords" content="Plant Care, Gardens, Farms, chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây, phân bón">
+    <!-- Bootstrap CSS CDN -->
+
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -353,13 +359,31 @@
             <a class="navbar-brand" href="#">
                 <img src="https://perenual.com/storage/image/logo/green-logo-sm.svg" alt="Logo"> Plant Disease
             </a>
-            <div class="navbar-nav ms-auto">
-                 <div class="navbar-nav ms-auto">
+           <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{{ url_for('home.home') }}">Trang chủ</a>
                 <a class="nav-link" href="{{ url_for('home.plant_detection') }}">Phát hiện bệnh</a>
                 <a class="nav-link" href="{{ url_for('home.plant_recommendation') }}">Gợi ý giống cây</a>
                 <a class="nav-link" href="{{ url_for('home.plant_fertilizer') }}">Gợi ý phân bón</a>
-                <a class="nav-link" href="#">Liên hệ</a>
-                <a class="nav-link" href="#">Đăng nhập</a>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {% if session.user %}
+                        {{ session.user.name }}
+                        <img src="https://myplantin.com/icons/my-plants.svg" alt="Logo"
+                            style="height: 16px; vertical-align: middle;">
+                        {% else %}
+                        Tài khoản
+                        {% endif %}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        {% if session.user %}
+                        <li><a class="dropdown-item" href="{{ url_for('api.logout') }}">Đăng xuất</a></li>
+                        {% else %}
+                        <li><a class="dropdown-item" href="{{ url_for('home.register') }}">Đăng ký</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('home.login') }}">Đăng nhập</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -379,7 +403,7 @@
             </div>
             <div class="col-lg-7">
                 <img src="https://myplantin.com/_next/image?url=https%3A%2F%2Fstrapi.myplantin.com%2FDiseases_illustration_a772d9dc34.webp&w=3840&q=75" class="img-fluid rounded"
-                    alt="Plant Image" style="padding-top: 15%">
+                    alt="Plant Image" style="padding-top: 15%; float: right; width: 100%; height: auto;">
             </div>
         </div>
 

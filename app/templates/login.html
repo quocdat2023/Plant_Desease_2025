@@ -12,20 +12,19 @@
     <meta name="keywords" content="Plant Care, Gardens, Farms, chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây, phân bón">
     <!-- Bootstrap CSS CDN -->
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: white;
+            background-color: #eceded;
         }
 
         .custom-bg {
-            background-image: linear-gradient(to right, #E3F8D3, #A9EBC3);
-            /* min-height: 100vh; */
+            background-color: #1BBFA0;
+            min-height: 100vh;
         }
 
         .navbar-custom {
-            background-color: white;
+            background-color: #ffffff;
         }
 
         .navbar-brand img {
@@ -35,7 +34,7 @@
         }
 
         .btn-start {
-            background-color: #3bbf9c;
+            background-color: #7066E0;
             color: white;
             border-radius: 50px;
         }
@@ -89,7 +88,7 @@
         }
 
         .text-purple {
-            color: #4CC7AB;
+            color: #7066E0;
         }
 
         .chat-button {
@@ -125,7 +124,7 @@
         }
 
         .chat-header {
-            background-color: #4CC7AB;
+            background-color: #7066E0;
             color: white;
             padding: 10px;
             border-top-left-radius: 10px;
@@ -160,7 +159,7 @@
         }
 
         .user-message {
-            background-color: #4CC7AB;
+            background-color: #7066E0;
             margin-left: auto;
             width: fit-content;
             color: white;
@@ -178,9 +177,12 @@
         }
 
         .chat-footer button {
-            background-color: #4CC7AB;
+            background-color: #7066E0;
             border: none;
         }
+
+
+
         .chat-message {
             margin: 10px;
             padding: 10px;
@@ -242,7 +244,7 @@
         .related-questions a:hover {
             text-decoration: underline;
         }
-    
+
         .footer {
             background-color: #1a1a1a;
             color: #ffffff;
@@ -344,11 +346,6 @@
             justify-content: center;
             font-size: 12px;
         }
-        .btn-start:hover
-        {
-            background-color: #4CC7AB;
-            color: white;
-        }
     </style>
 </head>
 
@@ -359,7 +356,7 @@
             <a class="navbar-brand" href="#">
                 <img src="https://perenual.com/storage/image/logo/green-logo-sm.svg" alt="Logo"> Plant Disease
             </a>
-            <div class="navbar-nav ms-auto">
+           <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="{{ url_for('home.home') }}">Trang chủ</a>
                 <a class="nav-link" href="{{ url_for('home.plant_detection') }}">Phát hiện bệnh</a>
                 <a class="nav-link" href="{{ url_for('home.plant_recommendation') }}">Gợi ý giống cây</a>
@@ -389,21 +386,49 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container-fuild custom-bg p-5">
+    <div class="p-5 custom-bg py-5">
         <div class="row">
-            <div class="col-lg-7 text-left">
-                <h1 class="display-4 fw-bold text-dark">Plant Care, Gardens & Farms</h1>
-                <p class="lead text-muted">
-                    Ứng dụng "Plant Care, Gardens & Farms" là một công cụ mạnh mẽ hỗ trợ người dùng trong việc chăm sóc
-                    cây trồng và quản lý vườn. Hãy chọn 1 ảnh để chúng tôi có thể giúp bạn chẩn đoán bệnh cây trồng.
-                </p>
-                <div class="mt-4">
-                    <a href="#" class="btn btn-start btn-lg me-2" style="width: 250px; height: 50px;">Gợi ý phân bón</a>
-                </div>
+            <div class="col-lg-6 text-left">
+                <h1 class="display-4 fw-bold text-light">Plant Care, Gardens & Farms</h1>
+                   <div class="row justify-content-center">
+                            <div class="card shadow-sm">
+                                 <div class="card-body">
+                        <h2 class="text-center mb-4">Đăng Nhập</h2>
+                        {% if error %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                        {% endif %}
+                        <form method="POST" action="{{ url_for('api.login') }}" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                                <div class="invalid-feedback">
+                                    Please enter a password.
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-start btn-lg me-2" >Đăng Nhập</button>
+                            </div>
+                        </form>
+                        <p class="text-center mt-3">
+                            Chưa có tài khoản? <a href="{{ url_for('home.register') }}" class="text-decoration-none">Đăng Ký</a>
+                        </p>
+                    </div>
+                        </div>
+                    </div>
+               
             </div>
-            <div class="col-lg-5">
-                 <img src="https://www.pngkit.com/png/full/337-3370206_microbial-products-alpine-fertilizer.png" class="img-fluid rounded"
-                    alt="Plant Image" style="width: 60%; float: right;">
+            <div class="col-lg-5 offset-lg-1 text-center">
+                <img src="https://static.vecteezy.com/system/resources/previews/035/906/776/non_2x/ai-generated-lush-green-plant-in-rustic-rope-hanging-basket-free-png.png" class="img-fluid rounded"
+                    alt="Plant Image">
             </div>
         </div>
 
@@ -437,10 +462,9 @@
                     <h3 id="modalScientificName" class="text-muted"></h3>
                     <h3 class="text-purple">Mô Tả</h3>
                     <div id="modalDescription"></div>
-                    <h3 class="text-primary">Giải Pháp</h3>
+                    <h3 class="text-purple">Giải Pháp</h3>
                     <div id="modalSolution"></div>
-                    <h3 class="text-purple">Các loại cây liên quan:</h3>
-                    <div id="modalHost"></div>
+                    <div id="modalHost" class="d-none"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
@@ -576,7 +600,7 @@
                             "solution": [
                                 {
                                     "subtitle": "Thực hành văn hóa",
-                                    "description": "•\tThực hiện quản lý cỏ đúng cách, bao gồm bón phân, tưới nước và bảo dưỡng.\n•\tTránh tích tụ quá nhiều lớp cỏ khô bằng cách dọn cỏ khô thường xuyên nếu vượt quá 1/2 inch (1,2 cm).\n•\tĐảm bảo thoát nước tốt và tránh tưới quá nhiều.\n•\tGiảm thiểu tích tụ chất hữu cơ bằng cách loại bỏ cỏ cắt và mảnh vụn.\n•\tSử dụng phân compost đã phân hủy hoàn toàn và vật liệu hữu cơ.\n•\tGiám sát và kiểm soát cỏ dại để ngăn chúng xâm nhập.\n•\tTránh lan truyền đất hoặc lớp cỏ khô bị nhiễm sang các khu vực khỏe mạnh.\n"
+                                    "description": "•\tThực hiện quản lý cỏ đúng cách, bao gồm bón phân, tưới nước và bảo dưỡng.<br>•\tTránh tích tụ quá nhiều lớp cỏ khô bằng cách dọn cỏ khô thường xuyên nếu vượt quá 1/2 inch (1,2 cm).<br>•\tĐảm bảo thoát nước tốt và tránh tưới quá nhiều.<br>•\tGiảm thiểu tích tụ chất hữu cơ bằng cách loại bỏ cỏ cắt và mảnh vụn.<br>•\tSử dụng phân compost đã phân hủy hoàn toàn và vật liệu hữu cơ.<br>•\tGiám sát và kiểm soát cỏ dại để ngăn chúng xâm nhập.<br>•\tTránh lan truyền đất hoặc lớp cỏ khô bị nhiễm sang các khu vực khỏe mạnh.\n"
                                 },
                                 {
                                     "subtitle": "Xử lý hóa học",
@@ -660,7 +684,7 @@
                             "solution": [
                                 {
                                     "subtitle": "Dọn dẹp cỏ, rác, lá cây đúng cách",
-                                    "description": "•\tCắt cỏ thường xuyên ở độ cao thích hợp để thúc đẩy sự phát triển khỏe mạnh của cỏ.\n•\tTránh tưới quá nhiều hoặc điều kiện thoát nước kém, vì độ ẩm quá mức có thể góp phần làm Nấm mực phát triển.\n•\tGiảm tích tụ lớp cỏ khô bằng cách dọn cỏ khô khi cần thiết.\n•\tĐảm bảo xử lý đúng cách các mảnh vụn hữu cơ và tránh chôn chúng trong cỏ .\n•\tSử dụng máy thông khí cỏ để cải thiện khả năng thấm nước và giảm sự phát triển của các lớp nấm dày đặc.\n•\tThường xuyên nhặt hoặc loại bỏ Nấm mực ngay khi chúng xuất hiện để ngăn lan truyền bào tử.\n•\tÁp dụng phân bón nitơ với liều lượng 1 pound nitơ thực tế trên 1.000 feet vuông cỏ để đẩy nhanh quá trình phân hủy chất hữu cơ và ngăn chặn sự phát triển của Nấm mực.\n"
+                                    "description": "•\tCắt cỏ thường xuyên ở độ cao thích hợp để thúc đẩy sự phát triển khỏe mạnh của cỏ.<br>•\tTránh tưới quá nhiều hoặc điều kiện thoát nước kém, vì độ ẩm quá mức có thể góp phần làm Nấm mực phát triển.<br>•\tGiảm tích tụ lớp cỏ khô bằng cách dọn cỏ khô khi cần thiết.<br>•\tĐảm bảo xử lý đúng cách các mảnh vụn hữu cơ và tránh chôn chúng trong cỏ .<br>•\tSử dụng máy thông khí cỏ để cải thiện khả năng thấm nước và giảm sự phát triển của các lớp nấm dày đặc.<br>•\tThường xuyên nhặt hoặc loại bỏ Nấm mực ngay khi chúng xuất hiện để ngăn lan truyền bào tử.<br>•\tÁp dụng phân bón nitơ với liều lượng 1 pound nitơ thực tế trên 1.000 feet vuông cỏ để đẩy nhanh quá trình phân hủy chất hữu cơ và ngăn chặn sự phát triển của Nấm mực.\n"
                                 }
                             ],
                             "host": [
@@ -719,7 +743,7 @@
                                 },
                                 {
                                     "subtitle": "Áp dụng thuốc trừ nấm",
-                                    "description": "Dưới đây là một số thuốc trừ nấm thường được sử dụng để quản lý Bệnh do nấm thối rể Pythium (đốm dầu) trên cỏ .\n\n•\tAzoxystrobin (Tên thương hiệu: Heritage)\n•\tFosetyl-al (Tên thương hiệu: Aliette WDG, Prodigy, Chipco Signature)\n•\tMancozeb (Tên thương hiệu: Fore 80WP, Dithane M-45)\n•\tMefenoxam (Tên thương hiệu: Subdue MAXX, Ridomil Gold SL)\n•\tChlorothalonil (Tên thương hiệu: Daconil, Bravo)\n•\tPropamocarb (Tên thương hiệu: Banol)\n\n•\tLưu ý rằng việc sử dụng thuốc trừ nấm nên tuân theo quy định địa phương, nhãn sản phẩm và lời khuyên từ chuyên gia hoặc dịch vụ địa phương.\n"
+                                    "description": "Dưới đây là một số thuốc trừ nấm thường được sử dụng để quản lý Bệnh do nấm thối rể Pythium (đốm dầu) trên cỏ .\n<br>•\tAzoxystrobin (Tên thương hiệu: Heritage)<br>•\tFosetyl-al (Tên thương hiệu: Aliette WDG, Prodigy, Chipco Signature)<br>•\tMancozeb (Tên thương hiệu: Fore 80WP, Dithane M-45)<br>•\tMefenoxam (Tên thương hiệu: Subdue MAXX, Ridomil Gold SL)<br>•\tChlorothalonil (Tên thương hiệu: Daconil, Bravo)<br>•\tPropamocarb (Tên thương hiệu: Banol)\n<br>•\tLưu ý rằng việc sử dụng thuốc trừ nấm nên tuân theo quy định địa phương, nhãn sản phẩm và lời khuyên từ chuyên gia hoặc dịch vụ địa phương.\n"
                                 }
                             ],
                             "host": [
@@ -927,11 +951,11 @@
                             "solution": [
                                 {
                                     "subtitle": "Phòng ngừa",
-                                    "description": "\n•\tDuy trì lượng nitơ và tưới nước thích hợp để thúc đẩy sự phát triển khỏe mạnh của cỏ.\n\n•\tTránh tích tụ quá nhiều lớp cỏ khô và cải thiện luồng không khí bằng cách thông khí và dọn cỏ khô thường xuyên.\n\n•\tĐảm bảo khoảng cách đủ giữa các cây để thúc đẩy luồng không khí, giảm độ ẩm và tạo điều kiện ít thuận lợi cho sự phát triển của gỉ sắt trên cây ngô.\n\n•\tLoại bỏ và xử lý mảnh vụn thực vật bị nhiễm để giảm nguồn lây nhiễm.\n\n•\tChọn các giống cỏ kháng gỉ sắt trên cây ngô bất cứ khi nào có thể.\n\n"
+                                    "description": "<br>•\tDuy trì lượng nitơ và tưới nước thích hợp để thúc đẩy sự phát triển khỏe mạnh của cỏ.\n<br>•\tTránh tích tụ quá nhiều lớp cỏ khô và cải thiện luồng không khí bằng cách thông khí và dọn cỏ khô thường xuyên.\n<br>•\tĐảm bảo khoảng cách đủ giữa các cây để thúc đẩy luồng không khí, giảm độ ẩm và tạo điều kiện ít thuận lợi cho sự phát triển của gỉ sắt trên cây ngô.\n<br>•\tLoại bỏ và xử lý mảnh vụn thực vật bị nhiễm để giảm nguồn lây nhiễm.\n<br>•\tChọn các giống cỏ kháng gỉ sắt trên cây ngô bất cứ khi nào có thể.\n\n"
                                 },
                                 {
                                     "subtitle": "Áp dụng thuốc trừ nấm",
-                                    "description": "Trong trường hợp vấn đề gỉ sắt trên cây ngô dai dẳng, việc áp dụng thuốc trừ nấm có mục tiêu có thể cần thiết.\n\n•\tTriazoles: Tebuconazole, Propiconazole, và Metconazole\n•\tStrobilurins: Azoxystrobin, Pyraclostrobin\n•\tThuốc trừ nấm dựa trên đồng: Copper sulfate, Copper hydroxide Mancozeb (Bonide® Orchard Spray)\n•\tDithiocarbamates: Maneb, Mancozeb\nĐây là các thuốc trừ nấm thường được sử dụng để ngăn ngừa bệnh này.\n\nTuy nhiên, việc sử dụng các tác nhân này một cách cẩn thận và theo hướng dẫn trên nhãn là rất quan trọng để tránh tác động tiêu cực không mong muốn đến các sinh vật khác trong hệ sinh thái."
+                                    "description": "Trong trường hợp vấn đề gỉ sắt trên cây ngô dai dẳng, việc áp dụng thuốc trừ nấm có mục tiêu có thể cần thiết.\n<br>•\tTriazoles: Tebuconazole, Propiconazole, và Metconazole<br>•\tStrobilurins: Azoxystrobin, Pyraclostrobin<br>•\tThuốc trừ nấm dựa trên đồng: Copper sulfate, Copper hydroxide Mancozeb (Bonide® Orchard Spray)<br>•\tDithiocarbamates: Maneb, Mancozeb\nĐây là các thuốc trừ nấm thường được sử dụng để ngăn ngừa bệnh này.\n\nTuy nhiên, việc sử dụng các tác nhân này một cách cẩn thận và theo hướng dẫn trên nhãn là rất quan trọng để tránh tác động tiêu cực không mong muốn đến các sinh vật khác trong hệ sinh thái."
                                 }
                             ],
                             "host": [
@@ -994,11 +1018,11 @@
                             "solution": [
                                 {
                                     "subtitle": "Lựa chọn cây trồng và vệ sinh",
-                                    "description": "•\tSử dụng các giống cây hạnh nhân kháng bệnh để giảm khả năng bị nhiễm.\n\n•\tDuy trì vệ sinh vườn cây bằng cách loại bỏ và tiêu hủy vật liệu cây bị nhiễm, bao gồm cả cây bị nhiễm.\n\n•\tCắt tỉa và loại bỏ các cành hoặc nhánh khung bị nhiễm dưới các triệu chứng nhìn thấy, tuân theo các thực hành vệ sinh đúng cách.\n"
+                                    "description": "•\tSử dụng các giống cây hạnh nhân kháng bệnh để giảm khả năng bị nhiễm.\n<br>•\tDuy trì vệ sinh vườn cây bằng cách loại bỏ và tiêu hủy vật liệu cây bị nhiễm, bao gồm cả cây bị nhiễm.\n<br>•\tCắt tỉa và loại bỏ các cành hoặc nhánh khung bị nhiễm dưới các triệu chứng nhìn thấy, tuân theo các thực hành vệ sinh đúng cách.\n"
                                 },
                                 {
                                     "subtitle": "Kiểm soát côn trùng và quản lý căng thẳng",
-                                    "description": "•\tThực hiện các chiến lược quản lý sâu bệnh tổng hợp để kiểm soát các vectơ côn trùng như leafhoppers và spittlebugs.\n\n•\tThực hành kỹ thuật tưới nước đúng cách để ngăn ngừa căng thẳng cây, vì cây bị căng thẳng dễ bị bệnh hơn.\n\n•\tKiểm tra đất, sửa chữa các thiếu hụt/bất cân bằng và điều chỉnh pH nếu cần thiết.\n"
+                                    "description": "•\tThực hiện các chiến lược quản lý sâu bệnh tổng hợp để kiểm soát các vectơ côn trùng như leafhoppers và spittlebugs.\n<br>•\tThực hành kỹ thuật tưới nước đúng cách để ngăn ngừa căng thẳng cây, vì cây bị căng thẳng dễ bị bệnh hơn.\n<br>•\tKiểm tra đất, sửa chữa các thiếu hụt/bất cân bằng và điều chỉnh pH nếu cần thiết.\n"
                                 },
                                 {
                                     "subtitle": "Xử lý hóa học",
@@ -1048,15 +1072,15 @@
                             "solution": [
                                 {
                                     "subtitle": "Lựa chọn cây trồng và thực hành văn hóa tốt",
-                                    "description": "•\tChọn các loài hoặc giống cây kháng bệnh ít bị nhiễm Armillaria.\n\n•\tĐảm bảo kỹ thuật trồng cây đúng cách, bao gồm thoát nước đất tốt và tránh trồng quá sâu.\n\n•\tDuy trì sức khỏe cây qua tưới nước, bón phân và cắt tỉa đúng cách.\n\n•\tTránh tưới quá nhiều hoặc tạo điều kiện ngập úng.\n"
+                                    "description": "•\tChọn các loài hoặc giống cây kháng bệnh ít bị nhiễm Armillaria.\n<br>•\tĐảm bảo kỹ thuật trồng cây đúng cách, bao gồm thoát nước đất tốt và tránh trồng quá sâu.\n<br>•\tDuy trì sức khỏe cây qua tưới nước, bón phân và cắt tỉa đúng cách.\n<br>•\tTránh tưới quá nhiều hoặc tạo điều kiện ngập úng.\n"
                                 },
                                 {
                                     "subtitle": "Quản lý đất và loại bỏ vật liệu bị nhiễm",
-                                    "description": "•\tCải thiện thoát nước đất bằng cách bổ sung chất hữu cơ, như compost, và tránh tưới quá nhiều.\n\n•\tNhanh chóng loại bỏ và tiêu hủy cây, rễ và gốc cây bị nhiễm để ngăn chặn sự lan truyền của nấm.\n"
+                                    "description": "•\tCải thiện thoát nước đất bằng cách bổ sung chất hữu cơ, như compost, và tránh tưới quá nhiều.\n<br>•\tNhanh chóng loại bỏ và tiêu hủy cây, rễ và gốc cây bị nhiễm để ngăn chặn sự lan truyền của nấm.\n"
                                 },
                                 {
                                     "subtitle": "Kiểm soát hóa học",
-                                    "description": "•\tDưới đây là một số thuốc trừ nấm thường được sử dụng để kiểm soát thối rễ Armillaria: thuốc trừ nấm dựa trên phosphite (ví dụ: potassium phosphite), thiophanate-methyl, metalaxyl, propiconazole và fluazinam. Các thuốc trừ nấm này có thể hiệu quả trong việc quản lý bệnh,\n\n•\tQuan trọng là phải tuân theo hướng dẫn trên nhãn và tham khảo ý kiến chuyên gia để có các khuyến nghị cụ thể.\n"
+                                    "description": "•\tDưới đây là một số thuốc trừ nấm thường được sử dụng để kiểm soát thối rễ Armillaria: thuốc trừ nấm dựa trên phosphite (ví dụ: potassium phosphite), thiophanate-methyl, metalaxyl, propiconazole và fluazinam. Các thuốc trừ nấm này có thể hiệu quả trong việc quản lý bệnh,\n<br>•\tQuan trọng là phải tuân theo hướng dẫn trên nhãn và tham khảo ý kiến chuyên gia để có các khuyến nghị cụ thể.\n"
                                 }
                             ],
                             "host": [
@@ -1284,7 +1308,7 @@
                             care: [
                                 {
                                     subtitle: "Yêu cầu chăm sóc",
-                                    description: "• Cần nước dồi dào, thường được trồng ở các ruộng ngập nước.\n• Đất phù hợp: đất sét hoặc đất phù sa giàu dinh dưỡng.\n• Bón phân định kỳ với phân đạm, lân và kali."
+                                    description: "• Cần nước dồi dào, thường được trồng ở các ruộng ngập nước.<br>• Đất phù hợp: đất sét hoặc đất phù sa giàu dinh dưỡng.<br>• Bón phân định kỳ với phân đạm, lân và kali."
                                 }
                             ],
                             environment: [
@@ -1311,7 +1335,7 @@
                             care: [
                                 {
                                     subtitle: "Yêu cầu chăm sóc",
-                                    description: "• Đất tơi xốp, thoát nước tốt.\n• Tưới nước đều đặn, đặc biệt trong giai đoạn ra hoa và tạo hạt.\n• Bón phân hữu cơ và phân hóa học cân đối."
+                                    description: "• Đất tơi xốp, thoát nước tốt.<br>• Tưới nước đều đặn, đặc biệt trong giai đoạn ra hoa và tạo hạt.<br>• Bón phân hữu cơ và phân hóa học cân đối."
                                 }
                             ],
                             environment: [
@@ -1338,7 +1362,7 @@
                             "care": [
                                 {
                                     "subtitle": "Yêu cầu chăm sóc",
-                                    "description": "• Đất giàu dinh dưỡng, tơi xốp, thoát nước tốt.\n• Tưới nước đều đặn, giữ ẩm nhưng không để úng.\n• Bón phân hữu cơ hoặc phân NPK trong suốt mùa vụ, đặc biệt khi cây ra hoa và đậu quả.\n• Cần giá đỡ hoặc lồng để hỗ trợ cây phát triển."
+                                    "description": "• Đất giàu dinh dưỡng, tơi xốp, thoát nước tốt.<br>• Tưới nước đều đặn, giữ ẩm nhưng không để úng.<br>• Bón phân hữu cơ hoặc phân NPK trong suốt mùa vụ, đặc biệt khi cây ra hoa và đậu quả.<br>• Cần giá đỡ hoặc lồng để hỗ trợ cây phát triển."
                                 }
                             ],
                             "environment": [
@@ -1349,6 +1373,86 @@
                             "images": [
                                 {
                                     "thumbnail": "https://th.bing.com/th/id/R.e2471a5d5b7b5e0ffa5d4c9f5f883d3b?rik=c43WDw6zEQW%2blw&pid=ImgRaw&r=0"
+                                }
+                            ]
+                        }, {
+                            "id": 9,
+                            "common_name": "Cây Bông Gossypium hirsutum",
+                            "scientific_name": "Gossypium hirsutum",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Bông (Gossypium hirsutum) là gì?",
+                                    "description": "Cây bông là cây công nghiệp quan trọng, được trồng để lấy sợi bông từ quả. Sợi bông là nguyên liệu chính trong ngành dệt may."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất cát pha hoặc đất thịt nhẹ, thoát nước tốt.<br>• Cần đủ nước trong giai đoạn ra hoa và hình thành quả.<br>• Bón phân cân đối, đặc biệt là đạm, lân và kali.<br>• Cần ánh sáng mặt trời đầy đủ."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 25-30°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/OIP.ZwnnwnOdqNbb7LlfEhyDWwHaE9?w=1024&h=685&rs=1&pid=ImgDetMain"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 10,
+                            "common_name": "Cây Hạt Điều Anacardium occidentale",
+                            "scientific_name": "Anacardium occidentale",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Hạt Điều (Anacardium occidentale) là gì?",
+                                    "description": "Cây hạt điều là cây công nghiệp lâu năm, được trồng để lấy hạt điều. Hạt điều là một loại hạt dinh dưỡng, được sử dụng làm thực phẩm và chế biến."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Thích nghi với nhiều loại đất, đặc biệt là đất đồi, đất cát pha.<br>• Chịu hạn tốt.<br>• Cần ánh sáng mặt trời đầy đủ.<br>• Bón phân hữu cơ và vô cơ định kỳ."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 25-35°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/OIP.V8IDIVYDOdK9HzaxbdYCygHaFA?rs=1&pid=ImgDetMain"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 9,
+                            "common_name": "Cây Xoài Mangifera indica",
+                            "scientific_name": "Mangifera indica",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Xoài (Mangifera indica) là gì?",
+                                    "description": "Cây xoài là một loại cây ăn quả thuộc họ Anacardiaceae, được trồng để lấy quả ngọt, giàu vitamin C và phổ biến ở vùng nhiệt đới."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất thoát nước tốt, giàu dinh dưỡng.<br>• Tưới nước vừa phải, tránh ngập.<br>• Bón phân hữu cơ và tỉa cành định kỳ."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 24-35°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng trực tiếp"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://res.cloudinary.com/dtfpvrnp2/image/upload/v1745673455/afl24tkpgycwmk5stdvw.webp"
                                 }
                             ]
                         }
@@ -1390,200 +1494,199 @@
                 ? species.images[0].thumbnail
                 : 'https://via.placeholder.com/150';
 
+            // Set image and basic text content
             modalImage.src = thumbnail;
             modalCommonName.textContent = species.common_name || 'Unknown Species';
             modalScientificName.textContent = species.scientific_name || 'N/A';
 
-            // Combine all descriptions
+            // Handle description with line breaks
             let descriptionText = '';
             if (species.description && species.description.length > 0) {
                 species.description.forEach(desc => {
-                    descriptionText += `<p><strong>${desc.subtitle}</strong></p><p>${desc.description}</p>`;
+                    descriptionText += `<p><strong>${desc.subtitle}</strong></p><p>${desc.description.replace(/\n/g, '<br>')}</p>`;
                 });
             } else {
                 descriptionText = '<p>No description available</p>';
             }
             modalDescription.innerHTML = descriptionText;
 
-            // Combine all care instructions
+            // Handle care instructions with line breaks
             let careText = '';
             if (species.care && species.care.length > 0) {
                 species.care.forEach(care => {
-                    careText += `<p><strong>${care.subtitle}</strong></p><p>${care.description}</p>`;
+                    careText += `<p><strong>${care.subtitle}</strong></p><p>${care.description.replace(/\n/g, '<br>')}</p>`;
                 });
             } else {
                 careText = '<p>No care instructions available</p>';
             }
             modalCare.innerHTML = careText;
 
-            // Combine all environment conditions
+            // Handle environment conditions with line breaks
             let environmentText = '';
             if (species.environment && species.environment.length > 0) {
-                environmentText = species.environment.join(', ');
+                environmentText = species.environment.map(item => `<p>${item}</p>`).join('');
             } else {
-                environmentText = 'No environment information available';
+                environmentText = '<p>No environment information available</p>';
             }
-            modalEnvironment.textContent = environmentText;
+            modalEnvironment.innerHTML = environmentText;
 
             // Show the modal
             const modal = new bootstrap.Modal(document.getElementById('speciesModal'));
             modal.show();
-        }
-
-        // Load both plant diseases and species when the page loads
+        }     // Load both plant diseases and species when the page loads
         window.onload = function () {
             loadPlantDiseases();
             loadPlantSpecies();
         };
     </script>
-<script>
-    document.getElementById('openChat').addEventListener('click', function () {
-    document.getElementById('chatPopup').style.display = 'block';
-    document.getElementById('openChat').style.display = 'none';
-});
-
-document.getElementById('closeChat').addEventListener('click', function () {
-    document.getElementById('chatPopup').style.display = 'none';
-    document.getElementById('openChat').style.display = 'flex';
-});
-
-async function sendToBot(message) {
-    try {
-        const response = await fetch('http://localhost:5000/api/query', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ question: message })
+    <script>
+        document.getElementById('openChat').addEventListener('click', function () {
+            document.getElementById('chatPopup').style.display = 'block';
+            document.getElementById('openChat').style.display = 'none';
         });
-        if (!response.ok) {
-            throw new Error('API request failed');
-        }
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error:', error);
-        return { final_response: 'Đã xảy ra lỗi khi xử lý yêu cầu. Vui lòng thử lại.' };
-    }
-}
 
-function handleRelatedQuestionClick(question) {
-    document.getElementById('chatInput').value = question;
-    document.getElementById('sendMessage').click();
-    document.getElementById('chatInput').value = '';
+        document.getElementById('closeChat').addEventListener('click', function () {
+            document.getElementById('chatPopup').style.display = 'none';
+            document.getElementById('openChat').style.display = 'flex';
+        });
 
-}
-
-async function typeText(element, text, delay = 30) {
-    element.innerHTML = ''; // Clear element content
-    for (let i = 0; i < text.length; i++) {
-        element.innerHTML = element.innerHTML.slice(0, -1) + text[i] + '|';
-        await new Promise(resolve => setTimeout(resolve, delay));
-    }
-    element.innerHTML = element.innerHTML.slice(0, -1); // Remove cursor
-}
-
-async function formatBotResponse(data) {
-    const { final_response, related_questions } = data;
-    const container = document.createElement('div');
-    container.className = 'chat-message bot-message';
-
-    // Split the response into sections based on headers
-    const sections = final_response.split(/\*\*(.*?)\*\*:/);
-    let formattedHtml = '';
-
-    for (let i = 1; i < sections.length; i += 2) {
-        const header = sections[i].trim();
-        const content = sections[i + 1].trim();
-
-        formattedHtml += `<h3>${header}</h3>`;
-
-        const lines = content.split('\n').filter(line => line.trim());
-        let inList = false;
-
-        lines.forEach(line => {
-            if (line.startsWith('* ')) {
-                if (!inList) {
-                    formattedHtml += '<ul>';
-                    inList = true;
+        async function sendToBot(message) {
+            try {
+                const response = await fetch('http://localhost:5000/api/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: message })
+                });
+                if (!response.ok) {
+                    throw new Error('API request failed');
                 }
-                formattedHtml += `<li>${line.substring(2).trim()}</li>`;
-            } else {
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error:', error);
+                return { final_response: 'Đã xảy ra lỗi khi xử lý yêu cầu. Vui lòng thử lại.' };
+            }
+        }
+
+        function handleRelatedQuestionClick(question) {
+            document.getElementById('chatInput').value = question;
+            document.getElementById('sendMessage').click();
+            document.getElementById('chatInput').value = '';
+
+        }
+
+        async function typeText(element, text, delay = 30) {
+            element.innerHTML = ''; // Clear element content
+            for (let i = 0; i < text.length; i++) {
+                element.innerHTML = element.innerHTML.slice(0, -1) + text[i] + '|';
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+            element.innerHTML = element.innerHTML.slice(0, -1); // Remove cursor
+        }
+
+        async function formatBotResponse(data) {
+            const { final_response, related_questions } = data;
+            const container = document.createElement('div');
+            container.className = 'chat-message bot-message';
+
+            // Split the response into sections based on headers
+            const sections = final_response.split(/\*\*(.*?)\*\*:/);
+            let formattedHtml = '';
+
+            for (let i = 1; i < sections.length; i += 2) {
+                const header = sections[i].trim();
+                const content = sections[i + 1].trim();
+
+                formattedHtml += `<h3>${header}</h3>`;
+
+                const lines = content.split('\n').filter(line => line.trim());
+                let inList = false;
+
+                lines.forEach(line => {
+                    if (line.startsWith('* ')) {
+                        if (!inList) {
+                            formattedHtml += '<ul>';
+                            inList = true;
+                        }
+                        formattedHtml += `<li>${line.substring(2).trim()}</li>`;
+                    } else {
+                        if (inList) {
+                            formattedHtml += '</ul>';
+                            inList = false;
+                        }
+                        formattedHtml += `<p>${line}</p>`;
+                    }
+                });
+
                 if (inList) {
                     formattedHtml += '</ul>';
-                    inList = false;
                 }
-                formattedHtml += `<p>${line}</p>`;
+            }
+
+            container.innerHTML = formattedHtml;
+
+            // Type out headers, paragraphs, and list items
+            const elementsToType = container.querySelectorAll('h3, p, li');
+            for (const element of elementsToType) {
+                const text = element.textContent;
+                element.textContent = '';
+                await typeText(element, text);
+            }
+
+            // Add related questions if available
+            if (related_questions && Array.isArray(related_questions)) {
+                const relatedQuestionsDiv = document.createElement('div');
+                relatedQuestionsDiv.className = 'related-questions';
+                relatedQuestionsDiv.innerHTML = '<strong>Câu hỏi liên quan:</strong>';
+
+                const questionsList = document.createElement('ul');
+                related_questions.forEach(q => {
+                    const questionItem = document.createElement('li');
+                    const questionLink = document.createElement('a');
+                    questionLink.href = '#';
+                    questionLink.textContent = q.question;
+                    questionLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        handleRelatedQuestionClick(q.question);
+                    });
+                    questionItem.appendChild(questionLink);
+                    questionsList.appendChild(questionItem);
+                });
+
+                relatedQuestionsDiv.appendChild(questionsList);
+                container.appendChild(relatedQuestionsDiv);
+            }
+
+            return container;
+        }
+
+        document.getElementById('sendMessage').addEventListener('click', async function () {
+            const chatInput = document.getElementById('chatInput');
+            const chatBody = document.getElementById('chatBody');
+            const messageText = chatInput.value.trim();
+
+            if (messageText) {
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message user-message';
+                userMessage.textContent = messageText;
+                chatBody.appendChild(userMessage);
+
+                const responseData = await sendToBot(messageText);
+                const botMessage = await formatBotResponse(responseData);
+                chatBody.appendChild(botMessage);
+
+                chatInput.value = '';
+                chatBody.scrollTop = chatBody.scrollHeight;
             }
         });
 
-        if (inList) {
-            formattedHtml += '</ul>';
-        }
-    }
-
-    container.innerHTML = formattedHtml;
-
-    // Type out headers, paragraphs, and list items
-    const elementsToType = container.querySelectorAll('h3, p, li');
-    for (const element of elementsToType) {
-        const text = element.textContent;
-        element.textContent = '';
-        await typeText(element, text);
-    }
-
-    // Add related questions if available
-    if (related_questions && Array.isArray(related_questions)) {
-        const relatedQuestionsDiv = document.createElement('div');
-        relatedQuestionsDiv.className = 'related-questions';
-        relatedQuestionsDiv.innerHTML = '<strong>Câu hỏi liên quan:</strong>';
-
-        const questionsList = document.createElement('ul');
-        related_questions.forEach(q => {
-            const questionItem = document.createElement('li');
-            const questionLink = document.createElement('a');
-            questionLink.href = '#';
-            questionLink.textContent = q.question;
-            questionLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                handleRelatedQuestionClick(q.question);
-            });
-            questionItem.appendChild(questionLink);
-            questionsList.appendChild(questionItem);
+        document.getElementById('chatInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.getElementById('sendMessage').click();
+                document.getElementById('chatInput').value = '';
+            }
         });
-
-        relatedQuestionsDiv.appendChild(questionsList);
-        container.appendChild(relatedQuestionsDiv);
-    }
-
-    return container;
-}
-
-document.getElementById('sendMessage').addEventListener('click', async function () {
-    const chatInput = document.getElementById('chatInput');
-    const chatBody = document.getElementById('chatBody');
-    const messageText = chatInput.value.trim();
-
-    if (messageText) {
-        const userMessage = document.createElement('div');
-        userMessage.className = 'chat-message user-message';
-        userMessage.textContent = messageText;
-        chatBody.appendChild(userMessage);
-
-        const responseData = await sendToBot(messageText);
-        const botMessage = await formatBotResponse(responseData);
-        chatBody.appendChild(botMessage);
-
-        chatInput.value = '';
-        chatBody.scrollTop = chatBody.scrollHeight;
-    }
-});
-
-document.getElementById('chatInput').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        document.getElementById('sendMessage').click();
-        document.getElementById('chatInput').value = '';
-    }
-});
-   </script>
+    </script>
 </body>
 
 </html>

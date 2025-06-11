@@ -1,9 +1,12 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, redirect, url_for, session, render_template
 from datetime import datetime
 from langchain.memory import ConversationBufferMemory
 import json
 from typing import List, Dict
 import re
+import bcrypt
+from pymongo import MongoClient
+from pymongo.errors import DuplicateKeyError
 
 # Giả định các service/repository đã được định nghĩa
 from ..core.services.query_service import QueryService
@@ -12,31 +15,26 @@ from ..core.repositories.index_repository import IndexRepository
 
 api_bp = Blueprint('api', __name__)
 
+# Kết nối MongoDB
+mongo_client = MongoClient('mongodb://localhost:27017/')  # Thay bằng URI của MongoDB Atlas nếu cần
+db = mongo_client['plant_disease_db']
+users_collection = db['users']
+users_collection.create_index('email', unique=True)
+
 # Khởi tạo các service/repository
 index_repo = IndexRepository()
 query_service = QueryService(index_repo)
 gemini_service = GeminiService()
 
-# Khởi tạo ConversationBufferMemory với giới hạn 10 tin nhắn và 1000 token
+# Khởi tạo ConversationBufferMemory
 memory = ConversationBufferMemory(
     memory_key="chat_history",
     return_messages=True,
-    max_message_limit=10,  # Giới hạn 10 tin nhắn
-    max_token_limit=1000   # Giới hạn 1000 token
+    max_message_limit=10,
+    max_token_limit=1000
 )
 
 def preprocess_related_questions(related_questions_input: str | List[Dict[str, str]]) -> List[Dict[str, str]]:
-    """
-    Preprocess related questions, handling JSON string with optional ```json and ``` markers.
-    
-    Args:
-        related_questions_input: JSON string (with or without ```json/``` markers) or list of dicts
-    
-    Returns:
-        List of exactly 5 validated and unique questions in the format [{"question": "..."}, ...]
-        related to agricultural diseases, symptoms, treatments, or related diseases.
-    """
-    # Danh sách câu hỏi dự phòng liên quan đến nông nghiệp
     fallback_questions = [
         {"question": "Cách xử lý bệnh phổ biến trên cây trồng tại Việt Nam là gì?"},
         {"question": "Làm thế nào để nhận biết sớm các triệu chứng bệnh trên cây cà chua?"},
@@ -45,7 +43,6 @@ def preprocess_related_questions(related_questions_input: str | List[Dict[str, s
         {"question": "Chế độ dinh dưỡng nào giúp cây trồng tăng sức đề kháng với bệnh?"}
     ]
 
-    # Xử lý đầu vào
     if isinstance(related_questions_input, str):
         cleaned_input = re.sub(r'^```json\s*|\s*```$', '', related_questions_input).strip()
         try:
@@ -55,17 +52,14 @@ def preprocess_related_questions(related_questions_input: str | List[Dict[str, s
     else:
         related_questions = related_questions_input
 
-    # Kiểm tra nếu không phải danh sách
     if not isinstance(related_questions, list):
         return fallback_questions[:5]
 
-    # Lọc các câu hỏi hợp lệ
     valid_questions = [
         q for q in related_questions
         if isinstance(q, dict) and "question" in q and isinstance(q["question"], str) and q["question"].strip()
     ]
 
-    # Loại bỏ trùng lặp
     seen = set()
     unique_questions = []
     for q in valid_questions:
@@ -74,15 +68,12 @@ def preprocess_related_questions(related_questions_input: str | List[Dict[str, s
             seen.add(question_text)
             unique_questions.append({"question": question_text})
 
-    # Lọc câu hỏi liên quan đến nông nghiệp, loại bỏ câu hỏi pháp luật
     agriculture_keywords = r"(bệnh|cây trồng|triệu chứng|thuốc trừ sâu|điều trị|nông nghiệp|cà chua|lúa|nấm|nhện đỏ|phân bón)"
-    
     filtered_questions = [
         q for q in unique_questions
         if re.search(agriculture_keywords, q["question"], re.IGNORECASE)
     ]
 
-    # Nếu không đủ 5 câu hỏi, bổ sung từ fallback
     if len(filtered_questions) < 5:
         remaining = 5 - len(filtered_questions)
         for fq in fallback_questions:
@@ -105,16 +96,95 @@ def format_chat_history(memory):
         formatted.append(f"{role.capitalize()}: {content}")
     return "\n".join(formatted)
 
-@api_bp.route("/query", methods=["POST"])
+@api_bp.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "GET":
+        return render_template("register.html")
+    
+    data = request.form if request.form else request.get_json(silent=True) or {}
+    email = data.get("email", "").strip()
+    password = data.get("password", "").strip()
+    name = data.get("name", "").strip()
+
+    if not email or not password or not name:
+        if request.form:
+            return render_template("register.html", error="Email, password, and name are required!")
+        return jsonify({"error": "Email, password, and name are required!"}), 400
+
+    hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+
+    try:
+        users_collection.insert_one({
+            "email": email,
+            "password": hashed_password,
+            "name": name,
+            "created_at": datetime.utcnow()
+        })
+    except DuplicateKeyError:
+        if request.form:
+            return render_template("register.html", error="Email already exists!")
+        return jsonify({"error": "Email already exists!"}), 400
+
+    if request.form:
+        return render_template("register.html", message="Registration successful! Please log in.")
+    return jsonify({"message": "Registration successful! Please log in."}), 201
+
+@api_bp.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "GET":
+        return render_template("login.html")
+    
+    data = request.form if request.form else request.get_json(silent=True) or {}
+    email = data.get("email", "").strip()
+    password = data.get("password", "").strip()
+
+    if not email or not password:
+        if request.form:
+            return render_template("login.html", error="Email and password are required!")
+        return jsonify({"error": "Email and password are required!"}), 400
+
+    user = users_collection.find_one({"email": email})
+    if not user:
+        if request.form:
+            return render_template("login.html", error="Invalid email or password!")
+        return jsonify({"error": "Invalid email or password!"}), 401
+
+    if bcrypt.checkpw(password.encode('utf-8'), user["password"]):
+        session["user"] = {"email": user["email"], "name": user["name"]}
+        if request.form:
+            return redirect(url_for("home.home"))
+        return jsonify({"message": "Login successful!", "user": session["user"]}), 200
+    else:
+        if request.form:
+            return render_template("login.html", error="Invalid email or password!")
+        return jsonify({"error": "Invalid email or password!"}), 401
+
+@api_bp.route("/logout", methods=["GET", "POST"])
+def logout():
+    session.pop("user", None)
+    if request.method == "GET":
+        return redirect(url_for("home.home"))
+    return jsonify({"message": "Logged out successfully"}), 200
+
+@api_bp.route("/query", methods=["GET", "POST"])
 def query():
-    data = request.get_json(silent=True) or {}
+    if "user" not in session:
+        if request.method == "GET":
+            return redirect(url_for("api.login_page"))
+        return jsonify({"error": "Please log in first!"}), 401
+
+    if request.method == "GET":
+        return render_template("query.html")
+
+    user_info = session["user"]
+    data = request.form if request.form else request.get_json(silent=True) or {}
     question = data.get("question", "").strip()
     if not question:
+        if request.form:
+            return render_template("query.html", error="Invalid question!")
         return jsonify({"error": "Invalid question!"}), 400
 
-    # Query dữ liệu tham khảo
     results = query_service.query(question, k=5, doc_type="banan", strategy="hybrid")
-
     top_pdf_docs = [
         {"source": r.metadata["source"], "text": r.text, "distance": r.distance, **r.__dict__}
         for r in results if r.distance is not None and r.distance != 0
@@ -122,77 +192,29 @@ def query():
 
     chat_history_str = format_chat_history(memory)
 
-    # Prompt for main answer
     main_prompt = f"""
 Dưới đây là lịch sử hội thoại trước đó:
 {chat_history_str}
 
-Bạn là chuyên gia nông nghiệp với hơn 30 năm kinh nghiệm trong lĩnh vực bệnh cây trồng tại Việt Nam. Bạn sẽ phân tích câu hỏi về bệnh nông nghiệp theo các bước chi tiết dưới đây để cung cấp câu trả lời chính xác, rõ ràng, dễ áp dụng, trích dẫn thông tin từ dữ liệu tham khảo nếu có.
-
+Bạn là chuyên gia nông nghiệp với hơn 30 năm kinh nghiệm trong lĩnh vực bệnh cây trồng tại Việt Nam. 
+Người dùng: {user_info.get('name', 'Anonymous')} (Email: {user_info.get('email', 'N/A')})
 **Câu hỏi:**  
 {question}
 
 **Thông tin tham khảo:**  
 {top_pdf_docs if top_pdf_docs else "Không tìm thấy thông tin từ PDF. Phân tích dựa trên dữ liệu bệnh và kiến thức nông nghiệp."}
 
-
 **Hướng dẫn trả lời chi tiết:**
-** Chú ý nếu xác định đầu vào là câu hỏi thì tập trung vào trả lời câu hỏi liên quan. ngược lại nếu đầu vào là  tên bệnh thì trả lời theo các bước sau: **
+** Chú ý nếu xác định đầu vào là câu hỏi thì tập trung vào trả lời câu hỏi liên quan. ngược lại nếu đầu vào là tên bệnh thì trả lời theo các bước sau: **
 
-1. **Tên bệnh:**  
-   - Xác định và nêu rõ tên bệnh liên quan đến câu hỏi (nếu có trong dữ liệu tham khảo).
-   - Nếu không có dữ liệu cụ thể, đề xuất bệnh có thể liên quan dựa trên triệu chứng hoặc cây trồng được nhắc đến.
-
-2. **Triệu chứng:**  
-   - Mô tả rõ các triệu chứng của bệnh, dựa trên dữ liệu tham khảo hoặc kiến thức chung.
-   - Nêu các dấu hiệu nhận biết trên cây trồng (lá, thân, quả, v.v.).
-
-3. **Cách điều trị:**  
-   - Đề xuất phương pháp điều trị cụ thể, bao gồm thuốc trừ sâu, biện pháp sinh học, hoặc kỹ thuật canh tác.
-   - Trích dẫn từ dữ liệu tham khảo nếu có (thuốc, liều lượng, thời điểm phun).
-
-4. **Bệnh liên quan:**  
-   - Liệt kê các bệnh khác thường xuất hiện cùng hoặc có triệu chứng tương tự trên cùng loại cây trồng.
-   - Giải thích ngắn gọn mối liên hệ giữa các bệnh này.
-
-5. **Tài liệu tham khảo**
-    - Trích dẫn nguồn cụ thể (ví dụ: "Theo tài liệu từ [tên nguồn]...").
-    - Ví dụ:
-    + Bệnh hại cây trồng Việt Nam
-Tác giả: GS.TS Vũ Triệu Mân (chủ biên), GS.TS Nguyễn Văn Tuất, GS.TS Bùi Cách Tuyến, PGS Phạm Văn Kim và 82 tác giả khác
-Năm xuất bản: Không rõ (xuất bản nhân dịp kỷ niệm 70 năm ngành bệnh cây Việt Nam)
-Tài liệu giảng dạy - Khoa Nông nghiệp Thủy sản
-Tác giả: Lâm Quốc Nam
-Năm xuất bản: 2014
-Quản lý dịch hại tổng hợp (IPM) trên cam, quít, chanh, bưởi
-Tác giả: Nguyễn Thị Thu Cúc, Phạm Hoàng Oanh
-Năm xuất bản: 2005
-Quản lý tổng hợp dịch hại cây trồng
-Tác giả: KS. Nguyễn Mạnh Chinh, GS.TS. Mai Văn Quyền, TS. Nguyễn Đăng Nghĩa
-Năm xuất bản: 2005
-
-6. **Lưu ý quan trọng:**
-   - Không được phép đề cập đến án lệ, bản án, hoặc các vấn đề pháp lý.
-   - Không cần giới thiệu bản thân, không đề cập đến kinh nghiệm tư vấn.
-   - Không cần đề cập đến nguồn tài liệu tham khảo.
-   - Tập trung trả lời câu hỏi của nông dân.
-   - Trả lời ngắn gọn, súc tích, đúng trọng tâm.
-   - Nêu các lưu ý khi áp dụng phương pháp điều trị (thời điểm, an toàn lao động, môi trường).
-   - Đảm bảo trả lời ngắn gọn, súc tích, đúng trọng tâm.
-   - Không sử dụng từ "giả sử" hoặc "ví dụ".
-   - Trình bày rõ ràng, sử dụng định dạng danh sách (-), in đậm (**text**) cho các tiêu đề và điểm quan trọng.
-
-**Định dạng trả lời:**
 - **Tên bệnh**: [Tên bệnh]
 - **Triệu chứng**: [Mô tả triệu chứng]
 - **Cách điều trị**: [Phương pháp điều trị]
 - **Bệnh liên quan**: [Danh sách bệnh liên quan]
 - **Lưu ý quan trọng**: [Các lưu ý]
 """
-    # Generate the main answer
     answer = gemini_service.generate_content(main_prompt)
 
-    # Prompt cho câu hỏi liên quan
     related_questions_prompt = f"""
 Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về bệnh cây trồng được cung cấp, hãy sinh ra 5 câu hỏi liên quan, đảm bảo các câu hỏi:
 
@@ -221,13 +243,10 @@ Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về b�
   {{"question": "Câu hỏi 5"}}
 ]
 """
-
-    # Parse related_questions to ensure it's a valid JSON list (assuming gemini_service returns a JSON string)
     try:
         related_questions = gemini_service.generate_content(related_questions_prompt)
-        # Preprocess the questions (handles both string and list inputs)
         related_questions = preprocess_related_questions(related_questions)
-    except (json.JSONDecodeError, ValueError, Exception) as e:        # Fallback to default questions if generation fails
+    except (json.JSONDecodeError, ValueError, Exception):
         related_questions = [
             {"question": "Cách nhận biết sớm các bệnh phổ biến trên cây cà chua?"},
             {"question": "Những loại thuốc nào an toàn để trị bệnh trên cây lúa?"},
@@ -236,29 +255,32 @@ Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về b�
             {"question": "Chế độ tưới nước ảnh hưởng thế nào đến bệnh cây trồng?"}
         ]
 
-    # Save context to memory
     memory.save_context({"question": question}, {"answer": answer})
 
-    # Return JSON response with related questions included
-    return jsonify({
+    response = {
         "final_response": answer,
         "top_banan_documents": top_pdf_docs,
         "chat_history": chat_history_str,
-        "related_questions": related_questions
-    })
+        "related_questions": related_questions,
+        "user_info": user_info
+    }
 
-
+    if request.form:
+        return render_template("query.html", response=response)
+    return jsonify(response)
 
 @api_bp.route("/query_related", methods=["POST"])
 def query_related():
+    if "user" not in session:
+        return jsonify({"error": "Please log in first!"}), 401
+
+    user_info = session["user"]
     data = request.get_json(silent=True) or {}
     question = data.get("question", "").strip()
     if not question:
         return jsonify({"error": "Invalid question!"}), 400
 
-    # Query dữ liệu tham khảo
     results = query_service.query(question, k=5, doc_type="banan", strategy="hybrid")
-
     top_pdf_docs = [
         {"source": r.metadata["source"], "text": r.text, "distance": r.distance, **r.__dict__}
         for r in results if r.distance is not None and r.distance != 0
@@ -266,38 +288,33 @@ def query_related():
 
     chat_history_str = format_chat_history(memory)
 
-    # Prompt for main answer
     main_prompt = f"""
-        Dưới đây là lịch sử hội thoại trước đó:
-        {chat_history_str}
+Dưới đây là lịch sử hội thoại trước đó:
+{chat_history_str}
 
-        Bạn là chuyên gia nông nghiệp với hơn 30 năm kinh nghiệm. Hãy phân tích câu hỏi về bệnh cây trồng và trả lời chi tiết, rõ ràng, đúng trọng tâm.
+Bạn là chuyên gia nông nghiệp với hơn 30 năm kinh nghiệm. 
+Người dùng: {user_info.get('name', 'Anonymous')} (Email: {user_info.get('email', 'N/A')})
+**Câu hỏi:**  
+{question}
 
-        **Câu hỏi:**  
-        {question}
+**Thông tin tham khảo (từ PDF):**  
+{top_pdf_docs if top_pdf_docs else "Không có thông tin từ PDF. Phân tích dựa trên kiến thức nông nghiệp."}
 
-        **Thông tin tham khảo (từ PDF):**  
-        {top_pdf_docs if top_pdf_docs else "Không có thông tin từ PDF. Phân tích dựa trên kiến thức nông nghiệp."}
+Trả lời cần:  
+- Tập trung trả lời câu hỏi của nông dân.
+- Đưa ra nguyên nhân gây bệnh.
+- Đề xuất phương pháp điều trị/phòng ngừa hiệu quả.
 
-        Trả lời cần:  
-        - Tập trung trả lời câu hỏi của nông dân.
-        - Đưa ra nguyên nhân gây bệnh.
-        - Đề xuất phương pháp điều trị/phòng ngừa hiệu quả.
-
-        **Lưu ý quan trọng:**
-        - Không cần giới thiệu bản thân, không đề cập đến kinh nghiệm tư vấn.
-        - Trả lời ngắn gọn, súc tích, đúng trọng tâm.
-        - Nêu các lưu ý khi áp dụng phương pháp điều trị (thời điểm, an toàn lao động, môi trường).
-        - Đảm bảo trả lời ngắn gọn, súc tích, đúng trọng tâm.
-        - Không sử dụng từ "giả sử" hoặc "ví dụ".
-        - Trình bày rõ ràng, sử dụng định dạng danh sách (-), in đậm (**text**) cho các tiêu đề và điểm quan trọng.
-
-        """
-
-    # Generate the main answer
+**Lưu ý quan trọng:**
+- Không cần giới thiệu bản thân, không đề cập đến kinh nghiệm tư vấn.
+- Trả lời ngắn gọn, súc tích, đúng trọng tâm.
+- Nêu các lưu ý khi áp dụng phương pháp điều trị (thời điểm, an toàn lao động, môi trường).
+- Đảm bảo trả lời ngắn gọn, súc tích, đúng trọng tâm.
+- Không sử dụng từ "giả sử" hoặc "ví dụ".
+- Trình bày rõ ràng, sử dụng định dạng danh sách (-), in đậm (**text**) cho các tiêu đề và điểm quan trọng.
+"""
     answer = gemini_service.generate_content(main_prompt)
 
-    # Prompt cho câu hỏi liên quan
     related_questions_prompt = f"""
 Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về bệnh cây trồng được cung cấp, hãy sinh ra 5 câu hỏi liên quan, đảm bảo các câu hỏi:
 
@@ -326,13 +343,10 @@ Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về b�
   {{"question": "Câu hỏi 5"}}
 ]
 """
-
-    # Parse related_questions to ensure it's a valid JSON list (assuming gemini_service returns a JSON string)
     try:
         related_questions = gemini_service.generate_content(related_questions_prompt)
-        # Preprocess the questions (handles both string and list inputs)
         related_questions = preprocess_related_questions(related_questions)
-    except (json.JSONDecodeError, ValueError, Exception) as e:        # Fallback to default questions if generation fails
+    except (json.JSONDecodeError, ValueError, Exception):
         related_questions = [
             {"question": "Cách nhận biết sớm các bệnh phổ biến trên cây cà chua?"},
             {"question": "Những loại thuốc nào an toàn để trị bệnh trên cây lúa?"},
@@ -341,15 +355,13 @@ Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về b�
             {"question": "Chế độ tưới nước ảnh hưởng thế nào đến bệnh cây trồng?"}
         ]
 
-    # Save context to memory
     memory.save_context({"question": question}, {"answer": answer})
 
-    # Return JSON response with related questions included
     return jsonify({
         "final_response": answer,
         "top_banan_documents": top_pdf_docs,
         "chat_history": chat_history_str,
-        "related_questions": related_questions
+        "related_questions": related_questions,
+        "user_info": user_info
     })
-
 

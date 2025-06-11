@@ -13,3 +13,4 @@ google-generativeai
 python-dotenv
 gunicorn
 rank_bm25
+flask-bcrypt
