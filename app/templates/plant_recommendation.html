@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Care, Gardens & Farms</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .custom-bg {
+            background-image: linear-gradient(to right, #E3F8D3, #A9EBC3);
+            /* min-height: 100vh; */
+        }
+
+        .navbar-custom {
+            background-color: white;
+        }
+
+        .navbar-brand img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .btn-start {
+            background-color: #3bbf9c;
+            color: white;
+            border-radius: 50px;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card {
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .card-subtitle {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: #333;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .modal-body img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .disease-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .text-purple {
+            color: #4CC7AB;
+        }
+
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: transparent;
+            /* Fully transparent */
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .chat-button img {
+            margin-right: 10px;
+        }
+
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 40px;
+            width: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .chat-header {
+            background-color: #4CC7AB;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h5 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .chat-body {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .bot-message {
+            background-color: #e9ecef;
+            margin-right: 10px;
+        }
+
+        .user-message {
+            background-color: #4CC7AB;
+            margin-left: auto;
+            width: fit-content;
+            color: white;
+        }
+
+        .chat-footer {
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-footer input {
+            flex: 1;
+        }
+
+        .chat-footer button {
+            background-color: #4CC7AB;
+            border: none;
+        }
+
+        .chat-message {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background-color: #5E6AB8;
+            margin-left: auto;
+            width: fit-content;
+        }
+
+        .bot-message {
+            background-color: #EAF0F6;
+            margin-right: auto;
+        }
+
+        .bot-message h3 {
+            margin: 10px 0 5px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .bot-message p {
+            margin: 5px 0;
+        }
+
+        .bot-message ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        .bot-message li {
+            margin: 5px 0;
+        }
+
+        .related-questions {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #EAF0F6;
+            border-radius: 5px;
+        }
+
+        .related-questions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .related-questions li {
+            margin: 5px 0;
+        }
+
+        .related-questions a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .related-questions a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .payment-icons img {
+            height: 25px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 12px;
+            color: #bbbbbb;
+            width: 100%;
+        }
+
+        .chat-bubble {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-bubble span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff4444;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .btn-start:hover {
+            background-color: #4CC7AB;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://perenual.com/storage/image/logo/green-logo-sm.svg" alt="Logo"> Plant Disease
+            </a>
+            <div class="navbar-nav ms-auto">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="{{ url_for('home.plant_detection') }}">Phát hiện bệnh</a>
+                    <a class="nav-link" href="{{ url_for('home.plant_recommendation') }}">Gợi ý giống cây</a>
+                    <a class="nav-link" href="{{ url_for('home.plant_fertilizer') }}">Gợi ý phân bón</a>
+                    <a class="nav-link" href="#">Liên hệ</a>
+                    <a class="nav-link" href="#">Đăng nhập</a>
+                </div>
+            </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fuild custom-bg p-5">
+        <div class="row">
+            <div class="col-lg-5 text-left">
+                <h1 class="display-4 fw-bold text-dark">Plant Care, Gardens & Farms</h1>
+                <p class="lead text-muted">
+                    Ứng dụng "Plant Care, Gardens & Farms" là một công cụ mạnh mẽ hỗ trợ người dùng trong việc chăm sóc
+                    cây trồng và quản lý vườn. Hãy chọn 1 ảnh để chúng tôi có thể giúp bạn chẩn đoán bệnh cây trồng.
+                </p>
+                <div class="mt-4">
+                    <a href="#" class="btn btn-start btn-lg me-2" style="width: 250px; height: 50px;">Gợi ý giống
+                        cây</a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <img src="https://myplantin.com/_next/image?url=https%3A%2F%2Fstrapi.myplantin.com%2FPlant_illustration04_38a31fa5e3.webp&w=3840&q=75"
+                    class="img-fluid rounded" alt="Plant Image" style="width: 90%; float: right;">
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fuild disease-container">
+
+        <h2 class="text-3xl pt-8 text-center">GỢI Ý MỘT SỐ GIỐNG CÂY TRỒNG</h2>
+        <!-- Plant Species Cards -->
+        <div class="row mt-5" id="speciesCards">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+
+    </div>
+    <!-- Modal for Disease Details -->
+    <div class="modal fade" id="diseaseModal" tabindex="-1" aria-labelledby="diseaseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="diseaseModalLabel">Chi Tiết Bệnh Cây</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" class="img-fluid" alt="Disease Image"
+                        style="width: 326px; height: auto;">
+                    <h5 id="modalCommonName"></h5>
+                    <h3 id="modalScientificName" class="text-muted"></h3>
+                    <h3 class="text-purple">Mô Tả</h3>
+                    <div id="modalDescription"></div>
+                    <h3 class="text-primary">Giải Pháp</h3>
+                    <div id="modalSolution"></div>
+                    <h3 class="text-purple">Các loại cây liên quan:</h3>
+                    <div id="modalHost"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Species Details -->
+    <div class="modal fade" id="speciesModal" tabindex="-1" aria-labelledby="speciesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="speciesModalLabel">Chi Tiết Chủng Loại Cây</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="speciesModalImage" src="" class="img-fluid" alt="Species Image"
+                        style="width: 326px; height: auto;">
+                    <h5 id="speciesModalCommonName"></h5>
+                    <h6 id="speciesModalScientificName" class="text-muted"></h6>
+                    <h3 class="text-purple">Mô Tả</h3>
+                    <div id="speciesModalDescription"></div>
+                    <h3 class="text-purple">Hướng Dẫn Chăm Sóc</h3>
+                    <div id="speciesModalCare"></div>
+                    <h3 class="text-purple">Môi Trường Phát Triển</h3>
+                    <div id="speciesModalEnvironment"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Chat Popup -->
+    <div class="chat-popup" id="chatPopup">
+        <div class="chat-header">
+            <h5>Trò chuyện với chúng tôi</h5>
+            <button type="button" class="btn-close" id="closeChat"></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot-message">
+                Chào bạn! Chúng tôi ở đây để giúp bạn với các câu hỏi về chăm sóc cây trồng. Hãy nhập tin nhắn của bạn
+                dưới đây!
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" class="form-control" placeholder="Nhập tin nhắn của bạn...">
+            <button type="button" class="btn btn-primary" id="sendMessage">Gửi</button>
+        </div>
+    </div>
+    <button class="chat-button" id="openChat">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/059/491/654/small/3d-rendered-chatbot-illustration-png.png"
+            alt="Chat Icon" style="width: 70px; height: 70px;">
+    </button>
+
+
+
+    <footer class="footer">
+        <div class="copyright">
+            © 2025 Copyright Plant Disease. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and JavaScript for loading JSON -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        async function loadPlantDiseases() {
+            const cardContainer = document.getElementById('diseaseCards');
+            try {
+                // Fetch the local JSON file
+                const response = await fetch('./plant_desease.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                }
+                const data = await response.json();
+
+                // Check if data.data exists and is an array
+                if (!data.data || !Array.isArray(data.data)) {
+                    throw new Error('Invalid JSON structure: "data" array not found');
+                }
+
+                // Clear any existing content
+                cardContainer.innerHTML = '';
+
+                // Loop through diseases and create cards
+                data.data.forEach(disease => {
+                    const thumbnail = disease.images && disease.images.length > 0
+                        ? disease.images[0].thumbnail
+                        : 'https://via.placeholder.com/150';
+                    const description = disease.description && disease.description.length > 0
+                        ? disease.description[0].description
+                        : 'No description available';
+                    const card = `
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100" onclick='showDiseaseDetails(${JSON.stringify(disease)})'>
+                                <img src="${thumbnail}" class="card-img-top" alt="${disease.common_name || 'Unknown Disease'}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${disease.common_name || 'Unknown Disease'}</h5>
+                                    <h6 class="card-subtitle mb-2">Tên khoa học: ${disease.scientific_name || 'N/A'}</h6>
+                                    <p class="card-text">${description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    cardContainer.innerHTML += card;
+                });
+            } catch (error) {
+                console.error('Error loading plant disease data:', error.message);
+                cardContainer.innerHTML = `
+                    <div class="col-12">
+                        <p class="text-danger">Error loading plant disease data: ${error.message}</p>
+                        <p class="text-muted">Please ensure the 'plant_desease.json' file is in the same directory as this HTML file and run the page using a local web server (e.g., 'python -m http.server 8000').</p>
+                    </div>
+                `;
+                // Fallback: Use sample data for testing
+                const fallbackData = {
+                    data: [
+                        {
+                            "id": 1,
+                            "common_name": "Nấm linh chi Agrocybe ",
+                            "scientific_name": "Agrocybe",
+                            "other_name": null,
+                            "family": null,
+                            "description": [
+                                {
+                                    "subtitle": "Nấm linh chi Agrocybe  (Agrocybe) là gì?",
+                                    "description": "Nấm linh chi Agrocybe  là một vấn đề trên cỏ nơi các dải hình tròn của cỏ màu xanh đậm hoặc cỏ chết xuất hiện. Các loại nấm khác nhau như Agrocybe, Marasmius oreades, và các loài Lepiota gây ra hiện tượng này. Nấm linh chi Agrocybe  có thể được tìm thấy trên các bãi cỏ trên toàn thế giới. Kích thước và hình dạng của các vòng phụ thuộc vào loại nấm và môi trường. Các triệu chứng phổ biến của Nấm linh chi Agrocybe  bao gồm việc hình thành mẫu hình vòng với cỏ tươi tốt hoặc cỏ chết. Một số nấm tạo ra Nấm mực mà không có vòng, trong khi những loại khác tạo ra vòng mà không có nấm. Vấn đề này ảnh hưởng đến cỏ đang phát triển mạnh, bao gồm cả cỏ mùa mát và Bermudagrass."
+                                },
+                                {
+                                    "subtitle": "Nấm linh chi Agrocybe  xảy ra như thế nào?",
+                                    "description": "Nấm linh chi Agrocybe  được hình thành khi các sợi nấm ngầm dưới đất phát triển theo mẫu hình tròn. Chúng giải phóng bào tử từ Nấm mực ở mép vòng, có thể lan rộng qua không khí, động vật hoặc nước để tạo ra các thuộc địa mới. Các sợi nấm tiêu thụ chất dinh dưỡng và khiến mẫu hình tròn phát triển, dẫn đến sự hình thành của Nấm linh chi Agrocybe ."
+                                }
+                            ],
+                            "solution": [
+                                {
+                                    "subtitle": "Thực hành văn hóa",
+                                    "description": "•\tThực hiện quản lý cỏ đúng cách, bao gồm bón phân, tưới nước và bảo dưỡng.<br>•\tTránh tích tụ quá nhiều lớp cỏ khô bằng cách dọn cỏ khô thường xuyên nếu vượt quá 1/2 inch (1,2 cm).<br>•\tĐảm bảo thoát nước tốt và tránh tưới quá nhiều.<br>•\tGiảm thiểu tích tụ chất hữu cơ bằng cách loại bỏ cỏ cắt và mảnh vụn.<br>•\tSử dụng phân compost đã phân hủy hoàn toàn và vật liệu hữu cơ.<br>•\tGiám sát và kiểm soát cỏ dại để ngăn chúng xâm nhập.<br>•\tTránh lan truyền đất hoặc lớp cỏ khô bị nhiễm sang các khu vực khỏe mạnh.\n"
+                                },
+                                {
+                                    "subtitle": "Xử lý hóa học",
+                                    "description": "•\tPropiconazole, thiophanate-methyl, Azoxystrobin (Heritage) và flutolanil (Prostar WG) là các thuốc trừ nấm có thể cản trở sự phát triển của nấm gây ra Nấm linh chi Agrocybe . Các thuốc trừ nấm này hoặc ngăn chặn quá trình hô hấp của nấm hoặc làm gián đoạn quá trình tổng hợp màng tế bào của chúng.\nTuân theo hướng dẫn của nhà sản xuất một cách cẩn thận."
+                                }
+                            ],
+                            "host": [
+                                "tất cả các loại cỏ "
+                            ],
+                            "images": [
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/1_a/og/Fairy_ring_-_geograph.org.uk_-_1057031.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/1_a/regular/Fairy_ring_-_geograph.org.uk_-_1057031.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/1_a/medium/Fairy_ring_-_geograph.org.uk_-_1057031.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/1_a/small/Fairy_ring_-_geograph.org.uk_-_1057031.jpg",
+                                    "thumbnail": "https://th.bing.com/th/id/OIP.SBuiqTy3eQQV_meYvYQwBQHaFO?r=0&rs=1&pid=ImgDetMain"
+                                },
+                                {
+                                    "license": 4,
+                                    "license_name": "Giấy Phép Ghi Nhận",
+                                    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+                                    "original_url": "https://perenual.com/storage/species_disease/1_a/og/7810714166_e1b9c10965_b.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/1_a/regular/7810714166_e1b9c10965_b.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/1_a/medium/7810714166_e1b9c10965_b.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/1_a/small/7810714166_e1b9c10965_b.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/1_a/thumbnail/7810714166_e1b9c10965_b.jpg"
+                                },
+                                {
+                                    "license": 9,
+                                    "license_name": "Tuyên Bố Dành Cho Miền Công Cộng (CC0)",
+                                    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+                                    "original_url": "https://perenual.com/storage/species_disease/1_a/og/5794681214_d97177b332_b.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/1_a/regular/5794681214_d97177b332_b.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/1_a/medium/5794681214_d97177b332_b.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/1_a/small/5794681214_d97177b332_b.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/1_a/thumbnail/5794681214_d97177b332_b.jpg"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/1_agrocybe/og/Fairy_ring_-_Lindsey.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/1_agrocybe/regular/Fairy_ring_-_Lindsey.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/1_agrocybe/medium/Fairy_ring_-_Lindsey.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/1_agrocybe/small/Fairy_ring_-_Lindsey.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/1_agrocybe/thumbnail/Fairy_ring_-_Lindsey.jpg"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/1_agrocybe/og/Fairy_ring5E_-_geograph.org.uk_-_573051.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/1_agrocybe/regular/Fairy_ring5E_-_geograph.org.uk_-_573051.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/1_agrocybe/medium/Fairy_ring5E_-_geograph.org.uk_-_573051.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/1_agrocybe/small/Fairy_ring5E_-_geograph.org.uk_-_573051.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/1_agrocybe/thumbnail/Fairy_ring5E_-_geograph.org.uk_-_573051.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "common_name": "Nấm cỏ (nấm ruộng)",
+                            "scientific_name": "Panaeolus foenisecii",
+                            "other_name": [
+                                "Nấm cỏ (nấm ruộng)"
+                            ],
+                            "family": null,
+                            "description": [
+                                {
+                                    "subtitle": "Nấm cỏ (nấm ruộng) (Panaeolus foenisecii) là gì?",
+                                    "description": "Nấm ói của chó, còn được gọi là Fuligo septica hoặc nấm mốc nhầy, là một loại nấm có thể xuất hiện trên cỏ và các khu vực ngoài trời khác. Nó có phân bố rộng rãi và có thể được tìm thấy ở nhiều khu vực khác nhau. Nó không trực tiếp lây nhiễm vào cây mà phát triển trên chất hữu cơ đang phân hủy trong đất. Các triệu chứng của nấm ói của chó bao gồm việc hình thành một khối nhầy giống như ói trên bề mặt cỏ . Mặc dù nó thường vô hại với cỏ, nhưng nó có thể gây mất thẩm mỹ."
+                                },
+                                {
+                                    "subtitle": "Nấm cỏ (nấm ruộng) (Panaeolus foenisecii) xảy ra như thế nào?",
+                                    "description": "Nấm ói của chó, hoặc Fuligo septica, tái tạo qua bào tử được giải phóng bởi nấm. Khi điều kiện phù hợp, các bào tử nảy mầm và hình thành một khối nguyên sinh chất gọi là plasmodium, di chuyển và ăn chất hữu cơ đang phân hủy. Plasmodium trưởng thành thành nấm mốc nhầy đặc trưng, giống như ói. Trong nấm mốc nhầy, các sporangia phát triển, sản xuất và giải phóng bào tử để hoàn thành chu kỳ sinh sản."
+                                }
+                            ],
+                            "solution": [
+                                {
+                                    "subtitle": "Dọn dẹp cỏ, rác, lá cây đúng cách",
+                                    "description": "•\tCắt cỏ thường xuyên ở độ cao thích hợp để thúc đẩy sự phát triển khỏe mạnh của cỏ.<br>•\tTránh tưới quá nhiều hoặc điều kiện thoát nước kém, vì độ ẩm quá mức có thể góp phần làm Nấm mực phát triển.<br>•\tGiảm tích tụ lớp cỏ khô bằng cách dọn cỏ khô khi cần thiết.<br>•\tĐảm bảo xử lý đúng cách các mảnh vụn hữu cơ và tránh chôn chúng trong cỏ .<br>•\tSử dụng máy thông khí cỏ để cải thiện khả năng thấm nước và giảm sự phát triển của các lớp nấm dày đặc.<br>•\tThường xuyên nhặt hoặc loại bỏ Nấm mực ngay khi chúng xuất hiện để ngăn lan truyền bào tử.<br>•\tÁp dụng phân bón nitơ với liều lượng 1 pound nitơ thực tế trên 1.000 feet vuông cỏ để đẩy nhanh quá trình phân hủy chất hữu cơ và ngăn chặn sự phát triển của Nấm mực.\n"
+                                }
+                            ],
+                            "host": [
+                                "tất cả các loại cỏ "
+                            ],
+                            "images": [
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/2__panaeolus_foenisecii_/og/Panaeolus_foenisecii_124316833.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/2__panaeolus_foenisecii_/regular/Panaeolus_foenisecii_124316833.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/2__panaeolus_foenisecii_/medium/Panaeolus_foenisecii_124316833.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/2__panaeolus_foenisecii_/small/Panaeolus_foenisecii_124316833.jpg",
+                                    "thumbnail": "https://th.bing.com/th/id/OIP.x4AVMGvTfJX5I2UbvouOfwHaEc?r=0&rs=1&pid=ImgDetMain"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "common_name": "Nấm gây bệnh thối rễ",
+                            "scientific_name": "Pythium spp.",
+                            "other_name": [
+                                "Bệnh do nấm thối rể Pythium (đốm dầu)",
+                                "Sự thối rễ và chết cây con",
+                                "Thối hạt và rễ cây con",
+                                "Các bệnh thối cây con"
+                            ],
+                            "family": null,
+                            "description": [
+                                {
+                                    "subtitle": "Bệnh do nấm thối rể Pythium (Pythium spp.) là gì?",
+                                    "description": "Bệnh do nấm thối rể Pythium là một bệnh nấm ảnh hưởng đến cỏ , gây ra các đốm tròn nhỏ kết hợp thành các lá héo, màu nâu đỏ, có vẻ ngoài bóng dầu, dẫn đến tên gọi \"đốm dầu.\" Bệnh này phát triển mạnh trong điều kiện ấm áp và ẩm ướt, đặc biệt khi độ ẩm cao và nhiệt độ vượt quá 30°C. Nó ảnh hưởng đến tất cả các loài cỏ, dẫn đến thối cây con và thối rễ. Bệnh do nấm thối rể Pythium lan truyền nhanh, có thể giết chết một khu vực cỏ rộng lớn chỉ trong 24 giờ."
+                                },
+                                {
+                                    "subtitle": "Bệnh do nấm thối rể xảy ra như thế nào?",
+                                    "description": "Bệnh do nấm thối rể Pythium tái tạo qua cả phương pháp vô tính và hữu tính. Trong điều kiện ẩm ướt, nó giải phóng các bào tử di động gọi là zoospores, có thể bơi trong nước và lây nhiễm sang cỏ gần đó. Nó cũng tạo ra các bào tử hữu tính bền vững giúp nó tồn tại trong đất và mảnh vụn thực vật. Các chiến lược sinh sản này cho phép Bệnh do nấm thối rể lan truyền và duy trì, gây hại cho các cây dễ bị tổn thương trong môi trường cỏ ."
+                                }
+                            ],
+                            "solution": [
+                                {
+                                    "subtitle": "Cải thiện thoát nước đất",
+                                    "description": "Duy trì mức độ ẩm đất phù hợp để tránh tạo điều kiện thuận lợi cho sự phát triển của Pythium. Cải thiện thoát nước đất qua thông khí và tránh tưới quá nhiều có thể hạn chế các điều kiện cho phép nấm phát triển."
+                                },
+                                {
+                                    "subtitle": "Tránh tưới nước vào ban đêm",
+                                    "description": "Tưới cỏ vào đầu ngày và sử dụng phân bón một cách thích hợp có thể giúp giảm nguy cơ mắc Bệnh do nấm thối rể Pythium."
+                                },
+                                {
+                                    "subtitle": "Sử dụng giống cỏ kháng bệnh",
+                                    "description": "Ngoài ra, chọn các giống cỏ kháng bệnh có thể cung cấp thêm một mức độ bảo vệ."
+                                },
+                                {
+                                    "subtitle": "Duy trì mức nitơ thích hợp",
+                                    "description": "Tránh bón phân nitơ quá mức, vì điều này có thể kích thích sự phát triển nhanh của cỏ và khiến cây dễ bị bệnh hơn."
+                                },
+                                {
+                                    "subtitle": "Áp dụng thuốc trừ nấm",
+                                    "description": "Dưới đây là một số thuốc trừ nấm thường được sử dụng để quản lý Bệnh do nấm thối rể Pythium (đốm dầu) trên cỏ .\n<br>•\tAzoxystrobin (Tên thương hiệu: Heritage)<br>•\tFosetyl-al (Tên thương hiệu: Aliette WDG, Prodigy, Chipco Signature)<br>•\tMancozeb (Tên thương hiệu: Fore 80WP, Dithane M-45)<br>•\tMefenoxam (Tên thương hiệu: Subdue MAXX, Ridomil Gold SL)<br>•\tChlorothalonil (Tên thương hiệu: Daconil, Bravo)<br>•\tPropamocarb (Tên thương hiệu: Banol)\n<br>•\tLưu ý rằng việc sử dụng thuốc trừ nấm nên tuân theo quy định địa phương, nhãn sản phẩm và lời khuyên từ chuyên gia hoặc dịch vụ địa phương.\n"
+                                }
+                            ],
+                            "host": [
+                                "tất cả các loại cỏ ",
+                                "cà rốt",
+                                "ngô",
+                                "các loại cây và cây bụi khác nhau",
+                                "các loại rau và dưa hấu"
+                            ],
+                            "images": [
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/3_p/og/Monographella_nivalis-2013-Brno-4.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/3_p/regular/Monographella_nivalis-2013-Brno-4.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/3_p/medium/Monographella_nivalis-2013-Brno-4.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/3_p/small/Monographella_nivalis-2013-Brno-4.jpg",
+                                    "thumbnail": "https://rocken.vn/wp-content/uploads/2024/04/benh-thoi-re-den-1024x683.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "common_name": "Nấm mực",
+                            "scientific_name": "Coprinus comatus",
+                            "other_name": null,
+                            "family": null,
+                            "description": [
+                                {
+                                    "subtitle": "Nấm mực (Coprinus comatus) là gì?",
+                                    "description": "Coprinus comatus, thường được gọi là nấm mũ lông xù hoặc mũ luật sư, là một loại nấm hấp dẫn được tìm thấy trên toàn thế giới. Nó phát triển mạnh ở các khu vực có cỏ và đồng cỏ, có ngoại hình đặc trưng và phân hủy nhanh thành chất lỏng như mực. Trong khi nó có thể ăn được khi còn non và tươi, các mẫu già trải qua quá trình tự tiêu hóa. Loại nấm này thuộc họ Agaricaceae và có cơ thể quả cao, mảnh, màu trắng với mũ xù xì chuyển sang đen và tan thành chất lỏng như mực khi trưởng thành."
+                                },
+                                {
+                                    "subtitle": "Nấm mực (Coprinus comatus) xảy ra như thế nào?",
+                                    "description": "Loại nấm này tái tạo qua sinh sản hữu tính và vô tính. Một khía cạnh thú vị là tự tiêu hóa, nơi các enzym giải phóng từ mang nấm tiêu hóa mũ và thân nấm. Bào tử rơi trên nấm kích hoạt quá trình này, khiến các mô phân hủy thành chất lỏng đen như mực."
+                                }
+                            ],
+                            "solution": [
+                                {
+                                    "subtitle": "Loại bỏ vật lý",
+                                    "description": "Loại bỏ Nấm mực bằng tay ngay khi chúng xuất hiện để ngăn chặn sự lan truyền của bào tử."
+                                },
+                                {
+                                    "subtitle": "Điều chỉnh điều kiện đất",
+                                    "description": "Để ngăn chặn điều này, bạn có thể điều chỉnh điều kiện đất trong khu vực bị ảnh hưởng. Thêm vôi có thể giúp tăng pH đất trong khi thêm chất hữu cơ có thể giúp cân bằng mức nitơ để ngăn chặn tác động tiêu cực của chất lỏng đen như mực."
+                                },
+                                {
+                                    "subtitle": "Cải thiện thoát nước",
+                                    "description": "Nâng cao thoát nước trong khu vực bị ảnh hưởng để ngăn tích tụ độ ẩm, vì Coprinus comatus phát triển mạnh trong môi trường ẩm ướt."
+                                },
+                                {
+                                    "subtitle": "Áp dụng thuốc trừ nấm",
+                                    "description": "Các tác nhân chống nấm, bao gồm carbendazim, thiophanate-methyl và iprodione. Ngăn chặn sự phân chia và phát triển của tế bào nấm và dừng việc hình thành các bào tử nấm mới.\nTuy nhiên, việc sử dụng các tác nhân này một cách cẩn thận và theo hướng dẫn trên nhãn là rất quan trọng để tránh tác động tiêu cực không mong muốn đến các sinh vật khác trong hệ sinh thái."
+                                }
+                            ],
+                            "host": [
+                                "tất cả các loại cỏ "
+                            ],
+                            "images": [
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/4_c/og/Coprinus_comatus-2_hg.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/4_c/regular/Coprinus_comatus-2_hg.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/4_c/medium/Coprinus_comatus-2_hg.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/4_c/small/Coprinus_comatus-2_hg.jpg",
+                                    "thumbnail": "https://th.bing.com/th/id/R.1ebe5fab16e0d4fee64a86336600d027?rik=BdyGkfGzRgpKSw&pid=ImgRaw&r=0"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/4_c/og/Coprinus_comatus%2C_the_shaggy_ink_cap%2C_lawyer%27s_wig%2C_or_shaggy_mane_mushroom.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/4_c/regular/Coprinus_comatus%2C_the_shaggy_ink_cap%2C_lawyer%27s_wig%2C_or_shaggy_mane_mushroom.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/4_c/medium/Coprinus_comatus%2C_the_shaggy_ink_cap%2C_lawyer%27s_wig%2C_or_shaggy_mane_mushroom.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/4_c/small/Coprinus_comatus%2C_the_shaggy_ink_cap%2C_lawyer%27s_wig%2C_or_shaggy_mane_mushroom.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/4_c/thumbnail/Coprinus_comatus%2C_the_shaggy_ink_cap%2C_lawyer%27s_wig%2C_or_shaggy_mane_mushroom.jpg"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/4_c/og/Coprinus_comatus_G4.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/4_c/regular/Coprinus_comatus_G4.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/4_c/medium/Coprinus_comatus_G4.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/4_c/small/Coprinus_comatus_G4.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/4_c/thumbnail/Coprinus_comatus_G4.jpg"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/4_coprinus_comatus/og/2560px-Coprinus_comatus_G4.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/4_coprinus_comatus/regular/2560px-Coprinus_comatus_G4.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/4_coprinus_comatus/medium/2560px-Coprinus_comatus_G4.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/4_coprinus_comatus/small/2560px-Coprinus_comatus_G4.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/4_coprinus_comatus/thumbnail/2560px-Coprinus_comatus_G4.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "common_name": "Nấm mốc phấn trắng",
+                            "scientific_name": "Erysiphe graminis",
+                            "other_name": null,
+                            "family": null,
+                            "description": [
+                                {
+                                    "subtitle": "Nấm mốc phấn trắng (Erysiphe graminis) là gì?",
+                                    "description": "Nấm mốc phấn trắng là một bệnh nấm ảnh hưởng đến nhiều loại cây, bao gồm cây cảnh, rau và cỏ . Nó phân bố trên toàn thế giới và phát triển mạnh trong điều kiện độ ẩm cao và nhiệt độ ôn hòa. Các cây bị nhiễm bệnh có sự phát triển màu xám trắng như bột trên bề mặt lá, bắt đầu từ các mảng riêng lẻ và lan rộng ra các khu vực lớn hơn. Ở giai đoạn tiến triển, các lá bị ảnh hưởng có thể chuyển sang vàng và bị méo mó."
+                                },
+                                {
+                                    "subtitle": "Nấm mốc phấn trắng (Erysiphe graminis) xảy ra như thế nào?",
+                                    "description": "Nấm mốc phấn trắng tái tạo qua sinh sản hữu tính, hình thành các cơ quan sinh sản gọi là cleistothecia giải phóng bào tử. Các bào tử này có thể được mang theo bởi gió hoặc các phương tiện khác để lây nhiễm sang các cây dễ bị tổn thương. Ngoài ra, nó tái tạo vô tính bằng cách sản xuất conidia, là các bào tử lơ lửng trong không khí được hình thành trên sự phát triển như bột của cây bị nhiễm. Các conidia này có thể lan sang các vật chủ mới, khởi phát các nhiễm trùng mới và thúc đẩy sự lan truyền nhanh chóng của bệnh."
+                                }
+                            ],
+                            "solution": [
+                                {
+                                    "subtitle": "Chọn giống cây kháng bệnh",
+                                    "description": "Chọn các giống cây đã chứng minh khả năng kháng Erysiphe graminis, vì chúng có các cơ chế phòng thủ tự nhiên chống lại nấm.\n"
+                                },
+                                {
+                                    "subtitle": "Đảm bảo khoảng cách cây trồng thích hợp",
+                                    "description": "Duy trì khoảng cách thích hợp giữa các cây để thúc đẩy luồng không khí và giảm độ ẩm xung quanh tán lá, tạo điều kiện ít thuận lợi cho nấm phát triển."
+                                },
+                                {
+                                    "subtitle": "Tối ưu hóa tiếp xúc với ánh sáng mặt trời",
+                                    "description": "Đặt cây ở những khu vực nhận được đủ ánh sáng mặt trời, vì ánh sáng giúp giảm độ ẩm và ức chế sự phát triển của nấm."
+                                },
+                                {
+                                    "subtitle": "Quản lý cách tưới nước",
+                                    "description": "Tránh tưới nước từ trên xuống, vì tán lá ướt khuyến khích sự phát triển của nấm. Thay vào đó, tưới nước ở gốc cây hoặc sử dụng tưới nhỏ giọt để giữ tán lá khô."
+                                },
+                                {
+                                    "subtitle": "Cắt tỉa và loại bỏ mảnh vụn thường xuyên",
+                                    "description": "Cắt tỉa và loại bỏ các phần cây bị nhiễm, lá rụng và các mảnh vụn khác để giảm sự hiện diện của bào tử nấm và giảm nguy cơ lây nhiễm."
+                                },
+                                {
+                                    "subtitle": "Thực hành luân canh cây trồng",
+                                    "description": "Nếu bệnh tái phát, luân canh các cây dễ bị nhiễm sang các khu vực khác mỗi mùa trồng để phá vỡ chu kỳ bệnh."
+                                },
+                                {
+                                    "subtitle": "Giám sát và phát hiện sớm các dấu hiệu",
+                                    "description": "Kiểm tra cây thường xuyên để phát hiện sớm các dấu hiệu nhiễm bệnh, như các mảng bột trắng trên lá và thân. Việc phát hiện sớm cho phép can thiệp kịp thời và kiểm soát hiệu quả."
+                                },
+                                {
+                                    "subtitle": "Áp dụng thuốc trừ nấm",
+                                    "description": "Trong các trường hợp nghiêm trọng hoặc khi các biện pháp phòng ngừa không đủ. Azoxystrobin, propiconazole (Bumper® 250 EC), tebuconazole, myclobutanil (Orius 250 EW), fenarimol, difenoconazole, cyprodinil và flutriafol là các ví dụ về thuốc trừ nấm tổng hợp hiệu quả chống lại nấm này.\n\nCác thuốc trừ nấm dựa trên lưu huỳnh và Biofungicides dựa trên Bacillus subtilis cũng có thể được sử dụng chống lại nó. Tuân theo hướng dẫn và áp dụng chúng như được chỉ dẫn."
+                                }
+                            ],
+                            "host": [
+                                "tất cả các loại cỏ "
+                            ],
+                            "images": [
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/5_e/og/Blumeria_graminis_on_winter_wheat.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/5_e/regular/Blumeria_graminis_on_winter_wheat.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/5_e/medium/Blumeria_graminis_on_winter_wheat.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/5_e/small/Blumeria_graminis_on_winter_wheat.jpg",
+                                    "thumbnail": "https://bachnong.com/_plugins_/source/tin-tuc/sau-benh/nguyen-nhan-dan-den-nam-moc-trang..jpg"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/5_e/og/Hordeum_vulgare_Erysiphe_graminis_f._hordei_%281%29.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/5_e/regular/Hordeum_vulgare_Erysiphe_graminis_f._hordei_%281%29.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/5_e/medium/Hordeum_vulgare_Erysiphe_graminis_f._hordei_%281%29.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/5_e/small/Hordeum_vulgare_Erysiphe_graminis_f._hordei_%281%29.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/5_e/thumbnail/Hordeum_vulgare_Erysiphe_graminis_f._hordei_%281%29.jpg"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/5_erysiphe_graminis/og/2560px-Hordeum_vulgare_Erysiphe_graminis_f._hordei_28129.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/5_erysiphe_graminis/regular/2560px-Hordeum_vulgare_Erysiphe_graminis_f._hordei_28129.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/5_erysiphe_graminis/medium/2560px-Hordeum_vulgare_Erysiphe_graminis_f._hordei_28129.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/5_erysiphe_graminis/small/2560px-Hordeum_vulgare_Erysiphe_graminis_f._hordei_28129.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/5_erysiphe_graminis/thumbnail/2560px-Hordeum_vulgare_Erysiphe_graminis_f._hordei_28129.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "common_name": "Bệnh gỉ sắt trên cây ngô",
+                            "scientific_name": "Puccinia spp.",
+                            "other_name": null,
+                            "family": null,
+                            "description": [
+                                {
+                                    "subtitle": "gỉ sắt trên cây ngô (Puccinia spp) là gì?",
+                                    "description": "Bệnh gỉ sắt trên cây ngô là các nhiễm trùng nấm ảnh hưởng đến cỏ , do các nấm thuộc giống Puccinia gây ra. Chúng có thể được tìm thấy trên nhiều loại khu vực cỏ như sân golf, sân thể thao và cỏ gia đình. Các triệu chứng bao gồm các đốm màu vàng nhạt trên lá hoặc thân phát triển song song với gân lá. Theo thời gian, các mụn mủ màu nâu đỏ hình thành, giải phóng các bào tử màu cam. Bệnh gỉ sắt trên cây ngô thường xuất hiện vào cuối mùa hè hoặc đầu mùa thu, chủ yếu ảnh hưởng đến cỏ mùa mát như cỏ lúa mãi mãi và cỏ xanh Kentucky."
+                                },
+                                {
+                                    "subtitle": "gỉ sắt trên cây ngô (Puccinia spp) xảy ra như thế nào?",
+                                    "description": "Bệnh gỉ sắt trên cây ngô có chu kỳ sống phức tạp với các giai đoạn bào tử khác nhau. Các nấm tạo ra các bào tử lơ lửng trong không khí gọi là urediniospores, lây nhiễm vào cây chủ qua các lỗ nhỏ gọi là khí khổng. Độ ẩm, như sương dày, cần thiết cho sự nảy mầm và lây nhiễm của bào tử. Khi đã vào bên trong cây, nhiễm trùng và sản xuất bào tử tiếp diễn miễn là lá còn sống. Nấm gỉ sắt trên cây ngô có thể cần các cây chủ khác nhau, bao gồm cỏ , cây bụi hoặc cây cảnh, để hoàn thành chu kỳ sống của chúng."
+                                }
+                            ],
+                            "solution": [
+                                {
+                                    "subtitle": "Phòng ngừa",
+                                    "description": "<br>•\tDuy trì lượng nitơ và tưới nước thích hợp để thúc đẩy sự phát triển khỏe mạnh của cỏ.\n<br>•\tTránh tích tụ quá nhiều lớp cỏ khô và cải thiện luồng không khí bằng cách thông khí và dọn cỏ khô thường xuyên.\n<br>•\tĐảm bảo khoảng cách đủ giữa các cây để thúc đẩy luồng không khí, giảm độ ẩm và tạo điều kiện ít thuận lợi cho sự phát triển của gỉ sắt trên cây ngô.\n<br>•\tLoại bỏ và xử lý mảnh vụn thực vật bị nhiễm để giảm nguồn lây nhiễm.\n<br>•\tChọn các giống cỏ kháng gỉ sắt trên cây ngô bất cứ khi nào có thể.\n\n"
+                                },
+                                {
+                                    "subtitle": "Áp dụng thuốc trừ nấm",
+                                    "description": "Trong trường hợp vấn đề gỉ sắt trên cây ngô dai dẳng, việc áp dụng thuốc trừ nấm có mục tiêu có thể cần thiết.\n<br>•\tTriazoles: Tebuconazole, Propiconazole, và Metconazole<br>•\tStrobilurins: Azoxystrobin, Pyraclostrobin<br>•\tThuốc trừ nấm dựa trên đồng: Copper sulfate, Copper hydroxide Mancozeb (Bonide® Orchard Spray)<br>•\tDithiocarbamates: Maneb, Mancozeb\nĐây là các thuốc trừ nấm thường được sử dụng để ngăn ngừa bệnh này.\n\nTuy nhiên, việc sử dụng các tác nhân này một cách cẩn thận và theo hướng dẫn trên nhãn là rất quan trọng để tránh tác động tiêu cực không mong muốn đến các sinh vật khác trong hệ sinh thái."
+                                }
+                            ],
+                            "host": [
+                                "tất cả các loại cỏ ",
+                                "các loại hoa khác nhau"
+                            ],
+                            "images": [
+                                {
+                                    "license": 9,
+                                    "license_name": "Tuyên Bố Dành Cho Miền Công Cộng (CC0)",
+                                    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+                                    "original_url": "https://perenual.com/storage/species_disease/6_p/og/13034637154_1c0ffb57b9_b.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/6_p/regular/13034637154_1c0ffb57b9_b.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/6_p/medium/13034637154_1c0ffb57b9_b.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/6_p/small/13034637154_1c0ffb57b9_b.jpg",
+                                    "thumbnail": "https://kythuattrongcay.vn/wp-content/uploads/2024/07/ri-sat-tren-bap.jpg"
+                                },
+                                {
+                                    "license": 9,
+                                    "license_name": "Tuyên Bố Dành Cho Miền Công Cộng (CC0)",
+                                    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+                                    "original_url": "https://perenual.com/storage/species_disease/6_p/og/13034698824_0940102091_b.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/6_p/regular/13034698824_0940102091_b.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/6_p/medium/13034698824_0940102091_b.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/6_p/small/13034698824_0940102091_b.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/6_p/thumbnail/13034698824_0940102091_b.jpg"
+                                },
+                                {
+                                    "license": 9,
+                                    "license_name": "Tuyên Bố Dành Cho Miền Công Cộng (CC0)",
+                                    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+                                    "original_url": "https://perenual.com/storage/species_disease/6_puccinia_spp/og/13034637154_1c0ffb57b9_b.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/6_puccinia_spp/regular/13034637154_1c0ffb57b9_b.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/6_puccinia_spp/medium/13034637154_1c0ffb57b9_b.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/6_puccinia_spp/small/13034637154_1c0ffb57b9_b.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/6_puccinia_spp/thumbnail/13034637154_1c0ffb57b9_b.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 7,
+                            "common_name": "Thối Lá Hạnh Nhân (Thối Lá Do Vi Khuẩn)",
+                            "scientific_name": "Xylella fastidiosa",
+                            "other_name": [
+                                "Thối lá do vi khuẩn (thối lá hạnh nhân)",
+                                "Bệnh Pierce",
+                                "Thối lá oleander"
+                            ],
+                            "family": null,
+                            "description": [
+                                {
+                                    "subtitle": "Thối Lá Hạnh Nhân (Xylella fastidiosa) là gì?",
+                                    "description": "Thối lá hạnh nhân là một bệnh cây do vi khuẩn Xylella fastidiosa gây ra. Nó chịu trách nhiệm gây ra bệnh Pierce ở cây nho và bệnh lùn cỏ linh lăng, ảnh hưởng đến nhiều loại cây và cỏ dại. Một triệu chứng đáng chú ý của thối lá hạnh nhân là màu vàng kim đặc trưng mà tán cây bị nhiễm nặng thể hiện, dẫn đến bệnh được gọi là \"cái chết vàng.\" Mặc dù các cây hạnh nhân bị ảnh hưởng có thể sống sót trong nhiều năm, sức khỏe, sự phát triển và năng suất tổng thể của chúng bị ảnh hưởng đáng kể."
+                                },
+                                {
+                                    "subtitle": "Thối Lá Hạnh Nhân (Xylella fastidiosa) xảy ra như thế nào?",
+                                    "description": "Xylella fastidiosa, vi khuẩn gây ra thối lá hạnh nhân, tái tạo và lan truyền chủ yếu qua các vectơ côn trùng. Các côn trùng như leafhoppers và spittlebugs thu nhận vi khuẩn khi ăn trên cây bị nhiễm và truyền nó sang cây khỏe mạnh trong các lần ăn tiếp theo. Các cây bị nhiễm hoạt động như bể chứa, cho phép vi khuẩn tồn tại và lan truyền qua hoạt động côn trùng hoặc di chuyển vật liệu cây bị nhiễm. Ngoài ra, việc truyền nhiễm có thể xảy ra bằng cách sử dụng dụng cụ ghép hoặc cắt tỉa bị nhiễm."
+                                }
+                            ],
+                            "solution": [
+                                {
+                                    "subtitle": "Lựa chọn cây trồng và vệ sinh",
+                                    "description": "•\tSử dụng các giống cây hạnh nhân kháng bệnh để giảm khả năng bị nhiễm.\n<br>•\tDuy trì vệ sinh vườn cây bằng cách loại bỏ và tiêu hủy vật liệu cây bị nhiễm, bao gồm cả cây bị nhiễm.\n<br>•\tCắt tỉa và loại bỏ các cành hoặc nhánh khung bị nhiễm dưới các triệu chứng nhìn thấy, tuân theo các thực hành vệ sinh đúng cách.\n"
+                                },
+                                {
+                                    "subtitle": "Kiểm soát côn trùng và quản lý căng thẳng",
+                                    "description": "•\tThực hiện các chiến lược quản lý sâu bệnh tổng hợp để kiểm soát các vectơ côn trùng như leafhoppers và spittlebugs.\n<br>•\tThực hành kỹ thuật tưới nước đúng cách để ngăn ngừa căng thẳng cây, vì cây bị căng thẳng dễ bị bệnh hơn.\n<br>•\tKiểm tra đất, sửa chữa các thiếu hụt/bất cân bằng và điều chỉnh pH nếu cần thiết.\n"
+                                },
+                                {
+                                    "subtitle": "Xử lý hóa học",
+                                    "description": "•\tTiêm kháng sinh: Làm chậm sự lan truyền bệnh nhưng không chữa khỏi cây. Đắt đỏ và yêu cầu điều trị liên tục. Tetracycline, Oxytetracycline, Chlortetracycline và Streptomycin đã được sử dụng để điều trị Xylella fastidiosa trong một số trường hợp theo khuyến nghị và quy định địa phương. Các vị trí tiêm cũng có thể dễ bị xâm chiếm bởi nấm gây hại."
+                                }
+                            ],
+                            "host": [
+                                "hạnh nhân",
+                                "anh đào",
+                                "nho",
+                                "oleander"
+                            ],
+                            "images": [
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/7_xylella_fastidiosa/og/Ahorn_Krankheit_9980.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/7_xylella_fastidiosa/regular/Ahorn_Krankheit_9980.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/7_xylella_fastidiosa/medium/Ahorn_Krankheit_9980.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/7_xylella_fastidiosa/small/Ahorn_Krankheit_9980.jpg",
+                                    "thumbnail": "https://www.promegaconnections.com/wp-content/uploads/2024/03/X-fastidiosa_olive-1024x683.jpeg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 8,
+                            "common_name": "Thối Rễ Armillaria (Nấm Rễ Sồi)",
+                            "scientific_name": "Armillaria mellea",
+                            "other_name": [
+                                "Nấm mật",
+                                "Nấm rễ sồi (thối rễ Armillaria)",
+                                "Thối rễ Armillaria",
+                                "Thối gỗ (chung)"
+                            ],
+                            "family": null,
+                            "description": [
+                                {
+                                    "subtitle": "Thối Rễ Armillaria (Armillaria mellea) là gì?",
+                                    "description": "Thối rễ Armillaria, do các nấm Armillaria gây ra, ảnh hưởng đến nhiều loại cây như cây, cây cọ, dương xỉ và nhiều hơn nữa. Cũng được biết đến như \"nấm rễ sồi\", nó thường xảy ra trong các vườn nhà, công viên, vườn nho và cây trồng tại California. Các cây bị nhiễm bệnh thể hiện các triệu chứng như suy giảm, lá héo, chết nhanh, chảy nhựa, rụng lá, chết cành, thưa thớt và các vết loét phẳng trên thân cây. Thối rễ Armillaria được chỉ ra bởi sự hiện diện của Nấm mực màu nâu nhạt, quạt sợi nấm và các rhizomorphs màu đen."
+                                },
+                                {
+                                    "subtitle": "Thối Rễ Armillaria (Armillaria mellea) xảy ra như thế nào?",
+                                    "description": "Thối rễ Armillaria lan truyền qua tiếp xúc rễ với rễ giữa các cây và bằng cách giải phóng bào tử qua Nấm mực. Nấm tái tạo bằng cách sinh sản vô tính khi rễ tiếp xúc với nhau. Nó cũng tái tạo hữu tính bằng cách giải phóng bào tử có thể xâm chiếm các gốc cây chết hoặc mảnh vụn gỗ gần đó. Để thiết lập sự phát triển mới, hai bào tử với một nửa vật liệu di truyền của cha mẹ phải hợp nhất trong cùng một mảnh gỗ. Quá trình này dẫn đến việc hình thành Nấm mực và giải phóng bào tử để lan truyền thêm."
+                                }
+                            ],
+                            "solution": [
+                                {
+                                    "subtitle": "Lựa chọn cây trồng và thực hành văn hóa tốt",
+                                    "description": "•\tChọn các loài hoặc giống cây kháng bệnh ít bị nhiễm Armillaria.\n<br>•\tĐảm bảo kỹ thuật trồng cây đúng cách, bao gồm thoát nước đất tốt và tránh trồng quá sâu.\n<br>•\tDuy trì sức khỏe cây qua tưới nước, bón phân và cắt tỉa đúng cách.\n<br>•\tTránh tưới quá nhiều hoặc tạo điều kiện ngập úng.\n"
+                                },
+                                {
+                                    "subtitle": "Quản lý đất và loại bỏ vật liệu bị nhiễm",
+                                    "description": "•\tCải thiện thoát nước đất bằng cách bổ sung chất hữu cơ, như compost, và tránh tưới quá nhiều.\n<br>•\tNhanh chóng loại bỏ và tiêu hủy cây, rễ và gốc cây bị nhiễm để ngăn chặn sự lan truyền của nấm.\n"
+                                },
+                                {
+                                    "subtitle": "Kiểm soát hóa học",
+                                    "description": "•\tDưới đây là một số thuốc trừ nấm thường được sử dụng để kiểm soát thối rễ Armillaria: thuốc trừ nấm dựa trên phosphite (ví dụ: potassium phosphite), thiophanate-methyl, metalaxyl, propiconazole và fluazinam. Các thuốc trừ nấm này có thể hiệu quả trong việc quản lý bệnh,\n<br>•\tQuan trọng là phải tuân theo hướng dẫn trên nhãn và tham khảo ý kiến chuyên gia để có các khuyến nghị cụ thể.\n"
+                                }
+                            ],
+                            "host": [
+                                "hạnh nhân",
+                                "táo",
+                                "bạch dương",
+                                "cẩm chướng",
+                                "cam chanh",
+                                "bạch dương cottonwood",
+                                "nho",
+                                "lê",
+                                "bạch dương poplar",
+                                "trái cây hạt",
+                                "các loại hoa khác nhau",
+                                "các loại trái cây và hạt",
+                                "các loại cây và cây bụi khác nhau",
+                                "óc chó"
+                            ],
+                            "images": [
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/8_a/og/Armillaria_mellea%2C_Honey_Fungus%2C_UK%2C_3.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/8_a/regular/Armillaria_mellea%2C_Honey_Fungus%2C_UK%2C_3.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/8_a/medium/Armillaria_mellea%2C_Honey_Fungus%2C_UK%2C_3.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/8_a/small/Armillaria_mellea%2C_Honey_Fungus%2C_UK%2C_3.jpg",
+                                    "thumbnail": "https://bizweb.dktcdn.net/thumb/grande/100/444/989/files/vang-la-thoi-re-bieu-hien.jpg?v=1731059371930"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/8_a/og/Armillaria_mellea%2C_Honey_Fungus%2C_UK_2.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/8_a/regular/Armillaria_mellea%2C_Honey_Fungus%2C_UK_2.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/8_a/medium/Armillaria_mellea%2C_Honey_Fungus%2C_UK_2.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/8_a/small/Armillaria_mellea%2C_Honey_Fungus%2C_UK_2.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/8_a/thumbnail/Armillaria_mellea%2C_Honey_Fungus%2C_UK_2.jpg"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/8_a/og/Armillaria_mellea_in_Sochi_14112015.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/8_a/regular/Armillaria_mellea_in_Sochi_14112015.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/8_a/medium/Armillaria_mellea_in_Sochi_14112015.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/8_a/small/Armillaria_mellea_in_Sochi_14112015.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/8_a/thumbnail/Armillaria_mellea_in_Sochi_14112015.jpg"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/8_a/og/Armillaria_mellea_Sochi_14112015.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/8_a/regular/Armillaria_mellea_Sochi_14112015.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/8_a/medium/Armillaria_mellea_Sochi_14112015.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/8_a/small/Armillaria_mellea_Sochi_14112015.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/8_a/thumbnail/Armillaria_mellea_Sochi_14112015.jpg"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/8_armillaria_mellea/og/2560px-Armillaria_mellea2C_Honey_Fungus2C_UK_1.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/8_armillaria_mellea/regular/2560px-Armillaria_mellea2C_Honey_Fungus2C_UK_1.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/8_armillaria_mellea/medium/2560px-Armillaria_mellea2C_Honey_Fungus2C_UK_1.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/8_armillaria_mellea/small/2560px-Armillaria_mellea2C_Honey_Fungus2C_UK_1.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/8_armillaria_mellea/thumbnail/2560px-Armillaria_mellea2C_Honey_Fungus2C_UK_1.jpg"
+                                },
+                                {
+                                    "license": 45,
+                                    "license_name": "Giấy Phép Ghi Nhận-Chia Sẻ Giống 3.0 Không Giới Hạn (CC BY-SA 3.0)",
+                                    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+                                    "original_url": "https://perenual.com/storage/species_disease/8_armillaria_mellea/og/2560px-Armillaria_mellea2C_Honey_Fungus2C_UK2C_3.jpg",
+                                    "regular_url": "https://perenual.com/storage/species_disease/8_armillaria_mellea/regular/2560px-Armillaria_mellea2C_Honey_Fungus2C_UK2C_3.jpg",
+                                    "medium_url": "https://perenual.com/storage/species_disease/8_armillaria_mellea/medium/2560px-Armillaria_mellea2C_Honey_Fungus2C_UK2C_3.jpg",
+                                    "small_url": "https://perenual.com/storage/species_disease/8_armillaria_mellea/small/2560px-Armillaria_mellea2C_Honey_Fungus2C_UK2C_3.jpg",
+                                    "thumbnail": "https://perenual.com/storage/species_disease/8_armillaria_mellea/thumbnail/2560px-Armillaria_mellea2C_Honey_Fungus2C_UK2C_3.jpg"
+                                }
+                            ]
+                        }
+                    ]
+                };
+                cardContainer.innerHTML = '';
+                fallbackData.data.forEach(disease => {
+                    const thumbnail = disease.images && disease.images.length > 0
+                        ? disease.images[0].thumbnail
+                        : 'https://via.placeholder.com/150';
+                    const description = disease.description && disease.description.length > 0
+                        ? disease.description[0].description
+                        : 'No description available';
+                    const card = `
+                        <div class="col-md-3 mb-4">
+                            <div class="card h-100" onclick='showDiseaseDetails(${JSON.stringify(disease)})'>
+                                <img src="${thumbnail}" class="card-img-top" alt="${disease.common_name || 'Unknown Disease'}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${disease.common_name || 'Unknown Disease'}</h5>
+                                    <h6 class="card-subtitle mb-2">Tên khoa học: ${disease.scientific_name || 'N/A'}</h6>
+                                    <p class="card-text">${description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    cardContainer.innerHTML += card;
+                });
+            }
+        }
+
+        function showDiseaseDetails(disease) {
+            const modalImage = document.getElementById('modalImage');
+            const modalCommonName = document.getElementById('modalCommonName');
+            const modalScientificName = document.getElementById('modalScientificName');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalSolution = document.getElementById('modalSolution');
+            const modalHost = document.getElementById('modalHost');
+            const thumbnail = disease.images && disease.images.length > 0
+                ? disease.images[0].thumbnail
+                : 'https://via.placeholder.com/150';
+
+            modalImage.src = thumbnail;
+            modalCommonName.textContent = disease.common_name || 'Unknown Disease';
+            modalScientificName.textContent = disease.scientific_name || 'N/A';
+
+            // Combine all descriptions
+            let descriptionText = '';
+            if (disease.description && disease.description.length > 0) {
+                disease.description.forEach(desc => {
+                    descriptionText += `<p><strong>${desc.subtitle}</strong></p><p>${desc.description}</p>`;
+                });
+            } else {
+                descriptionText = '<p>No description available</p>';
+            }
+            modalDescription.innerHTML = descriptionText;
+
+            // Combine all solutions
+            let solutionText = '';
+            if (disease.solution && disease.solution.length > 0) {
+                disease.solution.forEach(sol => {
+                    solutionText += `<p><strong>${sol.subtitle}</strong></p><p>${sol.description}</p>`;
+                });
+            } else {
+                solutionText = '<p>No solution available</p>';
+            }
+            modalSolution.innerHTML = solutionText;
+
+            // Combine all hosts
+            let hostText = '';
+            if (disease.host && disease.host.length > 0) {
+                hostText = disease.host.join(', ');
+            } else {
+                hostText = 'No host information available';
+            }
+            modalHost.textContent = hostText;
+
+            // Show the modal
+            const modal = new bootstrap.Modal(document.getElementById('diseaseModal'));
+            modal.show();
+        }
+
+        // Load the plant diseases when the page loads
+        window.onload = loadPlantDiseases;
+    </script>
+    <script>
+        async function loadPlantSpecies() {
+            const cardContainer = document.getElementById('speciesCards');
+            try {
+                // Fetch the local JSON file
+                const response = await fetch('./plant_species.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                }
+                const data = await response.json();
+
+                // Check if data.data exists and is an array
+                if (!data.data || !Array.isArray(data.data)) {
+                    throw new Error('Invalid JSON structure: "data" array not found');
+                }
+
+                // Clear any existing content
+                cardContainer.innerHTML = '';
+
+                // Loop through species and create cards
+                data.data.forEach(species => {
+                    const thumbnail = species.images && species.images.length > 0
+                        ? species.images[0].thumbnail
+                        : 'https://via.placeholder.com/150';
+                    const description = species.description && species.description.length > 0
+                        ? species.description[0].description
+                        : 'No description available';
+                    const card = `
+                <div class="col-md-2 mb-4">
+                    <div class="card h-100" onclick='showSpeciesDetails(${JSON.stringify(species)})'>
+                        <img src="${thumbnail}" class="card-img-top" alt="${species.common_name || 'Unknown Species'}">
+                        <div class="card-body">
+                            <h5 class="card-title">${species.common_name || 'Unknown Species'}</h5>
+                            <h6 class="card-subtitle mb-2">${species.scientific_name || 'N/A'}</h6>
+                            <p class="card-text">${description}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+                    cardContainer.innerHTML += card;
+                });
+            } catch (error) {
+                console.error('Error loading plant species data:', error.message);
+                cardContainer.innerHTML = `
+            <div class="col-12">
+                <p class="text-danger">Error loading plant species data: ${error.message}</p>
+                <p class="text-muted">Please ensure the 'plant_species.json' file is in the same directory as this HTML file and run the page using a local web server (e.g., 'python -m http.server 8000').</p>
+            </div>
+        `;
+                // Fallback: Use sample data for testing
+                const fallbackData = {
+                    data: [
+                        {
+                            "id": 4,
+                            "common_name": "Cây Khoai Tây Solanum tuberosum",
+                            "scientific_name": "Solanum tuberosum",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Khoai Tây (Solanum tuberosum) là gì?",
+                                    "description": "Khoai tây là một loại cây lương thực quan trọng, được trồng để lấy củ. Củ khoai tây là nguồn cung cấp carbohydrate dồi dào và được dùng làm thực phẩm chính ở nhiều nơi trên thế giới."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất tơi xốp, thoát nước tốt, giàu mùn.<br>• Tưới nước đều đặn, tránh để đất quá khô hoặc quá ẩm.<br>• Vun luống khi cây phát triển để bảo vệ củ khỏi ánh sáng mặt trời.<br>• Bón phân cân đối, đặc biệt là kali."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 15-25°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/R.163ddeb320230569926f294f7716f602?rik=AdIb3sc%2bQ%2fdVQw&pid=ImgRaw&r=0"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 5,
+                            "common_name": "Cây Lạc Arachis hypogaea",
+                            "scientific_name": "Arachis hypogaea",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Lạc/Đậu Phộng (Arachis hypogaea) là gì?",
+                                    "description": "Cây lạc là một loại cây họ đậu được trồng để lấy hạt. Hạt lạc giàu protein và chất béo, được sử dụng làm thực phẩm, dầu ăn và thức ăn chăn nuôi."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất cát pha hoặc đất thịt nhẹ, tơi xốp, thoát nước tốt.<br>• Tưới nước đầy đủ, đặc biệt trong giai đoạn ra hoa và hình thành củ.<br>• Cần ánh sáng mặt trời trực tiếp.<br>• Bón phân lân và kali."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 25-30°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/R.4d4e1a7c45aa39b5b9905c6b9d043437?rik=cs7lMqRlBuL7Bg&pid=ImgRaw&r=0"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "common_name": "Cây Đậu Tương Glycine max",
+                            "scientific_name": "Glycine max",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Đậu Tương/Đậu Nành (Glycine max) là gì?",
+                                    "description": "Đậu tương là một loại cây họ đậu có giá trị dinh dưỡng cao, được sử dụng rộng rãi làm thực phẩm (đậu phụ, sữa đậu nành), dầu ăn, và thức ăn chăn nuôi."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất màu mỡ, tơi xốp, thoát nước tốt.<br>• Tưới nước đều đặn, tránh ngập úng.<br>• Hạn chế bón phân đạm vì cây có khả năng cố định đạm từ không khí.<br>• Bón bổ sung lân và kali."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 20-30°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://agrotek.id/wp-content/uploads/2019/11/Cara-Pengendalian-Hama-dan-Penyakit-Tanaman-Kacang-Koro.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 7,
+                            "common_name": "Cây Mía Saccharum officinarum",
+                            "scientific_name": "Saccharum officinarum",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Mía (Saccharum officinarum) là gì?",
+                                    "description": "Cây mía là một loại cây thân thảo cao, được trồng chủ yếu để sản xuất đường. Nước mía cũng là một loại đồ uống giải khát phổ biến."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Cần nhiều nước, đặc biệt trong giai đoạn phát triển thân.<br>• Đất phù sa hoặc đất thịt nặng, giàu dinh dưỡng.<br>• Bón phân cân đối, đặc biệt là đạm và kali.<br>• Cần môi trường ấm áp, nhiều nắng."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 25-35°C",
+                                "Độ ẩm: Cao",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/OIP.ZSLBaYhZLacIfBnV2tFCSgHaEK?rs=1&pid=ImgDetMain"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 8,
+                            "common_name": "Cây Sắn Manihot esculenta",
+                            "scientific_name": "Manihot esculenta",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Sắn/Khoai Mì (Manihot esculenta) là gì?",
+                                    "description": "Cây sắn là một loại cây lương thực nhiệt đới, được trồng để lấy củ. Củ sắn giàu tinh bột, được sử dụng làm thực phẩm, thức ăn chăn nuôi và nguyên liệu công nghiệp."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Dễ trồng, thích nghi với nhiều loại đất, kể cả đất nghèo dinh dưỡng.<br>• Chịu hạn tốt.<br>• Không cần quá nhiều nước.<br>• Bón phân hữu cơ và phân vô cơ tùy theo độ phì nhiêu của đất."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 25-35°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/OIP.t_gP6jWcApxiNdDhkhebKwHaEK?rs=1&pid=ImgDetMain"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 9,
+                            "common_name": "Cây Bông Gossypium hirsutum",
+                            "scientific_name": "Gossypium hirsutum",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Bông (Gossypium hirsutum) là gì?",
+                                    "description": "Cây bông là cây công nghiệp quan trọng, được trồng để lấy sợi bông từ quả. Sợi bông là nguyên liệu chính trong ngành dệt may."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất cát pha hoặc đất thịt nhẹ, thoát nước tốt.<br>• Cần đủ nước trong giai đoạn ra hoa và hình thành quả.<br>• Bón phân cân đối, đặc biệt là đạm, lân và kali.<br>• Cần ánh sáng mặt trời đầy đủ."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 25-30°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/OIP.ZwnnwnOdqNbb7LlfEhyDWwHaE9?w=1024&h=685&rs=1&pid=ImgDetMain"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 10,
+                            "common_name": "Cây Hạt Điều Anacardium occidentale",
+                            "scientific_name": "Anacardium occidentale",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Hạt Điều (Anacardium occidentale) là gì?",
+                                    "description": "Cây hạt điều là cây công nghiệp lâu năm, được trồng để lấy hạt điều. Hạt điều là một loại hạt dinh dưỡng, được sử dụng làm thực phẩm và chế biến."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Thích nghi với nhiều loại đất, đặc biệt là đất đồi, đất cát pha.<br>• Chịu hạn tốt.<br>• Cần ánh sáng mặt trời đầy đủ.<br>• Bón phân hữu cơ và vô cơ định kỳ."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 25-35°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/OIP.V8IDIVYDOdK9HzaxbdYCygHaFA?rs=1&pid=ImgDetMain"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 11,
+                            "common_name": "Cây Hồ Tiêu Piper nigrum",
+                            "scientific_name": "Piper nigrum",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Hồ Tiêu (Piper nigrum) là gì?",
+                                    "description": "Cây hồ tiêu là cây thân leo, được trồng để lấy quả làm gia vị. Hạt tiêu là một trong những loại gia vị phổ biến nhất thế giới."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất giàu dinh dưỡng, thoát nước tốt, hơi chua.<br>• Cần độ ẩm cao, đặc biệt trong mùa khô.<br>• Cần cây trụ để leo bám.<br>• Bón phân hữu cơ và phân vô cơ định kỳ."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 20-30°C",
+                                "Độ ẩm: Cao",
+                                "Ánh sáng: Ánh sáng tán xạ hoặc một phần bóng râm"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/OIP.t6qtcDJ6zOUbBqfXA_iQ_wHaEK?rs=1&pid=ImgDetMain"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 12,
+                            "common_name": "Cây Cao Su Hevea brasiliensis",
+                            "scientific_name": "Hevea brasiliensis",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Cao Su (Hevea brasiliensis) là gì?",
+                                    "description": "Cây cao su là cây công nghiệp lâu năm, được trồng để lấy mủ (latex) làm nguyên liệu sản xuất cao su tự nhiên."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất feralit hoặc đất đỏ bazan, thoát nước tốt.<br>• Cần lượng mưa lớn và độ ẩm cao.<br>• Bón phân định kỳ, đặc biệt là kali.<br>• Cần ánh sáng mặt trời đầy đủ."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 25-30°C",
+                                "Độ ẩm: Cao",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://i.ytimg.com/vi/OO1mNg8J-gw/maxresdefault.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 13,
+                            "common_name": "Cây Chè Camellia sinensis",
+                            "scientific_name": "Camellia sinensis",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Chè/Trà (Camellia sinensis) là gì?",
+                                    "description": "Cây chè là cây bụi hoặc cây gỗ nhỏ, được trồng để lấy lá và búp chế biến thành trà. Trà là một trong những đồ uống phổ biến nhất thế giới."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất chua, tơi xốp, thoát nước tốt.<br>• Cần độ ẩm cao và lượng mưa dồi dào.<br>• Trồng ở vùng cao, khí hậu mát mẻ.<br>• Bón phân hữu cơ và phân NPK chuyên dụng cho cây chè."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 18-25°C",
+                                "Độ ẩm: Cao",
+                                "Ánh sáng: Ánh sáng tán xạ hoặc một phần bóng râm"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://v2.coffeecdn.com/uploads/allimg/210902/21-210Z21T9521F.jpg"
+                                }
+                            ]
+                        }, {
+                            "id": 9,
+                            "common_name": "Cây Xoài Mangifera indica",
+                            "scientific_name": "Mangifera indica",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Xoài (Mangifera indica) là gì?",
+                                    "description": "Cây xoài là một loại cây ăn quả thuộc họ Anacardiaceae, được trồng để lấy quả ngọt, giàu vitamin C và phổ biến ở vùng nhiệt đới."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất thoát nước tốt, giàu dinh dưỡng.\n• Tưới nước vừa phải, tránh ngập.\n• Bón phân hữu cơ và tỉa cành định kỳ."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 24-35°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng trực tiếp"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://res.cloudinary.com/dtfpvrnp2/image/upload/v1745673455/afl24tkpgycwmk5stdvw.webp"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 10,
+                            "common_name": "Cây Chuối Musa spp.",
+                            "scientific_name": "Musa spp.",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Chuối (Musa spp.) là gì?",
+                                    "description": "Cây chuối là một loại cây ăn quả thuộc họ Musaceae, được trồng để lấy quả và thân cây làm thực phẩm và nguyên liệu thủ công."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất giàu dinh dưỡng, giữ ẩm.\n• Tưới nước thường xuyên.\n• Bón phân hữu cơ và loại bỏ lá già."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 25-30°C",
+                                "Độ ẩm: Cao",
+                                "Ánh sáng: Ánh sáng đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://uniontrading.vn/wp-content/uploads/2021/11/giong-chuoi-khong-lo-Musa-ingens-banana-hinh-anh-1-1200x796.jpg"
+                                }
+                            ]
+                        }
+                    ]
+                };
+
+                cardContainer.innerHTML = '';
+                fallbackData.data.forEach(species => {
+                    const thumbnail = species.images && species.images.length > 0
+                        ? species.images[0].thumbnail
+                        : 'https://via.placeholder.com/150';
+                    const description = species.description && species.description.length > 0
+                        ? species.description[0].description
+                        : 'No description available';
+                    const card = `
+                <div class="col-md-2 mb-4">
+                    <div class="card h-100" onclick='showSpeciesDetails(${JSON.stringify(species)})'>
+                        <img src="${thumbnail}" class="card-img-top" alt="${species.common_name || 'Unknown Species'}" style="height: 100px; object-fit: cover;">
+                        <div class="card-body">
+                            <p><b>${species.common_name || 'Unknown Species'}</b></p>
+                            <p class="card-text" style="color: #1bbfa0 ">${description}</p> 
+                        </div>
+                    </div>
+                </div>
+            `;
+                    cardContainer.innerHTML += card;
+                });
+            }
+        }
+
+        function showSpeciesDetails(species) {
+            const modalImage = document.getElementById('speciesModalImage');
+            const modalCommonName = document.getElementById('speciesModalCommonName');
+            const modalScientificName = document.getElementById('speciesModalScientificName');
+            const modalDescription = document.getElementById('speciesModalDescription');
+            const modalCare = document.getElementById('speciesModalCare');
+            const modalEnvironment = document.getElementById('speciesModalEnvironment');
+            const thumbnail = species.images && species.images.length > 0
+                ? species.images[0].thumbnail
+                : 'https://via.placeholder.com/150';
+
+            // Set image and basic text content
+            modalImage.src = thumbnail;
+            modalCommonName.textContent = species.common_name || 'Unknown Species';
+            modalScientificName.textContent = species.scientific_name || 'N/A';
+
+            // Handle description with line breaks
+            let descriptionText = '';
+            if (species.description && species.description.length > 0) {
+                species.description.forEach(desc => {
+                    descriptionText += `<p><strong>${desc.subtitle}</strong></p><p>${desc.description.replace(/\n/g, '<br>')}</p>`;
+                });
+            } else {
+                descriptionText = '<p>No description available</p>';
+            }
+            modalDescription.innerHTML = descriptionText;
+
+            // Handle care instructions with line breaks
+            let careText = '';
+            if (species.care && species.care.length > 0) {
+                species.care.forEach(care => {
+                    careText += `<p><strong>${care.subtitle}</strong></p><p>${care.description.replace(/\n/g, '<br>')}</p>`;
+                });
+            } else {
+                careText = '<p>No care instructions available</p>';
+            }
+            modalCare.innerHTML = careText;
+
+            // Handle environment conditions with line breaks
+            let environmentText = '';
+            if (species.environment && species.environment.length > 0) {
+                environmentText = species.environment.map(item => `<p>${item}</p>`).join('');
+            } else {
+                environmentText = '<p>No environment information available</p>';
+            }
+            modalEnvironment.innerHTML = environmentText;
+
+            // Show the modal
+            const modal = new bootstrap.Modal(document.getElementById('speciesModal'));
+            modal.show();
+        }     // Load both plant diseases and species when the page loads
+        window.onload = function () {
+            loadPlantDiseases();
+            loadPlantSpecies();
+        };
+    </script>
+    <script>
+        document.getElementById('openChat').addEventListener('click', function () {
+            document.getElementById('chatPopup').style.display = 'block';
+            document.getElementById('openChat').style.display = 'none';
+        });
+
+        document.getElementById('closeChat').addEventListener('click', function () {
+            document.getElementById('chatPopup').style.display = 'none';
+            document.getElementById('openChat').style.display = 'flex';
+        });
+
+        async function sendToBot(message) {
+            try {
+                const response = await fetch('http://localhost:5000/api/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: message })
+                });
+                if (!response.ok) {
+                    throw new Error('API request failed');
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error:', error);
+                return { final_response: 'Đã xảy ra lỗi khi xử lý yêu cầu. Vui lòng thử lại.' };
+            }
+        }
+
+        function handleRelatedQuestionClick(question) {
+            document.getElementById('chatInput').value = question;
+            document.getElementById('sendMessage').click();
+            document.getElementById('chatInput').value = '';
+
+        }
+
+        async function typeText(element, text, delay = 30) {
+            element.innerHTML = ''; // Clear element content
+            for (let i = 0; i < text.length; i++) {
+                element.innerHTML = element.innerHTML.slice(0, -1) + text[i] + '|';
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+            element.innerHTML = element.innerHTML.slice(0, -1); // Remove cursor
+        }
+
+        async function formatBotResponse(data) {
+            const { final_response, related_questions } = data;
+            const container = document.createElement('div');
+            container.className = 'chat-message bot-message';
+
+            // Split the response into sections based on headers
+            const sections = final_response.split(/\*\*(.*?)\*\*:/);
+            let formattedHtml = '';
+
+            for (let i = 1; i < sections.length; i += 2) {
+                const header = sections[i].trim();
+                const content = sections[i + 1].trim();
+
+                formattedHtml += `<h3>${header}</h3>`;
+
+                const lines = content.split('\n').filter(line => line.trim());
+                let inList = false;
+
+                lines.forEach(line => {
+                    if (line.startsWith('* ')) {
+                        if (!inList) {
+                            formattedHtml += '<ul>';
+                            inList = true;
+                        }
+                        formattedHtml += `<li>${line.substring(2).trim()}</li>`;
+                    } else {
+                        if (inList) {
+                            formattedHtml += '</ul>';
+                            inList = false;
+                        }
+                        formattedHtml += `<p>${line}</p>`;
+                    }
+                });
+
+                if (inList) {
+                    formattedHtml += '</ul>';
+                }
+            }
+
+            container.innerHTML = formattedHtml;
+
+            // Type out headers, paragraphs, and list items
+            const elementsToType = container.querySelectorAll('h3, p, li');
+            for (const element of elementsToType) {
+                const text = element.textContent;
+                element.textContent = '';
+                await typeText(element, text);
+            }
+
+            // Add related questions if available
+            if (related_questions && Array.isArray(related_questions)) {
+                const relatedQuestionsDiv = document.createElement('div');
+                relatedQuestionsDiv.className = 'related-questions';
+                relatedQuestionsDiv.innerHTML = '<strong>Câu hỏi liên quan:</strong>';
+
+                const questionsList = document.createElement('ul');
+                related_questions.forEach(q => {
+                    const questionItem = document.createElement('li');
+                    const questionLink = document.createElement('a');
+                    questionLink.href = '#';
+                    questionLink.textContent = q.question;
+                    questionLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        handleRelatedQuestionClick(q.question);
+                    });
+                    questionItem.appendChild(questionLink);
+                    questionsList.appendChild(questionItem);
+                });
+
+                relatedQuestionsDiv.appendChild(questionsList);
+                container.appendChild(relatedQuestionsDiv);
+            }
+
+            return container;
+        }
+
+        document.getElementById('sendMessage').addEventListener('click', async function () {
+            const chatInput = document.getElementById('chatInput');
+            const chatBody = document.getElementById('chatBody');
+            const messageText = chatInput.value.trim();
+
+            if (messageText) {
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message user-message';
+                userMessage.textContent = messageText;
+                chatBody.appendChild(userMessage);
+
+                const responseData = await sendToBot(messageText);
+                const botMessage = await formatBotResponse(responseData);
+                chatBody.appendChild(botMessage);
+
+                chatInput.value = '';
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+        });
+
+        document.getElementById('chatInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.getElementById('sendMessage').click();
+                document.getElementById('chatInput').value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
