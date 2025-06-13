@@ -122,7 +122,7 @@
         }
 
         .chat-header {
-            background-color: #7066E0;
+            background-color: #4CC7AB;
             color: white;
             padding: 10px;
             border-top-left-radius: 10px;
@@ -350,6 +350,15 @@
             background-color: #8b83e6;
             color: white;
         }
+        .btn-send{
+            background-color: #4CC7AB !important;
+            color: white;
+        }
+         .btn-send:hover
+        {
+            background-color: #7be6cd !important;
+            color: white;
+        }
     </style>
 </head>
 
@@ -393,14 +402,9 @@
     <div class="container custom-bg py-5">
         <div class="row">
             <div class="col-lg-7 text-left">
-                <h1 class="display-4 fw-bold text-dark">Plant Care, Gardens & Farms</h1>
+                <h1 class="display-4 fw-bold text-dark">Plant Care & Garden</h1>
                 <p class="lead text-muted">
-                    Ứng dụng "Plant Care, Gardens & Farms" là một công cụ mạnh mẽ hỗ trợ người dùng trong việc chăm sóc
-                    cây trồng và quản lý vườn. Với giao diện thân thiện, ứng dụng cung cấp dữ liệu chi tiết về các loại
-                    cây, bệnh cây phổ biến, hướng dẫn chăm sóc và môi trường phát triển, bao gồm cả dự đoán bệnh qua API
-                    tùy chỉnh. Người dùng có thể truy cập thông tin qua các thẻ động, mô tả chi tiết trong modal, và
-                    nhận hỗ trợ trực tiếp qua tính năng trò chuyện tích hợp, phù hợp cho nông nghiệp, làm vườn và thực
-                    hành bền vững.
+                    Ứng dụng "Chăm Sóc Cây Trồng & Vườn" hỗ trợ người dùng Việt Nam chăm sóc cây và quản lý vườn với giao diện dễ dùng. Cung cấp thông tin về cây, bệnh cây, hướng dẫn chăm sóc phù hợp khí hậu Việt Nam, dự đoán bệnh qua ảnh, hỗ trợ hỏi đáp với hệ thống thông minh ứng dụng công nghệ RAG. Phù hợp cho nông nghiệp và làm vườn bền vững.
                 </p>
                 <div class="mt-4">
                     <a href="#" class="btn btn-start btn-lg me-2" style="width: 200px;">Bắt Đầu</a>
@@ -458,7 +462,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="speciesModalLabel">Chi Tiết Chủng Loại Cây</h5>
+                    <h5 class="modal-title" id="speciesModalLabel">Chi Tiết</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -493,7 +497,7 @@
         </div>
         <div class="chat-footer">
             <input type="text" id="chatInput" class="form-control" placeholder="Nhập tin nhắn của bạn...">
-            <button type="button" class="btn btn-primary" id="sendMessage">Gửi</button>
+            <button type="button" class="btn btn-send"  id="sendMessage" >Gửi</button>
         </div>
     </div>
     <button class="chat-button" id="openChat">

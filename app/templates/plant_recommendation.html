@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Care, Gardens & Farms</title>
+    <title>Plant Care & Gardens</title>
     <!-- Bootstrap CSS CDN -->
      <link rel="shortcut icon" href="https://perenual.com/storage/image/logo/green-logo-sm.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="description" content="Ứng dụng Plant Care, Gardens & Farms giúp người dùng chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây và phân bón.">
+    <meta name="description" content="Ứng dụng Plant Care & Gardens giúp người dùng chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây và phân bón.">
     <meta name="keywords" content="Plant Care, Gardens, Farms, chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây, phân bón">
     <!-- Bootstrap CSS CDN -->
 
@@ -71,8 +71,8 @@
             font-size: 0.9rem;
             color: #333;
             display: -webkit-box;
-            -webkit-line-clamp: 3;
-            line-clamp: 3;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
@@ -352,6 +352,11 @@
             background-color: #4CC7AB;
             color: white;
         }
+         .btn-primary:hover
+        {
+            background-color: #7be6cd;
+            color: white;
+        }
     </style>
 </head>
 
@@ -395,10 +400,10 @@
     <div class="container-fuild custom-bg p-5">
         <div class="row">
             <div class="col-lg-7 text-left">
-                <h1 class="display-4 fw-bold text-dark">Plant Care, Gardens & Farms</h1>
+                <h1 class="display-4 fw-bold text-dark">Plant Care & Gardens</h1>
                 <p class="lead text-muted">
-                    Ứng dụng "Plant Care, Gardens & Farms" là một công cụ mạnh mẽ hỗ trợ người dùng trong việc chăm sóc
-                    cây trồng và quản lý vườn. Hãy chọn 1 ảnh để chúng tôi có thể giúp bạn chẩn đoán bệnh cây trồng.
+                    Ứng dụng "Plant Care & Gardens" là một công cụ mạnh mẽ hỗ trợ người dùng trong việc chăm sóc
+                    cây trồng và quản lý vườn. Hãy trải nghiệm tính năng gợi ý về giống cây trồng cùng chúng tôi.
                 </p>
                 <div class="mt-4">
                     <a href="#" class="btn btn-start btn-lg me-2" style="width: 250px; height: 50px;"><i class="fa-solid fa-seedling"></i> Gợi ý giống
@@ -1250,11 +1255,11 @@
                         ? species.description[0].description
                         : 'No description available';
                     const card = `
-                <div class="col-md-2 mb-4">
+                <div class="col-md-1 b-4">
                     <div class="card h-100" onclick='showSpeciesDetails(${JSON.stringify(species)})'>
                         <img src="${thumbnail}" class="card-img-top" alt="${species.common_name || 'Unknown Species'}">
                         <div class="card-body">
-                            <h5 class="card-title">${species.common_name || 'Unknown Species'}</h5>
+                            <h5 class="card-title">${species.common_name || 'Unknown Species'} <i class="fa-solid fa-leaf"></i></h5>
                             <h6 class="card-subtitle mb-2">${species.scientific_name || 'N/A'}</h6>
                             <p class="card-text">${description}</p>
                         </div>
@@ -1276,7 +1281,7 @@
                     data: [
                         {
                             "id": 4,
-                            "common_name": "Cây Khoai Tây Solanum tuberosum",
+                            "common_name": "Cây Khoai Tây ",
                             "scientific_name": "Solanum tuberosum",
                             "description": [
                                 {
@@ -1303,7 +1308,7 @@
                         },
                         {
                             "id": 5,
-                            "common_name": "Cây Lạc Arachis hypogaea",
+                            "common_name": "Cây Lạc ",
                             "scientific_name": "Arachis hypogaea",
                             "description": [
                                 {
@@ -1330,7 +1335,7 @@
                         },
                         {
                             "id": 6,
-                            "common_name": "Cây Đậu Tương Glycine max",
+                            "common_name": "Cây Đậu Tương",
                             "scientific_name": "Glycine max",
                             "description": [
                                 {
@@ -1357,7 +1362,7 @@
                         },
                         {
                             "id": 7,
-                            "common_name": "Cây Mía Saccharum officinarum",
+                            "common_name": "Cây Mía",
                             "scientific_name": "Saccharum officinarum",
                             "description": [
                                 {
@@ -1384,7 +1389,7 @@
                         },
                         {
                             "id": 8,
-                            "common_name": "Cây Sắn Manihot esculenta",
+                            "common_name": "Cây Sắn",
                             "scientific_name": "Manihot esculenta",
                             "description": [
                                 {
@@ -1411,7 +1416,7 @@
                         },
                         {
                             "id": 9,
-                            "common_name": "Cây Bông Gossypium hirsutum",
+                            "common_name": "Cây Bông ",
                             "scientific_name": "Gossypium hirsutum",
                             "description": [
                                 {
@@ -1438,7 +1443,7 @@
                         },
                         {
                             "id": 10,
-                            "common_name": "Cây Hạt Điều Anacardium occidentale",
+                            "common_name": "Cây Hạt Điều ",
                             "scientific_name": "Anacardium occidentale",
                             "description": [
                                 {
@@ -1465,7 +1470,7 @@
                         },
                         {
                             "id": 11,
-                            "common_name": "Cây Hồ Tiêu Piper nigrum",
+                            "common_name": "Cây Hồ Tiêu",
                             "scientific_name": "Piper nigrum",
                             "description": [
                                 {
@@ -1492,7 +1497,7 @@
                         },
                         {
                             "id": 12,
-                            "common_name": "Cây Cao Su Hevea brasiliensis",
+                            "common_name": "Cây Cao Su ",
                             "scientific_name": "Hevea brasiliensis",
                             "description": [
                                 {
@@ -1519,7 +1524,7 @@
                         },
                         {
                             "id": 13,
-                            "common_name": "Cây Chè Camellia sinensis",
+                            "common_name": "Cây Chè",
                             "scientific_name": "Camellia sinensis",
                             "description": [
                                 {
@@ -1545,7 +1550,7 @@
                             ]
                         }, {
                             "id": 9,
-                            "common_name": "Cây Xoài Mangifera indica",
+                            "common_name": "Cây Xoài",
                             "scientific_name": "Mangifera indica",
                             "description": [
                                 {
@@ -1572,7 +1577,7 @@
                         },
                         {
                             "id": 10,
-                            "common_name": "Cây Chuối Musa spp.",
+                            "common_name": "Cây Chuối ",
                             "scientific_name": "Musa spp.",
                             "description": [
                                 {
@@ -1613,7 +1618,7 @@
                     <div class="card h-100" onclick='showSpeciesDetails(${JSON.stringify(species)})'>
                         <img src="${thumbnail}" class="card-img-top" alt="${species.common_name || 'Unknown Species'}" style="height: 100px; object-fit: cover;">
                         <div class="card-body">
-                            <p><b>${species.common_name || 'Unknown Species'}</b></p>
+                            <p><b>${species.common_name || 'Unknown Species'}</b> <i class="fa-solid fa-leaf"   style="color: #AFD716"></i></p>
                             <p class="card-text" style="color: #1bbfa0 ">${description}</p> 
                         </div>
                     </div>
