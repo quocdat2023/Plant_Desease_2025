@@ -7052,3 +7052,198 @@
 2025-06-22 16:04:29,149 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:04:29] "GET /static/uploads/caphe.jpg HTTP/1.1" 200 -
 2025-06-22 16:06:36,326 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:06:36] "POST /api/predict HTTP/1.1" 200 -
 2025-06-22 16:06:36,334 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:06:36] "GET /static/uploads/tieu.jpg HTTP/1.1" 200 -
+2025-06-22 16:14:36,652 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-06-22 16:14:36,702 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-06-22 16:14:36,703 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-06-22 16:14:36,707 [werkzeug] INFO:  * Restarting with stat
+2025-06-22 16:16:22,068 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-06-22 16:16:22,107 [werkzeug] WARNING:  * Debugger is active!
+2025-06-22 16:16:22,117 [werkzeug] INFO:  * Debugger PIN: 338-098-097
+2025-06-22 16:17:00,856 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:17:00] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 16:17:00,869 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:17:00] "GET /static/uploads/287.jpg HTTP/1.1" 200 -
+2025-06-22 16:17:51,996 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:17:51] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 16:17:52,275 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:17:52] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 16:17:52,281 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:17:52] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 16:17:55,621 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:17:55] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 16:17:55,633 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:17:55] "GET /static/uploads/bacterial_val%20(36).JPG HTTP/1.1" 200 -
+2025-06-22 16:18:43,035 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:18:43] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 16:18:43,046 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:18:43] "GET /static/uploads/narrow_brown_val%20(19).jpg HTTP/1.1" 200 -
+2025-06-22 16:19:27,441 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:19:27] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 16:19:27,972 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:19:27] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 16:19:27,976 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:19:27] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 16:19:31,559 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:19:31] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 16:19:31,571 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 16:19:31] "GET /static/uploads/benh-thuong-gap-tren-cay-tieu.jpg HTTP/1.1" 200 -
+2025-06-22 20:01:27,838 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-06-22 20:01:27,882 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-06-22 20:01:27,882 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-06-22 20:01:27,884 [werkzeug] INFO:  * Restarting with stat
+2025-06-22 20:02:40,564 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-06-22 20:02:40,576 [werkzeug] WARNING:  * Debugger is active!
+2025-06-22 20:02:40,580 [werkzeug] INFO:  * Debugger PIN: 338-098-097
+2025-06-22 20:03:59,276 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:03:59] "GET / HTTP/1.1" 200 -
+2025-06-22 20:03:59,578 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:03:59] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 20:03:59,584 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:03:59] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 20:04:01,145 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:04:01] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 20:04:01,344 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:04:01] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 20:04:01,352 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:04:01] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 20:04:06,145 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:04:06] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 20:04:06,155 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:04:06] "GET /static/uploads/benh-thuong-gap-tren-cay-tieu.jpg HTTP/1.1" 200 -
+2025-06-22 20:58:30,691 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:58:30] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 20:58:30,714 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:58:30] "GET /static/uploads/bacterial_val%20(36).JPG HTTP/1.1" 200 -
+2025-06-22 20:58:37,057 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:58:37] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 20:58:37,070 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 20:58:37] "GET /static/uploads/287.jpg HTTP/1.1" 200 -
+2025-06-22 21:01:34,569 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 21:01:34] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 21:01:34,581 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 21:01:34] "GET /static/uploads/caphe.jpg HTTP/1.1" 200 -
+2025-06-22 21:01:42,677 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 21:01:42] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 22:48:04,765 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:04] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:48:05,001 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:05] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:48:05,023 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:05] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:48:06,420 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:06] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:48:06,540 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:06] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:48:06,545 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:06] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:48:08,322 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:08] "GET /plant_recommendation HTTP/1.1" 200 -
+2025-06-22 22:48:09,108 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:09] "GET /plant_fertilizer HTTP/1.1" 200 -
+2025-06-22 22:48:13,094 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:13] "GET /plant_fertilizer HTTP/1.1" 200 -
+2025-06-22 22:48:15,671 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:15] "GET /plant_fertilizer HTTP/1.1" 200 -
+2025-06-22 22:48:17,753 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:17] "GET /plant_fertilizer HTTP/1.1" 200 -
+2025-06-22 22:48:19,697 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:19] "GET /plant_recommendation HTTP/1.1" 200 -
+2025-06-22 22:48:20,306 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:20] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:48:20,311 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:20] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:48:22,019 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:22] "GET /plant_fertilizer HTTP/1.1" 200 -
+2025-06-22 22:48:26,251 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:26] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:48:26,351 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:26] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:48:26,358 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:26] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:48:27,570 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:27] "GET / HTTP/1.1" 200 -
+2025-06-22 22:48:27,692 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:27] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:48:27,697 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:48:27] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:23,290 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:23] "GET /login HTTP/1.1" 200 -
+2025-06-22 22:57:24,926 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:24] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:24,932 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:24] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:25,736 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:25] "[32mPOST /api/login HTTP/1.1[0m" 302 -
+2025-06-22 22:57:25,748 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:25] "GET / HTTP/1.1" 200 -
+2025-06-22 22:57:26,923 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:26] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:26,928 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:26] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:34,436 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:34] "GET / HTTP/1.1" 200 -
+2025-06-22 22:57:34,554 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:34] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:34,556 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:34] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:38,707 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:38] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:57:38,831 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:38] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:38,850 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:38] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:39,687 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:39] "GET /plant_recommendation HTTP/1.1" 200 -
+2025-06-22 22:57:39,796 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:39] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:39,801 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:39] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:40,895 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:40] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:57:40,998 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:40] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:41,002 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:41] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:57:45,063 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:57:45] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 22:58:22,527 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:58:22] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:58:22,609 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:58:22] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 22:58:22,958 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:58:22] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:58:22,970 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:58:22] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:58:31,312 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:58:31] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 22:58:31,325 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:58:31] "GET /static/uploads/narrow_brown_val%20(19).jpg HTTP/1.1" 200 -
+2025-06-22 22:58:59,216 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:58:59] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:58:59,311 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:58:59] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 22:58:59,751 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:58:59] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:58:59,782 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:58:59] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:11,771 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:11] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:59:11,844 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:11] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:12,099 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:12] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:12,114 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:12] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:19,276 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:19] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:59:19,342 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:19] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:19,625 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:19] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:19,639 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:19] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:35,259 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:35] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:59:35,329 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:35] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:35,742 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:35] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:35,758 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:35] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:45,888 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:45] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:59:45,941 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:45] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:46,234 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:46] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:46,245 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:46] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:58,508 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:58] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 22:59:58,585 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:58] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:58,885 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:58] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 22:59:58,889 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 22:59:58] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:06,453 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:06] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:01:06,577 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:06] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:07,216 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:07] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:07,243 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:07] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:10,717 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:10] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:01:11,013 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:11] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:11,018 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:11] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:13,261 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:13] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:01:13,390 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:13] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:13,393 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:13] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:14,395 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:14] "GET /plant_recommendation HTTP/1.1" 200 -
+2025-06-22 23:01:14,536 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:14] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:14,541 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:14] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:15,567 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:15] "GET /plant_fertilizer HTTP/1.1" 200 -
+2025-06-22 23:01:20,280 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:20] "GET /plant_fertilizer HTTP/1.1" 200 -
+2025-06-22 23:01:21,959 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:21] "GET /plant_recommendation HTTP/1.1" 200 -
+2025-06-22 23:01:22,069 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:22] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:22,074 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:22] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:23,046 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:23] "GET /plant_recommendation HTTP/1.1" 200 -
+2025-06-22 23:01:23,135 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:23] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:23,140 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:23] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:24,073 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:24] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:01:24,185 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:24] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:24,189 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:24] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:01:31,699 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:01:31] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 23:02:28,136 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:02:28] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:02:28,202 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:02:28] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 23:02:28,471 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:02:28] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:02:28,474 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:02:28] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:02:46,726 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:02:46] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:02:46,922 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:02:46] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:02:46,930 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:02:46] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:03:08,051 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:03:08] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 23:03:08,062 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:03:08] "GET /static/uploads/tieu.jpg HTTP/1.1" 200 -
+2025-06-22 23:03:26,558 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:03:26] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 23:03:26,568 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:03:26] "GET /static/uploads/caychui.jpg HTTP/1.1" 200 -
+2025-06-22 23:05:08,773 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:05:08] "GET /plant_recommendation HTTP/1.1" 200 -
+2025-06-22 23:05:08,894 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:05:08] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:05:08,901 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:05:08] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:05:09,807 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:05:09] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:05:09,919 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:05:09] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:05:09,923 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:05:09] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:06:01,664 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:06:01] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:06:01,848 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:06:01] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:06:01,862 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:06:01] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:06:37,641 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:06:37] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:06:37,805 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:06:37] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:06:37,812 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:06:37] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:06:44,979 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:06:44] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:06:45,085 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:06:45] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:06:45,091 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:06:45] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:06:58,409 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:06:58] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 23:07:21,345 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:07:21] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:07:21,404 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:07:21] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 23:07:21,806 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:07:21] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:07:21,812 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:07:21] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:07:29,129 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:07:29] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:07:29,307 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:07:29] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:07:29,311 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:07:29] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:07:38,892 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:07:38] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-22 23:07:43,463 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:07:43] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 23:08:03,301 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:08:03] "POST /api/query HTTP/1.1" 200 -
+2025-06-22 23:10:22,705 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:10:22] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:10:22,939 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:10:22] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:10:22,949 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:10:22] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-06-22 23:10:26,761 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:10:26] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-22 23:10:44,047 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:10:44] "POST /api/query HTTP/1.1" 200 -
+2025-06-22 23:13:37,417 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:13:37] "OPTIONS /api/query HTTP/1.1" 200 -
+2025-06-22 23:13:54,733 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:13:54] "POST /api/query HTTP/1.1" 200 -
+2025-06-22 23:16:23,982 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:16:23] "POST /api/predict HTTP/1.1" 200 -
+2025-06-22 23:16:23,991 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:16:23] "GET /static/uploads/ri-sat-tren-bap.jpg HTTP/1.1" 200 -
+2025-06-22 23:16:35,957 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:16:35] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-22 23:17:23,915 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:17:23] "GET /plant_detection HTTP/1.1" 200 -
+2025-06-22 23:17:24,122 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:17:24] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-06-22 23:17:24,125 [werkzeug] INFO: 127.0.0.1 - - [22/Jun/2025 23:17:24] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
