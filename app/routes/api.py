@@ -7,6 +7,14 @@ import re
 import bcrypt
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'yolov11_source')))
+from yolov11_source.ultralytics import YOLO
+import cv2
+import os
+from PIL import Image
+import numpy as np
 
 # Giả định các service/repository đã được định nghĩa
 from ..core.services.query_service import QueryService
@@ -25,6 +33,18 @@ users_collection.create_index('email', unique=True)
 index_repo = IndexRepository()
 query_service = QueryService(index_repo)
 gemini_service = GeminiService()
+
+
+
+# Đường dẫn đến mô hình YOLO đã huấn luyện
+MODEL_PATH = "source/trained_yolo11n_cls.pt"
+# Thư mục lưu ảnh tải lên
+UPLOAD_FOLDER = "app/static/uploads"
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+# Tải mô hình YOLO
+model = YOLO(MODEL_PATH)
 
 # Khởi tạo ConversationBufferMemory
 memory = ConversationBufferMemory(
@@ -389,3 +409,31 @@ Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về b�
         "user_info": user_info
     })
 
+@api_bp.route("/predict", methods=["POST"])
+def predict():
+    if "file" not in request.files:
+        return jsonify({"error": "No file uploaded"}), 400
+
+    file = request.files["file"]
+    if file.filename == "":
+        return jsonify({"error": "No file selected"}), 400
+
+    # Lưu file ảnh tải lên
+    file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+    file.save(file_path)
+
+    # Đọc và dự đoán với YOLO
+    results = model(file_path)
+    probs = results[0].probs
+    top1_idx = probs.top1
+    top1_conf = probs.top1conf.item()
+    class_name = model.names[top1_idx]
+
+    # Trả về đường dẫn tương đối cho client
+    relative_image_path = f"/static/uploads/{file.filename}"
+
+    return jsonify({
+        "class": class_name,
+        "confidence": f"{top1_conf:.2f}",
+        "image_path": relative_image_path  # Sử dụng đường dẫn tương đối
+    })

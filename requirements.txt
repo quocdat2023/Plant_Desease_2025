@@ -14,3 +14,6 @@ python-dotenv
 gunicorn
 rank_bm25
 flask-bcrypt
+ultralytics
+opencv-python
+Pillow

@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Care & Gardens</title>
     <!-- Bootstrap CSS CDN -->
-     <link rel="shortcut icon" href="https://perenual.com/storage/image/logo/green-logo-sm.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="https://perenual.com/storage/image/logo/green-logo-sm.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="description" content="Ứng dụng Plant Care & Gardens giúp người dùng chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây và phân bón.">
-    <meta name="keywords" content="Plant Care, Gardens, Farms, chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây, phân bón">
+    <meta name="description"
+        content="Ứng dụng Plant Care & Gardens giúp người dùng chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây và phân bón.">
+    <meta name="keywords"
+        content="Plant Care, Gardens, Farms, chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây, phân bón">
     <!-- Bootstrap CSS CDN -->
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -181,6 +185,7 @@
             background-color: #4CC7AB;
             border: none;
         }
+
         .chat-message {
             margin: 10px;
             padding: 10px;
@@ -242,7 +247,7 @@
         .related-questions a:hover {
             text-decoration: underline;
         }
-    
+
         .footer {
             background-color: #1a1a1a;
             color: #ffffff;
@@ -344,16 +349,105 @@
             justify-content: center;
             font-size: 12px;
         }
-        .btn-start:hover
-        {
+
+        .btn-start:hover {
             background-color: #4CC7AB;
             color: white;
         }
 
-        .btn-primary:hover
-        {
+        .btn-primary:hover {
             background-color: #7be6cd;
             color: white;
+        }
+
+        /* Form layout to place elements in a row */
+        #upload-form {
+            display: flex;
+            align-items: center;
+            /* Vertically center items */
+            gap: 10px;
+            /* Space between elements */
+        }
+
+        /* Container for the file input */
+        .custom-file-upload {
+            position: relative;
+            display: inline-block;
+            width: 150px;
+            /* Match button width */
+            height: 50px;
+            /* Match button height */
+        }
+
+        /* Hide the default file input */
+        #file-input {
+            display: none;
+        }
+
+        /* Style the label to look like a button */
+        .custom-file-upload label {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-color: #f8f9fa;
+            /* Light background */
+            border: 2px solid #6c757d;
+            /* Gray border */
+            border-radius: 5px;
+            /* Rounded corners */
+            text-align: center;
+            line-height: 46px;
+            /* Center text vertically */
+            color: #6c757d;
+            /* Text color */
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        /* Hover effect */
+        .custom-file-upload label:hover {
+            background-color: #e9ecef;
+            border-color: #495057;
+            color: #495057;
+        }
+
+        /* Active effect */
+        .custom-file-upload label:active {
+            background-color: #dee2e6;
+        }
+
+        /* Style for when a file is selected */
+        .custom-file-upload input[type="file"]:valid+label {
+            background-color: #d4edda;
+            /* Light green to indicate success */
+            border-color: #3bbf9c;
+            color: #3bbf9c;
+        }
+
+        /* Optional: Add an icon inside the label */
+        .custom-file-upload label::before {
+            content: "\f093";
+            /* Font Awesome upload icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 8px;
+        }
+
+        /* Style the submit button */
+        .btn-start {
+            background-color: #3bbf9c;
+            /* Green button */
+            border-color: #3bbf9c;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-start:hover {
+            background-color: #4CC7AB;
+            border-color: #4CC7AB;
         }
     </style>
 </head>
@@ -365,7 +459,7 @@
             <a class="navbar-brand" href="#">
                 <img src="https://perenual.com/storage/image/logo/green-logo-sm.svg" alt="Logo"> Plant Disease
             </a>
-           <div class="navbar-nav ms-auto">
+            <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="{{ url_for('home.home') }}">Trang chủ</a>
                 <a class="nav-link" href="{{ url_for('home.plant_detection') }}">Phát hiện bệnh</a>
                 <a class="nav-link" href="{{ url_for('home.plant_recommendation') }}">Gợi ý giống cây</a>
@@ -404,12 +498,24 @@
                     cây trồng và quản lý vườn. Hãy chọn 1 ảnh để chúng tôi có thể giúp bạn chẩn đoán bệnh cây trồng.
                 </p>
                 <div class="mt-4">
-                    <a href="#" class="btn btn-start btn-lg me-2" style="width: 250px; height: 50px;"><i class="fa-solid fa-camera-retro"></i>  Chẩn đoán cây bệnh</a>
+
+                    <form id="upload-form">
+                        <div class="custom-file-upload">
+                            <input type="file" id="file-input" accept="image/*" required>
+                            <label for="file-input">Chọn ảnh cây</label>
+                        </div>
+                        <button type="submit" class="btn btn-start btn-lg" style="width: 250px; height: 50px;">
+                            <i class="fa-solid fa-camera-retro"></i> Chẩn đoán cây bệnh
+                        </button>
+                    </form>
+                    <div id="result" class="lead text-muted"></div>
                 </div>
             </div>
             <div class="col-lg-7">
-                <img src="https://myplantin.com/_next/image?url=https%3A%2F%2Fstrapi.myplantin.com%2FDiseases_illustration_a772d9dc34.webp&w=3840&q=75" class="img-fluid rounded"
-                    alt="Plant Image" style="padding-top: 15%; float: right; width: 100%; height: auto;">
+                <img id="preview"
+                    src="https://myplantin.com/_next/image?url=https%3A%2F%2Fstrapi.myplantin.com%2FDiseases_illustration_a772d9dc34.webp&w=3840&q=75"
+                    class="img-fluid" alt="Plant Image"
+                    style="padding-top: 15%; float: right; width: 100%; height: auto;">
             </div>
         </div>
 
@@ -744,7 +850,7 @@
                                     "regular_url": "https://perenual.com/storage/species_disease/3_p/regular/Monographella_nivalis-2013-Brno-4.jpg",
                                     "medium_url": "https://perenual.com/storage/species_disease/3_p/medium/Monographella_nivalis-2013-Brno-4.jpg",
                                     "small_url": "https://perenual.com/storage/species_disease/3_p/small/Monographella_nivalis-2013-Brno-4.jpg",
-                                    "thumbnail": "https://rocken.vn/wp-content/uploads/2024/04/benh-thoi-re-den-1024x683.jpg"
+                                    "thumbnail": "http://thaprausach.com//Resources/2022/06/15/35.jpg"
                                 }
                             ]
                         },
@@ -1442,154 +1548,192 @@
             loadPlantSpecies();
         };
     </script>
-<script>
-    document.getElementById('openChat').addEventListener('click', function () {
-    document.getElementById('chatPopup').style.display = 'block';
-    document.getElementById('openChat').style.display = 'none';
-});
-
-document.getElementById('closeChat').addEventListener('click', function () {
-    document.getElementById('chatPopup').style.display = 'none';
-    document.getElementById('openChat').style.display = 'flex';
-});
-
-async function sendToBot(message) {
-    try {
-        const response = await fetch('http://localhost:5000/api/query', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ question: message })
+    <script>
+        document.getElementById('openChat').addEventListener('click', function () {
+            document.getElementById('chatPopup').style.display = 'block';
+            document.getElementById('openChat').style.display = 'none';
         });
-        if (!response.ok) {
-            throw new Error('API request failed');
-        }
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error:', error);
-        return { final_response: 'Đã xảy ra lỗi khi xử lý yêu cầu. Vui lòng thử lại.' };
-    }
-}
 
-function handleRelatedQuestionClick(question) {
-    document.getElementById('chatInput').value = question;
-    document.getElementById('sendMessage').click();
-    document.getElementById('chatInput').value = '';
+        document.getElementById('closeChat').addEventListener('click', function () {
+            document.getElementById('chatPopup').style.display = 'none';
+            document.getElementById('openChat').style.display = 'flex';
+        });
 
-}
-
-async function typeText(element, text, delay = 30) {
-    element.innerHTML = ''; // Clear element content
-    for (let i = 0; i < text.length; i++) {
-        element.innerHTML = element.innerHTML.slice(0, -1) + text[i] + '|';
-        await new Promise(resolve => setTimeout(resolve, delay));
-    }
-    element.innerHTML = element.innerHTML.slice(0, -1); // Remove cursor
-}
-
-async function formatBotResponse(data) {
-    const { final_response, related_questions } = data;
-    const container = document.createElement('div');
-    container.className = 'chat-message bot-message';
-
-    // Split the response into sections based on headers
-    const sections = final_response.split(/\*\*(.*?)\*\*:/);
-    let formattedHtml = '';
-
-    for (let i = 1; i < sections.length; i += 2) {
-        const header = sections[i].trim();
-        const content = sections[i + 1].trim();
-
-        formattedHtml += `<h3>${header}</h3>`;
-
-        const lines = content.split('\n').filter(line => line.trim());
-        let inList = false;
-
-        lines.forEach(line => {
-            if (line.startsWith('* ')) {
-                if (!inList) {
-                    formattedHtml += '<ul>';
-                    inList = true;
+        async function sendToBot(message) {
+            try {
+                const response = await fetch('http://localhost:5000/api/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: message })
+                });
+                if (!response.ok) {
+                    throw new Error('API request failed');
                 }
-                formattedHtml += `<li>${line.substring(2).trim()}</li>`;
-            } else {
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error:', error);
+                return { final_response: 'Đã xảy ra lỗi khi xử lý yêu cầu. Vui lòng thử lại.' };
+            }
+        }
+
+        function handleRelatedQuestionClick(question) {
+            document.getElementById('chatInput').value = question;
+            document.getElementById('sendMessage').click();
+            document.getElementById('chatInput').value = '';
+
+        }
+
+        async function typeText(element, text, delay = 30) {
+            element.innerHTML = ''; // Clear element content
+            for (let i = 0; i < text.length; i++) {
+                element.innerHTML = element.innerHTML.slice(0, -1) + text[i] + '|';
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+            element.innerHTML = element.innerHTML.slice(0, -1); // Remove cursor
+        }
+
+        async function formatBotResponse(data) {
+            const { final_response, related_questions } = data;
+            const container = document.createElement('div');
+            container.className = 'chat-message bot-message';
+
+            // Split the response into sections based on headers
+            const sections = final_response.split(/\*\*(.*?)\*\*:/);
+            let formattedHtml = '';
+
+            for (let i = 1; i < sections.length; i += 2) {
+                const header = sections[i].trim();
+                const content = sections[i + 1].trim();
+
+                formattedHtml += `<h3>${header}</h3>`;
+
+                const lines = content.split('\n').filter(line => line.trim());
+                let inList = false;
+
+                lines.forEach(line => {
+                    if (line.startsWith('* ')) {
+                        if (!inList) {
+                            formattedHtml += '<ul>';
+                            inList = true;
+                        }
+                        formattedHtml += `<li>${line.substring(2).trim()}</li>`;
+                    } else {
+                        if (inList) {
+                            formattedHtml += '</ul>';
+                            inList = false;
+                        }
+                        formattedHtml += `<p>${line}</p>`;
+                    }
+                });
+
                 if (inList) {
                     formattedHtml += '</ul>';
-                    inList = false;
                 }
-                formattedHtml += `<p>${line}</p>`;
+            }
+
+            container.innerHTML = formattedHtml;
+
+            // Type out headers, paragraphs, and list items
+            const elementsToType = container.querySelectorAll('h3, p, li');
+            for (const element of elementsToType) {
+                const text = element.textContent;
+                element.textContent = '';
+                await typeText(element, text);
+            }
+
+            // Add related questions if available
+            if (related_questions && Array.isArray(related_questions)) {
+                const relatedQuestionsDiv = document.createElement('div');
+                relatedQuestionsDiv.className = 'related-questions';
+                relatedQuestionsDiv.innerHTML = '<strong>Câu hỏi liên quan:</strong>';
+
+                const questionsList = document.createElement('ul');
+                related_questions.forEach(q => {
+                    const questionItem = document.createElement('li');
+                    const questionLink = document.createElement('a');
+                    questionLink.href = '#';
+                    questionLink.textContent = q.question;
+                    questionLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        handleRelatedQuestionClick(q.question);
+                    });
+                    questionItem.appendChild(questionLink);
+                    questionsList.appendChild(questionItem);
+                });
+
+                relatedQuestionsDiv.appendChild(questionsList);
+                container.appendChild(relatedQuestionsDiv);
+            }
+
+            return container;
+        }
+
+        document.getElementById('sendMessage').addEventListener('click', async function () {
+            const chatInput = document.getElementById('chatInput');
+            const chatBody = document.getElementById('chatBody');
+            const messageText = chatInput.value.trim();
+
+            if (messageText) {
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message user-message';
+                userMessage.textContent = messageText;
+                chatBody.appendChild(userMessage);
+
+                const responseData = await sendToBot(messageText);
+                const botMessage = await formatBotResponse(responseData);
+                chatBody.appendChild(botMessage);
+
+                chatInput.value = '';
+                chatBody.scrollTop = chatBody.scrollHeight;
             }
         });
 
-        if (inList) {
-            formattedHtml += '</ul>';
-        }
-    }
+        document.getElementById('chatInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.getElementById('sendMessage').click();
+                document.getElementById('chatInput').value = '';
+            }
+        });
+    </script>
+    <script>
+        document.getElementById("upload-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById("file-input");
+            const resultDiv = document.getElementById("result");
+            const preview = document.getElementById("preview");
 
-    container.innerHTML = formattedHtml;
+            if (!fileInput.files[0]) {
+                resultDiv.innerHTML = "Please select an image!";
+                return;
+            }
 
-    // Type out headers, paragraphs, and list items
-    const elementsToType = container.querySelectorAll('h3, p, li');
-    for (const element of elementsToType) {
-        const text = element.textContent;
-        element.textContent = '';
-        await typeText(element, text);
-    }
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
 
-    // Add related questions if available
-    if (related_questions && Array.isArray(related_questions)) {
-        const relatedQuestionsDiv = document.createElement('div');
-        relatedQuestionsDiv.className = 'related-questions';
-        relatedQuestionsDiv.innerHTML = '<strong>Câu hỏi liên quan:</strong>';
+            try {
+                const response = await fetch("http://127.0.0.1:5000/api/predict", {
+                    method: "POST",
+                    body: formData
+                });
+                const data = await response.json();
 
-        const questionsList = document.createElement('ul');
-        related_questions.forEach(q => {
-            const questionItem = document.createElement('li');
-            const questionLink = document.createElement('a');
-            questionLink.href = '#';
-            questionLink.textContent = q.question;
-            questionLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                handleRelatedQuestionClick(q.question);
-            });
-            questionItem.appendChild(questionLink);
-            questionsList.appendChild(questionItem);
+                if (response.ok) {
+                    resultDiv.innerHTML = `<br>Dự đoán của hệ thống là: ${data.class} <br> Confidence: ${data.confidence}`;
+                    preview.src = data.image_path;
+                    preview.style.display = "block";
+                    preview.style.width = "80%";
+                    preview.style.height = "auto";
+
+                } else {
+                    resultDiv.innerHTML = `Error: ${data.error}`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = "Error: Failed to process request";
+            }
         });
 
-        relatedQuestionsDiv.appendChild(questionsList);
-        container.appendChild(relatedQuestionsDiv);
-    }
-
-    return container;
-}
-
-document.getElementById('sendMessage').addEventListener('click', async function () {
-    const chatInput = document.getElementById('chatInput');
-    const chatBody = document.getElementById('chatBody');
-    const messageText = chatInput.value.trim();
-
-    if (messageText) {
-        const userMessage = document.createElement('div');
-        userMessage.className = 'chat-message user-message';
-        userMessage.textContent = messageText;
-        chatBody.appendChild(userMessage);
-
-        const responseData = await sendToBot(messageText);
-        const botMessage = await formatBotResponse(responseData);
-        chatBody.appendChild(botMessage);
-
-        chatInput.value = '';
-        chatBody.scrollTop = chatBody.scrollHeight;
-    }
-});
-
-document.getElementById('chatInput').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        document.getElementById('sendMessage').click();
-        document.getElementById('chatInput').value = '';
-    }
-});
-   </script>
+    </script>
 </body>
 
 </html>
