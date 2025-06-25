@@ -443,7 +443,6 @@
             color: white;
             transition: background-color 0.3s ease;
         }
-
     </style>
 </head>
 
@@ -499,7 +498,8 @@
                             <input type="file" id="file-input" accept="image/*" required>
                             <label for="file-input">Chọn ảnh cây</label>
                         </div>
-                        <button type="submit" class="btn btn-start btn-lg" style="width: 250px; height: 50px;font-size: 16px;">
+                        <button type="submit" class="btn btn-start btn-lg"
+                            style="width: 250px; height: 50px;font-size: 16px;">
                             <i class="fa-solid fa-camera-retro"></i> Chẩn đoán cây bệnh
                         </button>
                     </form>
@@ -513,9 +513,18 @@
                     style="padding-top: 15%; float: right; width: 100%; height: auto;">
             </div>
         </div>
-
+        <div class="col-lg-12" id="result-container" style="display: none;">
+            <div class="result-section" id="result-section">
+                <h3>Thông tin chi tiết</h3>
+                <p><strong>😷 Tên bệnh:</strong> <span id="disease"></span></p>
+                <p><strong>📅 Lịch tưới tiêu:</strong> <span id="irrigation-schedule"></span></p>
+                <p><strong>💧 Liều lượng phân bón:</strong> <span id="fertilizer-dosage"></span></p>
+                <p><strong>🛡️ Điều trị và phòng ngừa:</strong> <span id="disease-treatment"></span></p>
+            </div>
+        </div>
     </div>
     <div class="container-fuild disease-container">
+        <div id="error-message" class="error"></div>
         <h2 class="text-3xl pt-8 text-center">MỘT SỐ CÂU HỎI THƯỜNG GẶP</h2>
         <!-- Plant Disease Cards -->
         <div class="row mt-5" id="diseaseCards">
@@ -1696,6 +1705,7 @@
             e.preventDefault();
             const fileInput = document.getElementById("file-input");
             const resultDiv = document.getElementById("result");
+            const resultDivCon = document.getElementById("result-container");
             const preview = document.getElementById("preview");
 
             if (!fileInput.files[0]) {
@@ -1720,6 +1730,18 @@
                     preview.style.width = "80%";
                     preview.style.height = "auto";
 
+                    if (data.crop_info.message) {
+                        errorDiv.innerHTML = data.crop_info.message;
+                        resultDiv.style.display = "none";
+                        resultDivCon.style.display = "none";
+                    } else {
+                        document.getElementById("disease").textContent = data.crop_info.disease + " trên cây " + data.crop_info.vietnamese_name;
+                        document.getElementById("irrigation-schedule").textContent = data.crop_info.irrigation_schedule;
+                        document.getElementById("fertilizer-dosage").textContent = data.crop_info.fertilizer_dosage;
+                        document.getElementById("disease-treatment").textContent = data.crop_info.disease_treatment_prevention;
+                        resultDiv.style.display = "block";
+                        resultDivCon.style.display = "block";
+                    }
                 } else {
                     resultDiv.innerHTML = `Error: ${data.error}`;
                 }

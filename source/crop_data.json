@@ -1,0 +1,382 @@
+{
+  "crops": [
+    {
+      "key": "Coffee___Rust",
+      "scientific_name": "Coffea arabica",
+      "vietnamese_name": "Cà phê",
+      "disease": "Rỉ sắt",
+      "irrigation_schedule": "Tưới 1-2 lần/tuần, 10-20 lít/cây trưởng thành, tùy mùa khô hay mưa. Đảm bảo đất thoát nước tốt để tránh ẩm ướt quá mức.",
+      "fertilizer_dosage": "Bón phân NPK 20-10-10 (200-300 g/cây) 2-3 lần/năm. Bổ sung phân kali (50-100 g/cây) vào mùa ra hoa để tăng sức đề kháng.",
+      "disease_treatment_prevention": "Phun thuốc chứa đồng (Copper-based fungicide, ví dụ: Bordeaux) khi phát hiện đốm cam/vàng trên lá. Loại bỏ và đốt lá bệnh. Trồng xen cây che bóng (như chuối, bơ) để giảm độ ẩm và hạn chế lây lan bệnh."
+    },
+    {
+      "key": "Grape___Black_rot",
+      "scientific_name": "Vitis vinifera",
+      "vietnamese_name": "Nho",
+      "disease": "Thối đen",
+      "irrigation_schedule": "Tưới nhỏ giọt 2-3 lần/tuần, 5-10 lít/cây, giữ đất ẩm nhưng không ngập úng.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (100-150 g/cây) mỗi tháng trong mùa sinh trưởng. Bón thêm phân hữu cơ hoai mục (3-5 kg/cây) mỗi năm.",
+      "disease_treatment_prevention": "Phun thuốc chứa mancozeb hoặc captan ngay khi phát hiện đốm đen trên lá hoặc quả. Cắt tỉa cành bệnh, vệ sinh vườn sạch sẽ. Tránh tưới nước lên lá để giảm độ ẩm."
+    },
+    {
+      "key": "Potato___Early_blight",
+      "scientific_name": "Solanum tuberosum",
+      "vietnamese_name": "Khoai tây",
+      "disease": "Đốm vòng sớm",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 5-10 lít/m², đảm bảo đất ẩm đều nhưng không úng. Tưới vào sáng sớm để lá khô nhanh.",
+      "fertilizer_dosage": "Bón lót phân chuồng hoai mục (10-15 kg/m²). Bón thúc NPK 10-20-10 (20-30 g/m²) sau khi cây mọc 2-3 tuần.",
+      "disease_treatment_prevention": "Phun thuốc chứa chlorothalonil hoặc mancozeb khi thấy đốm nâu có vòng đồng tâm trên lá. Luân canh với cây họ đậu hoặc ngô để giảm nguy cơ bệnh tái phát."
+    },
+    {
+      "key": "Tomato___Target_Spot",
+      "scientific_name": "Solanum lycopersicum",
+      "vietnamese_name": "Cà chua",
+      "disease": "Đốm mục tiêu",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 1-2 lít/cây, tưới gốc để tránh ướt lá, đặc biệt vào buổi sáng.",
+      "fertilizer_dosage": "Bón lót phân hữu cơ (5-10 kg/m²). Bón thúc NPK 15-15-15 (10-15 g/cây) mỗi 2 tuần trong giai đoạn sinh trưởng.",
+      "disease_treatment_prevention": "Phun thuốc chứa chlorothalonil hoặc azoxystrobin khi thấy đốm nâu với vòng đồng tâm trên lá. Loại bỏ lá bệnh, vệ sinh vườn. Trồng thưa để tăng thông thoáng."
+    },
+    {
+      "key": "Coffee___Phoma",
+      "scientific_name": "Coffea arabica",
+      "vietnamese_name": "Cà phê",
+      "disease": "Bệnh đốm nâu Phoma",
+      "irrigation_schedule": "Tưới 1-2 lần/tuần, 10-20 lít/cây, đảm bảo đất thoát nước tốt để tránh ẩm ướt lâu.",
+      "fertilizer_dosage": "Bón phân NPK 20-10-10 (200-300 g/cây) 2-3 lần/năm. Bổ sung phân kali (50-100 g/cây) vào mùa ra hoa.",
+      "disease_treatment_prevention": "Phun thuốc chứa mancozeb hoặc benomyl khi phát hiện đốm nâu trên lá hoặc cành. Loại bỏ và đốt lá/cành bệnh. Tăng cường bón phân hữu cơ để cải thiện sức đề kháng cây."
+    },
+    {
+      "key": "Potato___Late_blight",
+      "scientific_name": "Solanum tuberosum",
+      "vietnamese_name": "Khoai tây",
+      "disease": "Đốm muộn",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 5-10 lít/m², tưới gốc để tránh ướt lá. Ngưng tưới khi độ ẩm không khí cao.",
+      "fertilizer_dosage": "Bón lót phân chuồng hoai mục (10-15 kg/m²). Bón thúc NPK 10-20-10 (20-30 g/m²) sau khi cây mọc 2-3 tuần.",
+      "disease_treatment_prevention": "Phun thuốc chứa metalaxyl hoặc mancozeb khi thấy đốm nâu/xám trên lá, đặc biệt trong thời tiết ẩm ướt. Luân canh cây trồng, sử dụng giống kháng bệnh."
+    },
+    {
+      "key": "Tomato___Late_blight",
+      "scientific_name": "Solanum lycopersicum",
+      "vietnamese_name": "Cà chua",
+      "disease": "Đốm muộn",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 1-2 lít/cây, tưới gốc để tránh ướt lá. Tưới vào sáng sớm.",
+      "fertilizer_dosage": "Bón lót phân hữu cơ (5-10 kg/m²). Bón thúc NPK 15-15-15 (10-15 g/cây) mỗi 2 tuần.",
+      "disease_treatment_prevention": "Phun thuốc chứa metalaxyl hoặc dimethomorph khi thấy đốm nâu/xám trên lá hoặc thân. Loại bỏ lá bệnh, vệ sinh vườn. Trồng trong nhà lưới để giảm độ ẩm."
+    },
+    {
+      "key": "Tomato___Tomato_mosaic_virus",
+      "scientific_name": "Solanum lycopersicum",
+      "vietnamese_name": "Cà chua",
+      "disease": "Virus khảm cà chua",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 1-2 lít/cây, giữ đất ẩm đều, tránh tưới quá nhiều.",
+      "fertilizer_dosage": "Bón lót phân hữu cơ (5-10 kg/m²). Bón thúc NPK 15-15-15 (10-15 g/cây) mỗi 2 tuần.",
+      "disease_treatment_prevention": "Loại bỏ và đốt cây bệnh ngay khi thấy lá xoăn, có đốm khảm vàng/xanh. Vệ sinh dụng cụ trồng trọt bằng cát hoặc dung dịch khử trùng. Sử dụng giống kháng virus, kiểm soát côn trùng như rệp."
+    },
+    {
+      "key": "Orange___Haunglongbing_(Citrus_greening)",
+      "scientific_name": "Citrus sinensis",
+      "vietnamese_name": "Cam",
+      "disease": "Bệnh vàng lá gân xanh (Huanglongbing)",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-30 lít/cây, tùy kích thước cây và độ ẩm đất. Tưới nhỏ giọt để tiết kiệm nước.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (200-500 g/cây) 3-4 lần/năm. Bổ sung vi lượng như kẽm (50 g/cây) và sắt (20 g/cây) để tăng sức khỏe cây.",
+      "disease_treatment_prevention": "Kiểm soát rệp sáp và bọ chích hút bằng thuốc trừ sâu như imidacloprid. Loại bỏ và đốt cây bệnh. Sử dụng cây giống sạch bệnh từ vườn ươm uy tín."
+    },
+    {
+      "key": "Rice___leaf_scald",
+      "scientific_name": "Oryza sativa",
+      "vietnamese_name": "Lúa",
+      "disease": "Bệnh cháy lá",
+      "irrigation_schedule": "Giữ mực nước 3-5 cm trong ruộng lúa ở giai đoạn sinh trưởng. Thoát nước trước khi thu hoạch.",
+      "fertilizer_dosage": "Bón lót phân NPK 15-15-15 (20-30 kg/ha). Bón thúc đạm ure (10-15 kg/ha) trong giai đoạn đẻ nhánh.",
+      "disease_treatment_prevention": "Phun thuốc chứa propiconazole hoặc tricyclazole khi thấy đốm trắng/xám trên lá. Vệ sinh đồng ruộng, loại bỏ tàn dư cây trồng. Sử dụng giống lúa kháng bệnh."
+    },
+    {
+      "key": "Pepperbell___Bacterial_spot",
+      "scientific_name": "Capsicum annuum",
+      "vietnamese_name": "Ớt chuông",
+      "disease": "Đốm vi khuẩn",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 1-2 lít/cây, tưới gốc để tránh ướt lá. Tưới vào sáng sớm.",
+      "fertilizer_dosage": "Bón lót phân hữu cơ (5-10 kg/m²). Bón thúc NPK 15-15-15 (10-15 g/cây) mỗi 2 tuần.",
+      "disease_treatment_prevention": "Phun thuốc chứa đồng (Copper-based bactericide) khi thấy đốm nhỏ màu nâu/đen trên lá. Loại bỏ lá bệnh, vệ sinh vườn. Tránh tưới nước lên lá."
+    },
+    {
+      "key": "Tomato___Leaf_Mold",
+      "scientific_name": "Solanum lycopersicum",
+      "vietnamese_name": "Cà chua",
+      "disease": "Mốc lá",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 1-2 lít/cây, tưới gốc để tránh ướt lá. Tưới vào sáng sớm.",
+      "fertilizer_dosage": "Bón lót phân hữu cơ (5-10 kg/m²). Bón thúc NPK 15-15-15 (10-15 g/cây) mỗi 2 tuần.",
+      "disease_treatment_prevention": "Phun thuốc chứa chlorothalonil hoặc mancozeb khi thấy lớp mốc trắng/xám dưới mặt lá. Tăng thông thoáng vườn bằng cách tỉa cành, trồng thưa."
+    },
+    {
+      "key": "Dragon___bad_leaf",
+      "scientific_name": "Hylocereus undatus",
+      "vietnamese_name": "Thanh long",
+      "disease": "Lá hư (đốm nâu, thối nhũn)",
+      "irrigation_schedule": "Tưới 1-2 lần/tuần, 5-10 lít/cây, tùy độ ẩm đất. Tránh tưới quá nhiều gây úng.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (100-150 g/cây) mỗi tháng. Bón thêm phân hữu cơ hoai mục (3-5 kg/cây) mỗi năm.",
+      "disease_treatment_prevention": "Loại bỏ lá/cành hư, vệ sinh vườn. Phun thuốc chứa mancozeb hoặc carbendazim để phòng bệnh nấm. Kiểm tra hệ thống thoát nước để tránh ẩm ướt lâu."
+    },
+    {
+      "key": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "scientific_name": "Vitis vinifera",
+      "vietnamese_name": "Nho",
+      "disease": "Đốm lá Isariopsis",
+      "irrigation_schedule": "Tưới nhỏ giọt 2-3 lần/tuần, 5-10 lít/cây, giữ đất ẩm nhưng không ngập úng.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (100-150 g/cây) mỗi tháng. Bón thêm phân hữu cơ (3-5 kg/cây) mỗi năm.",
+      "disease_treatment_prevention": "Phun thuốc chứa captan hoặc myclobutanil khi thấy đốm nâu/xám trên lá. Cắt tỉa cành bệnh, vệ sinh vườn sạch sẽ."
+    },
+    {
+      "key": "Rice___narrow_brown_spot",
+      "scientific_name": "Oryza sativa",
+      "vietnamese_name": "Lúa",
+      "disease": "Đốm nâu hẹp",
+      "irrigation_schedule": "Giữ mực nước 3-5 cm trong ruộng lúa ở giai đoạn sinh trưởng. Thoát nước trước khi thu hoạch.",
+      "fertilizer_dosage": "Bón lót phân NPK 15-15-15 (20-30 kg/ha). Bón thúc đạm ure (10-15 kg/ha) trong giai đoạn đẻ nhánh.",
+      "disease_treatment_prevention": "Phun thuốc chứa propiconazole khi thấy đốm nâu hẹp trên lá. Vệ sinh đồng ruộng, loại bỏ tàn dư cây trồng. Sử dụng giống kháng bệnh."
+    },
+    {
+      "key": "Cherry_(including_sour)___Powdery_mildew",
+      "scientific_name": "Prunus avium",
+      "vietnamese_name": "Anh đào",
+      "disease": "Phấn trắng",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-15 lít/cây, giữ đất ẩm nhưng thoát nước tốt.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (100-150 g/cây) mỗi tháng trong mùa sinh trưởng. Bón thêm phân hữu cơ (3-5 kg/cây) mỗi năm.",
+      "disease_treatment_prevention": "Phun thuốc chứa sulfur hoặc myclobutanil khi thấy lớp phấn trắng trên lá hoặc quả. Tăng thông thoáng vườn bằng cách cắt tỉa cành."
+    },
+    {
+      "key": "Apple___Cedar_apple_rust",
+      "scientific_name": "Malus domestica",
+      "vietnamese_name": "Táo",
+      "disease": "Rỉ sắt tuyết tùng",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-15 lít/cây, giữ đất thoát nước tốt, tránh tưới lên lá.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (100-150 g/cây) mỗi tháng. Bón thêm phân hữu cơ (3-5 kg/cây) mỗi năm.",
+      "disease_treatment_prevention": "Phun thuốc chứa myclobutanil hoặc sulfur khi thấy đốm vàng/cam trên lá. Loại bỏ cây tuyết tùng gần vườn táo để giảm nguồn bệnh."
+    },
+    {
+      "key": "Tomato___Bacterial_spot",
+      "scientific_name": "Solanum lycopersicum",
+      "vietnamese_name": "Cà chua",
+      "disease": "Đốm vi khuẩn",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 1-2 lít/cây, tưới gốc để tránh ướt lá. Tưới vào sáng sớm.",
+      "fertilizer_dosage": "Bón lót phân hữu cơ (5-10 kg/m²). Bón thúc NPK 15-15-15 (10-15 g/cây) mỗi 2 tuần.",
+      "disease_treatment_prevention": "Phun thuốc chứa đồng (Copper-based bactericide) khi thấy đốm nhỏ màu nâu/đen trên lá. Loại bỏ lá bệnh, vệ sinh vườn."
+    },
+    {
+      "key": "Tomato___Early_blight",
+      "scientific_name": "Solanum lycopersicum",
+      "vietnamese_name": "Cà chua",
+      "disease": "Đốm vòng sớm",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 1-2 lít/cây, tưới gốc để tránh ướt lá. Tưới vào sáng sớm.",
+      "fertilizer_dosage": "Bón lót phân hữu cơ (5-10 kg/m²). Bón thúc NPK 15-15-15 (10-15 g/cây) mỗi 2 tuần.",
+      "disease_treatment_prevention": "Phun thuốc chứa chlorothalonil hoặc mancozeb khi thấy đốm nâu có vòng đồng tâm trên lá. Luân canh cây trồng, vệ sinh vườn."
+    },
+    {
+      "key": "Corn_(maize)___Common_rust",
+      "scientific_name": "Zea mays",
+      "vietnamese_name": "Ngô",
+      "disease": "Rỉ sắt thông thường",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-15 lít/m², đặc biệt trong giai đoạn trỗ cờ và tạo hạt.",
+      "fertilizer_dosage": "Bón lót phân chuồng hoai mục (10-15 kg/m²). Bón thúc NPK 20-10-10 (20-30 g/m²) trong giai đoạn sinh trưởng.",
+      "disease_treatment_prevention": "Phun thuốc chứa mancozeb hoặc azoxystrobin khi thấy đốm cam/vàng trên lá. Sử dụng giống ngô kháng bệnh, luân canh cây trồng."
+    },
+    {
+      "key": "Banana___Bract_Mosaic_Virus",
+      "scientific_name": "Musa acuminata",
+      "vietnamese_name": "Chuối",
+      "disease": "Virus khảm lá chuối",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-20 lít/cây, giữ đất ẩm đều, tránh ngập úng.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (200-300 g/cây) mỗi tháng. Bón thêm phân kali (100-150 g/cây) trong giai đoạn ra hoa.",
+      "disease_treatment_prevention": "Loại bỏ và đốt cây bệnh ngay khi thấy lá có đốm khảm hoặc biến dạng. Sử dụng giống chuối sạch bệnh, kiểm soát côn trùng như rệp."
+    },
+    {
+      "key": "Grape___Esca_(Black_Measles)",
+      "scientific_name": "Vitis vinifera",
+      "vietnamese_name": "Nho",
+      "disease": "Bệnh sởi đen (Esca)",
+      "irrigation_schedule": "Tưới nhỏ giọt 2-3 lần/tuần, 5-10 lít/cây, giữ đất ẩm nhưng không ngập úng.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (100-150 g/cây) mỗi tháng. Bón thêm phân hữu cơ (3-5 kg/cây) mỗi năm.",
+      "disease_treatment_prevention": "Cắt tỉa cành bệnh, đốt bỏ. Phun thuốc chứa sodium arsenite (nếu được phép tại địa phương) hoặc sử dụng biện pháp sinh học. Kiểm tra sức khỏe cây định kỳ."
+    },
+    {
+      "key": "Banana___Moko",
+      "scientific_name": "Musa acuminata",
+      "vietnamese_name": "Chuối",
+      "disease": "Bệnh Moko (thối nhũn vi khuẩn)",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-20 lít/cây, giữ đất ẩm đều, tránh ngập úng.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (200-300 g/cây) mỗi tháng. Bón thêm phân kali (100-150 g/cây) trong giai đoạn ra hoa.",
+      "disease_treatment_prevention": "Loại bỏ và đốt cây bệnh. Vệ sinh dụng cụ trồng trọt bằng dung dịch khử trùng. Sử dụng giống sạch bệnh, kiểm soát vi khuẩn bằng thuốc chứa streptomycin (nếu được phép)."
+    },
+    {
+      "key": "Rice___brown_spot",
+      "scientific_name": "Oryza sativa",
+      "vietnamese_name": "Lúa",
+      "disease": "Đốm nâu",
+      "irrigation_schedule": "Giữ mực nước 3-5 cm trong ruộng lúa ở giai đoạn sinh trưởng. Thoát nước trước khi thu hoạch.",
+      "fertilizer_dosage": "Bón lót phân NPK 15-15-15 (20-30 kg/ha). Bón thúc đạm ure (10-15 kg/ha) trong giai đoạn đẻ nhánh.",
+      "disease_treatment_prevention": "Phun thuốc chứa propiconazole hoặc carbendazim khi thấy đốm nâu trên lá. Sử dụng giống lúa kháng bệnh, vệ sinh đồng ruộng."
+    },
+    {
+      "key": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "scientific_name": "Solanum lycopersicum",
+      "vietnamese_name": "Cà chua",
+      "disease": "Virus xoăn vàng lá cà chua",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 1-2 lít/cây, giữ đất ẩm đều, tránh tưới quá nhiều.",
+      "fertilizer_dosage": "Bón lót phân hữu cơ (5-10 kg/m²). Bón thúc NPK 15-15-15 (10-15 g/cây) mỗi 2 tuần.",
+      "disease_treatment_prevention": "Sử dụng lưới chống côn trùng để ngăn bọ phấn trắng lây truyền virus. Loại bỏ và đốt cây bệnh. Sử dụng giống kháng virus."
+    },
+    {
+      "key": "Apple___Apple_scab",
+      "scientific_name": "Malus domestica",
+      "vietnamese_name": "Táo",
+      "disease": "Vảy táo",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-15 lít/cây, giữ đất thoát nước tốt, tránh tưới lên lá.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (100-150 g/cây) mỗi tháng. Bón thêm phân hữu cơ (3-5 kg/cây) mỗi năm.",
+      "disease_treatment_prevention": "Phun thuốc chứa captan hoặc myclobutanil khi thấy đốm nâu/xám trên lá hoặc quả. Cắt tỉa cành bệnh, vệ sinh vườn."
+    },
+    {
+      "key": "Corn_(maize)___Northern_Leaf_Blight",
+      "scientific_name": "Zea mays",
+      "vietnamese_name": "Ngô",
+      "disease": "Đốm lá phía Bắc",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-15 lít/m², đặc biệt trong giai đoạn trỗ cờ và tạo hạt.",
+      "fertilizer_dosage": "Bón lót phân chuồng hoai mục (10-15 kg/m²). Bón thúc NPK 20-10-10 (20-30 g/m²) trong giai đoạn sinh trưởng.",
+      "disease_treatment_prevention": "Phun thuốc chứa chlorothalonil hoặc azoxystrobin khi thấy đốm xám/trắng trên lá. Sử dụng giống ngô kháng bệnh, luân canh cây trồng."
+    },
+    {
+      "key": "Rice___leaf_blast",
+      "scientific_name": "Oryza sativa",
+      "vietnamese_name": "Lúa",
+      "disease": "Đạo ôn lá",
+      "irrigation_schedule": "Giữ mực nước 3-5 cm trong ruộng lúa ở giai đoạn sinh trưởng. Thoát nước trước khi thu hoạch.",
+      "fertilizer_dosage": "Bón lót phân NPK 15-15-15 (20-30 kg/ha). Bón thúc đạm ure (10-15 kg/ha) trong giai đoạn đẻ nhánh.",
+      "disease_treatment_prevention": "Phun thuốc chứa tricyclazole hoặc isoprothiolane khi thấy đốm xám/trắng trên lá. Sử dụng giống lúa kháng bệnh, tránh bón thừa đạm."
+    },
+    {
+      "key": "Cucumber___ill",
+      "scientific_name": "Cucumis sativus",
+      "vietnamese_name": "Dưa chuột",
+      "disease": "Bệnh tổng hợp (nấm, vi khuẩn)",
+      "irrigation_schedule": "Tưới hàng ngày, 1-2 lít/cây, giữ đất ẩm đều, tưới gốc để tránh ướt lá.",
+      "fertilizer_dosage": "Bón lót phân chuồng hoai mục (5-10 kg/m²). Bón thúc NPK 10-10-10 (10-15 g/cây) mỗi 10 ngày.",
+      "disease_treatment_prevention": "Phun thuốc chứa mancozeb hoặc chlorothalonil khi thấy dấu hiệu nấm (đốm trắng, mốc). Kiểm soát vi khuẩn bằng thuốc chứa đồng. Trồng trên luống cao, tăng thông thoáng."
+    },
+    {
+      "key": "Tomato___Spider_mites Two-spotted_spider_mite",
+      "scientific_name": "Solanum lycopersicum",
+      "vietnamese_name": "Cà chua",
+      "disease": "Nhện đỏ hai chấm",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 1-2 lít/cây, giữ đất ẩm đều, tưới gốc để tránh ướt lá.",
+      "fertilizer_dosage": "Bón lót phân hữu cơ (5-10 kg/m²). Bón thúc NPK 15-15-15 (10-15 g/cây) mỗi 2 tuần.",
+      "disease_treatment_prevention": "Phun dung dịch neem oil hoặc thuốc chứa abamectin khi thấy chấm nhỏ vàng trên lá. Tăng độ ẩm vườn để hạn chế nhện phát triển. Kiểm tra mặt dưới lá thường xuyên."
+    },
+    {
+      "key": "Banana___Panama",
+      "scientific_name": "Musa acuminata",
+      "vietnamese_name": "Chuối",
+      "disease": "Bệnh Panama (thối rễ nấm Fusarium)",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-20 lít/cây, giữ đất ẩm đều, tránh ngập úng.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (200-300 g/cây) mỗi tháng. Bón thêm phân kali (100-150 g/cây) trong giai đoạn ra hoa.",
+      "disease_treatment_prevention": "Loại bỏ và đốt cây bệnh. Sử dụng giống chuối kháng bệnh (như Cavendish). Xử lý đất bằng vôi nông nghiệp hoặc thuốc chứa carbendazim trước khi trồng."
+    },
+    {
+      "key": "Banana___Black_Sigatoka",
+      "scientific_name": "Musa acuminata",
+      "vietnamese_name": "Chuối",
+      "disease": "Đốm đen Sigatoka",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-20 lít/cây, giữ đất ẩm đều, tránh ngập úng.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (200-300 g/cây) mỗi tháng. Bón thêm phân kali (100-150 g/cây) trong giai đoạn ra hoa.",
+      "disease_treatment_prevention": "Phun thuốc chứa mancozeb hoặc propiconazole khi thấy đốm đen trên lá. Loại bỏ lá bệnh, vệ sinh vườn. Tăng thông thoáng bằng cách tỉa lá già."
+    },
+    {
+      "key": "Peach___Bacterial_spot",
+      "scientific_name": "Prunus persica",
+      "vietnamese_name": "Đào",
+      "disease": "Đốm vi khuẩn",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 5-10 lít/cây, giữ đất ẩm nhưng thoát nước tốt, tránh tưới lên lá.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (100-150 g/cây) mỗi tháng trong mùa sinh trưởng. Bón thêm phân hữu cơ (3-5 kg/cây) mỗi năm.",
+      "disease_treatment_prevention": "Phun thuốc chứa đồng (Copper-based bactericide) khi thấy đốm nhỏ màu nâu/đen trên lá hoặc quả. Cắt tỉa cành bệnh, vệ sinh vườn."
+    },
+    {
+      "key": "Banana___Insect_Pest",
+      "scientific_name": "Musa acuminata",
+      "vietnamese_name": "Chuối",
+      "disease": "Sâu hại côn trùng",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-20 lít/cây, giữ đất ẩm đều, tránh ngập úng.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (200-300 g/cây) mỗi tháng. Bón thêm phân kali (100-150 g/cây) trong giai đoạn ra hoa.",
+      "disease_treatment_prevention": "Sử dụng thuốc trừ sâu sinh học như neem oil hoặc thuốc chứa imidacloprid để kiểm soát sâu đục thân, rệp. Bẫy côn trùng bằng bẫy pheromone. Kiểm tra cây thường xuyên."
+    },
+    {
+      "key": "Banana___Yellow_Sigatoka",
+      "scientific_name": "Musa acuminata",
+      "vietnamese_name": "Chuối",
+      "disease": "Đốm vàng Sigatoka",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-20 lít/cây, giữ đất ẩm đều, tránh ngập úng.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (200-300 g/cây) mỗi tháng. Bón thêm phân kali (100-150 g/cây) trong giai đoạn ra hoa.",
+      "disease_treatment_prevention": "Phun thuốc chứa chlorothalonil hoặc propiconazole khi thấy đốm vàng trên lá. Loại bỏ lá bệnh, vệ sinh vườn. Tăng thông thoáng bằng cách tỉa lá."
+    },
+    {
+      "key": "Tomato___Septoria_leaf_spot",
+      "scientific_name": "Solanum lycopersicum",
+      "vietnamese_name": "Cà chua",
+      "disease": "Đốm lá Septoria",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 1-2 lít/cây, tưới gốc để tránh ướt lá. Tưới vào sáng sớm.",
+      "fertilizer_dosage": "Bón lót phân hữu cơ (5-10 kg/m²). Bón thúc NPK 15-15-15 (10-15 g/cây) mỗi 2 tuần.",
+      "disease_treatment_prevention": "Phun thuốc chứa chlorothalonil hoặc mancozeb khi thấy đốm nâu/xám với chấm đen nhỏ trên lá. Loại bỏ lá bệnh, vệ sinh vườn."
+    },
+    {
+      "key": "Squash___Powdery_mildew",
+      "scientific_name": "Cucurbita pepo",
+      "vietnamese_name": "Bí ngô",
+      "disease": "Phấn trắng",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 2-3 lít/cây, giữ đất ẩm đều, tưới gốc để tránh ướt lá.",
+      "fertilizer_dosage": "Bón lót phân chuồng hoai mục (5-10 kg/m²). Bón thúc NPK 10-10-10 (10-15 g/cây) mỗi 2 tuần.",
+      "disease_treatment_prevention": "Phun thuốc chứa sulfur hoặc myclobutanil khi thấy lớp phấn trắng trên lá. Tăng thông thoáng vườn, tránh trồng quá dày."
+    },
+    {
+      "key": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "scientific_name": "Zea mays",
+      "vietnamese_name": "Ngô",
+      "disease": "Đốm lá xám Cercospora",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-15 lít/m², đặc biệt trong giai đoạn trỗ cờ và tạo hạt.",
+      "fertilizer_dosage": "Bón lót phân chuồng hoai mục (10-15 kg/m²). Bón thúc NPK 20-10-10 (20-30 g/m²) trong giai đoạn sinh trưởng.",
+      "disease_treatment_prevention": "Phun thuốc chứa azoxystrobin hoặc propiconazole khi thấy đốm xám trên lá. Sử dụng giống ngô kháng bệnh, luân canh cây trồng."
+    },
+    {
+      "key": "Apple___Black_rot",
+      "scientific_name": "Malus domestica",
+      "vietnamese_name": "Táo",
+      "disease": "Thối đen",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 10-15 lít/cây, giữ đất thoát nước tốt, tránh tưới lên lá.",
+      "fertilizer_dosage": "Bón phân NPK 15-15-15 (100-150 g/cây) mỗi tháng. Bón thêm phân hữu cơ (3-5 kg/cây) mỗi năm.",
+      "disease_treatment_prevention": "Phun thuốc chứa captan hoặc thiophanate-methyl khi thấy đốm đen trên lá hoặc quả. Cắt tỉa cành bệnh, vệ sinh vườn."
+    },
+    {
+      "key": "Coffee___Miner",
+      "scientific_name": "Coffea arabica",
+      "vietnamese_name": "Cà phê",
+      "disease": "Sâu đục lá (Miner)",
+      "irrigation_schedule": "Tưới 1-2 lần/tuần, 10-20 lít/cây, đảm bảo đất thoát nước tốt.",
+      "fertilizer_dosage": "Bón phân NPK 20-10-10 (200-300 g/cây) 2-3 lần/năm. Bổ sung phân kali (50-100 g/cây) vào mùa ra hoa.",
+      "disease_treatment_prevention": "Sử dụng thuốc trừ sâu như chlorpyrifos hoặc neem oil khi thấy đường đục trên lá. Loại bỏ lá bị hại, vệ sinh vườn. Bẫy côn trùng bằng bẫy ánh sáng."
+    },
+    {
+      "key": "Strawberry___Leaf_scorch",
+      "scientific_name": "Fragaria × ananassa",
+      "vietnamese_name": "Dâu tây",
+      "disease": "Cháy lá",
+      "irrigation_schedule": "Tưới 2-3 lần/tuần, 1-2 lít/cây, giữ đất ẩm nhưng không ngập úng. Tưới vào sáng sớm.",
+      "fertilizer_dosage": "Bón phân hữu cơ hoai mục (2-3 kg/m²) trước khi trồng. Bón thúc NPK 16-16-8 (10-15 g/cây) mỗi 2 tuần.",
+      "disease_treatment_prevention": "Phun thuốc chứa mancozeb hoặc captan khi thấy đốm nâu/đen trên lá. Loại bỏ lá bệnh, vệ sinh vườn. Trồng thưa để tăng thông thoáng."
+    },
+    {
+      "key": "Rice___bacterial_leaf_blight",
+      "scientific_name": "Oryza sativa",
+      "vietnamese_name": "Lúa",
+      "disease": "Cháy lá vi khuẩn",
+      "irrigation_schedule": "Giữ mực nước 3-5 cm trong ruộng lúa ở giai đoạn sinh trưởng. Thoát nước trước khi thu hoạch.",
+      "fertilizer_dosage": "Bón lót phân NPK 15-15-15 (20-30 kg/ha). Bón thúc đạm ure (10-15 kg/ha) trong giai đoạn đẻ nhánh.",
+      "disease_treatment_prevention": "Phun thuốc chứa streptomycin hoặc oxytetracycline khi thấy mép lá bị cháy, có giọt sương vi khuẩn. Vệ sinh đồng ruộng, sử dụng giống kháng bệnh."
+    }
+  ]
+}

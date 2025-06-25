@@ -411,6 +411,7 @@ Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về b�
 
 @api_bp.route("/predict", methods=["POST"])
 def predict():
+    # Kiểm tra file upload
     if "file" not in request.files:
         return jsonify({"error": "No file uploaded"}), 400
 
@@ -432,8 +433,66 @@ def predict():
     # Trả về đường dẫn tương đối cho client
     relative_image_path = f"/static/uploads/{file.filename}"
 
+    # Tải file JSON
+    json_file_path = "source/crop_data.json"
+    try:
+        with open(json_file_path, 'r', encoding='utf-8') as f:
+            crop_data = json.load(f)
+    except FileNotFoundError:
+        return jsonify({"error": "Crop data JSON file not found"}), 500
+    except json.JSONDecodeError:
+        return jsonify({"error": "Invalid JSON format in crop data file"}), 500
+
+    # Tìm thông tin cây trồng dựa trên class_name khớp với key trong JSON
+    crop_info = None
+    for crop in crop_data['crops']:
+        if crop['key'] == class_name:
+            crop_info = {
+                "scientific_name": crop['scientific_name'],
+                "vietnamese_name": crop['vietnamese_name'],
+                "disease": crop['disease'],
+                "irrigation_schedule": crop['irrigation_schedule'],
+                "fertilizer_dosage": crop['fertilizer_dosage'],
+                "disease_treatment_prevention": crop['disease_treatment_prevention']
+            }
+            break
+
+    # Nếu không tìm thấy thông tin cây trồng, trả về thông báo
+    if not crop_info:
+        crop_info = {"message": "No detailed information found for this crop disease"}
+
+    # Trả về kết quả dự đoán và thông tin cây trồng
     return jsonify({
         "class": class_name,
         "confidence": f"{top1_conf:.2f}",
-        "image_path": relative_image_path  # Sử dụng đường dẫn tương đối
+        "image_path": relative_image_path,
+        "crop_info": crop_info
     })
+
+# def predict():
+#     if "file" not in request.files:
+#         return jsonify({"error": "No file uploaded"}), 400
+
+#     file = request.files["file"]
+#     if file.filename == "":
+#         return jsonify({"error": "No file selected"}), 400
+
+#     # Lưu file ảnh tải lên
+#     file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+#     file.save(file_path)
+
+#     # Đọc và dự đoán với YOLO
+#     results = model(file_path)
+#     probs = results[0].probs
+#     top1_idx = probs.top1
+#     top1_conf = probs.top1conf.item()
+#     class_name = model.names[top1_idx]
+
+#     # Trả về đường dẫn tương đối cho client
+#     relative_image_path = f"/static/uploads/{file.filename}"
+
+#     return jsonify({
+#         "class": class_name,
+#         "confidence": f"{top1_conf:.2f}",
+#         "image_path": relative_image_path  # Sử dụng đường dẫn tương đối
+#     })
