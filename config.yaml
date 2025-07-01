@@ -32,5 +32,5 @@ gemini:
     delay: 15  # seconds
 
   # Optional: Model Settings
-  default_model: "gemini-2.0-flash-exp"
+  default_model: "gemma-3-27b-it"
   system_instruction: null

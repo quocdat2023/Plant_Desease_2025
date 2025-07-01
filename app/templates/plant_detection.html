@@ -507,11 +507,16 @@
                 </div>
             </div>
             <div class="col-lg-7">
-                <img id="preview"
+                <div style="width: 100%; height: 500px; overflow: hidden;">
+                        <img  id="img-fluid"
                     src="https://myplantin.com/_next/image?url=https%3A%2F%2Fstrapi.myplantin.com%2FDiseases_illustration_a772d9dc34.webp&w=3840&q=75"
                     class="img-fluid" alt="Plant Image"
                     style="padding-top: 15%; float: right; width: 100%; height: auto;">
-            </div>
+  
+                    <img id="preview" src="https://myplantin.com/_next/image?url=https%3A%2F%2Fstrapi.myplantin.com%2FDiseases_illustration_a772d9dc34.webp&w=3840&q=75" style="padding-top: 15%; float: right; width: 100%; height: 100%; object-fit: cover; display: none;" />
+                </div>
+
+          </div>
         </div>
         <div class="col-lg-12" id="result-container" style="display: none;">
             <div class="result-section" id="result-section">
@@ -1707,6 +1712,7 @@
             const resultDiv = document.getElementById("result");
             const resultDivCon = document.getElementById("result-container");
             const preview = document.getElementById("preview");
+            const previewImage = document.getElementById("img-fluid");
 
             if (!fileInput.files[0]) {
                 resultDiv.innerHTML = "Please select an image!";
@@ -1729,6 +1735,7 @@
                     preview.style.display = "block";
                     preview.style.width = "80%";
                     preview.style.height = "auto";
+                    previewImage.style.display = "none";
 
                     if (data.crop_info.message) {
                         errorDiv.innerHTML = data.crop_info.message;
@@ -1743,6 +1750,7 @@
                         resultDivCon.style.display = "block";
                     }
                 } else {
+
                     resultDiv.innerHTML = `Error: ${data.error}`;
                 }
             } catch (error) {

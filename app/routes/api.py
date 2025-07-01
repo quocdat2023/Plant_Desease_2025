@@ -13,8 +13,8 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 from yolov11_source.ultralytics import YOLO
 import cv2
 import os
-from PIL import Image
 import numpy as np
+from PIL import Image, UnidentifiedImageError  # Kiểm tra file ảnh
 
 # Giả định các service/repository đã được định nghĩa
 from ..core.services.query_service import QueryService
@@ -33,8 +33,6 @@ users_collection.create_index('email', unique=True)
 index_repo = IndexRepository()
 query_service = QueryService(index_repo)
 gemini_service = GeminiService()
-
-
 
 # Đường dẫn đến mô hình YOLO đã huấn luyện
 MODEL_PATH = "source/trained_yolo11n_cls.pt"
@@ -111,9 +109,9 @@ def format_chat_history(memory):
         return "Không có lịch sử hội thoại trước."
     formatted = []
     for m in messages:
-        role = getattr(m, "type", None) or m.get("role", "User")
-        content = getattr(m, "content", None) or m.get("content", "")
-        formatted.append(f"{role.capitalize()}: {content}")
+        role = getattr(m, "type", "user").capitalize()
+        content = getattr(m, "content", "") or ""
+        formatted.append(f"{role}: {content}")
     return "\n".join(formatted)
 
 @api_bp.route("/register", methods=["GET", "POST"])
@@ -195,7 +193,6 @@ def query():
 
     # Query dữ liệu tham khảo
     results = query_service.query(question, k=5, doc_type="banan", strategy="hybrid")
-
     top_pdf_docs = [
         {"source": r.metadata["source"], "text": r.text, "distance": r.distance, **r.__dict__}
         for r in results if r.distance is not None and r.distance != 0
@@ -215,7 +212,6 @@ Bạn là chuyên gia nông nghiệp với hơn 30 năm kinh nghiệm trong lĩn
 
 **Thông tin tham khảo:**  
 {top_pdf_docs if top_pdf_docs else "Không tìm thấy thông tin từ PDF. Phân tích dựa trên dữ liệu bệnh và kiến thức nông nghiệp."}
-
 
 **Hướng dẫn trả lời chi tiết:**
 ** Chú ý nếu xác định đầu vào là câu hỏi thì tập trung vào trả lời câu hỏi liên quan. ngược lại nếu đầu vào là  tên bệnh thì trả lời theo các bước sau: **
@@ -292,7 +288,7 @@ Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về b�
         related_questions = gemini_service.generate_content(related_questions_prompt)
         # Preprocess the questions (handles both string and list inputs)
         related_questions = preprocess_related_questions(related_questions)
-    except (json.JSONDecodeError, ValueError, Exception) as e:        # Fallback to default questions if generation fails
+    except (json.JSONDecodeError, ValueError, Exception) as e:
         related_questions = [
             {"question": "Cách nhận biết sớm các bệnh phổ biến trên cây cà chua?"},
             {"question": "Những loại thuốc nào an toàn để trị bệnh trên cây lúa?"},
@@ -311,7 +307,6 @@ Bạn là chuyên gia nông nghiệp Việt Nam. Dựa trên câu hỏi về b�
         "chat_history": chat_history_str,
         "related_questions": related_questions
     })
-
 
 @api_bp.route("/query_related", methods=["POST"])
 def query_related():
@@ -419,19 +414,24 @@ def predict():
     if file.filename == "":
         return jsonify({"error": "No file selected"}), 400
 
+    # Kiểm tra định dạng có phải ảnh hay không
+    try:
+        image = Image.open(file)
+        image.verify()  # Kiểm tra hợp lệ của ảnh
+    except UnidentifiedImageError:
+        return jsonify({"error": "Uploaded file is not a valid image"}), 400
+    except Exception as e:
+        return jsonify({"error": f"Image validation failed: {str(e)}"}), 400
+
+    # Reset lại con trỏ file để lưu
+    file.stream.seek(0)
+
     # Lưu file ảnh tải lên
     file_path = os.path.join(UPLOAD_FOLDER, file.filename)
     file.save(file_path)
 
     # Đọc và dự đoán với YOLO
-    results = model(file_path)
-    probs = results[0].probs
-    top1_idx = probs.top1
-    top1_conf = probs.top1conf.item()
-    class_name = model.names[top1_idx]
-
-    # Trả về đường dẫn tương đối cho client
-    relative_image_path = f"/static/uploads/{file.filename}"
+    results = model
 
     # Tải file JSON
     json_file_path = "source/crop_data.json"
@@ -468,31 +468,3 @@ def predict():
         "image_path": relative_image_path,
         "crop_info": crop_info
     })
-
-# def predict():
-#     if "file" not in request.files:
-#         return jsonify({"error": "No file uploaded"}), 400
-
-#     file = request.files["file"]
-#     if file.filename == "":
-#         return jsonify({"error": "No file selected"}), 400
-
-#     # Lưu file ảnh tải lên
-#     file_path = os.path.join(UPLOAD_FOLDER, file.filename)
-#     file.save(file_path)
-
-#     # Đọc và dự đoán với YOLO
-#     results = model(file_path)
-#     probs = results[0].probs
-#     top1_idx = probs.top1
-#     top1_conf = probs.top1conf.item()
-#     class_name = model.names[top1_idx]
-
-#     # Trả về đường dẫn tương đối cho client
-#     relative_image_path = f"/static/uploads/{file.filename}"
-
-#     return jsonify({
-#         "class": class_name,
-#         "confidence": f"{top1_conf:.2f}",
-#         "image_path": relative_image_path  # Sử dụng đường dẫn tương đối
-#     })
