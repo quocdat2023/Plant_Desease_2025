@@ -35,7 +35,7 @@ query_service = QueryService(index_repo)
 gemini_service = GeminiService()
 
 # Đường dẫn đến mô hình YOLO đã huấn luyện
-MODEL_PATH = "source/trained_yolo11n_cls.pt"
+MODEL_PATH = "source/trained_yolo11s_cls.pt"
 # Thư mục lưu ảnh tải lên
 UPLOAD_FOLDER = "app/static/uploads"
 if not os.path.exists(UPLOAD_FOLDER):
@@ -431,7 +431,14 @@ def predict():
     file.save(file_path)
 
     # Đọc và dự đoán với YOLO
-    results = model
+    results = model(file_path)
+    probs = results[0].probs
+    top1_idx = probs.top1
+    top1_conf = probs.top1conf.item()
+    class_name = model.names[top1_idx]
+
+    # Trả về đường dẫn tương đối cho client
+    relative_image_path = f"/static/uploads/{file.filename}"
 
     # Tải file JSON
     json_file_path = "source/crop_data.json"

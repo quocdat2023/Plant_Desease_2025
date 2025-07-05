@@ -7937,3 +7937,178 @@
 2025-07-01 14:55:23,423 [werkzeug] INFO: 127.0.0.1 - - [01/Jul/2025 14:55:23] "POST /api/query HTTP/1.1" 200 -
 2025-07-01 14:57:34,114 [werkzeug] INFO: 127.0.0.1 - - [01/Jul/2025 14:57:34] "OPTIONS /api/query HTTP/1.1" 200 -
 2025-07-01 14:57:52,326 [werkzeug] INFO: 127.0.0.1 - - [01/Jul/2025 14:57:52] "POST /api/query HTTP/1.1" 200 -
+2025-07-05 20:20:09,150 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 20:20:09,177 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-07-05 20:20:09,178 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-07-05 20:20:09,183 [werkzeug] INFO:  * Restarting with stat
+2025-07-05 20:21:50,228 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 20:21:50,254 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-07-05 20:21:50,254 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-07-05 20:21:50,256 [werkzeug] INFO:  * Restarting with stat
+2025-07-05 20:23:16,688 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 20:23:16,702 [werkzeug] WARNING:  * Debugger is active!
+2025-07-05 20:23:16,712 [werkzeug] INFO:  * Debugger PIN: 582-961-207
+2025-07-05 20:23:21,050 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:21] "GET / HTTP/1.1" 200 -
+2025-07-05 20:23:21,065 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:21] "GET / HTTP/1.1" 200 -
+2025-07-05 20:23:23,049 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:23] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 20:23:23,052 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:23] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 20:23:27,581 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:27] "GET /login HTTP/1.1" 200 -
+2025-07-05 20:23:28,314 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:28] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 20:23:28,315 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:28] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 20:23:33,922 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:33] "POST /api/login HTTP/1.1" 200 -
+2025-07-05 20:23:34,046 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:34] "[33mGET /api/plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 20:23:34,050 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:34] "[33mGET /api/plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 20:23:37,442 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:37] "POST /api/login HTTP/1.1" 200 -
+2025-07-05 20:23:37,555 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:37] "[33mGET /api/plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 20:23:37,557 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:37] "[33mGET /api/plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 20:23:42,904 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:42] "POST /api/login HTTP/1.1" 200 -
+2025-07-05 20:23:43,028 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:43] "[33mGET /api/plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 20:23:43,034 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:43] "[33mGET /api/plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 20:23:56,727 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:56] "POST /api/login HTTP/1.1" 200 -
+2025-07-05 20:23:56,833 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:56] "[33mGET /api/plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 20:23:56,834 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:23:56] "[33mGET /api/plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 20:24:16,082 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:24:16] "GET /register HTTP/1.1" 200 -
+2025-07-05 20:24:17,180 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:24:17] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 20:24:17,184 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:24:17] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 20:24:23,165 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:24:23] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 20:24:24,573 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:24:24] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 20:24:24,575 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:24:24] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 20:24:35,513 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:24:35] "POST /api/predict HTTP/1.1" 200 -
+2025-07-05 20:24:35,524 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 20:24:35] "GET /static/uploads/287.jpg HTTP/1.1" 200 -
+2025-07-05 20:24:56,193 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\Desktop\\plants\\app\\routes\\api.py', reloading
+2025-07-05 20:24:58,832 [werkzeug] INFO:  * Restarting with stat
+2025-07-05 20:26:43,863 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 20:26:43,876 [werkzeug] WARNING:  * Debugger is active!
+2025-07-05 20:26:43,881 [werkzeug] INFO:  * Debugger PIN: 582-961-207
+2025-07-05 20:27:18,557 [werkzeug] INFO:  * Detected change in 'C:\\Users\\quocd\\AppData\\Roaming\\Python\\Python311\\site-packages\\wrapt\\__init__.py', reloading
+2025-07-05 20:27:21,941 [werkzeug] INFO:  * Restarting with stat
+2025-07-05 21:02:16,927 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 21:02:16,985 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-07-05 21:02:16,986 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-07-05 21:02:17,016 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-07-05 21:03:54,308 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 21:03:54,343 [werkzeug] WARNING:  * Debugger is active!
+2025-07-05 21:03:54,354 [werkzeug] INFO:  * Debugger PIN: 105-487-264
+2025-07-05 21:03:54,640 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:03:54] "GET / HTTP/1.1" 200 -
+2025-07-05 21:03:54,931 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:03:54] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 21:03:54,936 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:03:54] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 21:03:55,316 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\multiarray.py', reloading
+2025-07-05 21:03:55,334 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\array_constructors.py', reloading
+2025-07-05 21:03:55,375 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\comparisons.py', reloading
+2025-07-05 21:03:58,699 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-07-05 21:05:54,062 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 21:05:54,100 [werkzeug] WARNING:  * Debugger is active!
+2025-07-05 21:05:54,108 [werkzeug] INFO:  * Debugger PIN: 105-487-264
+2025-07-05 21:05:54,267 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:05:54] "GET / HTTP/1.1" 200 -
+2025-07-05 21:05:54,314 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:05:54] "GET /plant_fertilizer HTTP/1.1" 200 -
+2025-07-05 21:05:54,404 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:05:54] "GET /plant_recommendation HTTP/1.1" 200 -
+2025-07-05 21:05:54,407 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:05:54] "GET /plant_recommendation HTTP/1.1" 200 -
+2025-07-05 21:05:54,487 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:05:54] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:05:54,502 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:05:54] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:05:54,605 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:05:54] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:05:54,642 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:05:54] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:05:54,643 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:05:54] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 21:05:54,647 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:05:54] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:05:54,648 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:05:54] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 21:05:54,705 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\kiwisolver\\__init__.py', reloading
+2025-07-05 21:05:54,837 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\kiwisolver\\exceptions.py', reloading
+2025-07-05 21:05:55,065 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\jsonpointer.py', reloading
+2025-07-05 21:05:58,105 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-07-05 21:07:22,786 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 21:07:22,812 [werkzeug] WARNING:  * Debugger is active!
+2025-07-05 21:07:22,821 [werkzeug] INFO:  * Debugger PIN: 105-487-264
+2025-07-05 21:07:22,924 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:07:22] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:07:22,955 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:07:22] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:07:22,996 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:07:22] "GET / HTTP/1.1" 200 -
+2025-07-05 21:07:23,028 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:07:23] "GET / HTTP/1.1" 200 -
+2025-07-05 21:07:23,389 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:07:23] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 21:07:23,392 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:07:23] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 21:07:26,901 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\filelock\\_unix.py', reloading
+2025-07-05 21:07:26,918 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\filelock\\_util.py', reloading
+2025-07-05 21:07:26,940 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\filelock\\version.py', reloading
+2025-07-05 21:07:26,958 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\filelock\\asyncio.py', reloading
+2025-07-05 21:07:26,977 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\filelock\\_api.py', reloading
+2025-07-05 21:07:26,994 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\filelock\\_windows.py', reloading
+2025-07-05 21:07:28,742 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-07-05 21:08:42,139 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 21:08:42,167 [werkzeug] WARNING:  * Debugger is active!
+2025-07-05 21:08:42,177 [werkzeug] INFO:  * Debugger PIN: 105-487-264
+2025-07-05 21:08:42,287 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:08:42] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:08:42,314 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:08:42] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:08:42,328 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:08:42] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:08:42,336 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:08:42] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:08:42,346 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:08:42] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:08:42,622 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:08:42] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 21:08:42,644 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:08:42] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 21:08:47,689 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\scipy\\io\\tests\\test_mmio.py', reloading
+2025-07-05 21:08:47,721 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\scipy\\io\\tests\\test_fortran.py', reloading
+2025-07-05 21:08:47,760 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\scipy\\io\\matlab\\mio_utils.py', reloading
+2025-07-05 21:08:47,824 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\scipy\\io\\matlab\\__init__.py', reloading
+2025-07-05 21:08:47,859 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\scipy\\io\\matlab\\mio5_params.py', reloading
+2025-07-05 21:08:47,891 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\scipy\\io\\matlab\\_mio.py', reloading
+2025-07-05 21:08:47,924 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\scipy\\io\\matlab\\_mio5_params.py', reloading
+2025-07-05 21:08:48,108 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\scipy\\io\\matlab\\mio_utils.py', reloading
+2025-07-05 21:08:50,611 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-07-05 21:12:06,937 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 21:12:06,969 [werkzeug] INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.9:5000
+2025-07-05 21:12:06,969 [werkzeug] INFO: [33mPress CTRL+C to quit[0m
+2025-07-05 21:12:06,988 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-07-05 21:14:18,749 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 21:14:18,773 [werkzeug] WARNING:  * Debugger is active!
+2025-07-05 21:14:18,783 [werkzeug] INFO:  * Debugger PIN: 105-487-264
+2025-07-05 21:14:18,887 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:14:18] "GET / HTTP/1.1" 200 -
+2025-07-05 21:14:18,929 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:14:18] "GET / HTTP/1.1" 200 -
+2025-07-05 21:14:18,989 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\torch\\_inductor\\codegen\\cpp.py', reloading
+2025-07-05 21:14:19,177 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:14:19] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 21:14:19,180 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:14:19] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 21:14:22,559 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-07-05 21:16:12,424 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 21:16:12,448 [werkzeug] WARNING:  * Debugger is active!
+2025-07-05 21:16:12,456 [werkzeug] INFO:  * Debugger PIN: 105-487-264
+2025-07-05 21:16:12,588 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:16:12] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:16:12,603 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:16:12] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:16:12,604 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:16:12] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:16:12,645 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:16:12] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:16:12,705 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\torch\\distributed\\_shard\\metadata.py', reloading
+2025-07-05 21:16:12,814 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\torch\\distributed\\_shard\\sharding_spec\\_internals.py', reloading
+2025-07-05 21:16:12,897 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:16:12] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 21:16:12,899 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:16:12] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 21:16:12,924 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\torch\\distributed\\_shard\\sharding_spec\\chunk_sharding_spec.py', reloading
+2025-07-05 21:16:13,053 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\torch\\distributed\\_shard\\sharding_spec\\api.py', reloading
+2025-07-05 21:16:13,198 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\torch\\distributed\\_shard\\sharding_spec\\chunk_sharding_spec_ops\\embedding.py', reloading
+2025-07-05 21:16:13,351 [werkzeug] INFO:  * Detected change in 'c:\\Users\\quocd\\Desktop\\plants\\venv\\Lib\\site-packages\\torch\\distributed\\_shard\\sharding_spec\\chunk_sharding_spec_ops\\_common.py', reloading
+2025-07-05 21:16:16,181 [werkzeug] INFO:  * Restarting with watchdog (windowsapi)
+2025-07-05 21:17:59,782 [app] INFO: Secret Key Set: b9c8a7d6e5f43210fedcba9876543210abcdef9876543210
+2025-07-05 21:17:59,798 [werkzeug] WARNING:  * Debugger is active!
+2025-07-05 21:17:59,804 [werkzeug] INFO:  * Debugger PIN: 105-487-264
+2025-07-05 21:18:00,360 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:18:00] "POST /api/predict HTTP/1.1" 200 -
+2025-07-05 21:18:00,375 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:18:00] "GET /static/uploads/ri-sat-tren-bap.jpg HTTP/1.1" 200 -
+2025-07-05 21:18:21,120 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:18:21] "POST /api/predict HTTP/1.1" 200 -
+2025-07-05 21:18:21,129 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:18:21] "GET /static/uploads/benh-thuong-gap-tren-cay-tieu.jpg HTTP/1.1" 200 -
+2025-07-05 21:18:28,257 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:18:28] "POST /api/predict HTTP/1.1" 200 -
+2025-07-05 21:18:28,267 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:18:28] "GET /static/uploads/bacterial_val%20(36).JPG HTTP/1.1" 200 -
+2025-07-05 21:19:02,339 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:19:02] "POST /api/predict HTTP/1.1" 200 -
+2025-07-05 21:19:02,349 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:19:02] "GET /static/uploads/caphe.jpg HTTP/1.1" 200 -
+2025-07-05 21:19:36,102 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:19:36] "POST /api/predict HTTP/1.1" 200 -
+2025-07-05 21:19:36,112 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:19:36] "GET /static/uploads/R%20(1).jpg HTTP/1.1" 200 -
+2025-07-05 21:19:45,669 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:19:45] "GET /plant_detection HTTP/1.1" 200 -
+2025-07-05 21:19:45,785 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:19:45] "[33mGET /plant_desease.json HTTP/1.1[0m" 404 -
+2025-07-05 21:19:45,788 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:19:45] "[33mGET /plant_species.json HTTP/1.1[0m" 404 -
+2025-07-05 21:19:51,497 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:19:51] "POST /api/predict HTTP/1.1" 200 -
+2025-07-05 21:19:51,508 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:19:51] "GET /static/uploads/287.jpg HTTP/1.1" 200 -
+2025-07-05 21:19:59,608 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:19:59] "POST /api/predict HTTP/1.1" 200 -
+2025-07-05 21:19:59,619 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:19:59] "GET /static/uploads/tieu.jpg HTTP/1.1" 200 -
+2025-07-05 21:20:14,791 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:20:14] "POST /api/predict HTTP/1.1" 200 -
+2025-07-05 21:20:14,799 [werkzeug] INFO: 127.0.0.1 - - [05/Jul/2025 21:20:14] "GET /static/uploads/R%20(1).jpg HTTP/1.1" 200 -

@@ -1,3 +1,4 @@
 # Bỏ qua tệp môi trường chứa key
 .env
 *.env
+venv

@@ -17,3 +17,4 @@ flask-bcrypt
 ultralytics
 opencv-python
 Pillow
+tensorflow
