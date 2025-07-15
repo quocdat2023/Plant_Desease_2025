@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Care & Gardens</title>
+    <link rel="shortcut icon"
+        href="https://cdn.prod.website-files.com/635f83ca61099e23ec36a337/63e324da0ebc777116ef9242_new_256.jpg"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .custom-bg {
+            background-image: linear-gradient(to right, #E3F8D3, #A9EBC3);
+            /* min-height: 100vh; */
+        }
+
+        .navbar-custom {
+            background-color: white;
+        }
+
+        .navbar-brand img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .btn-start {
+            background-color: #3bbf9c;
+            color: white;
+            border-radius: 50px;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card {
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .card-subtitle {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: #333;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .modal-body img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .disease-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .text-purple {
+            color: #4CC7AB;
+        }
+
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: transparent;
+            /* Fully transparent */
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .chat-button img {
+            margin-right: 10px;
+        }
+
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 40px;
+            width: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .chat-header {
+            background-color: #4CC7AB;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h5 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .chat-body {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .bot-message {
+            background-color: #e9ecef;
+            margin-right: 10px;
+        }
+
+        .user-message {
+            background-color: #4CC7AB;
+            margin-left: auto;
+            width: fit-content;
+            color: white;
+        }
+
+        .chat-footer {
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-footer input {
+            flex: 1;
+        }
+
+        .chat-footer button {
+            background-color: #4CC7AB;
+            border: none;
+        }
+
+        .chat-message {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background-color: #4CC7AB;
+            margin-left: auto;
+            width: fit-content;
+        }
+
+        .bot-message {
+            background-color: #EAF0F6;
+            margin-right: auto;
+        }
+
+        .bot-message h3 {
+            margin: 10px 0 5px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .bot-message p {
+            margin: 5px 0;
+        }
+
+        .bot-message ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        .bot-message li {
+            margin: 5px 0;
+        }
+
+        .related-questions {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #EAF0F6;
+            border-radius: 5px;
+        }
+
+        .related-questions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .related-questions li {
+            margin: 5px 0;
+        }
+
+        .related-questions a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .related-questions a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .payment-icons img {
+            height: 25px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 12px;
+            color: #bbbbbb;
+            width: 100%;
+        }
+
+        .chat-bubble {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-bubble span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff4444;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .btn-start:hover {
+            background-color: #4CC7AB;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #7be6cd;
+            color: white;
+        }
+
+        /* Form layout to place elements in a row */
+        #upload-form {
+            display: flex;
+            align-items: center;
+            /* Vertically center items */
+            gap: 10px;
+            /* Space between elements */
+        }
+
+        /* Container for the file input */
+        .custom-file-upload {
+            position: relative;
+            display: inline-block;
+            width: 150px;
+            /* Match button width */
+            height: 50px;
+            /* Match button height */
+        }
+
+        /* Hide the default file input */
+        #file-input {
+            display: none;
+        }
+
+        /* Style the label to look like a button */
+        .custom-file-upload label {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-color: #3bbf9c;
+            color: white;
+            /* Light background */
+            border: 2px solid #3bbf9c;
+            /* Gray border */
+            border-radius: 5px;
+            /* Rounded corners */
+            text-align: center;
+            line-height: 46px;
+            /* Center text vertically */
+            /* Text color */
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        /* Hover effect */
+        .custom-file-upload label:hover {
+            background-color: #d4edda;
+            color: #3bbf9c;
+        }
+
+        /* Active effect */
+        .custom-file-upload label:active {
+            background-color: #dee2e6;
+        }
+
+        /* Style for when a file is selected */
+        .custom-file-upload input[type="file"]:valid+label {
+            background-color: #d4edda;
+            /* Light green to indicate success */
+            border-color: #3bbf9c;
+            color: #3bbf9c;
+        }
+
+        /* Optional: Add an icon inside the label */
+        .custom-file-upload label::before {
+            content: "\f093";
+            /* Font Awesome upload icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 8px;
+        }
+
+        /* Style the submit button */
+        .btn-start {
+            background-color: #3bbf9c;
+            /* Green button */
+            border-color: #3bbf9c;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://cdn.prod.website-files.com/635f83ca61099e23ec36a337/63e324da0ebc777116ef9242_new_256.jpg"
+                    alt="Logo"> Plant Disease
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{{ url_for('home') }}">Trang chủ</a>
+                {% if session.user %}
+                <a class="nav-link" href="{{ url_for('plant_detection') }}">Phát hiện bệnh</a>
+                {% endif %}
+                <a class="nav-link" href="{{ url_for('plant_recommendation') }}">Gợi ý giống cây</a>
+                <a class="nav-link" href="{{ url_for('plant_fertilizer') }}">Gợi ý phân bón</a>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {% if session.user %}
+                        {{ session.user.name }}
+                        <img src="https://myplantin.com/icons/my-plants.svg" alt="Logo"
+                            style="height: 16px; vertical-align: middle;">
+                        {% else %}
+                        Tài khoản
+                        {% endif %}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        {% if session.user %}
+                        <li><a class="dropdown-item" href="{{ url_for('logout') }}">Đăng xuất</a></li>
+                        {% else %}
+                        <li><a class="dropdown-item" href="{{ url_for('register') }}">Đăng ký</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('login') }}">Đăng nhập</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid custom-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-dark">Plant Care & Gardens</h1>
+                    <p class="lead text-muted">
+                        Ứng dụng "Plant Care & Gardens" là công cụ hỗ trợ chăm sóc cây trồng và quản lý vườn. Trải
+                        nghiệm tính năng gợi ý giống cây phù hợp với điều kiện của bạn!
+                    </p>
+                    <div class="form-container mt-4">
+                        <form id="plantRecommendationForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="N">Nitrogen (N):</label>
+                                    <input type="number" step="any" class="form-control" id="N" name="N" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="P">Phosphorus (P):</label>
+                                    <input type="number" step="any" class="form-control" id="P" name="P" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="K">Potassium (K):</label>
+                                    <input type="number" step="any" class="form-control" id="K" name="K" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="temperature">Nhiệt độ (°C):</label>
+                                    <input type="number" step="any" class="form-control" id="temperature"
+                                        name="temperature" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="humidity">Độ ẩm (%):</label>
+                                    <input type="number" step="any" class="form-control" id="humidity" name="humidity"
+                                        required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="ph">pH:</label>
+                                    <input type="number" step="any" class="form-control" id="ph" name="ph" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="rainfall">Lượng mưa (mm):</label>
+                                    <input type="number" step="any" class="form-control" id="rainfall" name="rainfall"
+                                        required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <button type="submit" class="btn btn-start" id="submitBtn"
+                                        style="margin-top: 20px; width: 100%;"><i class="fa-solid fa-seedling"></i> Gợi
+                                        ý cây
+                                        trồng</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="error" class="error" style="display: none;"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-left">
+                    <img src="https://www.picturethisai.com/image-handle/website_cmsname/static/name/e9984a758e24ad0f4849b7e5b9d58e2a/img/article_home/img/head-photo.png?x-oss-process=image/format,webp/resize,s_527&v=1.0"
+                        class="img-fluid rounded" alt="Plant Image" id="imagePreview">
+                </div>
+                <div class="d-flex flex-row justify-content-center align-items-center">
+                    <div id="result" style="display: none;" class="mt-3 result" style="height: auto; width: 50%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container disease-container">
+        <h2 class="text-3xl text-center mb-5">GỢI Ý MỘT SỐ GIỐNG CÂY TRỒNG</h2>
+        <div class="row mt-5" id="speciesCards"></div>
+    </div>
+
+    <!-- Modal for Disease Details -->
+    <div class="modal fade" id="diseaseModal" tabindex="-1" aria-labelledby="diseaseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="diseaseModalLabel">Chi Tiết Bệnh Cây</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" class="img-fluid" alt="Disease Image"
+                        style="width: 326px; height: auto;">
+                    <h5 id="modalCommonName"></h5>
+                    <h6 id="modalScientificName" class="text-muted"></h6>
+                    <h3 class="text-purple">Mô Tả</h3>
+                    <div id="modalDescription"></div>
+                    <h3 class="text-purple">Giải Pháp</h3>
+                    <div id="modalSolution"></div>
+                    <h3 class="text-purple">Các loại cây liên quan:</h3>
+                    <div id="modalHost"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Species Details -->
+    <div class="modal fade" id="speciesModal" tabindex="-1" aria-labelledby="speciesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="speciesModalLabel">Chi Tiết Chủng Loại Cây</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="speciesModalImage" src="" class="img-fluid" alt="Species Image"
+                        style="width: 326px; height: auto;">
+                    <h5 id="speciesModalCommonName"></h5>
+                    <h6 id="speciesModalScientificName" class="text-muted"></h6>
+                    <h3 class="text-purple">Mô Tả</h3>
+                    <div id="speciesModalDescription"></div>
+                    <h3 class="text-purple">Hướng Dẫn Chăm Sóc</h3>
+                    <div id="speciesModalCare"></div>
+                    <h3 class="text-purple">Môi Trường Phát Triển</h3>
+                    <div id="speciesModalEnvironment"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Popup -->
+    <div class="chat-popup" id="chatPopup">
+        <div class="chat-header">
+            <h5>Trò chuyện với chúng tôi</h5>
+            <button type="button" class="btn-close" id="closeChat"></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot-message">
+                Chào bạn! Chúng tôi ở đây để giúp bạn với các câu hỏi về chăm sóc cây trồng. Hãy nhập tin nhắn của bạn
+                dưới đây!
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" class="form-control" placeholder="Nhập tin nhắn của bạn...">
+            <button type="button" class="btn btn-primary" id="sendMessage">Gửi</button>
+        </div>
+    </div>
+    <button class="chat-button" id="openChat">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/059/491/654/small/3d-rendered-chatbot-illustration-png.png"
+            alt="Chat Icon" style="width: 70px; height: 70px;">
+    </button>
+
+    <footer class="footer text-center">
+        <div class="copyright">
+            © 2025 Copyright Plant Disease. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        async function loadPlantDiseases() {
+            const cardContainer = document.getElementById('diseaseCards');
+            try {
+                const response = await fetch('./plant_desease.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                }
+                const data = await response.json();
+                if (!data.data || !Array.isArray(data.data)) {
+                    throw new Error('Invalid JSON structure: "data" array not found');
+                }
+                cardContainer.innerHTML = '';
+                data.data.forEach(disease => {
+                    const thumbnail = disease.images && disease.images.length > 0
+                        ? disease.images[0].thumbnail
+                        : 'https://via.placeholder.com/150';
+                    const description = disease.description && disease.description.length > 0
+                        ? disease.description[0].description
+                        : 'No description available';
+                    const card = `
+                        <div class="col-md-3 mb-4">
+                            <div class="card h-100" onclick='showDiseaseDetails(${JSON.stringify(disease)})'>
+                                <img src="${thumbnail}" class="card-img-top" alt="${disease.common_name || 'Unknown Disease'}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${disease.common_name || 'Unknown Disease'}</h5>
+                                    <h6 class="card-subtitle mb-2">Tên khoa học: ${disease.scientific_name || 'N/A'}</h6>
+                                    <p class="card-text">${description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    cardContainer.innerHTML += card;
+                });
+            } catch (error) {
+                console.error('Error loading plant disease data:', error.message);
+                cardContainer.innerHTML = `
+                    <div class="col-12">
+                        <p class="text-danger">Error loading plant disease data: ${error.message}</p>
+                        <p class="text-muted">Please ensure the 'plant_desease.json' file is in the same directory as this HTML file and run the page using a local web server (e.g., 'python -m http.server 8000').</p>
+                    </div>
+                `;
+                // Fallback data remains the same as in the original code
+            }
+        }
+
+        function showDiseaseDetails(disease) {
+            const modalImage = document.getElementById('modalImage');
+            const modalCommonName = document.getElementById('modalCommonName');
+            const modalScientificName = document.getElementById('modalScientificName');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalSolution = document.getElementById('modalSolution');
+            const modalHost = document.getElementById('modalHost');
+            const thumbnail = disease.images && disease.images.length > 0
+                ? disease.images[0].thumbnail
+                : 'https://via.placeholder.com/150';
+
+            modalImage.src = thumbnail;
+            modalCommonName.textContent = disease.common_name || 'Unknown Disease';
+            modalScientificName.textContent = disease.scientific_name || 'N/A';
+
+            let descriptionText = '';
+            if (disease.description && disease.description.length > 0) {
+                disease.description.forEach(desc => {
+                    descriptionText += `<p><strong>${desc.subtitle}</strong></p><p>${desc.description}</p>`;
+                });
+            } else {
+                descriptionText = '<p>No description available</p>';
+            }
+            modalDescription.innerHTML = descriptionText;
+
+            let solutionText = '';
+            if (disease.solution && disease.solution.length > 0) {
+                disease.solution.forEach(sol => {
+                    solutionText += `<p><strong>${sol.subtitle}</strong></p><p>${sol.description}</p>`;
+                });
+            } else {
+                solutionText = '<p>No solution available</p>';
+            }
+            modalSolution.innerHTML = solutionText;
+
+            let hostText = '';
+            if (disease.host && disease.host.length > 0) {
+                hostText = disease.host.join(', ');
+            } else {
+                hostText = 'No host information available';
+            }
+            modalHost.textContent = hostText;
+
+            const modal = new bootstrap.Modal(document.getElementById('diseaseModal'));
+            modal.show();
+        }
+
+        async function loadPlantSpecies() {
+            const cardContainer = document.getElementById('speciesCards');
+            try {
+                // Fetch the local JSON file
+                const response = await fetch('./plant_species.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                }
+                const data = await response.json();
+
+                // Check if data.data exists and is an array
+                if (!data.data || !Array.isArray(data.data)) {
+                    throw new Error('Invalid JSON structure: "data" array not found');
+                }
+
+                // Clear any existing content
+                cardContainer.innerHTML = '';
+
+                // Loop through species and create cards
+                data.data.forEach(species => {
+                    const thumbnail = species.images && species.images.length > 0
+                        ? species.images[0].thumbnail
+                        : 'https://via.placeholder.com/150';
+                    const description = species.description && species.description.length > 0
+                        ? species.description[0].description
+                        : 'No description available';
+                    const card = `
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100" onclick='showSpeciesDetails(${JSON.stringify(species)})'>
+                        <img src="${thumbnail}" class="card-img-top" alt="${species.common_name || 'Unknown Species'}">
+                        <div class="card-body">
+                            <h5 class="card-title">${species.common_name || 'Unknown Species'}</h5>
+                            <h6 class="card-subtitle mb-2">${species.scientific_name || 'N/A'}</h6>
+                            <p class="card-text">${description}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+                    cardContainer.innerHTML += card;
+                });
+            } catch (error) {
+                console.error('Error loading plant species data:', error.message);
+                cardContainer.innerHTML = `
+            <div class="col-12">
+                <p class="text-danger">Error loading plant species data: ${error.message}</p>
+                <p class="text-muted">Please ensure the 'plant_species.json' file is in the same directory as this HTML file and run the page using a local web server (e.g., 'python -m http.server 8000').</p>
+            </div>
+        `;
+                // Fallback: Use sample data for testing
+                const fallbackData = {
+                    data: [
+                        {
+                            id: 1,
+                            common_name: "Cây Lúa Oryza sativa",
+                            scientific_name: "Oryza sativa",
+                            description: [
+                                {
+                                    subtitle: "Cây Lúa (Oryza sativa) là gì?",
+                                    description: "Cây lúa là một trong những cây lương thực quan trọng nhất thế giới, cung cấp nguồn thực phẩm chính cho hơn một nửa dân số toàn cầu. Nó thuộc họ Poaceae và được trồng chủ yếu ở các khu vực nhiệt đới và cận nhiệt đới."
+                                }
+                            ],
+                            care: [
+                                {
+                                    subtitle: "Yêu cầu chăm sóc",
+                                    description: "• Cần nước dồi dào, thường được trồng ở các ruộng ngập nước.<br>• Đất phù hợp: đất sét hoặc đất phù sa giàu dinh dưỡng.<br>• Bón phân định kỳ với phân đạm, lân và kali."
+                                }
+                            ],
+                            environment: [
+                                "Nhiệt độ: 20-35°C",
+                                "Độ ẩm: Cao, thích hợp với môi trường ngập nước",
+                                "Ánh sáng: Cần ánh sáng mặt trời đầy đủ"
+                            ],
+                            images: [
+                                {
+                                    thumbnail: "https://th.bing.com/th/id/OIP.dIgON9j8a3ns-svKCz6uPwHaFj?r=0&rs=1&pid=ImgDetMain"
+                                }
+                            ]
+                        },
+                        {
+                            id: 2,
+                            common_name: "Cây Ngô Zea mays",
+                            scientific_name: "Zea mays",
+                            description: [
+                                {
+                                    subtitle: "Cây Ngô (Zea mays) là gì?",
+                                    description: "Cây ngô là một loại cây lương thực quan trọng, được trồng rộng rãi trên toàn thế giới để lấy hạt làm thực phẩm, thức ăn chăn nuôi và nguyên liệu công nghiệp."
+                                }
+                            ],
+                            care: [
+                                {
+                                    subtitle: "Yêu cầu chăm sóc",
+                                    description: "• Đất tơi xốp, thoát nước tốt.<br>• Tưới nước đều đặn, đặc biệt trong giai đoạn ra hoa và tạo hạt.<br>• Bón phân hữu cơ và phân hóa học cân đối."
+                                }
+                            ],
+                            environment: [
+                                "Nhiệt độ: 18-32°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng trực tiếp"
+                            ],
+                            images: [
+                                {
+                                    thumbnail: "https://ars.els-cdn.com/content/image/3-s2.0-B9780128186213000082-f07-01-9780128186213.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "common_name": "Cây Cà Chua Solanum lycopersicum",
+                            "scientific_name": "Solanum lycopersicum",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Cà Chua (Solanum lycopersicum) là gì?",
+                                    "description": "Cây cà chua là một loại cây trồng phổ biến thuộc họ Solanaceae, được trồng để lấy quả làm thực phẩm. Cà chua được sử dụng rộng rãi trong ẩm thực trên toàn thế giới, từ salad, nước sốt đến các món ăn chế biến."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất giàu dinh dưỡng, tơi xốp, thoát nước tốt.<br>• Tưới nước đều đặn, giữ ẩm nhưng không để úng.<br>• Bón phân hữu cơ hoặc phân NPK trong suốt mùa vụ, đặc biệt khi cây ra hoa và đậu quả.<br>• Cần giá đỡ hoặc lồng để hỗ trợ cây phát triển."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 20-30°C",
+                                "Độ ẩm: Trung bình đến cao",
+                                "Ánh sáng: Cần ánh sáng mặt trời trực tiếp ít nhất 6-8 giờ mỗi ngày"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/R.e2471a5d5b7b5e0ffa5d4c9f5f883d3b?rik=c43WDw6zEQW%2blw&pid=ImgRaw&r=0"
+                                }
+                            ]
+                        }, {
+                            "id": 9,
+                            "common_name": "Cây Bông Gossypium hirsutum",
+                            "scientific_name": "Gossypium hirsutum",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Bông (Gossypium hirsutum) là gì?",
+                                    "description": "Cây bông là cây công nghiệp quan trọng, được trồng để lấy sợi bông từ quả. Sợi bông là nguyên liệu chính trong ngành dệt may."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất cát pha hoặc đất thịt nhẹ, thoát nước tốt.<br>• Cần đủ nước trong giai đoạn ra hoa và hình thành quả.<br>• Bón phân cân đối, đặc biệt là đạm, lân và kali.<br>• Cần ánh sáng mặt trời đầy đủ."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 25-30°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/OIP.ZwnnwnOdqNbb7LlfEhyDWwHaE9?w=1024&h=685&rs=1&pid=ImgDetMain"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 10,
+                            "common_name": "Cây Hạt Điều Anacardium occidentale",
+                            "scientific_name": "Anacardium occidentale",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Hạt Điều (Anacardium occidentale) là gì?",
+                                    "description": "Cây hạt điều là cây công nghiệp lâu năm, được trồng để lấy hạt điều. Hạt điều là một loại hạt dinh dưỡng, được sử dụng làm thực phẩm và chế biến."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Thích nghi với nhiều loại đất, đặc biệt là đất đồi, đất cát pha.<br>• Chịu hạn tốt.<br>• Cần ánh sáng mặt trời đầy đủ.<br>• Bón phân hữu cơ và vô cơ định kỳ."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 25-35°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng mặt trời đầy đủ"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://th.bing.com/th/id/OIP.V8IDIVYDOdK9HzaxbdYCygHaFA?rs=1&pid=ImgDetMain"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 9,
+                            "common_name": "Cây Xoài Mangifera indica",
+                            "scientific_name": "Mangifera indica",
+                            "description": [
+                                {
+                                    "subtitle": "Cây Xoài (Mangifera indica) là gì?",
+                                    "description": "Cây xoài là một loại cây ăn quả thuộc họ Anacardiaceae, được trồng để lấy quả ngọt, giàu vitamin C và phổ biến ở vùng nhiệt đới."
+                                }
+                            ],
+                            "care": [
+                                {
+                                    "subtitle": "Yêu cầu chăm sóc",
+                                    "description": "• Đất thoát nước tốt, giàu dinh dưỡng.<br>• Tưới nước vừa phải, tránh ngập.<br>• Bón phân hữu cơ và tỉa cành định kỳ."
+                                }
+                            ],
+                            "environment": [
+                                "Nhiệt độ: 24-35°C",
+                                "Độ ẩm: Trung bình",
+                                "Ánh sáng: Ánh sáng trực tiếp"
+                            ],
+                            "images": [
+                                {
+                                    "thumbnail": "https://res.cloudinary.com/dtfpvrnp2/image/upload/v1745673455/afl24tkpgycwmk5stdvw.webp"
+                                }
+                            ]
+                        }
+                    ]
+                };
+                cardContainer.innerHTML = '';
+                fallbackData.data.forEach(species => {
+                    const thumbnail = species.images && species.images.length > 0
+                        ? species.images[0].thumbnail
+                        : 'https://via.placeholder.com/150';
+                    const description = species.description && species.description.length > 0
+                        ? species.description[0].description
+                        : 'No description available';
+                    const card = `
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100" onclick='showSpeciesDetails(${JSON.stringify(species)})'>
+                        <img src="${thumbnail}" class="card-img-top" alt="${species.common_name || 'Unknown Species'}">
+                        <div class="card-body">
+                            <h5 class="card-title">${species.common_name || 'Unknown Species'}</h5>
+                            <h6 class="card-subtitle mb-2">Tên khoa học: ${species.scientific_name || 'N/A'}</h6>
+                            <p class="card-text">${description}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+                    cardContainer.innerHTML += card;
+                });
+            }
+        }
+
+        function showSpeciesDetails(species) {
+            const modalImage = document.getElementById('speciesModalImage');
+            const modalCommonName = document.getElementById('speciesModalCommonName');
+            const modalScientificName = document.getElementById('speciesModalScientificName');
+            const modalDescription = document.getElementById('speciesModalDescription');
+            const modalCare = document.getElementById('speciesModalCare');
+            const modalEnvironment = document.getElementById('speciesModalEnvironment');
+            const thumbnail = species.images && species.images.length > 0
+                ? species.images[0].thumbnail
+                : 'https://via.placeholder.com/150';
+
+            // Set image and basic text content
+            modalImage.src = thumbnail;
+            modalCommonName.textContent = species.common_name || 'Unknown Species';
+            modalScientificName.textContent = species.scientific_name || 'N/A';
+
+            // Handle description with line breaks
+            let descriptionText = '';
+            if (species.description && species.description.length > 0) {
+                species.description.forEach(desc => {
+                    descriptionText += `<p><strong>${desc.subtitle}</strong></p><p>${desc.description.replace(/\n/g, '<br>')}</p>`;
+                });
+            } else {
+                descriptionText = '<p>No description available</p>';
+            }
+            modalDescription.innerHTML = descriptionText;
+
+            // Handle care instructions with line breaks
+            let careText = '';
+            if (species.care && species.care.length > 0) {
+                species.care.forEach(care => {
+                    careText += `<p><strong>${care.subtitle}</strong></p><p>${care.description.replace(/\n/g, '<br>')}</p>`;
+                });
+            } else {
+                careText = '<p>No care instructions available</p>';
+            }
+            modalCare.innerHTML = careText;
+
+            // Handle environment conditions with line breaks
+            let environmentText = '';
+            if (species.environment && species.environment.length > 0) {
+                environmentText = species.environment.map(item => `<p>${item}</p>`).join('');
+            } else {
+                environmentText = '<p>No environment information available</p>';
+            }
+            modalEnvironment.innerHTML = environmentText;
+
+            // Show the modal
+            const modal = new bootstrap.Modal(document.getElementById('speciesModal'));
+            modal.show();
+        }     // Load both plant diseases and species when the page loads
+        window.onload = function () {
+            loadPlantDiseases();
+            loadPlantSpecies();
+        };
+
+        document.getElementById('openChat').addEventListener('click', function () {
+            document.getElementById('chatPopup').style.display = 'block';
+            document.getElementById('openChat').style.display = 'none';
+        });
+
+        document.getElementById('closeChat').addEventListener('click', function () {
+            document.getElementById('chatPopup').style.display = 'none';
+            document.getElementById('openChat').style.display = 'flex';
+        });
+
+        async function sendToBot(message) {
+            try {
+                const response = await fetch('http://localhost:5000/api/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: message })
+                });
+                if (!response.ok) {
+                    throw new Error('API request failed');
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error:', error);
+                return { final_response: 'Đã xảy ra lỗi khi xử lý yêu cầu. Vui lòng thử lại.' };
+            }
+        }
+
+        async function typeText(element, text, delay = 30) {
+            element.innerHTML = '';
+            for (let i = 0; i < text.length; i++) {
+                element.innerHTML = element.innerHTML.slice(0, -1) + text[i] + '|';
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+            element.innerHTML = element.innerHTML.slice(0, -1);
+        }
+
+        async function formatBotResponse(data) {
+            const { final_response, related_questions } = data;
+            const container = document.createElement('div');
+            container.className = 'chat-message bot-message';
+
+            const sections = final_response.split(/\*\*(.*?)\*\*:/);
+            let formattedHtml = '';
+
+            for (let i = 1; i < sections.length; i += 2) {
+                const header = sections[i].trim();
+                const content = sections[i + 1].trim();
+
+                formattedHtml += `<h3>${header}</h3>`;
+                const lines = content.split('\n').filter(line => line.trim());
+                let inList = false;
+
+                lines.forEach(line => {
+                    if (line.startsWith('* ')) {
+                        if (!inList) {
+                            formattedHtml += '<ul>';
+                            inList = true;
+                        }
+                        formattedHtml += `<li>${line.substring(2).trim()}</li>`;
+                    } else {
+                        if (inList) {
+                            formattedHtml += '</ul>';
+                            inList = false;
+                        }
+                        formattedHtml += `<p>${line}</p>`;
+                    }
+                });
+
+                if (inList) {
+                    formattedHtml += '</ul>';
+                }
+            }
+
+            container.innerHTML = formattedHtml;
+
+            const elementsToType = container.querySelectorAll('h3, p, li');
+            for (const element of elementsToType) {
+                const text = element.textContent;
+                element.textContent = '';
+                await typeText(element, text);
+            }
+
+            if (related_questions && Array.isArray(related_questions)) {
+                const relatedQuestionsDiv = document.createElement('div');
+                relatedQuestionsDiv.className = 'related-questions';
+                relatedQuestionsDiv.innerHTML = '<strong>Câu hỏi liên quan:</strong>';
+
+                const questionsList = document.createElement('ul');
+                related_questions.forEach(q => {
+                    const questionItem = document.createElement('li');
+                    const questionLink = document.createElement('a');
+                    questionLink.href = '#';
+                    questionLink.textContent = q.question;
+                    questionLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        handleRelatedQuestionClick(q.question);
+                    });
+                    questionItem.appendChild(questionLink);
+                    questionsList.appendChild(questionItem);
+                });
+
+                relatedQuestionsDiv.appendChild(questionsList);
+                container.appendChild(relatedQuestionsDiv);
+            }
+
+            return container;
+        }
+
+        document.getElementById('sendMessage').addEventListener('click', async function () {
+            const chatInput = document.getElementById('chatInput');
+            const chatBody = document.getElementById('chatBody');
+            const messageText = chatInput.value.trim();
+
+            if (messageText) {
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message user-message';
+                userMessage.textContent = messageText;
+                chatBody.appendChild(userMessage);
+
+                const responseData = await sendToBot(messageText);
+                const botMessage = await formatBotResponse(responseData);
+                chatBody.appendChild(botMessage);
+
+                chatInput.value = '';
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+        });
+
+        document.getElementById('chatInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.getElementById('sendMessage').click();
+                document.getElementById('chatInput').value = '';
+            }
+        });
+
+        const cropData = {
+            maize: {
+                name: "Cây Ngô",
+                scientificName: "Zea mays",
+                description: "Cây ngô là một loại cây lương thực quan trọng, được trồng rộng rãi trên toàn thế giới để lấy hạt làm thực phẩm, thức ăn chăn nuôi và nguyên liệu công nghiệp.",
+                careInstructions: [
+                    "Đất tơi xốp, giàu dinh dưỡng, thoát nước tốt.",
+                    "Tưới nước đều đặn, đặc biệt trong giai đoạn ra hoa và tạo hạt.",
+                    "Bón phân hữu cơ và phân hóa học (NPK) cân đối theo giai đoạn sinh trưởng."
+                ],
+                environment: {
+                    temperature: "18-32°C",
+                    humidity: "Trung bình, tránh ngập úng",
+                    light: "Ánh sáng trực tiếp, 6-8 giờ/ngày"
+                }
+            },
+            rice: {
+                name: "Lúa gạo",
+                scientificName: "Oryza sativa",
+                description: "Lúa gạo là cây lương thực chính cung cấp nguồn thực phẩm cho hàng tỷ người trên thế giới.",
+                careInstructions: [
+                    "Đất phù sa, giữ nước tốt.",
+                    "Tưới ngập trong giai đoạn đầu.",
+                    "Bón phân đạm và kali hợp lý."
+                ],
+                environment: {
+                    temperature: "20-35°C",
+                    humidity: "Cao",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            chickpea: {
+                name: "Đậu gà",
+                scientificName: "Cicer arietinum",
+                description: "Đậu gà là cây họ đậu giàu protein, được sử dụng trong nhiều món ăn và chế phẩm thực phẩm.",
+                careInstructions: [
+                    "Đất cát pha, thoát nước tốt.",
+                    "Tưới vừa phải, tránh úng.",
+                    "Bón phân lân và kali để tăng năng suất."
+                ],
+                environment: {
+                    temperature: "15-30°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng đầy đủ"
+                }
+            },
+            kidneybeans: {
+                name: "Đậu thận",
+                scientificName: "Phaseolus vulgaris",
+                description: "Đậu thận là loại đậu giàu dinh dưỡng, được sử dụng trong nhiều món ăn và có giá trị kinh tế cao.",
+                careInstructions: [
+                    "Đất tơi xốp, giàu chất hữu cơ.",
+                    "Tưới nước đều, tránh ngập úng.",
+                    "Bón phân đạm và lân vào giai đoạn đầu."
+                ],
+                environment: {
+                    temperature: "20-30°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            pigeonpeas: {
+                name: "Đậu tương",
+                scientificName: "Cajanus cajan",
+                description: "Đậu tương là cây họ đậu nhiệt đới, được trồng để lấy hạt làm thực phẩm và cải tạo đất.",
+                careInstructions: [
+                    "Đất thoát nước tốt, pH 5.0-7.0.",
+                    "Tưới vừa đủ, chịu hạn tốt.",
+                    "Bón phân hữu cơ và phân lân."
+                ],
+                environment: {
+                    temperature: "20-35°C",
+                    humidity: "Trung bình đến thấp",
+                    light: "Ánh sáng đầy đủ"
+                }
+            },
+            mothbeans: {
+                name: "Đậu tằm",
+                scientificName: "Vigna aconitifolia",
+                description: "Đậu tằm là cây họ đậu chịu hạn, phù hợp với vùng khô cằn, dùng làm thực phẩm và thức ăn chăn nuôi.",
+                careInstructions: [
+                    "Đất cát, thoát nước tốt.",
+                    "Tưới ít, phù hợp vùng khô hạn.",
+                    "Bón phân kali và lân nhẹ."
+                ],
+                environment: {
+                    temperature: "24-32°C",
+                    humidity: "Thấp",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            mungbean: {
+                name: "Đậu xanh",
+                scientificName: "Vigna radiata",
+                description: "Đậu xanh là cây họ đậu ngắn ngày, được trồng để lấy hạt làm thực phẩm và chế biến.",
+                careInstructions: [
+                    "Đất tơi xốp, thoát nước tốt.",
+                    "Tưới đều, không để úng.",
+                    "Bón phân đạm và lân vào giai đoạn đầu."
+                ],
+                environment: {
+                    temperature: "25-35°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            blackgram: {
+                name: "Đậu đen",
+                scientificName: "Vigna mungo",
+                description: "Đậu đen là cây họ đậu giàu protein, được sử dụng trong ẩm thực và cải tạo đất.",
+                careInstructions: [
+                    "Đất phù sa hoặc đất cát pha.",
+                    "Tưới vừa phải, tránh ngập.",
+                    "Bón phân hữu cơ và lân."
+                ],
+                environment: {
+                    temperature: "25-35°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng đầy đủ"
+                }
+            },
+            lentil: {
+                name: "Đậu lăng",
+                scientificName: "Lens culinaris",
+                description: "Đậu lăng là cây họ đậu giàu dinh dưỡng, được trồng để lấy hạt làm thực phẩm.",
+                careInstructions: [
+                    "Đất thoát nước tốt, pH 6.0-7.0.",
+                    "Tưới vừa phải, tránh úng.",
+                    "Bón phân lân và kali."
+                ],
+                environment: {
+                    temperature: "15-25°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            pomegranate: {
+                name: "Lựu",
+                scientificName: "Punica granatum",
+                description: "Lựu là cây ăn quả nhiệt đới, được trồng để lấy quả giàu vitamin và chất chống oxy hóa.",
+                careInstructions: [
+                    "Đất cát pha, thoát nước tốt.",
+                    "Tưới vừa phải, chịu hạn tốt.",
+                    "Bón phân hữu cơ và phân kali."
+                ],
+                environment: {
+                    temperature: "20-35°C",
+                    humidity: "Trung bình đến thấp",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            banana: {
+                name: "Chuối",
+                scientificName: "Musa spp.",
+                description: "Chuối là cây ăn quả nhiệt đới, được trồng để lấy quả làm thực phẩm và xuất khẩu.",
+                careInstructions: [
+                    "Đất giàu hữu cơ, thoát nước tốt.",
+                    "Tưới nước đều, giữ ẩm thường xuyên.",
+                    "Bón phân kali và đạm định kỳ."
+                ],
+                environment: {
+                    temperature: "20-35°C",
+                    humidity: "Cao",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            mango: {
+                name: "Xoài",
+                scientificName: "Mangifera indica",
+                description: "Xoài là cây ăn quả nhiệt đới, được trồng để lấy quả ngọt và giàu dinh dưỡng.",
+                careInstructions: [
+                    "Đất tơi xốp, thoát nước tốt.",
+                    "Tưới vừa phải, tránh úng.",
+                    "Bón phân hữu cơ và kali."
+                ],
+                environment: {
+                    temperature: "24-35°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            grapes: {
+                name: "Nho",
+                scientificName: "Vitis vinifera",
+                description: "Nho là cây ăn quả được trồng để lấy quả làm thực phẩm, rượu vang và nho khô.",
+                careInstructions: [
+                    "Đất cát pha, thoát nước tốt.",
+                    "Tưới vừa phải, tránh úng.",
+                    "Bón phân kali và lân, cắt tỉa thường xuyên."
+                ],
+                environment: {
+                    temperature: "15-30°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            watermelon: {
+                name: "Dưa hấu",
+                scientificName: "Citrullus lanatus",
+                description: "Dưa hấu là cây ăn quả mùa hè, được trồng để lấy quả ngọt và giàu nước.",
+                careInstructions: [
+                    "Đất cát pha, giàu dinh dưỡng.",
+                    "Tưới đều, giữ ẩm tốt.",
+                    "Bón phân kali và đạm."
+                ],
+                environment: {
+                    temperature: "25-35°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            muskmelon: {
+                name: "Dưa lưới",
+                scientificName: "Cucumis melo",
+                description: "Dưa lưới là cây ăn quả ngọt, được trồng để lấy quả làm thực phẩm.",
+                careInstructions: [
+                    "Đất tơi xốp, thoát nước tốt.",
+                    "Tưới vừa phải, giữ ẩm đều.",
+                    "Bón phân kali và đạm."
+                ],
+                environment: {
+                    temperature: "25-35°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            apple: {
+                name: "Táo",
+                scientificName: "Malus domestica",
+                description: "Táo là cây ăn quả ôn đới, được trồng để lấy quả giàu vitamin.",
+                careInstructions: [
+                    "Đất tơi xốp, pH 6.0-7.0.",
+                    "Tưới vừa phải, tránh úng.",
+                    "Bón phân hữu cơ và cắt tỉa cành."
+                ],
+                environment: {
+                    temperature: "15-25°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            orange: {
+                name: "Cam",
+                scientificName: "Citrus sinensis",
+                description: "Cam là cây ăn quả nhiệt đới, được trồng để lấy quả giàu vitamin C.",
+                careInstructions: [
+                    "Đất tơi xốp, thoát nước tốt.",
+                    "Tưới đều, giữ ẩm vừa phải.",
+                    "Bón phân đạm, lân và kali."
+                ],
+                environment: {
+                    temperature: "20-30°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            papaya: {
+                name: "Đu đủ",
+                scientificName: "Carica papaya",
+                description: "Đu đủ là cây ăn quả nhiệt đới, được trồng để lấy quả giàu vitamin và enzyme.",
+                careInstructions: [
+                    "Đất giàu hữu cơ, thoát nước tốt.",
+                    "Tưới đều, giữ ẩm thường xuyên.",
+                    "Bón phân hữu cơ và kali."
+                ],
+                environment: {
+                    temperature: "22-35°C",
+                    humidity: "Cao",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            coconut: {
+                name: "Dừa",
+                scientificName: "Cocos nucifera",
+                description: "Dừa là cây nhiệt đới, được trồng để lấy quả, nước dừa và dầu dừa.",
+                careInstructions: [
+                    "Đất cát pha, thoát nước tốt.",
+                    "Tưới đều, chịu mặn tốt.",
+                    "Bón phân kali và hữu cơ."
+                ],
+                environment: {
+                    temperature: "25-35°C",
+                    humidity: "Cao",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            cotton: {
+                name: "Bông",
+                scientificName: "Gossypium spp.",
+                description: "Bông là cây công nghiệp, được trồng để lấy sợi làm vải và hạt làm dầu.",
+                careInstructions: [
+                    "Đất tơi xốp, thoát nước tốt.",
+                    "Tưới vừa phải, tránh úng.",
+                    "Bón phân đạm và kali."
+                ],
+                environment: {
+                    temperature: "20-30°C",
+                    humidity: "Trung bình",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            jute: {
+                name: "Đay",
+                scientificName: "Corchorus spp.",
+                description: "Đay là cây công nghiệp, được trồng để lấy sợi làm bao bì và vải thô.",
+                careInstructions: [
+                    "Đất phù sa, giữ nước tốt.",
+                    "Tưới ngập trong giai đoạn đầu.",
+                    "Bón phân đạm và lân."
+                ],
+                environment: {
+                    temperature: "20-35°C",
+                    humidity: "Cao",
+                    light: "Ánh sáng trực tiếp"
+                }
+            },
+            coffee: {
+                name: "Cà phê",
+                scientificName: "Coffea spp.",
+                description: "Cà phê là cây công nghiệp nhiệt đới, được trồng để lấy hạt làm đồ uống.",
+                careInstructions: [
+                    "Đất tơi xốp, giàu hữu cơ, pH 5.0-6.0.",
+                    "Tưới đều, giữ ẩm vừa phải.",
+                    "Bón phân hữu cơ và kali."
+                ],
+                environment: {
+                    temperature: "15-25°C",
+                    humidity: "Cao",
+                    light: "Ánh sáng gián tiếp hoặc bóng râm"
+                }
+            }
+        };
+
+        document.getElementById('plantRecommendationForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const resultDiv = document.getElementById('result');
+            const errorDiv = document.getElementById('error');
+
+            resultDiv.style.display = 'none';
+            errorDiv.style.display = 'none';
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang xử lý...';
+
+            const formData = {
+                N: parseFloat(document.getElementById('N').value),
+                P: parseFloat(document.getElementById('P').value),
+                K: parseFloat(document.getElementById('K').value),
+                temperature: parseFloat(document.getElementById('temperature').value),
+                humidity: parseFloat(document.getElementById('humidity').value),
+                ph: parseFloat(document.getElementById('ph').value),
+                rainfall: parseFloat(document.getElementById('rainfall').value)
+            };
+
+            try {
+                const response = await fetch('/plant_recommendation', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const prediction = data.prediction || "Không có kết quả";
+
+                // Kiểm tra xem cây trồng có trong danh sách cropData không
+                if (cropData[prediction]) {
+                    const crop = cropData[prediction];
+                    resultDiv.style.display = "block";
+                    resultDiv.innerHTML = `
+                                    <div class="alert alert-success">
+                                    <h3 class="text-success text-center">Cây trồng được gợi ý</h3>
+                                    <h3>${crop.name}</h3>
+                                    <p><strong>Mô tả:</strong> ${crop.description}</p>
+                                    <p><strong>Hướng dẫn chăm sóc:</strong></p>
+                                    <ul>
+                                    ${crop.careInstructions.map((instruction) => `<li>${instruction}</li>`).join("")}
+                                    </ul>
+                                    <p><strong>Môi trường phát triển:</strong></p>
+                                    <ul>
+                                    <li>Nhiệt độ: ${crop.environment.temperature}</li>
+                                    <li>Độ ẩm: ${crop.environment.humidity}</li>
+                                    <li>Ánh sáng: ${crop.environment.light}</li>
+                                    </ul>
+                                    </div>
+      `;
+                } else {
+                    resultDiv.style.display = "block";
+                    resultDiv.innerHTML = `<strong>Cây trồng được đề xuất:</strong> ${prediction} (Chưa có thông tin chi tiết)`;
+                }
+
+                errorDiv.style.display = "none";
+            } catch (error) {
+                errorDiv.style.display = 'block';
+                errorDiv.textContent = `Lỗi: ${error.message}`;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa-solid fa-seedling"></i> Gợi ý cây trồng';
+            }
+        });
+
+        window.onload = function () {
+            loadPlantDiseases();
+            loadPlantSpecies();
+        };
+    </script>
+</body>
+
+</html>

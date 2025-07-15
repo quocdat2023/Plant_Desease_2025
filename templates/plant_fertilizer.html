@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Care & Gardens</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="shortcut icon"
+        href="https://cdn.prod.website-files.com/635f83ca61099e23ec36a337/63e324da0ebc777116ef9242_new_256.jpg"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description"
+        content="Ứng dụng Plant Care & Gardens giúp người dùng chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây và phân bón.">
+    <meta name="keywords"
+        content="Plant Care, Gardens, Farms, chăm sóc cây trồng, phát hiện bệnh cây, gợi ý giống cây, phân bón">
+    <!-- Bootstrap CSS CDN -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .custom-bg {
+            background-image: linear-gradient(to right, #E3F8D3, #A9EBC3);
+            /* min-height: 100vh; */
+        }
+
+        .navbar-custom {
+            background-color: white;
+        }
+
+        .navbar-brand img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .btn-start {
+            background-color: #3bbf9c;
+            color: white;
+            border-radius: 50px;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card {
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .card-subtitle {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: #333;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .modal-body img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .disease-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .text-purple {
+            color: #4CC7AB;
+        }
+
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: transparent;
+            /* Fully transparent */
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .chat-button img {
+            margin-right: 10px;
+        }
+
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 40px;
+            width: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .chat-header {
+            background-color: #4CC7AB;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h5 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .chat-body {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .bot-message {
+            background-color: #e9ecef;
+            margin-right: 10px;
+        }
+
+        .user-message {
+            background-color: #4CC7AB;
+            margin-left: auto;
+            width: fit-content;
+            color: white;
+        }
+
+        .chat-footer {
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-footer input {
+            flex: 1;
+        }
+
+        .chat-footer button {
+            background-color: #4CC7AB;
+            border: none;
+        }
+
+        .chat-message {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background-color: #5E6AB8;
+            margin-left: auto;
+            width: fit-content;
+        }
+
+        .bot-message {
+            background-color: #EAF0F6;
+            margin-right: auto;
+        }
+
+        .bot-message h3 {
+            margin: 10px 0 5px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .bot-message p {
+            margin: 5px 0;
+        }
+
+        .bot-message ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        .bot-message li {
+            margin: 5px 0;
+        }
+
+        .related-questions {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #EAF0F6;
+            border-radius: 5px;
+        }
+
+        .related-questions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .related-questions li {
+            margin: 5px 0;
+        }
+
+        .related-questions a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .related-questions a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .payment-icons img {
+            height: 25px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 12px;
+            color: #bbbbbb;
+            width: 100%;
+        }
+
+        .chat-bubble {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-bubble span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff4444;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .btn-start:hover {
+            background-color: #4CC7AB;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #7be6cd;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://cdn.prod.website-files.com/635f83ca61099e23ec36a337/63e324da0ebc777116ef9242_new_256.jpg"
+                    alt="Logo"> Plant Disease
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{{ url_for('home') }}">Trang chủ</a>
+                {% if session.user %}
+                <a class="nav-link" href="{{ url_for('plant_detection') }}">Phát hiện bệnh</a>
+                {% endif %}
+                <a class="nav-link" href="{{ url_for('plant_recommendation') }}">Gợi ý giống cây</a>
+                <a class="nav-link" href="{{ url_for('plant_fertilizer') }}">Gợi ý phân bón</a>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {% if session.user %}
+                        {{ session.user.name }}
+                        <img src="https://myplantin.com/icons/my-plants.svg" alt="Logo"
+                            style="height: 16px; vertical-align: middle;">
+                        {% else %}
+                        Tài khoản
+                        {% endif %}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        {% if session.user %}
+                        <li><a class="dropdown-item" href="{{ url_for('logout') }}">Đăng xuất</a></li>
+                        {% else %}
+                        <li><a class="dropdown-item" href="{{ url_for('register') }}">Đăng ký</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('login') }}">Đăng nhập</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid custom-bg p-5">
+        <div class="row">
+            <div class="col-lg-7 text-left">
+                <h1 class="display-4 fw-bold text-dark">Plant Care & Gardens</h1>
+                <p class="lead text-muted">
+                    Ứng dụng "Plant Care & Gardens" là một công cụ mạnh mẽ hỗ trợ người dùng trong việc chăm sóc
+                    cây trồng và quản lý vườn. Nhập thông tin môi trường và đất để nhận gợi ý phân bón phù hợp.
+                </p>
+                <!-- Form for Fertilizer Prediction -->
+                <form id="fertilizerForm" class="mt-4">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="Temperature" class="form-label">Nhiệt độ (°C)</label>
+                            <input type="number" class="form-control" id="Temperature" name="Temperature" required
+                                step="0.1">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="Humidity" class="form-label">Độ ẩm (%)</label>
+                            <input type="number" class="form-control" id="Humidity" name="Humidity" required step="0.1">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="Moisture" class="form-label">Độ ẩm đất (%)</label>
+                            <input type="number" class="form-control" id="Moisture" name="Moisture" required step="0.1">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="Nitrogen" class="form-label">Nitrogen (mg/kg)</label>
+                            <input type="number" class="form-control" id="Nitrogen" name="Nitrogen" required step="0.1">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="Potassium" class="form-label">Potassium (mg/kg)</label>
+                            <input type="number" class="form-control" id="Potassium" name="Potassium" required
+                                step="0.1">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="Phosphorous" class="form-label">Phosphorous (mg/kg)</label>
+                            <input type="number" class="form-control" id="Phosphorous" name="Phosphorous" required
+                                step="0.1">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-start"><i class="fa-solid fa-flask-vial"></i> Gợi ý phân
+                        bón</button>
+                </form>
+                <!-- Result Display -->
+
+            </div>
+            <div class="col-lg-5">
+                <img src="https://www.pngkit.com/png/full/337-3370206_microbial-products-alpine-fertilizer.png"
+                    class="img-fluid rounded" alt="Plant Image" style="width: 80%; float: right;">
+            </div>
+            <div class="d-flex flex-row justify-content-center align-items-center">
+                 <div id="predictionResult" class="mt-3" style="height: auto; width: 50%"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plant Table -->
+    <div class="container-fluid disease-container">
+        <div class="container mt-5">
+            <h1 class="text-center">GỢI Ý PHÂN BÓN CHO CÂY TRỒNG PHỔ BIẾN</h1>
+            <div class="mb-3">
+                <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm cây trồng...">
+            </div>
+            <table class="table table-striped" id="plantTable">
+                <thead>
+                    <tr>
+                        <th>Tên cây trồng</th>
+                        <th>Liều lượng</th>
+                        <th>Loại phân bón</th>
+                        <th class="text-center">Xem gợi ý</th>
+                    </tr>
+                </thead>
+                <tbody id="plantTableBody">
+                    <!-- Dữ liệu sẽ được thêm vào đây bởi JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal cho thông tin chi tiết -->
+        <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailModalLabel">Chi tiết phân bón</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+                        <!-- Thông tin chi tiết sẽ được thêm vào đây -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Popup -->
+    <div class="chat-popup" id="chatPopup" style="display: none;">
+        <div class="chat-header">
+            <h5>Trò chuyện với chúng tôi</h5>
+            <button type="button" class="btn-close" id="closeChat"></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot-message">
+                Chào bạn! Chúng tôi ở đây để giúp bạn với các câu hỏi về chăm sóc cây trồng. Hãy nhập tin nhắn của bạn
+                dưới đây!
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" class="form-control" placeholder="Nhập tin nhắn của bạn...">
+            <button type="button" class="btn btn-primary" id="sendMessage">Gửi</button>
+        </div>
+    </div>
+    <button class="chat-button" id="openChat">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/059/491/654/small/3d-rendered-chatbot-illustration-png.png"
+            alt="Chat Icon" style="width: 70px; height: 70px;">
+    </button>
+
+    <footer class="footer">
+        <div class="copyright">
+            © 2025 Copyright Plant Disease. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Custom JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        const plants = [
+            {
+                name: "Cà chua",
+                category: "Vegetable",
+                fertilizer: "Phân NPK 16-16-8",
+                dosage: "50g/cây",
+                timing: "Bón lót trước khi trồng và bón thúc sau khi trồng 2 tuần",
+                method: "Rải đều quanh gốc cây, cách gốc 10cm, sau đó tưới nước",
+                image: "https://perenual.com/storage/species_image/5025_lycopersicon_esculentum_rapunzel/medium/pexels-photo-6314416.jpg",
+                details: "Phân bón giàu kali giúp quả phát triển tốt và tăng cường sức đề kháng cho cây."
+            },
+            {
+                name: "Dưa hấu",
+                category: "Fruit",
+                fertilizer: "Phân hữu cơ",
+                dosage: "1kg/m²",
+                timing: "Bón trước khi trồng và sau khi thu hoạch",
+                method: "Trộn đều vào đất trước khi trồng",
+                image: "https://th.bing.com/th/id/OIP.vQMAipyH1XxSDxg0pZPu2gHaE8",
+                details: "Phân hữu cơ giúp cải thiện cấu trúc đất và cung cấp dinh dưỡng lâu dài cho cây."
+            },
+            {
+                name: "Rau muống",
+                category: "Vegetable",
+                fertilizer: "Phân ure",
+                dosage: "20g/m²",
+                timing: "Bón thúc sau khi trồng 1 tuần",
+                method: "Rải đều trên mặt đất, sau đó tưới nước",
+                image: "https://example.com/images/rau_muong.jpg",
+                details: "Phân ure cung cấp nitơ giúp lá xanh tốt và phát triển nhanh."
+            },
+            {
+                name: "Cây lúa",
+                category: "Grain",
+                fertilizer: "Phân DAP",
+                dosage: "100g/m²",
+                timing: "Bón lót trước khi gieo hạt và bón thúc khi lúa trổ đòng",
+                method: "Rải đều trên ruộng, sau đó cày bừa hoặc tưới nước",
+                image: "https://example.com/images/lua.jpg",
+                details: "Phân DAP cung cấp phốt pho và nitơ, hỗ trợ quá trình ra hoa và kết hạt."
+            },
+            {
+                name: "Hoa hồng",
+                category: "Flower",
+                fertilizer: "Phân NPK 20-20-20",
+                dosage: "30g/cây",
+                timing: "Bón định kỳ mỗi tháng một lần",
+                method: "Hòa tan trong nước và tưới vào gốc cây",
+                image: "https://example.com/images/hoa_hong.jpg",
+                details: "Phân bón cân đối giúp hoa nở đẹp và đều, tăng cường sức sống cho cây."
+            },
+            {
+                name: "Cải xanh",
+                category: "Vegetable",
+                fertilizer: "Phân NPK 10-10-10",
+                dosage: "25g/m²",
+                timing: "Bón lót trước khi gieo và bón thúc sau 10 ngày",
+                method: "Rải đều trên luống, sau đó tưới nước",
+                image: "https://example.com/images/cai_xanh.jpg",
+                details: "Phân bón cân đối giúp cây phát triển đều, lá xanh mướt."
+            },
+            {
+                name: "Xoài",
+                category: "Fruit",
+                fertilizer: "Phân NPK 15-15-15",
+                dosage: "200g/cây",
+                timing: "Bón sau khi trồng 1 tháng và trước khi ra hoa",
+                method: "Rải quanh gốc cây, cách gốc 20cm, sau đó tưới nước",
+                image: "https://example.com/images/xoai.jpg",
+                details: "Phân bón cân đối hỗ trợ cây ra hoa và kết quả tốt hơn."
+            },
+            {
+                name: "Ngô",
+                category: "Grain",
+                fertilizer: "Phân NPK 12-12-17",
+                dosage: "150g/m²",
+                timing: "Bón lót trước khi gieo và bón thúc khi cây cao 30cm",
+                method: "Rải đều trên luống, sau đó tưới nước",
+                image: "https://example.com/images/ngo.jpg",
+                details: "Phân bón giàu kali hỗ trợ phát triển bắp to và chắc."
+            },
+            {
+                name: "Cúc vạn thọ",
+                category: "Flower",
+                fertilizer: "Phân NPK 10-30-20",
+                dosage: "20g/cây",
+                timing: "Bón định kỳ mỗi 3 tuần",
+                method: "Hòa tan trong nước và tưới vào gốc",
+                image: "https://example.com/images/cuc_van_tho.jpg",
+                details: "Phân bón giàu phốt pho giúp hoa nở rộ và lâu tàn."
+            },
+            {
+                name: "Dưa leo",
+                category: "Vegetable",
+                fertilizer: "Phân NPK 16-16-8",
+                dosage: "40g/cây",
+                timing: "Bón lót trước khi trồng và bón thúc sau khi trồng 3 tuần",
+                method: "Rải quanh gốc cây, cách gốc 15cm, sau đó tưới nước",
+                image: "https://example.com/images/dua_leo.jpg",
+                details: "Phân bón giàu kali giúp quả phát triển đều và tăng năng suất."
+            }
+        ];
+
+        function getCategoryIcon(category) {
+            switch (category) {
+                case "Vegetable":
+                    return '<i class="fa-solid fa-leaf" style="color: #3bbf9c;"></i>';
+                case "Fruit":
+                    return '<i class="fa-solid fa-apple-whole" style="color: #ff5733;"></i>';
+                case "Grain":
+                    return '<i class="fa-solid fa-wheat-awn" style="color: #FFD43B;"></i>';
+                case "Flower":
+                    return '<i class="fa-solid fa-seedling" style="color: #29C3A0;"></i>';
+                default:
+                    return '<i class="fa-solid fa-seedling" style="color: #AFD716;"></i>';
+            }
+        }
+
+        function displayPlants(plantsToDisplay) {
+            const tableBody = document.getElementById('plantTableBody');
+            tableBody.innerHTML = '';
+            plantsToDisplay.forEach(plant => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${plant.name} ${getCategoryIcon(plant.category)}</td>
+                    <td>${plant.dosage}</td>
+                    <td>${plant.fertilizer}</td>
+                    <td class="text-center"><i class="fa-solid fa-flask-vial" onclick="showDetails('${plant.name}')" style="cursor: pointer; color: #3bbf9c;"></i></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function showDetails(plantName) {
+            const plant = plants.find(p => p.name === plantName);
+            if (plant) {
+                const modalBody = document.getElementById('modalBody');
+                modalBody.innerHTML = `
+                    <p><strong>Loại cây:</strong> ${plant.name} ${getCategoryIcon(plant.category)}</p>
+                    <p><strong>Phân loại:</strong> ${plant.category}</p>
+                    <p><strong>Loại phân bón:</strong> ${plant.fertilizer}</p>
+                    <p><strong>Liều lượng:</strong> ${plant.dosage}</p>
+                    <p><strong>Thời điểm bón:</strong> ${plant.timing}</p>
+                    <p><strong>Cách bón:</strong> ${plant.method}</p>
+                    <p><strong>Chi tiết:</strong> ${plant.details}</p>
+                `;
+                const modal = new bootstrap.Modal(document.getElementById('detailModal'));
+                modal.show();
+            }
+        }
+
+        document.getElementById('searchInput').addEventListener('input', function () {
+            const searchTerm = this.value.toLowerCase();
+            const filteredPlants = plants.filter(plant =>
+                plant.name.toLowerCase().includes(searchTerm) || plant.category.toLowerCase().includes(searchTerm)
+            );
+            displayPlants(filteredPlants);
+        });
+
+        // Hiển thị tất cả cây trồng ban đầu
+        displayPlants(plants);
+
+        // Handle Fertilizer Prediction Form Submission
+        document.getElementById('fertilizerForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const resultDiv = document.getElementById('predictionResult');
+            resultDiv.innerHTML = '<div class="alert alert-info">Đang xử lý...</div>';
+
+            const formData = new FormData(this);
+            const data = {
+                Temperature: parseFloat(formData.get('Temperature')),
+                Humidity: parseFloat(formData.get('Humidity')),
+                Moisture: parseFloat(formData.get('Moisture')),
+                Nitrogen: parseFloat(formData.get('Nitrogen')),
+                Potassium: parseFloat(formData.get('Potassium')),
+                Phosphorous: parseFloat(formData.get('Phosphorous'))
+            };
+
+            try {
+                const response = await fetch('/plant_fertilizer', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    if (result.predictions['Fertilizer Name'] === 'Urea' || result.predictions['Fertilizer Name'] === 'DAP') {
+                        resultDiv.innerHTML = `
+                        <div class="alert alert-success">
+                            <h5>Kết quả gợi ý:</h5>
+                            <p><strong>Loại đất:</strong> ${result.predictions['Soil Type']}</p>
+                            <p><strong>Loại cây:</strong> ${result.predictions['Crop Type']}</p>
+                            <p><strong>Phân bón:</strong> Phân bón ${result.predictions['Fertilizer Name']}</p>
+                        </div>
+                    `;
+                    } else {
+                        resultDiv.innerHTML = `
+                        <div class="alert alert-success">
+                            <h5>Kết quả gợi ý:</h5>
+                            <p><strong>Loại đất:</strong> ${result.predictions['Soil Type']}</p>
+                            <p><strong>Loại cây:</strong> ${result.predictions['Crop Type']}</p>
+                            <p><strong>Phân bón:</strong> Phân bón NPK ${result.predictions['Fertilizer Name']}</p>
+                        </div>
+                    `;
+                    }
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="alert alert-danger">
+                            Lỗi: ${result.error}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="alert alert-danger">
+                        Lỗi khi gửi yêu cầu: ${error.message}
+                    </div>
+                `;
+            }
+        });
+
+        // Chat Popup Functionality
+        document.getElementById('openChat').addEventListener('click', function () {
+            document.getElementById('chatPopup').style.display = 'block';
+            document.getElementById('openChat').style.display = 'none';
+        });
+
+        document.getElementById('closeChat').addEventListener('click', function () {
+            document.getElementById('chatPopup').style.display = 'none';
+            document.getElementById('openChat').style.display = 'flex';
+        });
+
+        async function sendToBot(message) {
+            try {
+                const response = await fetch('http://localhost:5000/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: message })
+                });
+                if (!response.ok) {
+                    throw new Error('API request failed');
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error:', error);
+                return { final_response: 'Đã xảy ra lỗi khi xử lý yêu cầu. Vui lòng thử lại.' };
+            }
+        }
+
+        async function typeText(element, text, delay = 30) {
+            element.innerHTML = ''; // Clear element content
+            for (let i = 0; i < text.length; i++) {
+                element.innerHTML = element.innerHTML.slice(0, -1) + text[i] + '|';
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+            element.innerHTML = element.innerHTML.slice(0, -1); // Remove cursor
+        }
+
+        async function formatBotResponse(data) {
+            const { final_response, related_questions } = data;
+            const container = document.createElement('div');
+            container.className = 'chat-message bot-message';
+
+            // Split the response into sections based on headers
+            const sections = final_response.split(/\*\*(.*?)\*\*:/);
+            let formattedHtml = '';
+
+            for (let i = 1; i < sections.length; i += 2) {
+                const header = sections[i].trim();
+                const content = sections[i + 1].trim();
+
+                formattedHtml += `<h3>${header}</h3>`;
+
+                const lines = content.split('\n').filter(line => line.trim());
+                let inList = false;
+
+                lines.forEach(line => {
+                    if (line.startsWith('* ')) {
+                        if (!inList) {
+                            formattedHtml += '<ul>';
+                            inList = true;
+                        }
+                        formattedHtml += `<li>${line.substring(2).trim()}</li>`;
+                    } else {
+                        if (inList) {
+                            formattedHtml += '</ul>';
+                            inList = false;
+                        }
+                        formattedHtml += `<p>${line}</p>`;
+                    }
+                });
+
+                if (inList) {
+                    formattedHtml += '</ul>';
+                }
+            }
+
+            container.innerHTML = formattedHtml;
+
+            // Type out headers, paragraphs, and list items
+            const elementsToType = container.querySelectorAll('h3, p, li');
+            for (const element of elementsToType) {
+                const text = element.textContent;
+                element.textContent = '';
+                await typeText(element, text);
+            }
+
+            // Add related questions if available
+            if (related_questions && Array.isArray(related_questions)) {
+                const relatedQuestionsDiv = document.createElement('div');
+                relatedQuestionsDiv.className = 'related-questions';
+                relatedQuestionsDiv.innerHTML = '<strong>Câu hỏi liên quan:</strong>';
+
+                const questionsList = document.createElement('ul');
+                related_questions.forEach(q => {
+                    const questionItem = document.createElement('li');
+                    const questionLink = document.createElement('a');
+                    questionLink.href = '#';
+                    questionLink.textContent = q.question;
+                    questionLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        document.getElementById('chatInput').value = q.question;
+                        document.getElementById('sendMessage').click();
+                        document.getElementById('chatInput').value = '';
+                    });
+                    questionItem.appendChild(questionLink);
+                    questionsList.appendChild(questionItem);
+                });
+
+                relatedQuestionsDiv.appendChild(questionsList);
+                container.appendChild(relatedQuestionsDiv);
+            }
+
+            return container;
+        }
+
+        document.getElementById('sendMessage').addEventListener('click', async function () {
+            const chatInput = document.getElementById('chatInput');
+            const chatBody = document.getElementById('chatBody');
+            const messageText = chatInput.value.trim();
+
+            if (messageText) {
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message user-message';
+                userMessage.textContent = messageText;
+                chatBody.appendChild(userMessage);
+
+                const responseData = await sendToBot(messageText);
+                const botMessage = await formatBotResponse(responseData);
+                chatBody.appendChild(botMessage);
+
+                chatInput.value = '';
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+        });
+
+        document.getElementById('chatInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.getElementById('sendMessage').click();
+                document.getElementById('chatInput').value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
